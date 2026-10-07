@@ -1,0 +1,13 @@
+{
+  "name": "vitasr-da-ngon-ngu",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Làm lại giao diện mini app VITASR Đa ngôn ngữ. Spec là nguồn chân lý duy nhất.",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "spec:trace": "node scripts/spec.mjs trace",
+    "spec:acceptance": "node scripts/spec.mjs acceptance",
+    "spec:check": "node scripts/spec.mjs check"
+  }
+}
