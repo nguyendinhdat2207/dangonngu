@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Chọn ngôn ngữ và bộ nội dung",
+    "copy": "Mở khung tùy chọn bằng nút thu/mở dưới logo.",
+    "details": [
+      "Chọn Ngôn ngữ rồi chọn Bộ nội dung. Số câu thực tế hiển thị theo lựa chọn hiện tại và phạm vi được chia sẻ.",
+      "Gói Global English có 4.608 câu tiếng Anh; gói English Fluency có 4.096 câu cho từng ngôn ngữ được cung cấp.",
+      "Nút mặt trăng chuyển sang tối; nút mặt trời chuyển sang sáng. Thu/mở chỉ đổi phần hiển thị tùy chọn."
+    ],
+    "caption": "Minh họa thao tác · Chọn ngôn ngữ và bộ nội dung"
+  },
+  {
+    "title": "Học một nhóm tối đa 8 câu",
+    "copy": "Bấm Học 8 câu để mở bộ chọn bài.",
+    "details": [
+      "Chọn nội dung theo Unit · Nhóm 8 câu, Cụm từ hoặc Ngẫu nhiên. Tình huống và Chủ đề chỉ xuất hiện khi gói có dữ liệu tương ứng.",
+      "Chọn nhóm, đọc danh sách xem trước và số câu phù hợp rồi bấm Bắt đầu học. Nhóm ít hơn 8 câu sẽ dùng đúng số câu hiện có.",
+      "Xem toàn bộ câu đưa bạn về phạm vi thư viện hiện tại."
+    ],
+    "caption": "Minh họa thao tác · Học một nhóm tối đa 8 câu"
+  },
+  {
+    "title": "Học theo chủ đề",
+    "copy": "Gõ từ khóa hoặc cụm từ vào Học theo chủ đề; có thể gõ không dấu.",
+    "details": [
+      "Tìm trong bộ nội dung đang chọn: câu gốc, bản dịch, cách dùng, cụm từ và nhãn phân loại. Đây là tìm từ khóa trong dữ liệu sẵn có; không sinh câu mới.",
+      "Kết quả cho biết số câu, số nhóm nội dung gốc (chunks), và số nhóm luyện tối đa 8 câu. Chunks ở đây không phải các cụm đọc của T02.",
+      "Chọn Học toàn bộ kết quả hoặc Học từng nhóm 8 câu. Dùng Nhóm trước / Nhóm tiếp để chuyển nhóm. Không có kết quả: rút gọn từ khóa hoặc đổi bộ nội dung."
+    ],
+    "caption": "Minh họa thao tác · Học theo chủ đề"
+  },
+  {
+    "title": "Hiện câu, Bản dịch và Cách dùng",
+    "copy": "Chủ động chọn phần nội dung bạn muốn xem trên thẻ học.",
+    "details": [
+      "Tích Hiện câu: câu gốc luôn hiện trước khi đọc. Bỏ tích: hiện Chạm để hiện câu gốc; chạm thẻ để mở câu hiện tại. Sang câu khác sẽ ẩn lại. Áp dụng cho mọi ngôn ngữ.",
+      "Bản dịch bật hoặc ẩn nghĩa của câu. Cách dùng bật hoặc ẩn phần giải thích có trong dữ liệu. Câu không có giải thích sẽ không hiện phần này.",
+      "Từ hoặc cụm tiếng Anh được đánh dấu xanh đậm và đặt trong ngoặc kép, ví dụ “First”, “One more”."
+    ],
+    "caption": "Minh họa thao tác · Hiện câu, Bản dịch và Cách dùng"
+  },
+  {
+    "title": "Nghe câu và nghe lặp",
+    "copy": "Bấm Nghe câu để phát câu đang hiển thị.",
+    "details": [
+      "Bật Nghe lặp để phát lại liên tục đúng câu hiện tại, không cần đánh dấu câu trong danh sách. Bỏ chọn Nghe lặp để dừng.",
+      "Câu trước / Câu tiếp hoặc vuốt phải / trái để chuyển câu. Khi nghe lặp vẫn bật, việc phát câu mới tiếp tục lặp câu mới.",
+      "Dừng / phát dừng hoặc phát lại câu hiện tại. Giọng đọc mở lựa chọn giọng có trên thiết bị. Với tiếng Lào, ứng dụng tự dùng Keomany Neural khi thiết bị thiếu giọng; có thể tải một gói để nghe ngoại tuyến. Karen & Daniel vẫn được ưu tiên cho tiếng Anh khi có sẵn."
+    ],
+    "caption": "Minh họa thao tác · Nghe câu và nghe lặp"
+  },
+  {
+    "title": "Danh sách dữ liệu",
+    "copy": "Mở Danh sách dữ liệu để tìm và chọn câu cụ thể.",
+    "details": [
+      "Nhập vào Tìm kiếm để lọc danh sách. Bấm nội dung một câu để đưa câu đó lên thẻ học và nghe.",
+      "Dùng các bộ lọc 5 câu mới, 5 ngẫu nhiên, 5 câu dài, Câu ngắn theo nhu cầu; Trang trước / Trang sau chuyển trang danh sách.",
+      "Ô Tất cả và ô chọn từng dòng dùng để đánh dấu câu trong danh sách. Nghe lặp hiện lặp câu trên thẻ, không chọn ngẫu nhiên trong các ô đã đánh dấu."
+    ],
+    "caption": "Minh họa thao tác · Danh sách dữ liệu"
+  },
+  {
+    "title": "TEST NOW: bắt đầu từ đúng câu",
+    "copy": "Bấm TEST NOW trên thẻ học để bắt đầu từ câu đang hiển thị.",
+    "details": [
+      "Bài test dùng dữ liệu, ngôn ngữ và thứ tự câu được thiết lập bên ngoài; một phiên gồm tối đa 8 câu.",
+      "T01 nghe hiểu: nghe câu ở ngôn ngữ đích rồi chọn nghĩa đúng. Next chuyển sang câu mới ở T01, tự đọc và làm nổi bật đáp án đúng sau khi nghe xong.",
+      "Chỉ bấm Next hoặc xem đáp án nổi bật không được cộng điểm trả lời hay tính là hoàn thành đủ ba bước."
+    ],
+    "caption": "Minh họa thao tác · TEST NOW: bắt đầu từ đúng câu"
+  },
+  {
+    "title": "Luồng đầy đủ T01 → T02 → T03",
+    "copy": "Dùng luồng đầy đủ khi muốn thực hiện cả ba bước trên từng câu.",
+    "details": [
+      "T01: tự chọn đáp án đúng để chuyển sang T02.",
+      "T02: chạm từng cụm tiếng Việt để hiện cụm ở ngôn ngữ đích và nghe. Mở hết các cụm sẽ tiếp tục T03.",
+      "T03: chạm các cụm theo đúng thứ tự, xem đáp án chuẩn rồi chạm để nghe lại. Nghe xong, luồng tự động chuyển sang câu kế tiếp. T02 ghi nhận mở cụm, không chấm phát âm bằng microphone."
+    ],
+    "caption": "Minh họa thao tác · Luồng đầy đủ T01 → T02 → T03"
+  },
+  {
+    "title": "T02 riêng: Next tự đọc từng cụm",
+    "copy": "Chạm vòng tròn T02 để chọn chế độ luyện riêng.",
+    "details": [
+      "Khi vừa chọn T02, bạn vẫn có thể chạm từng cụm của câu hiện tại để mở và nghe.",
+      "Mỗi lần bấm Next: sang câu mới → tự hiện từng cụm tiếng Anh → đọc lần lượt → hết cụm cuối thì dừng, giữ ở T02. Với ngôn ngữ khác, ứng dụng dùng ngôn ngữ đích đã chọn.",
+      "Bấm Next tiếp để lặp lại quy trình với câu kế tiếp. Chuyển câu hoặc thoát sẽ hủy luồng đọc cũ. Chạm T01 để trở lại luồng tự động."
+    ],
+    "caption": "Minh họa thao tác · T02 riêng: Next tự đọc từng cụm"
+  },
+  {
+    "title": "T03 riêng và kết quả test",
+    "copy": "Chạm vòng tròn T03 để luyện sắp xếp riêng.",
+    "details": [
+      "Bấm Next để sang câu mới và giữ T03. Các cụm tự nhảy lên bảng theo đúng thứ tự; mỗi cụm được đọc ngay khi xuất hiện. Khi đủ cụm, ứng dụng tự đọc cả câu rồi dừng.",
+      "Ở T03 riêng, nghe xong vẫn ở câu này và chờ Next. Chạm T01 để trở lại luồng tự động. Nút × đóng test nằm dưới cùng bên phải.",
+      "Câu, Điểm và Tiến bộ phản ánh phiên test hiện tại; các thanh T01/T02/T03 ghi nhận từng bước riêng. Điểm hoàn thành T02 không phải điểm đánh giá phát âm."
+    ],
+    "caption": "Minh họa thao tác · T03 riêng và kết quả test"
+  },
+  {
+    "title": "Tiến bộ, Của tôi và Góp ý",
+    "copy": "Mở tùy chọn để thấy bốn nút Tiếp tục phiên, Tiến bộ, Của tôi và Góp ý.",
+    "details": [
+      "Tiếp tục phiên mở phiên luyện đang dở của mục học. Tiến bộ có bộ lọc 1, 7, 30 ngày, kết quả chọn nghĩa, tự đánh giá nhớ và lịch ôn. Đây là số liệu trên thiết bị này; đã xem không đồng nghĩa đã nhớ.",
+      "Của tôi cho phép đặt mục tiêu 7 ngày, xuất bản sao JSON và nhập bản sao tối đa 2 MB có bước xác nhận. Dữ liệu cá nhân chưa tự đồng bộ giữa các thiết bị.",
+      "Góp ý lưu nháp trên thiết bị, chưa tự gửi hỗ trợ. Bạn có thể xuất bản nháp để chia sẻ. Sao lưu trước khi xóa dữ liệu trình duyệt."
+    ],
+    "caption": "Minh họa thao tác · Tiến bộ, Của tôi và Góp ý"
+  },
+  {
+    "title": "Xử lý lỗi và xem lại",
+    "copy": "Kiểm tra giọng, âm lượng và mở lại hướng dẫn khi cần.",
+    "details": [
+      "Không nghe được: kiểm tra âm lượng và đầu ra Bluetooth rồi bấm Nghe câu. Tiếng Lào tự dùng âm thanh Keomany Neural; khi mất mạng, mở Giọng đọc và tải gói ngoại tuyến trước. Các ngôn ngữ khác vẫn dùng giọng phù hợp đã cài trên thiết bị. Bộ phát thử phục hồi một lần nếu chưa bắt đầu; nếu bị gián đoạn sẽ báo để bạn bấm nghe lại. Trạng thái thiết bị báo bắt đầu không xác nhận loa đang phát tiếng. Nếu T02 bị gián đoạn, Next có thể chuyển sang câu tiếp; chuyển chế độ hoặc đóng test để dừng luồng cũ.",
+      "Trong hộp Giọng đọc, dòng Keomany Neural xác nhận âm thanh Lào dựng sẵn đã sẵn sàng; nhãn Đã tải chỉ xuất hiện sau khi đủ toàn bộ gói ngoại tuyến.",
+      "Hướng dẫn nằm ngay dưới logo. Chỉ tự mở lần đầu trên trình duyệt/PWA đã lưu dấu xem; cập nhật này không tự mở lại cho người đã xem. Bạn luôn có thể mở lại và xem video bằng nút Hướng dẫn."
+    ],
+    "caption": "Minh họa thao tác · Xử lý lỗi và xem lại"
+  }
+]
