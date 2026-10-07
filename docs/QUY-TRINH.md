@@ -1,0 +1,106 @@
+# Quy trình làm việc giữa spec, code và acceptance
+
+Tài liệu này quy định cách nhóm và Claude cùng làm việc trên repo. Mục tiêu: spec là nguồn chân lý duy nhất, mọi dòng code truy ngược được về một yêu cầu, và mọi yêu cầu có điều kiện nghiệm thu rõ ràng.
+
+## 1. Ba loại file và vai trò
+
+| File | Ai sửa | Vai trò |
+|---|---|---|
+| `spec.md` trong mỗi thư mục khu vực | Nhóm (người) | Mô tả giao diện và hành vi phải có. Là nguồn chân lý. |
+| `acceptance.md` cạnh mỗi `spec.md` | Nhóm viết mục kiểm; người kiểm đánh dấu | Điều kiện để chấp nhận phần code của khu vực đó. |
+| Code trong `fe/` | Claude (hoặc dev) | Hiện thực spec. Mỗi phần gắn ghi chú `@spec`. |
+
+Tài liệu trong `docs/legacy/` mô tả bản cũ, chỉ để tham khảo, không phải yêu cầu. `docs/generated/` do script sinh ra, không sửa tay.
+
+## 2. Khu vực và ID
+
+Mỗi thư mục có `spec.md` là một **khu vực**, có `id` trong frontmatter:
+
+| Nhóm | ID khu vực | Thư mục |
+|---|---|---|
+| Mục tiêu sản phẩm | `G` | `docs/new/` |
+| Khung app (điều hướng, bố cục, trạng thái toàn cục) | `APP` | `fe/src/app/` |
+| Nền tảng thiết kế (token, chữ, giọng văn, trợ năng) | `FND` | `fe/src/foundation/` |
+| Dữ liệu (hợp đồng, nguồn, tiến độ) | `DATA` | `fe/src/data/` |
+| Thành phần | `C1` đến `C7` | `fe/src/components/` |
+| Trang | `S1`, `T1`, `S3`, `T2`, `S5`, `T3`, `T4`, `S8`, `S9` | `fe/src/pages/` |
+
+Quy ước ID:
+
+- **Yêu cầu**: `<khu vực>-<2 chữ số>`, viết thành tiêu đề cấp 3 trong `spec.md`: `### T1-02 Nút chính đổi chữ theo ngữ cảnh`.
+- **Mục acceptance**: `<khu vực>-AC<2 chữ số>`, viết thành checkbox trong `acceptance.md`:
+  `- [ ] T1-AC03 [human] T1-02: Mô tả cách kiểm.`
+- ID không bao giờ được dùng lại. Bỏ một yêu cầu thì xóa tiêu đề của nó và ghi vào mục "Lịch sử thay đổi" của spec; ID đó coi như đã chết.
+- Sửa nội dung yêu cầu mà ý nghĩa không đổi: giữ ID. Đổi ý nghĩa hẳn: bỏ ID cũ, tạo ID mới.
+
+ID của bản cũ có tiền tố `L-` (ví dụ `L-D6`) để không trùng với ID bản mới.
+
+## 3. Ánh xạ hai chiều
+
+**Code sang spec.** Mỗi file hoặc khối code hiện thực một yêu cầu phải có ghi chú:
+
+```ts
+// @spec T1-02, T1-04
+export function StartButton() { ... }
+```
+
+Test tự động gắn ghi chú tới mục acceptance mà nó kiểm:
+
+```ts
+// @ac T1-AC03
+test('nút chính đổi chữ khi có phiên dở', ...)
+```
+
+**Spec sang code.** Không ghi đường dẫn code vào `spec.md` (nó sẽ lỗi thời ngay). Thay vào đó chạy:
+
+```bash
+npm run spec:trace
+```
+
+Script đọc toàn bộ spec, acceptance và ghi chú trong code, rồi sinh `docs/generated/traceability.md`: mỗi yêu cầu nằm ở file code nào, được mục acceptance nào kiểm, có test nào.
+
+`npm run spec:check` báo lỗi (thoát mã 1) khi:
+
+- ID yêu cầu hoặc acceptance bị trùng;
+- mục acceptance trỏ tới yêu cầu không tồn tại;
+- yêu cầu chưa có mục acceptance nào;
+- code gắn `@spec` hoặc `@ac` tới ID không tồn tại (thường do spec vừa bỏ yêu cầu đó).
+
+Và cảnh báo khi mục `[auto]` chưa có test gắn `@ac`.
+
+## 4. Vòng làm việc khi spec thay đổi
+
+1. Người sửa `spec.md` (và `acceptance.md` nếu cần), commit riêng với tiền tố `spec:`. Ghi một dòng vào "Lịch sử thay đổi" của spec đó.
+2. Claude đọc diff của các file spec trong commit đó, sửa code tương ứng, cập nhật ghi chú `@spec`.
+3. Claude chạy `npm run spec:check`. Không có lỗi mới được coi là xong lượt sửa.
+4. Claude bỏ dấu `[x]` của các mục acceptance bị ảnh hưởng bởi thay đổi (chúng phải được kiểm lại), rồi tự kiểm lại các mục `[claude]` và `[auto]`.
+5. Người kiểm lại các mục `[human]` bị ảnh hưởng.
+
+Claude không tự sửa `spec.md`. Khi thấy spec mâu thuẫn, thiếu hoặc không khả thi, Claude ghi câu hỏi vào mục "Câu hỏi mở" của spec đó trong một commit riêng tiền tố `spec-question:` và dừng phần code liên quan.
+
+## 5. Ai kiểm mục acceptance
+
+| Nhãn | Ai kiểm | Cách kiểm | Ai được đánh dấu [x] |
+|---|---|---|---|
+| `[auto]` | Máy | Test tự động có ghi chú `@ac <ID>` và đang pass | Claude, sau khi chạy test và thấy pass |
+| `[claude]` | Claude | Đọc code, chạy app, chụp màn hình ở các khổ quy định, đối chiếu spec | Claude, kèm dòng bằng chứng |
+| `[human]` | Người trong nhóm | Thao tác trên thiết bị thật, đánh giá cảm quan, test với người dùng | Chỉ người |
+
+Khi đánh dấu, thêm một dòng bằng chứng thụt vào ngay dưới mục:
+
+```md
+- [x] T1-AC03 [claude] T1-02: Nút chính hiện "Tiếp tục: N câu còn lại" khi có phiên dở.
+  - Bằng chứng: ảnh docs/evidence/T1-AC03.png, commit a1b2c3d, Claude, 2026-10-20
+```
+
+## 6. Khi nào một phần được chấp nhận
+
+- Một **khu vực** đạt khi mọi mục trong `acceptance.md` của nó đã `[x]`.
+- Một **trang** chỉ được nghiệm thu khi trang đó đạt và mọi thành phần nó dùng (ghi ở `depends` trong frontmatter) cũng đạt, cùng với `APP`, `FND`, `DATA`.
+- Bản giao cho khách khi tất cả khu vực đạt, kể cả `G` (test với người dùng).
+
+Xem tình trạng hiện tại: `npm run spec:acceptance`, rồi mở `docs/generated/acceptance-report.md`.
+
+## 7. Khổ màn hình dùng để kiểm
+
+Trừ khi mục acceptance ghi khác: điện thoại 375 x 812, máy tính bảng 768 x 1024, máy tính 1280 x 800; cả giao diện sáng và tối. Thiết bị thật tối thiểu cho mục `[human]`: một iPhone (Safari), một điện thoại Android (Chrome), một máy Windows (Chrome hoặc Edge).

@@ -1,0 +1,78 @@
+---
+id: T1
+title: Học
+status: nháp
+version: 0.1
+route: "#/hoc"
+depends: APP, FND, DATA, C1, C2, C3
+legacy: L-S2
+---
+
+# T1 Học
+
+Màn chính. Cho người học thấy câu tiếp theo trong lộ trình và bắt đầu học trong một lần chạm.
+
+## Bố cục
+
+```
+┌───────────────────────────┐
+│ Tiếng Anh ▾          ⚙    │  thanh trên cùng (APP-02)
+│                           │
+│ Tuần này: 3/5 phiên       │
+│                           │
+│ ┌───────────────────────┐ │
+│ │ ■■■□□□□□   Câu 4/8    │ │
+│ │ Unit 12               │ │
+│ │ I'd like to...        │ │
+│ │ Tôi muốn...           │ │
+│ │                       │ │
+│ │ Tôi muốn đặt một bàn  │ │
+│ │ cho hai người.        │ │
+│ │ I'd like to book a    │ │
+│ │ table for two.        │ │
+│ │ (◉ Nghe)              │ │
+│ └───────────────────────┘ │
+│                           │
+│ [Tiếp tục: 5 câu còn lại] │  nút chính
+│                           │
+│ 12 câu cần ôn hôm nay   › │
+├───────────────────────────┤
+│ Học Luyện tập T.viện T.bộ │  thanh tab (C5)
+└───────────────────────────┘
+```
+
+## Yêu cầu
+
+### T1-01 Thẻ câu tiếp theo
+
+Hiện thẻ câu (C1) của câu tiếp theo trong lộ trình (DATA-11), ở trạng thái hiện đầy đủ (C1-03). Phía trên nghĩa trong thẻ là tên unit: "Unit n" (`--t-sm`, `--muted`), rồi `title` và `translation` của unit (`--t-body`). Dải 8 ô (C2) thể hiện trạng thái các câu của unit đó, ô của câu đang hiện ở trạng thái Đang học.
+
+### T1-02 Nút chính đổi chữ theo ngữ cảnh
+
+Dưới thẻ là nút chính duy nhất của màn (C3-01):
+- Không có phiên dở: "Học 8 câu" (hoặc "Học N câu" khi unit có N < 8 câu). Bấm mở `#/phien-hoc?nguon=lo-trinh`.
+- Có phiên dở (S3-08): "Tiếp tục: N câu còn lại". Bấm mở lại đúng phiên đó ở câu đang dở.
+
+### T1-03 Mục tiêu tuần
+
+Phía trên thẻ là dòng "Tuần này: x/y phiên", trong đó x là số phiên hoàn tất trong 7 ngày gần nhất (tính cả hôm nay), y là mục tiêu (S8-01). Khi x ≥ y: "Tuần này: đã đạt mục tiêu x/y phiên".
+
+### T1-04 Câu cần ôn
+
+Dưới nút chính là dòng có thể chạm "N câu cần ôn hôm nay", N theo DATA-07, kèm mũi tên. Chạm mở `#/phien-hoc?nguon=on-tap`. Chỉ hiện khi N > 0.
+
+### T1-05 Học hết lộ trình
+
+Khi không còn câu chưa học: thay thẻ và nút chính bằng đoạn "Bạn đã học hết [count] câu [tên ngôn ngữ]. Vào Luyện tập để ôn lại." và nút chính "Mở Luyện tập".
+
+### T1-06 Bố cục máy tính
+
+Từ 900 px: hai cột. Cột trái (tối đa 560 px) là thẻ và nút chính; cột phải là mục tiêu tuần và dòng câu cần ôn.
+
+### T1-07 Không đổi câu trên T1
+
+T1 chỉ hiện một câu; không có vuốt hay nút để xem câu trước/sau. Xem câu khác thì dùng T3.
+
+## Lịch sử thay đổi
+
+- 0.1 (07/10/2026): bản đầu.
