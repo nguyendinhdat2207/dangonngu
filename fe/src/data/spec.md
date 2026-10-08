@@ -138,6 +138,8 @@ Danh sách bộ của một ngôn ngữ được tính từ các manifest: ngôn
 
 - Khoảng ôn 1, 3, 7, 14, 30 ngày trong DATA-07 là đề xuất. Cần chốt với khách hoặc đối chiếu quy tắc của bản cũ (`demo/learning-ui.js`, `demo/learning-store.js`).
 - Global English có 6 trình độ A1 đến C2. Lộ trình hiện đi lần lượt từ A1-01. Có cho người học chọn trình độ bắt đầu không (giống trang đăng ký có ô Level A1 đến B2)?
+- DATA-07 chưa nói khi trả lời đúng ở bước trắc nghiệm mà không dùng gợi ý. Code đợt 1 giữ nguyên `streak` và `due` trong trường hợp này. Nhóm xác nhận giúp.
+- Code đợt 1 lưu thêm vài trường ngoài danh sách DATA-06: Session có `step` (bước đang làm, S3-08 cần), `abandonedAt` (phiên dở bị thay bằng phiên mới, S3-08) và `params` (`q`, `nhom`, `id` để mở lại đúng phiên). Trạng thái lưu của câu (`status`) dùng `da-hoc` khi câu đã qua bước ghi nhớ và `kiem-tra` khi câu mới chỉ gặp ở bài kiểm tra. Mốc thời gian lưu dạng số mili giây. Đề nghị ghi các điểm này vào DATA-06.
 
 ## Lịch sử thay đổi
 

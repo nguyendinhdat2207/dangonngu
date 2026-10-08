@@ -19,9 +19,9 @@ Người học người Việt mở app trên điện thoại, học một nhóm
 
 ## 2. Mục tiêu
 
-### G-01 Bắt đầu học không cần hướng dẫn
+### G-01 Giao diện dễ hiểu dễ nhìn để sử dụng
 
-Người học mới bắt đầu được một phiên học 8 câu trong không quá 2 lần chạm sau khi chọn ngôn ngữ, mà không cần đọc hướng dẫn.
+Người mới dùng có thể dễ dàng nhìn hiểu cách sử dụng.
 
 ### G-02 Hiểu được tiến bộ của mình
 

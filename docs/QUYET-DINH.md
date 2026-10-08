@@ -4,7 +4,9 @@ Mỗi quyết định có trạng thái: **Đề xuất** (chờ nhóm chốt), 
 
 ## QD-01 Công nghệ front-end
 
-Trạng thái: Đề xuất
+Trạng thái: Đã chốt (08/10/2026, nhóm đồng ý khi bắt đầu code)
+
+Phiên bản dùng: Vite 6.4, React 18.3, TypeScript 5.6, Vitest 4.1 (jsdom), Testing Library, Playwright 1.49 với axe-core. `.npmrc` bật `legacy-peer-deps` vì npm 10 lỗi khi giải phụ thuộc ngang hàng tùy chọn của jsdom; không ảnh hưởng bản build.
 
 Đề xuất: Vite, React 18, TypeScript. Test đơn vị bằng Vitest, test giao diện bằng Playwright (Chromium và WebKit để có hành vi gần Safari iOS).
 
@@ -14,7 +16,7 @@ Phương án khác: Vue 3 hoặc Svelte đều phù hợp. Chọn theo kỹ năn
 
 ## QD-02 Điều hướng bằng hash
 
-Trạng thái: Đề xuất
+Trạng thái: Đã chốt (08/10/2026)
 
 Dùng route dạng `#/hoc`, `#/thu-vien`. App được host tĩnh và nạp trong iframe bằng một URL; route bằng hash không cần cấu hình server và không làm hỏng URL mà trang chính nạp vào. Bảng route nằm ở `fe/src/app/spec.md` (APP-04).
 
@@ -26,12 +28,12 @@ Khách không cung cấp mã nguồn và không mở API, nhưng đã gửi bộ
 
 ## QD-04 Bộ icon
 
-Trạng thái: Đề xuất
+Trạng thái: Đã chốt (08/10/2026)
 
-Phosphor Icons, nét Regular. Bản cũ cũng đã tải Phosphor, nên khách quen với hình dạng icon này.
+Phosphor Icons, nét Regular. Bản cũ cũng đã tải Phosphor, nên khách quen với hình dạng icon này. Dùng gói `@phosphor-icons/react`.
 
 ## QD-05 Font
 
-Trạng thái: Đề xuất
+Trạng thái: Đã chốt (08/10/2026)
 
-Lexend cho giao diện và câu gốc, Literata cho nghĩa tiếng Việt, Noto Sans theo từng hệ chữ khác (FND-04). Tự host font trong bản build để app chạy được ngoại tuyến và không phụ thuộc Google Fonts khi nằm trong iframe.
+Lexend cho giao diện và câu gốc, Literata cho nghĩa tiếng Việt, Noto Sans theo từng hệ chữ khác (FND-04). Tự host font trong bản build để app chạy được ngoại tuyến và không phụ thuộc Google Fonts khi nằm trong iframe. Dùng các gói `@fontsource/*`; Lexend và Literata nạp sẵn (phần chữ Latinh và tiếng Việt), Noto nạp khi chọn ngôn ngữ cần (`fe/src/foundation/fonts.ts`).

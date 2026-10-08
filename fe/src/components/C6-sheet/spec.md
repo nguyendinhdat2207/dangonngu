@@ -28,6 +28,10 @@ Khi mở: focus chuyển vào phần tử đầu tiên có thể thao tác trong
 
 Nội dung vượt chiều cao thì cuộn bên trong sheet; tiêu đề và nút hành động chính (nếu có) đứng yên. Cuộn trong sheet không làm cuộn trang phía sau.
 
+## Câu hỏi mở
+
+- Lớp nền phía sau sheet là `--ink` độ mờ 40%. Ở chế độ tối `--ink` là màu sáng (`#E6EAF2`), nên lớp nền làm màn phía sau sáng và bạc đi thay vì tối lại. Hướng dẫn S9 dùng cùng lớp nền này. Có muốn dùng một token lớp nền riêng (ví dụ đen độ mờ 50%) cho chế độ tối không?
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

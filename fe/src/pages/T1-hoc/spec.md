@@ -96,6 +96,10 @@ Từ 900 px: hai cột. Cột trái (tối đa 560 px) là thẻ và nút chính
 
 T1 chỉ hiện một câu; không có vuốt hay nút để xem câu trước/sau. Xem câu khác thì dùng T3.
 
+## Câu hỏi mở
+
+- T1-03 đếm "phiên hoàn tất". Code đợt 1 đếm mọi phiên đã xong (lộ trình, ôn tập, từ khóa, học một câu, kiểm tra nhanh), không đếm phiên bị dừng giữa chừng. Nhóm xác nhận giúp.
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

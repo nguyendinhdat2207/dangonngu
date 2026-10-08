@@ -21,6 +21,10 @@ Repo làm lại giao diện mini app VITASR Đa ngôn ngữ. Spec là nguồn ch
 - Trường câu gốc luôn tên `en` ở mọi file ngôn ngữ, kể cả tiếng Đức, Nhật…; ngôn ngữ thật lấy từ `languageId`.
 - Giai đoạn đầu ưu tiên web trên máy tính (1440, 1280 px), responsive xuống điện thoại.
 
+## Lệnh kiểm trước khi báo xong
+
+`npm test`, `npm run build`, `npm run test:e2e`, `npm run spec:check`. Ảnh bằng chứng cho mục `[claude]`: `npm run evidence` (ghi vào `docs/evidence/<mã mục>/`), xem lại ảnh rồi mới đánh dấu.
+
 ## Tài liệu tham khảo
 
 - Bản cũ: `docs/legacy/` (chỉ tham khảo hành vi, không phải yêu cầu).
