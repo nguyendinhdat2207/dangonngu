@@ -1,0 +1,11 @@
+{
+  "languages": [
+    {
+      "id": "en",
+      "name": "Tiếng Anh",
+      "locale": "en-GB",
+      "file": "en.json",
+      "units": "units-en.json"
+    }
+  ]
+}

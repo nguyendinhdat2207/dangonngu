@@ -22,7 +22,7 @@ Dùng route dạng `#/hoc`, `#/thu-vien`. App được host tĩnh và nạp tron
 
 Trạng thái: Đã chốt
 
-Khách không cung cấp mã nguồn và không mở API. Mọi dữ liệu đọc qua lớp `DataSource` (DATA-05); khi phát triển dùng fixture. Tính năng Chia sẻ của bản cũ (cần `/api/sharing/*`) bị bỏ.
+Khách không cung cấp mã nguồn và không mở API, nhưng đã gửi bộ dữ liệu đầy đủ (lưu ở `fe/public/data/`). Mọi dữ liệu đọc qua lớp `DataSource` (DATA-05): khi phát triển và demo đọc bộ đầy đủ, khi test đọc fixture. Tính năng Chia sẻ của bản cũ (cần `/api/sharing/*`) bị bỏ.
 
 ## QD-04 Bộ icon
 

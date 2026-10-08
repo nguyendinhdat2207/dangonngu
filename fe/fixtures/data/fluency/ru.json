@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "kind": "ve360-language-tree8",
+  "languageId": "ru",
+  "name": "Tiếng Nga",
+  "shortName": "Nga",
+  "nativeName": "Русский",
+  "locale": "ru-RU",
+  "sourceVersion": "MGL Tree v5.3",
+  "itemCount": 8,
+  "coreCount": 512,
+  "bridgeCount": 512,
+  "contentSha256": "7c584e3912bd7d17ce475d79949e39a230d2ced8ecf304f2c9d6c7c0d53b8b87",
+  "sourceSha256": "cb9c7ec8208894a6f1b76ecadc93974dad8a5335c0fff3b761ba1ee5429ed216",
+  "items": [
+    {
+      "id": 1,
+      "hierarchy": "core",
+      "en": "Я хочу…",
+      "vi": "Tôi muốn..."
+    },
+    {
+      "id": 257,
+      "hierarchy": "expansion",
+      "en": "хочу узнать…",
+      "vi": "muốn biết..."
+    },
+    {
+      "id": 769,
+      "hierarchy": "leaf",
+      "en": "хочу узнать, что произошло",
+      "vi": "muốn biết chuyện gì đã xảy ra"
+    },
+    {
+      "id": 770,
+      "hierarchy": "leaf",
+      "en": "хочу узнать, как это работает",
+      "vi": "muốn biết nó hoạt động như thế nào"
+    },
+    {
+      "id": 258,
+      "hierarchy": "expansion",
+      "en": "хочу сделать…",
+      "vi": "muốn làm..."
+    },
+    {
+      "id": 771,
+      "hierarchy": "leaf",
+      "en": "хочу убедиться",
+      "vi": "muốn chắc chắn"
+    },
+    {
+      "id": 772,
+      "hierarchy": "leaf",
+      "en": "хочу что-то изменить",
+      "vi": "muốn tạo ra sự khác biệt"
+    },
+    {
+      "id": 1793,
+      "hierarchy": "bridge",
+      "en": "[СВЯЗКА] если хотите…",
+      "vi": "nếu bạn muốn..."
+    }
+  ],
+  "_fixtureNote": "tập con của fluency/ru.json"
+}

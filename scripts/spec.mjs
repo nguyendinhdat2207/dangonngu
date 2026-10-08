@@ -10,6 +10,8 @@
 //   acceptance.md  mục kiểm là "- [ ] <AC-ID> [auto|claude|human] <ID yêu cầu, ...>: <mô tả>"
 //   code           ghi chú "@spec T1-02" (hoặc nhiều ID cách nhau dấu phẩy) trong file nguồn
 //   test           ghi chú "@ac T1-AC03" trong file test
+//   sơ đồ          trong khối mermaid của docs/new/navigation.md, mỗi mũi tên có dòng "%% @spec <ID>"
+//                  (hoặc "%% @none <lý do>") ngay bên dưới
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -145,6 +147,82 @@ for (const file of codeFiles) {
 }
 const autoMissing = [...acIndex.values()].filter((ac) => ac.who === 'auto' && ac.tests.size === 0);
 
+// ---------- đọc sơ đồ điều hướng ----------
+const DIAGRAM_FILES = ['docs/new/navigation.md'];
+const EDGE_RE = /^\s*(\w+)(?:\s*(?:\(\[|\[|\{|\()[^]*?(?:\]\)|\]|\}|\)))?\s*(<-->|-->|-\.->|==>)\s*(?:\|"?([^|]*?)"?\|)?\s*(\w+)/;
+const DEF_RE = /(\w+)\s*(?:\(\[|\[|\{|\()"([^"]*)"/g;
+const SUB_RE = /^\s*subgraph\s+(\w+)\s*\["([^"]*)"\]/;
+const navRows = [];
+let navEdges = 0;
+const clean = (t) => (t || '').replace(/<br\/?>/g, ' ').replace(/\s+/g, ' ').trim();
+for (const relFile of DIAGRAM_FILES) {
+  const file = path.join(ROOT, relFile);
+  if (!fs.existsSync(file)) continue;
+  const all = fs.readFileSync(file, 'utf8').split('\n');
+  let section = '';
+  for (let i = 0; i < all.length; i++) {
+    if (/^#{2,4}\s/.test(all[i])) section = all[i].replace(/^#+\s*/, '');
+    if (all[i].trim() !== '```mermaid') continue;
+    let j = i + 1;
+    while (j < all.length && all[j].trim() !== '```') j++;
+    const block = all.slice(i + 1, j);
+    const labels = new Map();
+    for (const ln of block) {
+      const sm = ln.match(SUB_RE);
+      if (sm) labels.set(sm[1], clean(sm[2]));
+      for (const m of ln.matchAll(DEF_RE)) if (!labels.has(m[1]) || !sm) labels.set(m[1], clean(m[2]));
+    }
+    const consumed = new Set();
+    block.forEach((ln, k) => {
+      const lineNo = i + 2 + k;
+      if (consumed.has(k)) return;
+      const tagLine = ln.trim().startsWith('%%') ? ln : null;
+      const em = tagLine ? null : ln.match(EDGE_RE);
+      if (em) {
+        navEdges++;
+        let n = k + 1;
+        while (n < block.length && block[n].trim() === '') n++;
+        const next = (block[n] || '').trim();
+        if (next.startsWith('%%')) consumed.add(n);
+        const edge = `${labels.get(em[1]) || em[1]} → ${labels.get(em[4]) || em[4]}`;
+        const via = clean(em[3]);
+        if (/^%%\s*@none\b/.test(next)) {
+          navRows.push({ section, edge, via, ids: [], none: next.replace(/^%%\s*@none\s*/, ''), loc: `${relFile}:${lineNo}` });
+        } else if (/^%%\s*@spec\b/.test(next)) {
+          const ids = next.match(ID_RE) || [];
+          navRows.push({ section, edge, via, ids, loc: `${relFile}:${lineNo}` });
+          for (const id of ids) {
+            const req = reqIndex.get(id);
+            if (!req) errors.push(`${relFile}:${lineNo + (n - k)}: sơ đồ trỏ tới yêu cầu không tồn tại ${id}`);
+            else (req.diagrams ??= new Set()).add(`${relFile}:${lineNo}`);
+          }
+        } else {
+          errors.push(`${relFile}:${lineNo}: mũi tên "${edge}" chưa gắn %% @spec hoặc %% @none`);
+        }
+      } else if (tagLine && /@spec\b/.test(tagLine)) {
+        for (const id of tagLine.match(ID_RE) || []) {
+          const req = reqIndex.get(id);
+          if (!req) errors.push(`${relFile}:${lineNo}: sơ đồ trỏ tới yêu cầu không tồn tại ${id}`);
+          else (req.diagrams ??= new Set()).add(`${relFile}:${lineNo}`);
+        }
+      }
+    });
+    i = j;
+  }
+}
+
+// ---------- kiểm tra mã yêu cầu nhắc tới trong tài liệu bản mới ----------
+const areaIds = new Set(areas.keys());
+for (const file of walk(path.join(ROOT, 'docs/new')).filter((f) => f.endsWith('.md'))) {
+  fs.readFileSync(file, 'utf8').split('\n').forEach((ln, k) => {
+    if (ln.trim().startsWith('%%')) return;
+    for (const m of ln.matchAll(/\b([A-Z]+\d*)-(AC)?(\d{2,3})\b/g)) {
+      if (!areaIds.has(m[1])) continue;
+      if (!reqIndex.has(m[0]) && !acIndex.has(m[0])) errors.push(`${rel(file)}:${k + 1}: nhắc tới ${m[0]} nhưng không có trong spec hay acceptance`);
+    }
+  });
+}
+
 // ---------- xuất báo cáo ----------
 const sortedAreas = [...areas.values()].sort((a, b) => order(a.id) - order(b.id) || a.id.localeCompare(b.id));
 function order(id) {
@@ -170,9 +248,9 @@ function writeTrace() {
   lines.push(`Yêu cầu chưa có code gắn @spec: ${noCode}/${reqIndex.size}.`, '');
   for (const a of sortedAreas) {
     lines.push(`## ${a.id} ${a.title}`, '', `Spec: ${linkFile(rel(a.specFile))}${a.accFile ? ` · Acceptance: ${linkFile(rel(a.accFile))}` : ''}`, '');
-    lines.push('| Yêu cầu | Tên | Acceptance | Code (@spec) | Test (@ac) |', '|---|---|---|---|---|');
+    lines.push('| Yêu cầu | Tên | Acceptance | Sơ đồ | Code (@spec) | Test (@ac) |', '|---|---|---|---|---|---|');
     for (const r of a.reqs.values()) {
-      lines.push(`| ${r.id} | ${r.title} | ${cell(r.acs.join(', '))} | ${cell([...r.code].join('<br>'))} | ${cell([...r.tests].join('<br>'))} |`);
+      lines.push(`| ${r.id} | ${r.title} | ${cell(r.acs.join(', '))} | ${cell([...(r.diagrams || [])].join('<br>'))} | ${cell([...r.code].join('<br>'))} | ${cell([...r.tests].join('<br>'))} |`);
     }
     lines.push('');
   }
@@ -188,6 +266,37 @@ function writeTrace() {
   }
   fs.mkdirSync(path.join(ROOT, OUT_DIR), { recursive: true });
   fs.writeFileSync(path.join(ROOT, OUT_DIR, 'traceability.md'), lines.join('\n'));
+}
+
+function writeNavTrace() {
+  const dirOf = (id) => {
+    const r = reqIndex.get(id);
+    return r ? path.dirname(r.file) + '/' : '';
+  };
+  const lines = [
+    '# Ánh xạ sơ đồ điều hướng sang spec',
+    '',
+    `File sinh tự động bởi \`node scripts/spec.mjs trace\` lúc ${stamp} UTC từ các dòng \`%% @spec\` trong ${DIAGRAM_FILES.join(', ')}. Không sửa tay.`,
+    '',
+    `Tổng: ${navEdges} mũi tên; ${navRows.filter((r) => r.ids.length).length} gắn yêu cầu, ${navRows.filter((r) => r.none !== undefined).length} ngoài phạm vi.`,
+    '',
+  ];
+  let sec = null;
+  for (const r of navRows) {
+    if (r.section !== sec) {
+      sec = r.section;
+      lines.push(`## ${sec}`, '', '| Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |', '|---|---|---|---|---|');
+    }
+    const ev = r.ids.length
+      ? r.ids.map((id) => `${id} ${reqIndex.get(id)?.title || '(không tồn tại)'} ([${reqIndex.get(id)?.file}:${reqIndex.get(id)?.line}](../../${reqIndex.get(id)?.file}))`).join('<br>')
+      : `Ngoài phạm vi: ${r.none}`;
+    const dirs = [...new Set(r.ids.map(dirOf))].filter(Boolean).map((d) => `\`${d}\``).join('<br>') || '-';
+    lines.push(`| ${r.edge} | ${r.via || '-'} | ${ev} | ${dirs} | ${r.loc} |`);
+    const nextRow = navRows[navRows.indexOf(r) + 1];
+    if (!nextRow || nextRow.section !== sec) lines.push('');
+  }
+  fs.mkdirSync(path.join(ROOT, OUT_DIR), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, OUT_DIR, 'navigation-trace.md'), lines.join('\n'));
 }
 
 function writeAcceptance() {
@@ -230,11 +339,14 @@ if (!['trace', 'acceptance', 'check'].includes(cmd)) {
   console.error('Dùng: node scripts/spec.mjs trace|acceptance|check');
   process.exit(2);
 }
-if (cmd === 'trace' || cmd === 'check') writeTrace();
+if (cmd === 'trace' || cmd === 'check') {
+  writeTrace();
+  writeNavTrace();
+}
 let acc;
 if (cmd === 'acceptance' || cmd === 'check') acc = writeAcceptance();
 
-console.log(`${areas.size} khu vực, ${reqIndex.size} yêu cầu, ${acIndex.size} mục acceptance, ${tagCount} ghi chú trong code.`);
+console.log(`${areas.size} khu vực, ${reqIndex.size} yêu cầu, ${acIndex.size} mục acceptance, ${tagCount} ghi chú trong code, ${navEdges} mũi tên trong sơ đồ.`);
 if (acc) console.log(`Acceptance: ${acc.done}/${acc.total} mục đã đạt.`);
 if (autoMissing.length) console.log(`Cảnh báo: ${autoMissing.length} mục [auto] chưa có test gắn @ac (danh sách trong docs/generated/traceability.md).`);
 warnings.forEach((w) => console.log('Cảnh báo: ' + w));

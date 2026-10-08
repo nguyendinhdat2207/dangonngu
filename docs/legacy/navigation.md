@@ -1,16 +1,16 @@
 # Sơ đồ điều hướng cửa sổ: bản cũ
 
-Nét liền: thao tác xác nhận được trong code. Nét đứt: cửa sổ có thật nhưng vị trí nút mở chưa xác nhận. Nét đậm: chuyển từ trang chính vào mini app. Mã màn hình có tiền tố `L-`; chi tiết từng màn ở `ui-spec.md`.
+Nét liền: thao tác xác nhận được trên trang thật hoặc trong code. Nét đứt: chưa xác nhận (cửa sổ có thật nhưng vị trí nút mở chưa rõ, hoặc phần trang chính sau đăng nhập chưa kiểm trực tiếp, xem `README.md` mục "Đang chờ xác nhận"). Mã màn hình có tiền tố `L-`; chi tiết từng màn ở `ui-spec.md`.
 
 ```mermaid
 flowchart TD
   subgraph HOST["Trang chính: language.pomaskhoahocnaobo.com"]
-    H0["/register, đăng nhập"] --> H1["/user-file/{user}<br/>Trang học chính"]
-    H1 -->|"nút mini app (btn-mam)"| H2["Danh sách mini app<br/>miniAppModal"]
-    H2 -->|"ĐA NGÔN NGỮ: Khởi chạy"| H3["Khung xem mini app<br/>miniAppViewer (iframe)"]
-    H3 -->|"Quay lại"| H2
+    H0["/register (đăng ký)"] -->|"Sign in"| HL["/ (đăng nhập)"]
+    HL --> H1["Trang học sau đăng nhập"]
+    H1 -.->|"nút góc trên bên trái"| H2["Menu / danh sách<br/>(chưa xác nhận)"]
+    H2 -.->|"Đa ngôn ngữ"| H3["Khung mini app<br/>(iframe hay tab mới: chưa xác nhận)"]
   end
-  H3 ==> S0
+  H3 -.-> S0
   subgraph MINI["Mini app ĐA NGÔN NGỮ"]
     S0["L-S0 Màn tải"] -->|"chưa lưu ngôn ngữ"| S1["L-S1 Chọn ngôn ngữ"]
     S0 -->|"đã lưu ngôn ngữ"| S2

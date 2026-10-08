@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "packs": [
+    {
+      "id": "lo-fluency-4096-v1",
+      "revision": "3e71838fdc38058b",
+      "language": "lo",
+      "label": "Tiếng Lào · 4.096 câu",
+      "url": "/data/audio/lo-fluency-4096-v1.json",
+      "bytes": 73275264,
+      "stream": true
+    }
+  ],
+  "status": "verified_lao_fallback"
+}

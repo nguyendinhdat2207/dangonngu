@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "kind": "ve360-language-tree8",
+  "languageId": "ja",
+  "name": "Tiếng Nhật",
+  "shortName": "Nhật",
+  "nativeName": "日本語",
+  "locale": "ja-JP",
+  "sourceVersion": "MGL Tree v5.3",
+  "itemCount": 8,
+  "coreCount": 512,
+  "bridgeCount": 512,
+  "baseContentSha256": "3c38ad65910461042549926b009e559c17fddb25cd6422f0e090b0a3397bcc03",
+  "readingSystem": "hiragana",
+  "readingCoverage": 4096,
+  "readingGenerator": "pyopenjtalk-0.4.1/open_jtalk-1.11",
+  "readingSha256": "4b45b99c875282979fa749d468c1a4ed836ebd729961d026f42a24db5f9f8425",
+  "furiganaSystem": "ruby-hiragana",
+  "furiganaCoverage": 4096,
+  "furiganaAnnotatedCount": 3816,
+  "furiganaGenerator": "pyopenjtalk-0.4.1/open_jtalk-1.11",
+  "furiganaSha256": "39e1145726a3a612c037df06d2d9f4317ceb1612d889fc4d4ca85c97b4544aa1",
+  "contentSha256": "215eeaf983cf3ac28527e516ac7704b2dd7660dc920d3eb310cbe4d81e578dc4",
+  "sourceSha256": "b2d84c181495fe712cdfe642bf64a3b8bcfe67c28c7bdd7b16c2304f6a9cff0b",
+  "items": [
+    {
+      "id": 1,
+      "hierarchy": "core",
+      "en": "～したい",
+      "vi": "Tôi muốn...",
+      "reading": "～したい",
+      "furigana": [
+        [
+          "～したい"
+        ]
+      ]
+    },
+    {
+      "id": 257,
+      "hierarchy": "expansion",
+      "en": "～を知りたい",
+      "vi": "muốn biết...",
+      "reading": "～をしりたい",
+      "furigana": [
+        [
+          "～を"
+        ],
+        [
+          "知り",
+          "しり"
+        ],
+        [
+          "たい"
+        ]
+      ]
+    },
+    {
+      "id": 769,
+      "hierarchy": "leaf",
+      "en": "何が起きたか知りたい",
+      "vi": "muốn biết chuyện gì đã xảy ra",
+      "reading": "なにがおきたかしりたい",
+      "furigana": [
+        [
+          "何",
+          "なに"
+        ],
+        [
+          "が"
+        ],
+        [
+          "起き",
+          "おき"
+        ],
+        [
+          "たか"
+        ],
+        [
+          "知り",
+          "しり"
+        ],
+        [
+          "たい"
+        ]
+      ]
+    },
+    {
+      "id": 770,
+      "hierarchy": "leaf",
+      "en": "仕組みを知りたい",
+      "vi": "muốn biết nó hoạt động như thế nào",
+      "reading": "しくみをしりたい",
+      "furigana": [
+        [
+          "仕組み",
+          "しくみ"
+        ],
+        [
+          "を"
+        ],
+        [
+          "知り",
+          "しり"
+        ],
+        [
+          "たい"
+        ]
+      ]
+    },
+    {
+      "id": 258,
+      "hierarchy": "expansion",
+      "en": "～を作りたい",
+      "vi": "muốn làm...",
+      "reading": "～をつくりたい",
+      "furigana": [
+        [
+          "～を"
+        ],
+        [
+          "作り",
+          "つくり"
+        ],
+        [
+          "たい"
+        ]
+      ]
+    },
+    {
+      "id": 771,
+      "hierarchy": "leaf",
+      "en": "確かめたい",
+      "vi": "muốn chắc chắn",
+      "reading": "たしかめたい",
+      "furigana": [
+        [
+          "確かめ",
+          "たしかめ"
+        ],
+        [
+          "たい"
+        ]
+      ]
+    },
+    {
+      "id": 772,
+      "hierarchy": "leaf",
+      "en": "変化をもたらしたい",
+      "vi": "muốn tạo ra sự khác biệt",
+      "reading": "へんかをもたらしたい",
+      "furigana": [
+        [
+          "変化",
+          "へんか"
+        ],
+        [
+          "をもたらしたい"
+        ]
+      ]
+    },
+    {
+      "id": 1793,
+      "hierarchy": "bridge",
+      "en": "[ブリッジ] もし～したいなら",
+      "vi": "nếu bạn muốn...",
+      "reading": "[ぶりっじ] もし～したいなら",
+      "furigana": [
+        [
+          "[ブリッジ] もし～したいなら"
+        ]
+      ]
+    }
+  ],
+  "_fixtureNote": "tập con của fluency/ja.json"
+}

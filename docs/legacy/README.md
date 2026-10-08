@@ -1,6 +1,6 @@
 # Bản cũ: nguồn và mức tin cậy
 
-Thư mục này mô tả mini app "ĐA NGÔN NGỮ" đang chạy, dựng lại bằng cách đọc ngược (không có tài liệu hay mã nguồn từ khách). Đây là tài liệu tham khảo hành vi, không phải yêu cầu cho bản mới.
+Thư mục này mô tả mini app "ĐA NGÔN NGỮ" đang chạy, dựng lại bằng cách đọc ngược trang thật (không có tài liệu hay mã nguồn từ khách). Đây là tài liệu tham khảo hành vi, không phải yêu cầu cho bản mới.
 
 | File | Nội dung |
 |---|---|
@@ -10,21 +10,31 @@ Thư mục này mô tả mini app "ĐA NGÔN NGỮ" đang chạy, dựng lại b
 
 ## Đối tượng mô tả
 
-- Trang học chính: `https://language.pomaskhoahocnaobo.com` (ASP.NET Core). Sau đăng nhập, trang `/user-file/{user}` có nút mở danh sách mini app.
-- Mini app: `https://vitasr-focus-160-pwa.t6dbgc79hk.chatgpt.site/`, phiên bản 1.9.40 (tên cache service worker `vitasr-demo-1.9.40-ve360`), nạp vào iframe `mamAppIframe` của trang chính.
+- Trang học chính: `https://language.pomaskhoahocnaobo.com`. Trang đăng ký công khai `/register?refId=…` ("Master English in 3–6 Months"), chọn Level A1 đến B2, xác minh bằng thanh kéo "Drag To Verify", nút "SIGN UP NOW"; đăng nhập ở `/`.
+- Mini app: `https://vitasr-focus-160-pwa.t6dbgc79hk.chatgpt.site/`, phiên bản 1.9.40 (tên cache service worker `vitasr-demo-1.9.40-ve360`).
 
-## Cách lấy thông tin
+## Cách lấy thông tin và mức tin cậy
 
-1. File `fix_fe.zip` do khách gửi: bản Chrome "Save page as" của `/register` và `/user-file/thuhien`. Không phải mã nguồn; iframe mini app trong bản lưu là `about:blank`.
-2. Đọc từng file JS, JSON công khai của mini app (danh sách lấy từ `sw.js`), ngày 07/10/2026.
-3. Gọi thử `GET /api/sharing/session` để xác nhận backend chia sẻ tồn tại.
+| Phần | Nguồn | Mức tin cậy |
+|---|---|---|
+| Mini app: màn hình, hành vi, dữ liệu, API, lưu trữ | Đọc từng file JS, JSON công khai trên trang thật (danh sách lấy từ `sw.js`), ngày 07/10/2026; kiểm lại 08/10/2026 vẫn là bản 1.9.40 | Cao cho những gì có trong code. Chưa bấm qua giao diện; chỗ ghi "cần xác nhận" là cửa sổ có trong code nhưng chưa rõ nút mở |
+| Backend chia sẻ | Gọi thử `GET /api/sharing/session` trên trang thật | Cao |
+| Trang đăng ký | Đọc trang công khai `/register?refId=849`, ngày 08/10/2026 | Cao |
+| Bộ dữ liệu | Khách gửi `data.zip` ngày 08/10/2026 (xuất từ trang thật ngày 07/10/2026; 40 file, 12 MB; mã băm khớp manifest theo `_inventory.json`). Lưu ở `fe/public/data/` | Cao |
+| Hướng dẫn chi tiết 12 bước | Đọc `demo/quick-guide.js` trên trang thật, ngày 08/10/2026; khớp với đoạn nhóm chép từ giao diện | Cao |
+| Trang học sau đăng nhập và cách mở mini app | Mô tả của nhóm: sau khi đăng nhập, bấm nút góc trên bên trái, chọn "Đa ngôn ngữ" | **Chờ xác nhận** trên trang thật (xem mục dưới) |
 
-Chưa bấm qua giao diện bằng trình duyệt. Những chỗ ghi "cần xác nhận" là cửa sổ có thật trong code nhưng chưa rõ nút mở nằm ở đâu.
+## Đang chờ xác nhận trên trang thật
+
+Cần đăng nhập để kiểm. Mỗi mục khi xác nhận xong thì cập nhật file tương ứng và xóa khỏi danh sách này. (Câu hỏi về kích thước khung chứa mini app đã được nhóm trả lời ngày 08/10/2026: bản mới thiết kế responsive, ưu tiên web, không phụ thuộc khung.)
+
+1. Nút góc trên bên trái mở ra gì (menu hay danh sách mini app), và mục "Đa ngôn ngữ" nằm ở đâu trong đó.
+2. Mini app được mở bằng iframe trong trang hay mở tab mới; URL được mở có đúng là địa chỉ mini app ở trên không, có kèm tham số gì không.
+3. Trang chính có truyền gì cho mini app không (tham số URL, token, postMessage). Ảnh hưởng APP-09 của bản mới.
 
 ## Phát hiện quan trọng
 
-- Trang chính không truyền token hay postMessage vào iframe. Mini app không phụ thuộc đăng nhập của trang chính.
 - Mini app gần như chạy hoàn toàn ở trình duyệt: dữ liệu học là JSON tĩnh, tiến độ lưu localStorage, giọng đọc dùng `speechSynthesis`.
-- Backend duy nhất là `/api/sharing/*` cho tính năng Chia sẻ, đăng nhập bằng tài khoản ChatGPT (`/signin-with-chatgpt`).
+- Backend duy nhất của mini app là `/api/sharing/*` cho tính năng Chia sẻ, đăng nhập bằng tài khoản ChatGPT (`/signin-with-chatgpt`). Mini app không gọi API nào của trang học chính, nên trong code không thấy chỗ nào phụ thuộc đăng nhập của trang chính.
 - `demo/index.html` vẫn chứa nguyên markup app gốc (Collocation, Listening Boost, FlashWord, trò chơi, thanh toán). Khi chạy, `demo/feature-removal.js` xóa khoảng 25 modal và vô hiệu khoảng 30 hàm; `user_v1.focus*.js` và các module `/demo/` dời node, dịch chữ, gắn thêm nút.
-- Bộ dữ liệu tiếng Anh chỉ có các trường `id`, `hierarchy`, `en`, `vi`. Gói âm thanh ngoại tuyến chỉ có tiếng Lào.
+- Tiếng Anh có hai bộ nội dung: English Fluency (4.096 câu, chỉ có `id`, `hierarchy`, `en`, `vi`; trường `en` chứa câu gốc ở mọi ngôn ngữ) và Global English (4.608 câu, có thêm `noteVi`, `topic`, `situation`, `unitId`). Các ngôn ngữ khác chỉ có bộ Fluency. Gói âm thanh ngoại tuyến chỉ có tiếng Lào.

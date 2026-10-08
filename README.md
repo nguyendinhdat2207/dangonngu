@@ -20,6 +20,7 @@ Khung dự án để làm lại giao diện mini app "ĐA NGÔN NGỮ" của VIT
 ├── CLAUDE.md                     quy tắc cho Claude khi làm trong repo
 ├── package.json                  lệnh spec:trace, spec:acceptance, spec:check
 ├── scripts/spec.mjs              script truy vết (Node 18+, không cần thư viện)
+├── scripts/make-fixtures.mjs     tạo fixture từ bộ dữ liệu đầy đủ
 ├── docs/
 │   ├── QUY-TRINH.md              ID, ánh xạ, ai kiểm gì, khi nào được chấp nhận
 │   ├── QUYET-DINH.md             quyết định kỹ thuật (QD-xx)
@@ -38,7 +39,8 @@ Khung dự án để làm lại giao diện mini app "ĐA NGÔN NGỮ" của VIT
 │       ├── traceability.md
 │       └── acceptance-report.md
 └── fe/
-    ├── fixtures/                 dữ liệu mẫu (DATA-09)
+    ├── public/data/              bộ dữ liệu đầy đủ khách gửi (15 ngôn ngữ Fluency, Global English)
+    ├── fixtures/                 tập con cho test (DATA-09), sinh bằng scripts/make-fixtures.mjs
     ├── tests/                    test tự động, gắn @ac
     └── src/
         ├── app/                  APP  khung app, route, bố cục, trạng thái toàn cục
@@ -78,7 +80,8 @@ Chạy trực tiếp không cần `npm install`: `node scripts/spec.mjs check`.
 
 ## Trạng thái hiện tại
 
-- 20 khu vực, 132 yêu cầu, 158 mục nghiệm thu (99 tự động, còn lại do Claude hoặc người kiểm).
-- Chưa có code, chưa có fixture.
+- 20 khu vực, 134 yêu cầu, 170 mục nghiệm thu; 93 mũi tên trong sơ đồ điều hướng đều gắn yêu cầu.
+- Đã có bộ dữ liệu đầy đủ (`fe/public/data/`) và fixture (`fe/fixtures/data/`); còn thiếu bộ tiến độ mẫu cho T4.
+- Chưa có code giao diện.
 - Các quyết định QD-01, QD-02, QD-04, QD-05 đang ở trạng thái Đề xuất, cần chốt trước khi viết code.
 - Câu hỏi mở cho khách: `docs/new/ui-spec.md` mục 5; câu hỏi mở theo khu vực nằm cuối từng `spec.md`.

@@ -13,11 +13,13 @@ Repo làm lại giao diện mini app VITASR Đa ngôn ngữ. Spec là nguồn ch
 
 ## Ràng buộc kỹ thuật cần nhớ
 
-- App chạy trong iframe của trang học chính, nạp bằng một URL tĩnh. Không có token, không có postMessage từ trang chính. Không dùng `window.top`.
+- App được trang học chính mở bằng một URL (cách mở cụ thể đang chờ xác nhận, xem `docs/legacy/README.md`). App phải chạy đúng cả khi nằm trong iframe lẫn khi mở trực tiếp, không cần token hay postMessage từ trang chính, không dùng `window.top` (APP-09).
 - Không có backend. Dữ liệu là file JSON tĩnh (xem `fe/src/data/spec.md`). Tiến độ lưu localStorage. Giọng đọc dùng `speechSynthesis`.
-- Bộ dữ liệu tiếng Anh chỉ có các trường `id`, `hierarchy`, `en`, `vi`. Không giả định có `noteVi`, `topic`, `situation`, `reading`, `furigana`.
+- Tiếng Anh có hai bộ nội dung với cấu trúc khác nhau: English Fluency (chỉ `id`, `hierarchy`, `en`, `vi`) và Global English (thêm `noteVi`, `topic`, `situation`, `unitId`). Các trường tùy chọn có thể vắng mặt tùy bộ; không giả định có hay không có (`docs/legacy/api-and-storage.md`).
 - Không gọi `/api/sharing/*` hay bất kỳ endpoint nào của bản cũ.
-- Dữ liệu thật thuộc về khách. Chỉ dùng fixture trong `fe/fixtures/` khi phát triển.
+- Bộ dữ liệu đầy đủ khách cho phép dùng nằm ở `fe/public/data/` (phát triển, demo); test dùng tập con `fe/fixtures/data/`, sinh bằng `node scripts/make-fixtures.mjs`, không sửa tay.
+- Trường câu gốc luôn tên `en` ở mọi file ngôn ngữ, kể cả tiếng Đức, Nhật…; ngôn ngữ thật lấy từ `languageId`.
+- Giai đoạn đầu ưu tiên web trên máy tính (1440, 1280 px), responsive xuống điện thoại.
 
 ## Tài liệu tham khảo
 

@@ -9,3 +9,4 @@
 - [ ] T1-AC07 [claude] T1-06: Ảnh chụp 1280 px: hai cột, thẻ bên trái rộng không quá 560 px, mục tiêu tuần và câu cần ôn bên phải.
 - [ ] T1-AC08 [auto] T1-07: Vuốt trái/phải trên thẻ và nhấn phím mũi tên không đổi câu.
 - [ ] T1-AC09 [human] T1-02, T1-04: Trên điện thoại thật, người học hiểu được khi nào nên bấm nút chính và khi nào nên chạm dòng câu cần ôn (hỏi lại sau khi họ thao tác).
+- [ ] T1-AC10 [auto] T1-01: Với fixture Global English, thẻ có "Unit 1", "A1", title "Find your classroom" và tình huống của unit; với fixture English Fluency, thẻ không có mã trình độ và tình huống.

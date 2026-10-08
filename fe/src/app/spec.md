@@ -19,9 +19,7 @@ App có đúng 4 khu chính, theo thứ tự: T1 Học, T2 Luyện tập, T3 Th�
 
 ### APP-02 Thanh trên cùng
 
-Mọi khu chính có thanh trên cùng cao 56 px gồm: bên trái là tên ngôn ngữ đang học kèm mũi tên xuống (chạm mở sheet Đổi ngôn ngữ, APP-06); bên phải là nút Cài đặt (icon bánh răng, nhãn trợ năng "Cài đặt") mở S8.
-
-Cho tới khi biết vị trí nút đóng của trang chính (câu hỏi mở 1), nút Cài đặt đặt cách mép phải 64 px để chừa vùng 56 x 56 px ở góc trên bên phải.
+Mọi khu chính có thanh trên cùng cao 56 px gồm: bên trái là tên ngôn ngữ đang học kèm mũi tên xuống, và với ngôn ngữ có nhiều bộ nội dung thì thêm tên bộ ở dòng nhỏ bên dưới (`--t-sm`, `--muted`, ví dụ "Global English") (chạm mở sheet Đổi ngôn ngữ, APP-06); bên phải là nút Cài đặt (icon bánh răng, nhãn trợ năng "Cài đặt") mở S8.
 
 ### APP-03 Màn toàn trang
 
@@ -50,15 +48,18 @@ Khi mở app: nếu chưa có ngôn ngữ đã lưu thì vào S1; nếu đã có
 
 ### APP-06 Sheet Đổi ngôn ngữ
 
-Sheet (C6) liệt kê các ngôn ngữ như S1 (cùng nội dung dòng, S1-02 và S1-03), đánh dấu ngôn ngữ đang học. Chọn ngôn ngữ khác thì đóng sheet, tải dữ liệu ngôn ngữ đó và về T1. Tiến độ của từng ngôn ngữ giữ riêng.
+Sheet (C6) "Đổi ngôn ngữ hoặc bộ nội dung" liệt kê các ngôn ngữ như S1 (cùng nội dung dòng, S1-02 và S1-03); ngôn ngữ có nhiều bộ được tách thành một dòng cho mỗi bộ ("Tiếng Anh, Global English", "Tiếng Anh, English Fluency"). Dòng đang dùng được đánh dấu. Chọn dòng khác thì đóng sheet, tải dữ liệu ngôn ngữ hoặc bộ đó và về T1. Tiến độ của từng cặp bộ và ngôn ngữ giữ riêng (DATA-06).
 
 ### APP-07 Bố cục theo khổ màn hình
+
+App dùng được cả trên web và trên điện thoại, thiết kế responsive. Giai đoạn đầu ưu tiên web trên máy tính: thiết kế và nghiệm thu khổ máy tính trước (1440 và 1280 px), sau đó tới máy tính bảng và điện thoại.
 
 | Chiều rộng | Bố cục |
 |---|---|
 | 320 đến 599 px | Một cột, lề 16 px, thanh tab dưới đáy, sheet trượt từ dưới lên |
 | 600 đến 899 px | Một cột, lề 24 px, nội dung rộng tối đa 560 px nằm giữa, chữ trong khối vẫn căn trái |
-| 900 px trở lên | Thanh điều hướng dọc trái 220 px; T1 và T3 hai cột (nêu trong spec trang); sheet hiển thị thành hộp thoại giữa màn |
+| 900 px trở lên | Thanh điều hướng dọc trái 220 px; T1 và T3 hai cột (nêu trong spec trang); S3 và S5 có khối nội dung giữa màn rộng tối đa 720 px; sheet hiển thị thành hộp thoại giữa màn |
+| 1440 px trở lên | Như trên; vùng nội dung bên phải thanh điều hướng rộng tối đa 1120 px, căn giữa |
 
 Không có thanh cuộn ngang ở bất kỳ khổ nào từ 320 px.
 
@@ -83,10 +84,8 @@ Sau lần mở đầu tiên có mạng, app mở lại được khi ngoại tuy�
 
 Tại mỗi thời điểm có tối đa một sheet hoặc hộp thoại mở. Mở sheet mới thì sheet đang mở phải đóng trước.
 
-## Câu hỏi mở
-
-- Kích thước khung iframe ở desktop và vị trí nút đóng của trang chính (ảnh hưởng APP-02, APP-07).
-
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
+- 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).

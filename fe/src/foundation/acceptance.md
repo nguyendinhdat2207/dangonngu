@@ -4,7 +4,7 @@
 - [ ] FND-AC02 [auto] FND-01, FND-02: Script tính tương phản cho mọi cặp chữ/nền dùng trong token (cả sáng và tối) và báo đạt 4.5:1 (3:1 với chữ từ 24 px).
 - [ ] FND-AC03 [claude] FND-02: Ảnh chụp mọi màn chính: mỗi màn có tối đa một nút nền `--brand`; câu trả lời sai trong S3 và S5 hiển thị màu `--review`, không đỏ.
 - [ ] FND-AC04 [auto] FND-03: Với hệ thống ở chế độ tối và cài đặt "Theo hệ thống", app dùng bảng màu tối; chọn "Sáng" trong S8 rồi tải lại trang thì app mở bằng bảng màu sáng ngay từ khung hình đầu tiên.
-- [ ] FND-AC05 [claude] FND-04: Ảnh chụp thẻ câu có nghĩa chứa đủ dấu tiếng Việt khó ("Tôi muốn đặt một bàn cho hai người, được không ạ?") ở `--t-lg` và câu tiếng Nhật ở `--t-2xl`: không chồng dấu, font đúng vai trò; tab Network cho thấy font Noto JP chỉ tải khi chọn tiếng Nhật.
+- [ ] FND-AC05 [claude] FND-04: Ảnh chụp thẻ câu có nghĩa chứa đủ dấu tiếng Việt khó ("Tôi muốn đặt một bàn cho hai người, được không ạ?") ở `--t-lg`, cùng câu tiếng Nhật, tiếng Nga và tiếng Tamil ở `--t-2xl`: không chồng dấu, không ô vuông thiếu chữ, font đúng vai trò; tab Network cho thấy font Noto JP chỉ tải khi chọn tiếng Nhật.
 - [ ] FND-AC06 [auto] FND-05: Kiểm tra tĩnh: mọi `font-size` trong code dùng token `--t-*`.
 - [ ] FND-AC07 [auto] FND-06: Test đơn vị hàm chọn cỡ câu: 39 ký tự cho `--t-2xl`, 40 và 90 cho `--t-xl`, 91 cho `--t-lg`.
 - [ ] FND-AC08 [claude] FND-07, FND-08, FND-09: Đọc file token và CSS: khoảng cách chỉ dùng giá trị trong FND-07; bo góc đúng vai trò; `box-shadow` chỉ có ở sheet và hộp thoại.

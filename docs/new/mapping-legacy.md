@@ -10,6 +10,9 @@ Trạng thái:
 | Yêu cầu bản mới | Bản cũ | Nguồn dữ liệu | Trạng thái |
 |---|---|---|---|
 | S1-01 đến S1-06 Chọn ngôn ngữ | L-S1 | `manifest.json`; tên gốc từ `Intl.DisplayNames` | Có sẵn |
+| S1-07, APP-06, DATA-13 Chọn và đổi bộ nội dung (Global English, English Fluency) | Bộ nội dung trong khối Tùy chọn học của L-S2 | Manifest của từng bộ | Có sẵn; chuyển lựa chọn bộ từ khối tùy chọn sang bước 2 của S1 và sheet Đổi ngôn ngữ |
+| C1-06 Dòng Cách dùng | Công tắc Cách dùng trong L-S2 | `noteVi` (chỉ bộ Global English) | Có sẵn |
+| T1-01 Mã trình độ, tình huống của unit | Không hiển thị | `unitId`, `situation` (chỉ bộ Global English) | Mới, chạy ở trình duyệt |
 | T1-01 Thẻ câu tiếp theo, nghe, hiện câu gốc | L-S2 thẻ Câu đang học | `{lang}.json`, `speechSynthesis` | Có sẵn |
 | T1-01 Tên unit trên thẻ | Không hiển thị | `units-{lang}.json` | Mới, chạy ở trình duyệt |
 | T1-03 Mục tiêu tuần | L-D4, L-D3 | localStorage | Có sẵn |
@@ -20,7 +23,7 @@ Trạng thái:
 | T2-03 Học theo từ khóa | L-D7 (ô tìm tự do) | Tìm trên câu gốc và nghĩa | Có sẵn |
 | S5-01 đến S5-08 Kiểm tra nhanh | L-D6, L-D6b (T01, T02, T03) | `{lang}.json`; cụm do app tự chia | Có sẵn; viết lại logic chia cụm (S5-04) và đáp án nhiễu (DATA-08) |
 | T3-01 đến T3-04 Danh sách, tìm, phân trang | Danh sách dữ liệu trong L-S2 | `{lang}.json` | Có sẵn |
-| T3-03 Lọc theo unit, trạng thái học | Không có | `units-{lang}.json`, localStorage | Mới, chạy ở trình duyệt |
+| T3-03 Lọc theo unit, trạng thái học, chủ đề, trình độ | Không có (Tình huống, Chủ đề có trong L-D1) | `units-{lang}.json`, `topic`, localStorage | Mới, chạy ở trình duyệt |
 | T3-05 Sheet Chi tiết câu, Học câu này | Không có | `{lang}.json`, `units-{lang}.json` | Mới, chạy ở trình duyệt |
 | T4-01 đến T4-08 Tiến bộ | L-D3 | localStorage | Có sẵn; bỏ xuất CSV |
 | S8-02 Giọng đọc, tốc độ đọc | L-D8 (không có tốc độ) | Giọng trên thiết bị; thuộc tính `rate` | Có sẵn; tốc độ là mới |
