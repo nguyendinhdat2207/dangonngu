@@ -22,7 +22,7 @@ Nếu nhóm đồng ý với cách code đang làm thì chỉ cần bước 1: c
 | A2 | DATA-11 | Cần trao đổi | Global English có cho chọn trình độ bắt đầu không? | Khách | Cao |
 | A3 | S1-07 | Cần trao đổi | Có cần chế độ "Tiếng Việt (từ tiếng Anh)" không? | Khách | Cao |
 | A4 | G-05 | Cần trao đổi | Ai duyệt thiết kế, ở mốc nào? | Khách | Cao |
-| A5 | APP-09 | Cần trao đổi | Trang chính mở mini app bằng iframe hay tab mới? | Khách | Cao |
+| A5 | APP-09, APP-12 | **Đã quyết định** (10/10): mở trang mới, không iframe; giữ nút quay lại về trang học chính | Trang chính mở mini app bằng iframe hay tab mới? | Nhóm | Cao |
 | A6 | DATA-09 | Cần trao đổi | Xác nhận bằng văn bản việc dùng dữ liệu | Khách | Cao |
 | A7 | (bản cũ 1.9.45) | Cần trao đổi | Mục pháp lý ở bản cũ có cần không? | Khách | Thấp |
 | B1 | DATA-07 | Cần trao đổi | Giữ khoảng ôn 1, 3, 7, 14, 30 ngày? Đúng không gợi ý thì giữ nguyên lịch? | Nhóm (có thể hỏi khách) | Cao |
@@ -100,6 +100,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Trạng thái** | **Đã quyết định ngày 10/10/2026.** Trang học chính mở mini app ở trang mới (tab mới, chuyển thẳng trang), không nhúng iframe. Giữ một nút quay lại để về trang học chính: yêu cầu mới APP-12. Spec đã sửa (APP-09, APP-12, `docs/new/ui-spec.md` mục 5, `docs/new/navigation.md`, `docs/legacy/README.md`) và APP-12 đã code trên nhánh `Manh_work_10_10` (`fe/src/app/HostBack.tsx`, `fe/src/app/TopBar.tsx`, `fe/src/pages/S1-chon-ngon-ngu/S1ChonNgonNgu.tsx`; địa chỉ đổi bằng `VITE_HOST_URL`). Câu còn lại: nút về trang chủ hay thẳng Trung tâm ứng dụng (câu hỏi mở của APP-12). |
 | **Câu hỏi cần làm rõ** | Trang học chính mở mini app bằng iframe hay tab mới? Có truyền tham số URL, token hay postMessage không? |
 | **Code đang làm** | Chạy được cả hai cách, không dùng `window.top`, không chờ token. |
 | **Spec** | [`docs/new/ui-spec.md:80`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/new/ui-spec.md#L80) (câu hỏi 3); [`fe/src/app/spec.md:75-77`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/spec.md#L75-L77) (APP-09); [`docs/legacy/README.md`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/legacy/README.md) |

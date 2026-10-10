@@ -1,6 +1,6 @@
 # Checklist chức năng VITASR Đa ngôn ngữ
 
-Cập nhật 10/10/2026 · nhánh main tại `ec1d2f2` (PR #6) · repo `nguyendinhdat2207/dangonngu`
+Cập nhật 10/10/2026 · nhánh `Manh_work_10_10` (main `ec1d2f2` cộng spec chốt cách mở app và code APP-12) · repo `nguyendinhdat2207/dangonngu`
 
 File này liệt kê từng chức năng của mini app theo từng màn, kèm mô tả, chi tiết cần lưu ý, câu hỏi còn treo, phản hồi của dev và trạng thái. Nguồn: `spec.md` và `acceptance.md` của 20 khu vực trong repo, `docs/generated/acceptance-report.md`, lịch sử commit và báo cáo tổng hợp ngày 10/10.
 
@@ -14,6 +14,7 @@ File này liệt kê từng chức năng của mini app theo từng màn, kèm m
 | Chờ thử thật | Đã code, mục tự động và mục kiểm bằng ảnh đã đạt; còn mục `[human]` cần điện thoại thật hoặc người học thật |
 | Chờ xác nhận | Đã code theo một cách hợp lý; nhóm chỉ cần đồng ý hoặc ghi cách muốn đổi |
 | Cần trao đổi | Nhóm hoặc khách phải chọn phương án; câu trả lời có thể đổi code hoặc phạm vi |
+| Đã quyết định | Nhóm hoặc khách đã trả lời; ghi chú ngay trong ô trạng thái nói quyết định ra sao, việc còn phải làm ghi ở cột Phản hồi Dev |
 | Đã chốt | Đã có quyết định, không cần làm thêm |
 | Chưa làm | Việc chưa bắt đầu |
 
@@ -29,31 +30,31 @@ Cột **Tên chức năng** có ô `[x]` khi chức năng đã hoàn thành. C�
 
 ## Tổng quan tiến độ
 
-Toàn bộ 134 chức năng trong spec đã có code. 148/170 mục nghiệm thu đạt; 21 mục còn lại cần thử trên thiết bị thật hoặc với người học thật, 1 mục (FND-AC12) chờ nhóm duyệt chữ. Đã chạy được 150 test đơn vị, 15 test trình duyệt, CI 4/4 lần thành công.
+Toàn bộ 135 chức năng trong spec đã có code, kể cả APP-12 (nút về trang học chính, thêm ngày 10/10 theo quyết định ở APP-09). 150/173 mục nghiệm thu đạt; 22 mục cần thử trên thiết bị thật, với người học thật hoặc trên trang học chính, 1 mục (FND-AC12) chờ nhóm duyệt chữ. Trên nhánh `Manh_work_10_10`: 152 test đơn vị và 15 test trình duyệt đạt, `spec:check` không lỗi.
 
-| Khu vực | Route | Chức năng | Hoàn thành | Chờ thử thật | Chờ xác nhận | Cần trao đổi | Nghiệm thu đạt |
-|---|---|---|---|---|---|---|---|
-| S1 Chọn ngôn ngữ | `#/chon-ngon-ngu` | 7 | 4 | 2 | 0 | 1 | 7/8 |
-| T1 Học | `#/hoc` | 7 | 4 | 2 | 1 | 0 | 9/10 |
-| S3 Phiên học | `#/phien-hoc` | 9 | 7 | 2 | 0 | 0 | 10/11 |
-| T2 Luyện tập | `#/luyen-tap` | 5 | 4 | 0 | 1 | 0 | 7/7 |
-| S5 Kiểm tra nhanh | `#/kiem-tra` | 8 | 3 | 1 | 4 | 0 | 9/10 |
-| T3 Thư viện | `#/thu-vien` | 7 | 6 | 0 | 1 | 0 | 10/10 |
-| T4 Tiến bộ | `#/tien-bo` | 8 | 4 | 1 | 1 | 2 | 9/10 |
-| S8 Cài đặt | `#/cai-dat` | 6 | 2 | 0 | 1 | 3 | 8/10 |
-| S9 Hướng dẫn lần đầu | (lớp phủ trên T1) | 5 | 4 | 1 | 0 | 0 | 5/6 |
-| APP Khung app |  | 11 | 8 | 1 | 1 | 1 | 15/17 |
-| C1 Thẻ câu |  | 8 | 6 | 1 | 1 | 0 | 7/8 |
-| C2 Dải 8 ô |  | 3 | 3 | 0 | 0 | 0 | 3/3 |
-| C3 Nút |  | 4 | 3 | 1 | 0 | 0 | 3/4 |
-| C4 Lựa chọn trắc nghiệm |  | 3 | 3 | 0 | 0 | 0 | 3/3 |
-| C5 Thanh tab |  | 4 | 4 | 0 | 0 | 0 | 4/4 |
-| C6 Sheet |  | 4 | 2 | 1 | 0 | 1 | 4/5 |
-| C7 Thông báo ngắn |  | 3 | 3 | 0 | 0 | 0 | 3/3 |
-| FND Nền tảng thiết kế |  | 14 | 10 | 2 | 0 | 2 | 13/17 |
-| DATA Dữ liệu và tiến độ |  | 13 | 9 | 0 | 1 | 3 | 18/19 |
-| G Mục tiêu sản phẩm |  | 5 | 1 | 3 | 0 | 1 | 1/5 |
-| **Tổng** | | **134** | **90** | **18** | **12** | **14** | **148/170** |
+| Khu vực | Route | Chức năng | Hoàn thành | Chờ thử thật | Chờ xác nhận | Cần trao đổi | Đã quyết định | Chưa làm | Nghiệm thu đạt |
+|---|---|---|---|---|---|---|---|---|---|
+| S1 Chọn ngôn ngữ | `#/chon-ngon-ngu` | 7 | 4 | 2 | 0 | 1 | 0 | 0 | 7/8 |
+| T1 Học | `#/hoc` | 7 | 4 | 2 | 1 | 0 | 0 | 0 | 9/10 |
+| S3 Phiên học | `#/phien-hoc` | 9 | 7 | 2 | 0 | 0 | 0 | 0 | 10/11 |
+| T2 Luyện tập | `#/luyen-tap` | 5 | 4 | 0 | 1 | 0 | 0 | 0 | 7/7 |
+| S5 Kiểm tra nhanh | `#/kiem-tra` | 8 | 3 | 1 | 4 | 0 | 0 | 0 | 9/10 |
+| T3 Thư viện | `#/thu-vien` | 7 | 6 | 0 | 1 | 0 | 0 | 0 | 10/10 |
+| T4 Tiến bộ | `#/tien-bo` | 8 | 4 | 1 | 1 | 2 | 0 | 0 | 9/10 |
+| S8 Cài đặt | `#/cai-dat` | 6 | 2 | 0 | 1 | 3 | 0 | 0 | 8/10 |
+| S9 Hướng dẫn lần đầu | (lớp phủ trên T1) | 5 | 4 | 1 | 0 | 0 | 0 | 0 | 5/6 |
+| APP Khung app |  | 12 | 8 | 2 | 1 | 0 | 1 | 0 | 17/20 |
+| C1 Thẻ câu |  | 8 | 6 | 1 | 1 | 0 | 0 | 0 | 7/8 |
+| C2 Dải 8 ô |  | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 3/3 |
+| C3 Nút |  | 4 | 3 | 1 | 0 | 0 | 0 | 0 | 3/4 |
+| C4 Lựa chọn trắc nghiệm |  | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 3/3 |
+| C5 Thanh tab |  | 4 | 4 | 0 | 0 | 0 | 0 | 0 | 4/4 |
+| C6 Sheet |  | 4 | 2 | 1 | 0 | 1 | 0 | 0 | 4/5 |
+| C7 Thông báo ngắn |  | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 3/3 |
+| FND Nền tảng thiết kế |  | 14 | 10 | 2 | 0 | 2 | 0 | 0 | 13/17 |
+| DATA Dữ liệu và tiến độ |  | 13 | 9 | 0 | 1 | 3 | 0 | 0 | 18/19 |
+| G Mục tiêu sản phẩm |  | 5 | 1 | 3 | 0 | 1 | 0 | 0 | 1/5 |
+| **Tổng** | | **135** | **90** | **19** | **12** | **13** | **1** | **0** | **150/173** |
 
 ## Các màn của app
 
@@ -186,7 +187,7 @@ Hướng dẫn 3 bước, chỉ hiện một lần. Nghiệm thu: **5/6** mục 
 
 ### APP Khung app
 
-Điều hướng, thanh trên cùng, bố cục, ngoại tuyến, iframe. Nghiệm thu: **15/17** mục đạt. Chức năng hoàn thành: 8/11.
+Điều hướng, thanh trên cùng, bố cục, ngoại tuyến, cách trang chính mở app, nút về trang học chính. Nghiệm thu: **17/20** mục đạt. Chức năng hoàn thành: 8/12.
 
 | STT | Tên chức năng | Mô tả mong muốn | Chi tiết cần lưu ý | Câu hỏi cần trao đổi | Phản hồi Dev | Trạng thái | Ưu tiên |
 |---|---|---|---|---|---|---|---|
@@ -198,9 +199,10 @@ Hướng dẫn 3 bước, chỉ hiện một lần. Nghiệm thu: **5/6** mục 
 | 6 | [x] **APP-06** Sheet Đổi ngôn ngữ | Sheet Đổi ngôn ngữ hoặc bộ nội dung. | Tiếng Anh tách 2 dòng theo 2 bộ; dòng đang dùng được đánh dấu. |  | Code Đợt 1 (`97e85fa`). Đạt: APP-AC08, APP-AC17. | Hoàn thành | Trung bình |
 | 7 | [ ] **APP-07** Bố cục theo khổ màn hình | Responsive, ưu tiên máy tính 1440 và 1280 px. | Các mốc 320 / 600 / 900 px; không cuộn ngang ở khổ nào. |  | Code Đợt 1 (`97e85fa`). Đạt: APP-AC09. Còn mở: APP-AC13 [human]. | Chờ thử thật | Cao |
 | 8 | [x] **APP-08** Trạng thái toàn cục | Trạng thái toàn cục: đang tải, lỗi tải, ngoại tuyến, bộ nhớ bị chặn. | Lỗi có nút Thử lại; không dùng vòng xoay giữa màn. |  | Code Đợt 1 (`97e85fa`). Đạt: APP-AC07, APP-AC10, APP-AC11. | Hoàn thành | Trung bình |
-| 9 | [ ] **APP-09** Chạy trong iframe | Chạy được trong iframe của trang học chính và khi mở trực tiếp. | Không dùng `window.top`, postMessage, không cần đăng nhập. | Trang chính mở mini app bằng iframe hay tab mới, có truyền tham số gì không? (hỏi khách) | Code Đợt 1 (`97e85fa`). Đạt: APP-AC12. Còn mở: APP-AC13 [human]. App đã chạy được cả hai cách; cần biết để kiểm trên trang thật. | Cần trao đổi | Cao |
+| 9 | [ ] **APP-09** Cách trang chính mở app | Trang học chính mở mini app ở trang mới; app vẫn chạy được khi mở trực tiếp và trong iframe. | Không dùng `window.top`, postMessage, không cần đăng nhập, bỏ qua mọi tham số URL. | ~~Trang chính mở mini app bằng iframe hay tab mới, có truyền tham số gì không?~~ Đã trả lời 10/10/2026. Còn chưa rõ trang chính có gắn tham số URL không; không chặn việc gì. | Code Đợt 1 (`97e85fa`). Đạt: APP-AC12. Còn mở: APP-AC13 [human], APP-AC20 [human]. Spec sửa APP-09 và thêm APP-12 (commit `spec:` 10/10); APP-12 đã code. Không phải sửa code cho phần mở trang mới. | **Đã quyết định** (10/10/2026): mở trang mới (tab mới, chuyển thẳng trang), không nhúng iframe; giữ nút quay lại để về trang học chính, xem APP-12 | Cao |
 | 10 | [ ] **APP-10** Ngoại tuyến và cập nhật | Chạy ngoại tuyến và báo khi có bản cập nhật. | Chỉ tải lại khi người dùng bấm "Cập nhật"; không hiện thông báo khi đang ở S3, S5. | Font Noto của chữ không phải Latinh chỉ có khi ngoại tuyến từ lần mở có mạng thứ hai; chấp nhận được không? | Code Đợt 2 (`757a784`). Đạt: APP-AC15. Còn mở: APP-AC14 [human]. Service worker tự kích hoạt bản mới, trang chỉ tải lại khi bấm Cập nhật. | Chờ xác nhận | Trung bình |
 | 11 | [x] **APP-11** Một lớp phủ tại một thời điểm | Tại một thời điểm chỉ có một sheet hoặc hộp thoại. | Mở sheet mới thì sheet cũ đóng trước. |  | Code Đợt 1 (`97e85fa`). Đạt: APP-AC16. | Hoàn thành | Trung bình |
+| 12 | [ ] **APP-12** Nút về trang học chính | Nút quay lại để người học về trang học chính. | Ngoài cùng bên trái thanh trên cùng của T1 đến T4 và góc trên S1 bước 1; icon mũi tên trái, nhãn "Quay lại trang học", từ 600 px có chữ "Trang học". Là liên kết thường tới `VITE_HOST_URL` (mặc định `https://language.pomaskhoahocnaobo.com/`), không dùng `history.back()`. Không có ở S1 bước 2, S3, S5, S8. | Nút về trang chủ hay về thẳng Trung tâm ứng dụng? Nếu là Trung tâm ứng dụng thì cần đường dẫn chính xác. | Code 10/10 trên nhánh `Manh_work_10_10` (`fe/src/app/HostBack.tsx`, `TopBar.tsx`, `S1ChonNgonNgu.tsx`). Đạt: APP-AC18 (test), APP-AC19 (ảnh và số đo: 44 x 44 px ở 320 và 375 px, 130 x 44 px có chữ từ 600 px); APP-AC03 đã chụp lại. Còn mở: APP-AC20 [human] trên trang học chính thật. | Chờ thử thật | Cao |
 
 ### C1 Thẻ câu
 
@@ -337,7 +339,7 @@ Kiểm bằng buổi thử với người học thật, sau khi các khu vực k
 
 ## Chức năng của bản cũ chưa có trong bản mới
 
-Các mục dưới đây không nằm trong 134 chức năng ở trên. Câu trả lời của khách có thể thêm màn hoặc thêm backend, nên cần hỏi trước Đợt 3.
+Các mục dưới đây không nằm trong 135 chức năng ở trên. Câu trả lời của khách có thể thêm màn hoặc thêm backend, nên cần hỏi trước Đợt 3.
 
 | STT | Tên chức năng | Mô tả mong muốn | Chi tiết cần lưu ý | Câu hỏi cần trao đổi | Phản hồi Dev | Trạng thái | Ưu tiên |
 |---|---|---|---|---|---|---|---|
@@ -352,7 +354,7 @@ Các mục dưới đây không nằm trong 134 chức năng ở trên. Câu tr�
 
 ## Công việc tiếp theo
 
-Bước 1 làm ngay; bước 2 và 3 chạy song song; Đợt 3 chỉ bắt đầu khi bước 2 có câu trả lời; bàn giao khi đủ 170/170 mục. Ngày cụ thể chưa chốt, trừ việc ghim Ubuntu cho CI phải xong trước 19/10.
+Bước 1 làm ngay; bước 2 và 3 chạy song song; Đợt 3 chỉ bắt đầu khi bước 2 có câu trả lời; bàn giao khi đủ 173/173 mục. Ngày cụ thể chưa chốt, trừ việc ghim Ubuntu cho CI phải xong trước 19/10.
 
 | STT | Công việc | Mô tả | Chi tiết cần lưu ý | Người làm | Hạn | Trạng thái | Ưu tiên |
 |---|---|---|---|---|---|---|---|
@@ -361,27 +363,30 @@ Bước 1 làm ngay; bước 2 và 3 chạy song song; Đợt 3 chỉ bắt đ�
 | 1.2 | [ ] Quyết repo công khai hay riêng tư | Repo đang công khai và chứa đủ 12 MB dữ liệu của khách trong `fe/public/data/` | Khách mới đồng ý cho dùng khi phát triển, chưa có văn bản | Nhóm | Sớm nhất có thể | Chưa làm | Cao |
 | 1.3 | [ ] Xin khách xác nhận bằng văn bản | Xác nhận cho dùng bộ dữ liệu khi phát triển và demo | Lưu tin nhắn làm bằng chứng cho DATA-AC12 | Người liên hệ khách | | Chưa làm | Cao |
 | 1.4 | [ ] Dọn nhánh | Xóa các nhánh đã gộp: `Khung_du_an`, `dinhdat`, `feature/don-repo`, `feature/dot2-cac-man-con-lai` | Mọi người `git checkout main && git pull` trước khi làm tiếp | Người giữ repo | | Chưa làm | Thấp |
+| 1.5 | [ ] Gộp nhánh `Manh_work_10_10` | Hai commit: `spec:` chốt cách mở app (APP-09, APP-12) và `feat:` nút về trang học chính; mở PR vào main | CI chạy lại toàn bộ kiểm tra trước khi gộp | Mạnh | | Chưa làm | Cao |
 | **2** | **Chốt câu hỏi mở** | | | | | | |
-| 2.1 | [ ] Gửi khách 5 câu hỏi | Chia sẻ, chọn trình độ bắt đầu, chế độ đảo chiều, ai duyệt thiết kế, iframe hay tab mới | Ưu tiên Chia sẻ và chọn trình độ vì có thể thêm màn mới | Người liên hệ khách | | Chưa làm | Cao |
+| 2.1 | [ ] Gửi khách 4 câu hỏi | Chia sẻ, chọn trình độ bắt đầu, chế độ đảo chiều, ai duyệt thiết kế. Câu iframe hay tab mới **đã quyết định** 10/10: mở trang mới, có nút về trang học chính | Ưu tiên Chia sẻ và chọn trình độ vì có thể thêm màn mới | Người liên hệ khách | | Chưa làm | Cao |
 | 2.2 | [ ] Nhóm chọn phương án cho các mục "Cần trao đổi" | Khoảng ôn, câu báo lỗi nhập file, "Theo thiết bị" hay "Theo hệ thống", "7 ngày tới", màu cột hôm nay, lớp nền sheet tối, cột 30 ngày ở 320 px | Câu báo lỗi nhập file đang chặn FND-AC12 | Nhóm | | Chưa làm | Cao |
 | 2.3 | [ ] Nhóm duyệt các mục "Chờ xác nhận" | Đọc cột Phản hồi Dev của các dòng Chờ xác nhận ở trên | Đồng ý thì đưa vào spec; không thì ghi cách muốn đổi | Nhóm | | Chưa làm | Trung bình |
 | 2.4 | [ ] Ghi câu trả lời vào spec | Sửa `spec.md` bằng commit tiền tố `spec:` kèm một dòng trong "Lịch sử thay đổi" | Claude không tự sửa nội dung spec | Nhóm | | Chưa làm | Cao |
-| **3** | **Thử thật để đóng 21 mục `[human]`** | | | | | | |
+| **3** | **Thử thật để đóng 22 mục `[human]`** | | | | | | |
 | 3.0 | [ ] Đặt bản build lên URL HTTPS | GitHub Pages hoặc máy chủ tĩnh của nhóm | Service worker chỉ chạy trên HTTPS hoặc localhost | Người giữ repo | | Chưa làm | Cao |
 | 3.1 | [ ] Thử trên thiết bị thật (9 mục) | C1-AC05, C3-AC03, C6-AC03, APP-AC13, APP-AC14, FND-AC11, FND-AC17, S8-AC03, S8-AC07 | Một iPhone (Safari), một Android (Chrome), một máy Windows (Chrome hoặc Edge); bật VoiceOver và TalkBack cho FND-AC17; kiểm giọng đọc của 15 ngôn ngữ | Nhóm | | Chưa làm | Cao |
 | 3.2 | [ ] Thử với người học thật (9 mục) | G-AC01, G-AC02, G-AC03, S1-AC06, S3-AC11, S5-AC10, S9-AC06, T1-AC09, T4-AC10 | 5 người chưa thấy app, xóa dữ liệu trình duyệt trước mỗi người; ghi số lần chạm, chỗ ngập ngừng, câu chia cụm vô lý | Nhóm | | Chưa làm | Cao |
 | 3.3 | [ ] Người ngoài nhóm đọc và xem (2 mục) | FND-AC13, G-AC05 | Danh sách chuỗi giao diện; ảnh 5 màn chính trong `docs/evidence/` | Nhóm | | Chưa làm | Trung bình |
 | 3.4 | [ ] Khách xác nhận dữ liệu (1 mục) | DATA-AC12 | Dùng tin nhắn ở việc 1.3 | Người liên hệ khách | | Chưa làm | Cao |
+| 3.5 | [ ] Thử trên trang học chính thật (1 mục) | APP-AC20: mở Đa ngôn ngữ thấy app ở trang mới; bấm "Quay lại trang học" về đúng trang học, vẫn đăng nhập | Cần một tài khoản đăng nhập được và bản build trên URL thật (việc 3.0) | Nhóm | | Chưa làm | Cao |
 | **4** | **Đợt 3: sửa theo câu trả lời và kết quả thử** | | | | | | |
 | 4.1 | [ ] Sửa code theo các commit `spec:` | Claude đọc diff, sửa code, bỏ `[x]` của mục bị ảnh hưởng rồi kiểm lại | Gửi zip và lệnh commit như Đợt 2; người trong nhóm tự commit | Claude + người commit | | Chưa làm | Cao |
 | 4.2 | [ ] Sửa lỗi tìm thấy khi thử | Lỗi ghi được ở việc 3.1 và 3.2 | | Claude + người commit | | Chưa làm | Cao |
 | 4.3 | [ ] Bật test trên WebKit | Gần với Safari iOS, theo QD-01 | CI hiện mới chạy Chromium | Claude | | Chưa làm | Trung bình |
 | 4.4 | [ ] Cập nhật `docs/legacy/` | Nếu xác nhận được thay đổi của bản cũ 1.9.45 | | Nhóm | | Chưa làm | Thấp |
 | 4.5 | [ ] Sửa dòng bằng chứng | Đổi "chưa commit (đợt 2)" thành `757a784` trong các `acceptance.md` | | Claude | | Chưa làm | Thấp |
+| 4.6 | [x] Code nút về trang học chính (APP-12) | Liên kết ở thanh trên cùng T1 đến T4 và S1 bước 1, địa chỉ từ `VITE_HOST_URL` | Xong 10/10 trên nhánh `Manh_work_10_10`: APP-AC18, APP-AC19 đạt, APP-AC03 chụp lại | Claude + Mạnh | | Hoàn thành | Cao |
 | **5** | **Bàn giao** | | | | | | |
 | 5.1 | [ ] Thống nhất nơi đặt bản build | Và đường dẫn để trang học chính mở mini app mới | | Nhóm + khách | | Chưa làm | Cao |
-| 5.2 | [ ] Kiểm trên trang học chính thật | Iframe hoặc tab mới: chọn ngôn ngữ, học một phiên, xem tiến bộ | Tiến độ khi mở trực tiếp và khi mở trong iframe có thể khác nhau do trình duyệt tách bộ nhớ | Nhóm | | Chưa làm | Cao |
-| 5.3 | [ ] Bàn giao | Mã nguồn, bản build, hướng dẫn cập nhật dữ liệu (theo DATA-01 đến DATA-04), báo cáo nghiệm thu 170/170 | | Nhóm | | Chưa làm | Cao |
+| 5.2 | [ ] Kiểm trên trang học chính thật | Mở ở trang mới (đã quyết định 10/10): chọn ngôn ngữ, học một phiên, xem tiến bộ, rồi bấm Quay lại trang học | Không nhúng iframe nên tiến độ không bị trình duyệt tách bộ nhớ | Nhóm | | Chưa làm | Cao |
+| 5.3 | [ ] Bàn giao | Mã nguồn, bản build, hướng dẫn cập nhật dữ liệu (theo DATA-01 đến DATA-04), báo cáo nghiệm thu 173/173 | | Nhóm | | Chưa làm | Cao |
 
 ## Cập nhật file này
 
