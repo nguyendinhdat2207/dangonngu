@@ -70,7 +70,7 @@ Không có thanh cuộn ngang ở bất kỳ khổ nào từ 320 px.
 | Đang tải dữ liệu | Khung xương đúng hình khối sẽ hiện (thẻ câu, danh sách); không dùng vòng xoay giữa màn |
 | Lỗi tải dữ liệu | "Không tải được danh sách câu. Kiểm tra kết nối rồi bấm Thử lại." và nút "Thử lại" |
 | Ngoại tuyến | Dải mỏng ngay dưới thanh trên cùng: "Đang ngoại tuyến. Tiến độ vẫn được lưu trên máy." Tự ẩn khi có mạng lại |
-| Bộ nhớ trình duyệt bị chặn | Dải cảnh báo: "Trình duyệt đang chặn lưu dữ liệu, tiến độ sẽ mất khi đóng app." |
+| Bộ nhớ trình duyệt bị chặn | Dải cảnh báo: "Trình duyệt đang chặn lưu tiến độ, tiến độ sẽ mất khi đóng app. Cho phép trang này lưu trên máy trong cài đặt trình duyệt rồi mở lại app." |
 
 ### APP-09 Cách trang chính mở app
 
@@ -78,7 +78,7 @@ Trang học chính mở mini app bằng một trang mới (tab mới hoặc chuy
 
 ### APP-10 Ngoại tuyến và cập nhật
 
-Sau lần mở đầu tiên có mạng, app mở lại được khi ngoại tuyến với ngôn ngữ đã tải. Khi có bản mới, hiện thông báo ngắn (C7) "Có bản cập nhật" với nút "Cập nhật"; chỉ tải lại khi người dùng bấm, và không hiện thông báo này khi đang ở S3 hoặc S5.
+Sau lần mở đầu tiên có mạng, app mở lại được khi ngoại tuyến với ngôn ngữ đã tải. Khi có bản mới, hiện thông báo ngắn (C7) "Có bản cập nhật" với nút "Cập nhật"; chỉ tải lại khi người dùng bấm, và không hiện thông báo này khi đang ở S3 hoặc S5. Bản mới tự kích hoạt trong service worker nhưng trang đang mở không tự tải lại. Ở lần mở đầu tiên có mạng, ngay khi service worker nhận trang, app tải lại các file dữ liệu đã dùng để lưu ngoại tuyến; font Noto của ngôn ngữ không dùng chữ Latinh được lưu từ lần mở có mạng thứ hai, trước đó câu hiện bằng font sẵn có của máy.
 
 ### APP-11 Một lớp phủ tại một thời điểm
 
@@ -90,14 +90,24 @@ Vì app mở bằng trang mới (APP-09), app có một nút để người họ
 
 - Vị trí: ngoài cùng bên trái thanh trên cùng của T1 đến T4 (APP-02), trước tên ngôn ngữ; và góc trên bên trái của S1 bước 1 (danh sách ngôn ngữ). Không có ở S1 bước 2 (đã có "Quay lại" về danh sách ngôn ngữ), S3 và S5 (đã có "Thoát"), S8 (đã có "Quay lại" về khu chính).
 - Hiển thị: icon mũi tên trái (FND-10), nhãn trợ năng "Quay lại trang học", vùng chạm tối thiểu 44 x 44 px (FND-14). Từ 600 px hiện thêm chữ "Trang học" cạnh icon.
-- Hành động: là một liên kết thường, mở địa chỉ trang học chính ngay trong trang đang xem. Địa chỉ cấu hình lúc build (`VITE_HOST_URL`), mặc định `https://language.pomaskhoahocnaobo.com/`. Không dùng `history.back()`: lịch sử route hash của app nằm trước trang học chính, và khi app mở bằng tab mới thì tab không có trang trước.
+- Hành động: là một liên kết thường, mở địa chỉ trang học chính ngay trong trang đang xem. Địa chỉ cấu hình lúc build (`VITE_HOST_URL`), mặc định là trang chủ `https://language.pomaskhoahocnaobo.com/`; khi có đường dẫn chính xác của Trung tâm ứng dụng thì đổi biến này, không sửa code. Không dùng `history.back()`: lịch sử route hash của app nằm trước trang học chính, và khi app mở bằng tab mới thì tab không có trang trước.
 - Bấm khi đang có phiên dở thì không hỏi; tiến độ đã lưu trên máy (DATA-06) và phiên dở mở lại được lần sau (S3-08).
+- Nếu trang chính mở app bằng tab mới thì bấm nút sẽ mở trang học chính ngay trong tab của app, tab trang học cũ vẫn còn. Không đóng tab bằng mã (`window.close()` chỉ chạy được trong một số trường hợp) và không đọc `window.opener` (APP-09).
 
 ## Câu hỏi mở
 
-- APP-12: nút về trang chủ `https://language.pomaskhoahocnaobo.com/` hay về thẳng Trung tâm ứng dụng? Nếu là Trung tâm ứng dụng thì cần đường dẫn chính xác của trang đó. Hiện để mặc định là trang chủ, đổi được bằng `VITE_HOST_URL` mà không sửa code.
-- APP-10: bản mới tự kích hoạt trong service worker nhưng trang đang mở không tự tải lại; người dùng bấm "Cập nhật" mới tải lại. Lần mở đầu tiên có mạng, ngay khi service worker nhận trang, app tải lại các file dữ liệu đã dùng để lưu ngoại tuyến. Font Noto của ngôn ngữ không dùng chữ Latinh chỉ được lưu từ lần mở có mạng thứ hai; nếu tắt mạng ngay sau lần đầu, câu tiếng Nhật, Thái... hiện bằng font sẵn có của máy. Nhóm xác nhận cách làm này.
-- APP-09, APP-12: quyết định ngày 10/10 ghi "tab mới, chuyển thẳng trang", nhưng hai cách này cho kết quả khác nhau khi bấm "Quay lại trang học". Nút hiện mở trang học chính ngay trong tab của app. Nếu trang chính mở app bằng tab mới thì tab trang học cũ vẫn còn, bấm nút sẽ thành hai tab trang học; nếu trang chính chuyển thẳng trong cùng tab thì nút về đúng một trang như mong muốn. Cần xác nhận trang chính dùng cách nào (xem trên trang thật, APP-AC20). Nếu là tab mới: giữ cách hiện tại, hay đổi nhãn cho rõ là mở trang học (đóng tab bằng mã chỉ làm được trong một số trường hợp nên không dùng được làm cách chính)?
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| APP-12: nút về trang chủ hay về thẳng Trung tâm ứng dụng | Về trang chủ `https://language.pomaskhoahocnaobo.com/`; đổi bằng `VITE_HOST_URL` khi có đường dẫn Trung tâm ứng dụng | APP-12 |
+| APP-10: cách kích hoạt bản mới và lưu font ngoại tuyến | Giữ cách đang làm | APP-10 |
+| APP-09, APP-12: trang chính mở app bằng tab mới hay chuyển thẳng trang | Giữ liên kết mở trang học chính trong tab đang xem; không đóng tab bằng mã. Cách trang chính mở app kiểm ở APP-AC20 | APP-12 |
+| APP-08: câu cảnh báo bộ nhớ bị chặn chưa có hướng xử lý (phát hiện khi rà FND-AC12) | Thêm hướng xử lý, bỏ chữ "dữ liệu" | APP-08 |
 
 ## Lịch sử thay đổi
 
@@ -105,3 +115,4 @@ Vì app mở bằng trang mới (APP-09), app có một nút để người họ
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
 - 0.4 (10/10/2026): chốt cách trang chính mở app là trang mới, không nhúng iframe (APP-09, đổi tên từ "Chạy trong iframe"); thêm nút về trang học chính (APP-12); APP-02 có thêm nút này ở bên trái.
+- 0.5 (10/10/2026): chốt các câu hỏi mở (Claude quyết định theo ủy quyền của nhóm): APP-10 ghi rõ cách kích hoạt bản mới và lưu ngoại tuyến; APP-12 chốt địa chỉ mặc định và trường hợp trang chính mở tab mới; APP-08 đổi câu cảnh báo bộ nhớ bị chặn cho có hướng xử lý (FND-12).

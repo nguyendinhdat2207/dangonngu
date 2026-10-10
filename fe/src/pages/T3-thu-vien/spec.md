@@ -61,7 +61,7 @@ Mỗi trang 32 câu. Mỗi dòng: số `id` 4 chữ số (`--t-sm`, `--muted`, c
 
 ### T3-03 Bộ lọc
 
-Các bộ lọc dạng nút mở danh sách chọn: "Unit" (Tất cả, rồi từng unit "Unit n: title"), "Trạng thái" (Tất cả, Chưa học, Đã nhớ, Cần ôn), "Chủ đề" (Tất cả, rồi các `topic` theo thứ tự chữ cái, kèm số câu, có ô tìm trong danh sách vì có tới 177 chủ đề) chỉ hiện khi bộ nội dung có `topic`, và "Trình độ" (Tất cả, A1, A2, B1, B2, C1, C2) chỉ hiện khi có `unitId` (DATA-04). Bộ lọc đang dùng hiện tên giá trị thay cho nhãn mặc định. Unit giữ trong route (`?unit=`). Tìm kiếm và bộ lọc kết hợp với nhau.
+Các bộ lọc dạng nút mở danh sách chọn: "Unit" (Tất cả, rồi từng unit "Unit n: title"), "Trạng thái" (Tất cả, Chưa học, Đã nhớ, Cần ôn), "Chủ đề" (Tất cả, rồi các `topic` theo thứ tự chữ cái, kèm số câu, có ô tìm trong danh sách vì có tới 177 chủ đề) chỉ hiện khi bộ nội dung có `topic`, và "Trình độ" (Tất cả, A1, A2, B1, B2, C1, C2) chỉ hiện khi có `unitId` (DATA-04). Bộ lọc đang dùng hiện tên giá trị thay cho nhãn mặc định. Unit giữ trong route (`?unit=`); Trạng thái, Chủ đề, Trình độ không giữ trong route nên mất khi tải lại trang. Danh sách chọn của mỗi bộ lọc mở bằng sheet (C6). Bộ lọc Trình độ chỉ liệt kê các trình độ có trong dữ liệu. Tìm kiếm và bộ lọc kết hợp với nhau.
 
 ### T3-04 Phân trang
 
@@ -81,12 +81,21 @@ Từ 900 px: hai cột. Danh sách bên trái (tối đa 480 px); chi tiết câ
 
 ## Câu hỏi mở
 
-- T3-03: chỉ Unit và từ khóa giữ trong route; bộ lọc Trạng thái, Chủ đề, Trình độ mất khi tải lại trang. Có cần giữ cả ba trong route không?
-- T3-03: bộ lọc Trình độ chỉ liệt kê các trình độ có trong dữ liệu (theo T3-AC10). Với bộ dữ liệu đầy đủ là đủ 6 trình độ A1 đến C2.
-- T3-03: spec chưa nói danh sách chọn của bộ lọc hiện ở đâu. Code mở bằng sheet (C6), giống các lớp phủ khác.
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| T3-03: có giữ Trạng thái, Chủ đề, Trình độ trong route không | Không; chỉ Unit và từ khóa giữ trong route | T3-03 |
+| T3-03: bộ lọc Trình độ chỉ liệt kê trình độ có trong dữ liệu | Giữ như code đang làm | T3-03 |
+| T3-03: danh sách chọn của bộ lọc hiện ở đâu | Mở bằng sheet (C6) | T3-03 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
+- 0.4 (10/10/2026): chốt các câu hỏi về bộ lọc (Claude quyết định theo ủy quyền của nhóm).

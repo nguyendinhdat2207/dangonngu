@@ -28,16 +28,17 @@ Tên hướng: **Thẻ câu**. Mọi thứ trên màn hình phục vụ câu đa
 | `--on-brand` | `#FFFFFF` | `#0D1424` | Chữ trên nút chính |
 | `--known` | `#1E7A4C` | `#5CCB8F` | "Đã nhớ", trả lời đúng |
 | `--review` | `#A35F00` | `#F0B54A` | "Cần ôn", trả lời chưa đúng |
+| `--scrim` | `--ink` độ mờ 40% | đen độ mờ 60% | Lớp nền sau sheet và hướng dẫn (C6-01, S9-02) |
 
 Code thành phần và trang chỉ dùng các token này. Không có gradient.
 
 ### FND-02 Quy tắc dùng màu
 
-`--brand` chỉ dùng cho tối đa một nút chính trên mỗi màn và cho ô đang học của dải 8 ô; không dùng làm nền khối lớn. Trả lời sai dùng `--review`, không dùng đỏ (đỏ là màu thương hiệu và nút chính). Mọi cặp chữ/nền đạt tương phản tối thiểu 4.5:1, chữ lớn từ 24 px tối thiểu 3:1.
+`--brand` chỉ dùng cho tối đa một nút chính trên mỗi màn và cho ô đang học của dải 8 ô; không dùng làm nền khối lớn. Ngoại lệ: cột hôm nay của biểu đồ T4-04. Trả lời sai dùng `--review`, không dùng đỏ (đỏ là màu thương hiệu và nút chính). Mọi cặp chữ/nền đạt tương phản tối thiểu 4.5:1, chữ lớn từ 24 px tối thiểu 3:1.
 
 ### FND-03 Sáng và tối
 
-Mặc định theo cài đặt hệ thống (`prefers-color-scheme`). Người dùng ghi đè được trong S8 (Theo hệ thống, Sáng, Tối); lựa chọn được lưu và áp dụng ngay khi mở app, không nhấp nháy giao diện sai trước khi áp dụng.
+Mặc định theo cài đặt hệ thống (`prefers-color-scheme`). Người dùng ghi đè được trong S8 (Theo thiết bị, Sáng, Tối); lựa chọn được lưu và áp dụng ngay khi mở app, không nhấp nháy giao diện sai trước khi áp dụng.
 
 ### FND-04 Font
 
@@ -106,9 +107,10 @@ Không gradient, không hiệu ứng kính mờ (`backdrop-filter` làm nền), 
 
 ### FND-14 Trợ năng chung
 
-Mọi thao tác làm được bằng bàn phím; viền focus 2 px `--brand`, cách phần tử 2 px, chỉ hiện khi dùng bàn phím (`:focus-visible`). Vùng chạm tối thiểu 44 x 44 px. Phần tử chứa câu ngôn ngữ đích có `lang` đúng mã ngôn ngữ; nghĩa có `lang="vi"`. Màu không bao giờ là tín hiệu duy nhất. Phóng chữ 200% không làm mất nội dung hay chức năng.
+Mọi thao tác làm được bằng bàn phím; viền focus 2 px `--brand`, cách phần tử 2 px, chỉ hiện khi dùng bàn phím (`:focus-visible`). Vùng chạm tối thiểu 44 x 44 px; ngoại lệ là liên kết nằm trong dòng chữ (C1-05) và cột biểu đồ 30 ngày trên màn hẹp (T4-04). Phần tử chứa câu ngôn ngữ đích có `lang` đúng mã ngôn ngữ; nghĩa có `lang="vi"`. Màu không bao giờ là tín hiệu duy nhất. Phóng chữ 200% không làm mất nội dung hay chức năng.
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
+- 0.4 (10/10/2026): FND-01 thêm token `--scrim`; FND-02 ghi ngoại lệ cột hôm nay của T4; FND-03 dùng "Theo thiết bị" như S8-04; FND-14 ghi hai ngoại lệ vùng chạm (Claude quyết định theo ủy quyền của nhóm).

@@ -85,7 +85,9 @@ Tiến độ và cài đặt lưu localStorage qua một interface `ProgressStor
 - `vitasr2.settings`: ngôn ngữ đang học, bộ nội dung đang dùng cho từng ngôn ngữ, giao diện, giọng đọc theo ngôn ngữ, tốc độ đọc, mục tiêu tuần, đã xem hướng dẫn.
 - `vitasr2.progress.{bộ}.{lang}` (ví dụ `vitasr2.progress.global.en`): tiến độ giữ riêng cho từng cặp bộ nội dung và ngôn ngữ, `{ schema: 1, sessions: [], attempts: [], items: { [id]: { status, streak, due, lastAt } } }`.
   - Session: `id`, `nguon` (lo-trinh, on-tap, tu-khoa, cau, kiem-tra), `itemIds`, `startedAt`, `completedAt`, `position`.
-  - Attempt: `sessionId`, `itemId`, `at`, `kind` (ghi-nho, trac-nghiem, nghe-chon, sap-xep), `outcome` (nho, can-on, dung, sai), `hinted`.
+  - Attempt: `sessionId`, `itemId`, `at`, `kind` (ghi-nho, trac-nghiem, nghe-chon, sap-xep), `outcome` (nho, can-on, dung, sai), `hinted`. Bước Nghe theo cụm của S5 không ghi lượt.
+  - Session lưu thêm `step` (bước đang làm, `ghi-nho` hoặc `kiem-tra`, để mở lại đúng chỗ, S3-08), `abandonedAt` (phiên dở bị thay bằng phiên mới, S3-08) và `params` (`q`, `nhom`, `id` để mở lại đúng phiên).
+  - Trạng thái lưu của câu (`status`): `da-hoc` khi câu đã qua bước ghi nhớ, `kiem-tra` khi câu mới chỉ gặp ở bài kiểm tra. Mốc thời gian lưu dạng số mili giây.
 
 Mọi ghi đều bọc xử lý lỗi; khi localStorage không dùng được, app vẫn chạy với bộ nhớ tạm trong phiên và hiện cảnh báo (APP-08). Không đọc tiến độ của bản cũ (đã chốt 08/10/2026).
 
@@ -94,8 +96,8 @@ Mọi ghi đều bọc xử lý lỗi; khi localStorage không dùng được, a
 Mỗi câu có một trong ba trạng thái hiển thị: **Chưa học**, **Đã nhớ**, **Cần ôn**.
 
 - Sau bước ghi nhớ: chọn "Tôi nhớ" thì `streak` tăng 1; chọn "Cần ôn lại" thì `streak` về 0.
-- Sau bước trắc nghiệm hoặc kiểm tra: trả lời sai hoặc dùng gợi ý thì `streak` về 0.
-- Ngày ôn tiếp (`due`): `streak` 0 thì đến hạn ngay; `streak` 1, 2, 3, 4, từ 5 trở lên thì sau 1, 3, 7, 14, 30 ngày tính từ lần làm cuối.
+- Sau bước trắc nghiệm hoặc kiểm tra: trả lời sai hoặc dùng gợi ý thì `streak` về 0; trả lời đúng mà không dùng gợi ý thì giữ nguyên `streak` và `due`.
+- Ngày ôn tiếp (`due`): `streak` 0 thì đến hạn ngay; `streak` 1, 2, 3, 4, từ 5 trở lên thì sau 1, 3, 7, 14, 30 ngày tính từ lần làm cuối (khoảng ôn đã chốt).
 - Câu **Cần ôn** trong ngày D là câu đã học có `due` không muộn hơn cuối ngày D (giờ máy). Câu đã học còn lại là **Đã nhớ**.
 
 Chỉ có một khái niệm "cần ôn" trong toàn app; T1, T2, T3, T4 cùng dùng quy tắc này.
@@ -119,7 +121,7 @@ App chỉ gọi mạng tới file của chính nó và base URL dữ liệu (DAT
 
 ### DATA-11 Lộ trình học
 
-Lộ trình là thứ tự unit trong file unit của bộ nội dung đang dùng. Câu tiếp theo trên T1 là câu chưa học đầu tiên của unit đầu tiên còn câu chưa học. Phiên học theo lộ trình lấy toàn bộ câu của unit đó (tối đa 8). Unit hoàn thành khi mọi câu của nó đã qua bước ghi nhớ ít nhất một lần.
+Lộ trình là thứ tự unit trong file unit của bộ nội dung đang dùng. Câu tiếp theo trên T1 là câu chưa học đầu tiên của unit đầu tiên còn câu chưa học. Phiên học theo lộ trình lấy toàn bộ câu của unit đó (tối đa 8). Unit hoàn thành khi mọi câu của nó đã qua bước ghi nhớ ít nhất một lần. Bản này không cho chọn trình độ bắt đầu: lộ trình Global English đi từ A1-01; muốn học trình độ khác thì lọc theo Trình độ ở Thư viện (T3-03).
 
 ### DATA-12 Tìm kiếm
 
@@ -136,13 +138,22 @@ Danh sách bộ của một ngôn ngữ được tính từ các manifest: ngôn
 
 ## Câu hỏi mở
 
-- Khoảng ôn 1, 3, 7, 14, 30 ngày trong DATA-07 là đề xuất. Cần chốt với khách hoặc đối chiếu quy tắc của bản cũ (`demo/learning-ui.js`, `demo/learning-store.js`).
-- Global English có 6 trình độ A1 đến C2. Lộ trình hiện đi lần lượt từ A1-01. Có cho người học chọn trình độ bắt đầu không (giống trang đăng ký có ô Level A1 đến B2)?
-- DATA-07 chưa nói khi trả lời đúng ở bước trắc nghiệm mà không dùng gợi ý. Code đợt 1 giữ nguyên `streak` và `due` trong trường hợp này. Nhóm xác nhận giúp.
-- Code đợt 1 lưu thêm vài trường ngoài danh sách DATA-06: Session có `step` (bước đang làm, S3-08 cần), `abandonedAt` (phiên dở bị thay bằng phiên mới, S3-08) và `params` (`q`, `nhom`, `id` để mở lại đúng phiên). Trạng thái lưu của câu (`status`) dùng `da-hoc` khi câu đã qua bước ghi nhớ và `kiem-tra` khi câu mới chỉ gặp ở bài kiểm tra. Mốc thời gian lưu dạng số mili giây. Đề nghị ghi các điểm này vào DATA-06.
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| Khoảng ôn 1, 3, 7, 14, 30 ngày là đề xuất | Chốt khoảng ôn này | DATA-07 |
+| Global English có cho chọn trình độ bắt đầu không | Không ở bản này; lộ trình đi từ A1-01, trình độ khác học qua bộ lọc của Thư viện | DATA-11, `docs/new/ui-spec.md` mục 5 |
+| Trả lời đúng ở bước trắc nghiệm mà không dùng gợi ý | Giữ nguyên `streak` và `due` như code đang làm | DATA-07 |
+| Các trường lưu thêm ngoài DATA-06 | Ghi vào DATA-06 | DATA-06 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
+- 0.4 (10/10/2026): chốt các câu hỏi mở (Claude quyết định theo ủy quyền của nhóm): khoảng ôn, không chọn trình độ bắt đầu, trả lời đúng không gợi ý giữ nguyên lịch, ghi các trường lưu thêm vào DATA-06.
