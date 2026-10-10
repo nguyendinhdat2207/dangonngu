@@ -36,3 +36,57 @@ jobs:
           name: playwright-test-results
           path: test-results/
           retention-days: 7
+
+  # Test trên WebKit (gần Safari iOS) theo QD-01. Chưa chặn việc gộp: mọi bước đều được phép lỗi, kết quả ghi ở phần
+  # tóm tắt của lần chạy, lỗi thì lưu kết quả test để tải về xem. Khi WebKit đạt ổn định, bỏ continue-on-error của bước test.
+  webkit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - id: deps
+        continue-on-error: true
+        timeout-minutes: 8
+        run: npm ci
+      - name: Build
+        id: build
+        if: steps.deps.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        run: npm run build
+      - name: Cài WebKit cho Playwright
+        id: install
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 8
+        run: npx playwright install --with-deps webkit
+      - name: Test trên trình duyệt (WebKit)
+        id: webkit
+        if: steps.install.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 15
+        run: npx playwright test --project=webkit
+        env:
+          PW_WEBKIT: '1'
+      - name: Ghi kết quả WebKit
+        if: always()
+        run: |
+          case "${{ steps.webkit.outcome }}" in
+            success) echo "WebKit: mọi test trình duyệt đạt." >> "$GITHUB_STEP_SUMMARY" ;;
+            failure) echo "WebKit: có test chưa đạt, xem log bước 'Test trên trình duyệt (WebKit)' và tệp kết quả đính kèm." >> "$GITHUB_STEP_SUMMARY"
+                     echo "::warning::WebKit có test chưa đạt (không chặn gộp)." ;;
+            *)       echo "WebKit: chưa chạy được test (bước cài thư viện, build hoặc cài WebKit lỗi), xem log." >> "$GITHUB_STEP_SUMMARY"
+                     echo "::warning::WebKit chưa chạy được test (không chặn gộp)." ;;
+          esac
+      - name: Lưu kết quả khi WebKit lỗi
+        if: steps.webkit.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/upload-artifact@v6
+        with:
+          name: playwright-webkit-results
+          path: test-results/
+          retention-days: 7
