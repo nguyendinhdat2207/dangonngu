@@ -369,6 +369,9 @@ test('FND-AC16 chỉ dùng bàn phím: T1 → S3 → tổng kết → T4', async
     }
     throw new Error(`Không tab tới được ${name}`);
   };
+  // Nút về trang học chính (APP-12) trên thanh trên cùng.
+  await focusTo('Quay lại trang học');
+  await shot(page, 'FND-AC16', '00-T1-focus-ve-trang-hoc');
   await focusTo(/Thư viện/);
   await shot(page, 'FND-AC16', '01-T1-focus-thanh-dieu-huong');
   await focusTo('Học 8 câu');

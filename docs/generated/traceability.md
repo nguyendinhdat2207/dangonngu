@@ -1,8 +1,8 @@
 # Ma trận truy vết spec, code và acceptance
 
-File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 09:05 UTC. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 10:32 UTC. Không sửa tay.
 
-Tổng: 135 yêu cầu, 173 mục acceptance, 420 ghi chú @spec/@ac trong code.
+Tổng: 135 yêu cầu, 173 mục acceptance, 423 ghi chú @spec/@ac trong code.
 
 Yêu cầu chưa có code gắn @spec: 10/135.
 
@@ -67,7 +67,7 @@ Spec: [fe/src/data/spec.md](../../fe/src/data/spec.md) · Acceptance: [fe/src/da
 | DATA-01 | Manifest | DATA-AC01, DATA-AC16, DATA-AC19 | - | fe/src/data/catalog.ts:1<br>fe/src/data/contract.ts:1<br>fe/src/data/types.ts:1 | fe/tests/unit/data.test.ts:41<br>fe/tests/unit/data.test.ts:86<br>fe/tests/unit/data.test.ts:100 |
 | DATA-02 | File ngôn ngữ | DATA-AC01, DATA-AC02, DATA-AC19 | - | fe/src/data/contract.ts:1<br>fe/src/data/types.ts:1 | fe/tests/unit/app.test.tsx:261<br>fe/tests/unit/data.test.ts:41<br>fe/tests/unit/data.test.ts:63<br>fe/tests/unit/data.test.ts:100 |
 | DATA-03 | File unit | DATA-AC01, DATA-AC03, DATA-AC16, DATA-AC19 | - | fe/src/data/contract.ts:1<br>fe/src/data/types.ts:1 | fe/tests/unit/data.test.ts:41<br>fe/tests/unit/data.test.ts:74<br>fe/tests/unit/data.test.ts:86<br>fe/tests/unit/data.test.ts:100 |
-| DATA-04 | Trường tùy chọn | DATA-AC04, DATA-AC18 | - | fe/src/data/contract.ts:1<br>fe/src/data/types.ts:1<br>fe/src/pages/T3-thu-vien/T3ThuVien.tsx:1<br>fe/src/pages/T3-thu-vien/filter.ts:1 | fe/tests/unit/app.test.tsx:402<br>fe/tests/unit/components.test.tsx:83<br>fe/tests/unit/t3.test.tsx:188<br>fe/tests/unit/t3.test.tsx:203 |
+| DATA-04 | Trường tùy chọn | DATA-AC04, DATA-AC18 | - | fe/src/data/contract.ts:1<br>fe/src/data/types.ts:1<br>fe/src/pages/T3-thu-vien/T3ThuVien.tsx:1<br>fe/src/pages/T3-thu-vien/filter.ts:1 | fe/tests/unit/app.test.tsx:402<br>fe/tests/unit/components.test.tsx:113<br>fe/tests/unit/t3.test.tsx:188<br>fe/tests/unit/t3.test.tsx:203 |
 | DATA-05 | Nguồn dữ liệu thay được | DATA-AC02, DATA-AC05 | docs/new/navigation.md:68 | fe/src/app/state.tsx:1<br>fe/src/data/contract.ts:1<br>fe/src/data/source.ts:1 | fe/tests/unit/app.test.tsx:261<br>fe/tests/unit/app.test.tsx:275<br>fe/tests/unit/data.test.ts:63 |
 | DATA-06 | Lưu tiến độ | DATA-AC06, DATA-AC07, DATA-AC17 | - | fe/src/app/state.tsx:1<br>fe/src/data/progress.ts:1<br>fe/src/data/session.ts:1<br>fe/src/data/storage.ts:1<br>fe/src/data/transfer.ts:1 | fe/tests/unit/app.test.tsx:242<br>fe/tests/unit/data.test.ts:212<br>fe/tests/unit/s3.test.tsx:215<br>fe/tests/unit/s3.test.tsx:232 |
 | DATA-07 | Quy tắc câu cần ôn | DATA-AC08, DATA-AC09 | - | fe/src/data/review.ts:1<br>fe/src/data/session.ts:1<br>fe/src/data/stats.ts:1<br>fe/src/pages/T3-thu-vien/filter.ts:1 | fe/tests/unit/app.test.tsx:362<br>fe/tests/unit/data.test.ts:134<br>fe/tests/unit/t2-t4.test.tsx:247 |
@@ -88,10 +88,10 @@ Spec: [fe/src/components/C1-the-cau/spec.md](../../fe/src/components/C1-the-cau/
 | C1-02 | Trạng thái che câu gốc | C1-AC02 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1 | fe/tests/unit/components.test.tsx:24 |
 | C1-03 | Trạng thái hiện đầy đủ | C1-AC03 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1 | fe/tests/unit/components.test.tsx:39 |
 | C1-04 | Phát âm | C1-AC04, C1-AC05 | - | fe/src/app/speech.ts:1<br>fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/useSpeaker.ts:1 | fe/tests/unit/components.test.tsx:48 |
-| C1-05 | Không có giọng đọc | C1-AC06 | docs/new/navigation.md:149<br>docs/new/navigation.md:295 | fe/src/app/speech.ts:1<br>fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/useSpeaker.ts:1 | fe/tests/unit/components.test.tsx:70 |
-| C1-06 | Dòng Cách dùng | C1-AC07 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:83 |
-| C1-07 | Phiên âm | C1-AC07 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:83 |
-| C1-08 | Thuộc tính ngôn ngữ | C1-AC08 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:106 |
+| C1-05 | Không có giọng đọc | C1-AC06 | docs/new/navigation.md:149<br>docs/new/navigation.md:295 | fe/src/app/speech.ts:1<br>fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1<br>fe/src/components/C1-the-cau/useSpeaker.ts:1 | fe/tests/e2e/app.spec.ts:191<br>fe/tests/unit/components.test.tsx:70<br>fe/tests/unit/components.test.tsx:83 |
+| C1-06 | Dòng Cách dùng | C1-AC07 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:113 |
+| C1-07 | Phiên âm | C1-AC07 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:113 |
+| C1-08 | Thuộc tính ngôn ngữ | C1-AC08 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:136 |
 
 ## C2 Dải 8 ô
 
@@ -101,7 +101,7 @@ Spec: [fe/src/components/C2-dai-8-o/spec.md](../../fe/src/components/C2-dai-8-o/
 |---|---|---|---|---|---|
 | C2-01 | Kích thước và số ô | C2-AC01 | - | fe/src/components/C2-dai-8-o/Strip.tsx:1<br>fe/src/components/C2-dai-8-o/strip.css:1 | fe/tests/e2e/app.spec.ts:30 |
 | C2-02 | Trạng thái ô | C2-AC02 | - | fe/src/components/C2-dai-8-o/Strip.tsx:1<br>fe/src/components/C2-dai-8-o/strip.css:1 | - |
-| C2-03 | Trợ năng | C2-AC03 | - | fe/src/components/C2-dai-8-o/Strip.tsx:1 | fe/tests/unit/components.test.tsx:128 |
+| C2-03 | Trợ năng | C2-AC03 | - | fe/src/components/C2-dai-8-o/Strip.tsx:1 | fe/tests/unit/components.test.tsx:158 |
 
 ## C3 Nút
 
@@ -112,7 +112,7 @@ Spec: [fe/src/components/C3-nut/spec.md](../../fe/src/components/C3-nut/spec.md)
 | C3-01 | Nút chính | C3-AC01 | - | fe/src/components/C3-nut/Button.tsx:1<br>fe/src/components/C3-nut/button.css:1 | - |
 | C3-02 | Nút phụ | C3-AC01 | - | fe/src/components/C3-nut/Button.tsx:1<br>fe/src/components/C3-nut/button.css:1 | - |
 | C3-03 | Cặp nút đánh giá | C3-AC02, C3-AC03 | docs/new/navigation.md:344<br>docs/new/navigation.md:346 | fe/src/components/C3-nut/RatePair.tsx:1<br>fe/src/components/C3-nut/button.css:1 | - |
-| C3-04 | Trạng thái chung | C3-AC04 | - | fe/src/components/C3-nut/Button.tsx:1<br>fe/src/components/C3-nut/button.css:1 | fe/tests/e2e/app.spec.ts:44<br>fe/tests/unit/components.test.tsx:140 |
+| C3-04 | Trạng thái chung | C3-AC04 | - | fe/src/components/C3-nut/Button.tsx:1<br>fe/src/components/C3-nut/button.css:1 | fe/tests/e2e/app.spec.ts:44<br>fe/tests/unit/components.test.tsx:170 |
 
 ## C4 Lựa chọn trắc nghiệm
 
@@ -121,8 +121,8 @@ Spec: [fe/src/components/C4-lua-chon/spec.md](../../fe/src/components/C4-lua-cho
 | Yêu cầu | Tên | Acceptance | Sơ đồ | Code (@spec) | Test (@ac) |
 |---|---|---|---|---|---|
 | C4-01 | Bố cục | C4-AC01 | - | fe/src/components/C4-lua-chon/Choices.tsx:1<br>fe/src/components/C4-lua-chon/choices.css:1 | - |
-| C4-02 | Chọn đáp án | C4-AC02 | - | fe/src/components/C4-lua-chon/Choices.tsx:1<br>fe/src/components/C4-lua-chon/choices.css:1 | fe/tests/unit/components.test.tsx:162 |
-| C4-03 | Thông báo kết quả | C4-AC03 | - | fe/src/components/C4-lua-chon/Choices.tsx:1 | fe/tests/unit/components.test.tsx:177 |
+| C4-02 | Chọn đáp án | C4-AC02 | - | fe/src/components/C4-lua-chon/Choices.tsx:1<br>fe/src/components/C4-lua-chon/choices.css:1 | fe/tests/unit/components.test.tsx:192 |
+| C4-03 | Thông báo kết quả | C4-AC03 | - | fe/src/components/C4-lua-chon/Choices.tsx:1 | fe/tests/unit/components.test.tsx:207 |
 
 ## C5 Thanh tab
 
@@ -132,8 +132,8 @@ Spec: [fe/src/components/C5-thanh-tab/spec.md](../../fe/src/components/C5-thanh-
 |---|---|---|---|---|---|
 | C5-01 | Thanh dưới đáy | C5-AC01 | docs/new/navigation.md:110<br>docs/new/navigation.md:285<br>docs/new/navigation.md:287<br>docs/new/navigation.md:289 | fe/src/components/C5-thanh-tab/TabBar.tsx:1<br>fe/src/components/C5-thanh-tab/tabbar.css:1 | - |
 | C5-02 | Thanh dọc | C5-AC02 | - | fe/src/components/C5-thanh-tab/TabBar.tsx:1<br>fe/src/components/C5-thanh-tab/tabbar.css:1 | - |
-| C5-03 | Mục đang chọn | C5-AC03 | - | fe/src/components/C5-thanh-tab/TabBar.tsx:1<br>fe/src/components/C5-thanh-tab/tabbar.css:1 | fe/tests/unit/components.test.tsx:190 |
-| C5-04 | Mục có số | C5-AC04 | - | fe/src/components/C5-thanh-tab/TabBar.tsx:1<br>fe/src/components/C5-thanh-tab/tabbar.css:1 | fe/tests/unit/components.test.tsx:201 |
+| C5-03 | Mục đang chọn | C5-AC03 | - | fe/src/components/C5-thanh-tab/TabBar.tsx:1<br>fe/src/components/C5-thanh-tab/tabbar.css:1 | fe/tests/unit/components.test.tsx:220 |
+| C5-04 | Mục có số | C5-AC04 | - | fe/src/components/C5-thanh-tab/TabBar.tsx:1<br>fe/src/components/C5-thanh-tab/tabbar.css:1 | fe/tests/unit/components.test.tsx:231 |
 
 ## C6 Sheet
 
@@ -142,8 +142,8 @@ Spec: [fe/src/components/C6-sheet/spec.md](../../fe/src/components/C6-sheet/spec
 | Yêu cầu | Tên | Acceptance | Sơ đồ | Code (@spec) | Test (@ac) |
 |---|---|---|---|---|---|
 | C6-01 | Dạng hiển thị | C6-AC01 | docs/new/navigation.md:38 | fe/src/components/C6-sheet/SheetHost.tsx:1<br>fe/src/components/C6-sheet/sheet.css:1 | - |
-| C6-02 | Tiêu đề và đóng | C6-AC02, C6-AC03 | - | fe/src/components/C6-sheet/SheetHost.tsx:1 | fe/tests/unit/components.test.tsx:221 |
-| C6-03 | Focus | C6-AC04 | - | fe/src/components/C6-sheet/SheetHost.tsx:1 | fe/tests/unit/components.test.tsx:253 |
+| C6-02 | Tiêu đề và đóng | C6-AC02, C6-AC03 | - | fe/src/components/C6-sheet/SheetHost.tsx:1 | fe/tests/unit/components.test.tsx:251 |
+| C6-03 | Focus | C6-AC04 | - | fe/src/components/C6-sheet/SheetHost.tsx:1 | fe/tests/unit/components.test.tsx:283 |
 | C6-04 | Nội dung dài | C6-AC05 | - | fe/src/components/C6-sheet/SheetHost.tsx:1<br>fe/src/components/C6-sheet/sheet.css:1<br>fe/src/pages/T2-luyen-tap/t2.css:1 | - |
 
 ## C7 Thông báo ngắn
@@ -153,8 +153,8 @@ Spec: [fe/src/components/C7-thong-bao/spec.md](../../fe/src/components/C7-thong-
 | Yêu cầu | Tên | Acceptance | Sơ đồ | Code (@spec) | Test (@ac) |
 |---|---|---|---|---|---|
 | C7-01 | Vị trí và hiển thị | C7-AC01 | - | fe/src/components/C7-thong-bao/ToastHost.tsx:1<br>fe/src/components/C7-thong-bao/toast.css:1 | - |
-| C7-02 | Thời gian và hành động | C7-AC02 | - | fe/src/components/C7-thong-bao/ToastHost.tsx:1 | fe/tests/unit/components.test.tsx:299 |
-| C7-03 | Trợ năng | C7-AC03 | - | fe/src/components/C7-thong-bao/ToastHost.tsx:1 | fe/tests/unit/components.test.tsx:323 |
+| C7-02 | Thời gian và hành động | C7-AC02 | - | fe/src/components/C7-thong-bao/ToastHost.tsx:1 | fe/tests/unit/components.test.tsx:329 |
+| C7-03 | Trợ năng | C7-AC03 | - | fe/src/components/C7-thong-bao/ToastHost.tsx:1 | fe/tests/unit/components.test.tsx:353 |
 
 ## S1 Chọn ngôn ngữ
 

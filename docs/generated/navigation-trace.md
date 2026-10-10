@@ -1,6 +1,6 @@
 # Ánh xạ sơ đồ điều hướng sang spec
 
-File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 09:05 UTC từ các dòng `%% @spec` trong docs/new/navigation.md. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 10:32 UTC từ các dòng `%% @spec` trong docs/new/navigation.md. Không sửa tay.
 
 Tổng: 95 mũi tên; 94 gắn yêu cầu, 1 ngoài phạm vi.
 
