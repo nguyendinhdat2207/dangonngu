@@ -15,7 +15,7 @@ Người học người Việt mở app trên điện thoại, học một nhóm
 
 - Người học: người Việt học ngoại ngữ, từ mất gốc đến nâng cao, học lẻ tẻ trong ngày. Giao diện bằng tiếng Việt, nội dung học là một trong 15 ngôn ngữ của bộ English Fluency, riêng tiếng Anh có thêm bộ Global English (A1 đến C2).
 - Thiết bị: dùng được cả trên web và trên điện thoại (responsive). Giai đoạn đầu ưu tiên web trên máy tính.
-- Môi trường chạy: app nạp trong iframe của trang học chính bằng một URL tĩnh, không có backend (xem `fe/src/app/spec.md` và `fe/src/data/spec.md`).
+- Môi trường chạy: trang học chính mở app bằng một trang mới (tab mới hoặc chuyển thẳng trang) từ một URL tĩnh, không nhúng iframe, không có backend (xem `fe/src/app/spec.md` và `fe/src/data/spec.md`). App có nút về trang học chính (APP-12).
 
 ## 2. Mục tiêu
 
@@ -77,8 +77,7 @@ Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; l�
 
 1. Có giữ Chia sẻ trong các bản sau không; nếu có, backend do bên nào cung cấp.
 2. Ai duyệt thiết kế, ở những mốc nào.
-3. Trang chính mở mini app bằng iframe hay tab mới, và có truyền gì cho mini app không (tham số URL, token, postMessage). Đang chờ kiểm trên trang thật, xem `docs/legacy/README.md`. App mới không phụ thuộc vào câu trả lời (APP-09).
-4. Global English: có cho chọn trình độ bắt đầu (A1 đến C2) không, xem câu hỏi mở của DATA.
+3. Global English: có cho chọn trình độ bắt đầu (A1 đến C2) không, xem câu hỏi mở của DATA.
 
 ### Đã trả lời (08/10/2026)
 
@@ -89,9 +88,16 @@ Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; l�
 | Bản đầu chỉ tiếng Anh hay cả ngôn ngữ khác | Có đủ các ngôn ngữ trong dữ liệu | Bối cảnh, DATA-01, FND-04 |
 | Được dùng mẫu dữ liệu nào | Dùng được bộ dữ liệu khách gửi | DATA-05, DATA-09, `fe/public/data/`, `fe/fixtures/` |
 
+### Đã trả lời (10/10/2026)
+
+| Câu hỏi | Trả lời | Đã áp dụng vào |
+|---|---|---|
+| Trang chính mở mini app bằng iframe hay tab mới, có truyền gì cho mini app không | Mở trang mới (tab mới, chuyển thẳng trang), không nhúng iframe. Giữ nút quay lại để về trang học chính. Chưa rõ trang chính có gắn tham số URL không; app bỏ qua mọi tham số nên việc này không chặn gì | APP-09, APP-12, `docs/new/navigation.md`, `docs/legacy/README.md` |
+
 ## 6. Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): thêm câu hỏi mở 7 về cách trang chính mở mini app.
 - 0.3 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.4 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
+- 0.5 (10/10/2026): nhóm trả lời câu hỏi về cách trang chính mở mini app: mở trang mới, không nhúng iframe, có nút về trang học chính (APP-09, APP-12). Câu hỏi 4 cũ thành câu 3.

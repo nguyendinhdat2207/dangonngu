@@ -34,3 +34,6 @@ Khổ kiểm mặc định và quy tắc đánh dấu: `docs/QUY-TRINH.md` mục
   - Bằng chứng: test fe/tests/unit/s8.test.tsx và fe/tests/unit/t3.test.tsx pass (npm test), Claude, 2026-10-10, chưa commit (đợt 2)
 - [x] APP-AC17 [auto] APP-02, APP-06: Đang học Global English: thanh trên cùng có "Tiếng Anh" và dòng nhỏ "Global English"; đang học Tiếng Nhật thì không có dòng tên bộ. Sheet Đổi ngôn ngữ có hai dòng cho Tiếng Anh; chọn dòng English Fluency thì về `#/hoc` với dữ liệu Fluency.
   - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
+- [ ] APP-AC18 [auto] APP-12: Ở T1, T2, T3, T4 và S1 bước 1 có một liên kết nhãn trợ năng "Quay lại trang học" với `href` bằng `VITE_HOST_URL` (mặc định `https://language.pomaskhoahocnaobo.com/`); ở S1 bước 2, S3, S5 và S8 không có liên kết này. Bấm liên kết khi đang có phiên dở không mở sheet xác nhận nào.
+- [ ] APP-AC19 [claude] APP-02, APP-12: Ảnh chụp thanh trên cùng của T1 ở 320, 375 và 1280 px, sáng và tối: nút về trang học nằm ngoài cùng bên trái, vùng chạm từ 44 x 44 px; từ 600 px có chữ "Trang học"; tên ngôn ngữ, tên bộ và nút Cài đặt không bị che hay cắt.
+- [ ] APP-AC20 [human] APP-09, APP-12: Trên trang học chính thật, đăng nhập, mở Đa ngôn ngữ: app mở ở trang mới. Bấm "Quay lại trang học": về đúng trang học chính và vẫn đăng nhập.

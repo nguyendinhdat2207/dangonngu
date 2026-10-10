@@ -10,7 +10,7 @@ Phiên bản dùng: Vite 6.4, React 18.3, TypeScript 5.6, Vitest 4.1 (jsdom), Te
 
 Đề xuất: Vite, React 18, TypeScript. Test đơn vị bằng Vitest, test giao diện bằng Playwright (Chromium và WebKit để có hành vi gần Safari iOS).
 
-Lý do: app tĩnh, chạy trong iframe, không cần render phía server; Vite cho bản build tĩnh gọn để khách tự host. TypeScript giúp giữ đúng hợp đồng dữ liệu khi khách đổi nguồn dữ liệu. Playwright chụp được ảnh ở nhiều khổ màn hình để làm bằng chứng cho mục acceptance `[claude]`.
+Lý do: app tĩnh, mở bằng một URL (trang mới, vẫn chạy được trong iframe), không cần render phía server; Vite cho bản build tĩnh gọn để khách tự host. TypeScript giúp giữ đúng hợp đồng dữ liệu khi khách đổi nguồn dữ liệu. Playwright chụp được ảnh ở nhiều khổ màn hình để làm bằng chứng cho mục acceptance `[claude]`.
 
 Phương án khác: Vue 3 hoặc Svelte đều phù hợp. Chọn theo kỹ năng của người sẽ bảo trì sau bàn giao.
 
@@ -18,7 +18,7 @@ Phương án khác: Vue 3 hoặc Svelte đều phù hợp. Chọn theo kỹ năn
 
 Trạng thái: Đã chốt (08/10/2026)
 
-Dùng route dạng `#/hoc`, `#/thu-vien`. App được host tĩnh và nạp trong iframe bằng một URL; route bằng hash không cần cấu hình server và không làm hỏng URL mà trang chính nạp vào. Bảng route nằm ở `fe/src/app/spec.md` (APP-04).
+Dùng route dạng `#/hoc`, `#/thu-vien`. App được host tĩnh và trang học chính mở nó bằng một URL ở trang mới (APP-09, chốt 10/10/2026; app vẫn chạy được trong iframe); route bằng hash không cần cấu hình server và không làm hỏng URL mà trang chính nạp vào. Bảng route nằm ở `fe/src/app/spec.md` (APP-04).
 
 ## QD-03 Không phụ thuộc backend
 
@@ -36,4 +36,4 @@ Phosphor Icons, nét Regular. Bản cũ cũng đã tải Phosphor, nên khách q
 
 Trạng thái: Đã chốt (08/10/2026)
 
-Lexend cho giao diện và câu gốc, Literata cho nghĩa tiếng Việt, Noto Sans theo từng hệ chữ khác (FND-04). Tự host font trong bản build để app chạy được ngoại tuyến và không phụ thuộc Google Fonts khi nằm trong iframe. Dùng các gói `@fontsource/*`; Lexend và Literata nạp sẵn (phần chữ Latinh và tiếng Việt), Noto nạp khi chọn ngôn ngữ cần (`fe/src/foundation/fonts.ts`).
+Lexend cho giao diện và câu gốc, Literata cho nghĩa tiếng Việt, Noto Sans theo từng hệ chữ khác (FND-04). Tự host font trong bản build để app chạy được ngoại tuyến và không phụ thuộc Google Fonts. Dùng các gói `@fontsource/*`; Lexend và Literata nạp sẵn (phần chữ Latinh và tiếng Việt), Noto nạp khi chọn ngôn ngữ cần (`fe/src/foundation/fonts.ts`).

@@ -13,7 +13,7 @@ Repo làm lại giao diện mini app VITASR Đa ngôn ngữ. Spec là nguồn ch
 
 ## Ràng buộc kỹ thuật cần nhớ
 
-- App được trang học chính mở bằng một URL (cách mở cụ thể đang chờ xác nhận, xem `docs/legacy/README.md`). App phải chạy đúng cả khi nằm trong iframe lẫn khi mở trực tiếp, không cần token hay postMessage từ trang chính, không dùng `window.top` (APP-09).
+- Trang học chính mở app bằng một trang mới (tab mới hoặc chuyển thẳng trang), không nhúng iframe (chốt 10/10/2026). App vẫn phải chạy đúng cả khi mở trực tiếp lẫn khi nằm trong iframe, không cần token hay postMessage từ trang chính, không dùng `window.top` (APP-09). Có nút về trang học chính, địa chỉ lấy từ `VITE_HOST_URL` (APP-12).
 - Không có backend. Dữ liệu là file JSON tĩnh (xem `fe/src/data/spec.md`). Tiến độ lưu localStorage. Giọng đọc dùng `speechSynthesis`.
 - Tiếng Anh có hai bộ nội dung với cấu trúc khác nhau: English Fluency (chỉ `id`, `hierarchy`, `en`, `vi`) và Global English (thêm `noteVi`, `topic`, `situation`, `unitId`). Các trường tùy chọn có thể vắng mặt tùy bộ; không giả định có hay không có (`docs/legacy/api-and-storage.md`).
 - Không gọi `/api/sharing/*` hay bất kỳ endpoint nào của bản cũ.
