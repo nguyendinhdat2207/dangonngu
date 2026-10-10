@@ -13,15 +13,15 @@ File này là điểm vào của spec bản mới. Nó chứa mục tiêu sản 
 
 Người học người Việt mở app trên điện thoại, học một nhóm 8 câu tiếng Anh trong 5 đến 10 phút, nghe được câu, tự kiểm tra mình nhớ hay chưa, và thấy được tiến bộ qua các ngày.
 
-- Người học: trình độ tiếng Anh từ mất gốc đến trung cấp, học lẻ tẻ trong ngày. Giao diện bằng tiếng Việt, nội dung học là ngôn ngữ đích (ưu tiên tiếng Anh).
-- Thiết bị: chủ yếu điện thoại 360 đến 430 px; một phần dùng máy tính trong lớp học.
+- Người học: người Việt học ngoại ngữ, từ mất gốc đến nâng cao, học lẻ tẻ trong ngày. Giao diện bằng tiếng Việt, nội dung học là một trong 15 ngôn ngữ của bộ English Fluency, riêng tiếng Anh có thêm bộ Global English (A1 đến C2).
+- Thiết bị: dùng được cả trên web và trên điện thoại (responsive). Giai đoạn đầu ưu tiên web trên máy tính.
 - Môi trường chạy: app nạp trong iframe của trang học chính bằng một URL tĩnh, không có backend (xem `fe/src/app/spec.md` và `fe/src/data/spec.md`).
 
 ## 2. Mục tiêu
 
-### G-01 Bắt đầu học không cần hướng dẫn
+### G-01 Giao diện dễ hiểu dễ nhìn để sử dụng
 
-Người học mới bắt đầu được một phiên học 8 câu trong không quá 2 lần chạm sau khi chọn ngôn ngữ, mà không cần đọc hướng dẫn.
+Người mới dùng có thể dễ dàng nhìn hiểu cách sử dụng.
 
 ### G-02 Hiểu được tiến bộ của mình
 
@@ -41,7 +41,7 @@ Người xem đánh giá giao diện là được thiết kế có chủ đích 
 
 ## 3. Phạm vi
 
-Giữ trong bản đầu: chọn ngôn ngữ, thẻ câu và nghe, phiên học 8 câu, ôn câu cần ôn, kiểm tra nhanh 3 bước, học theo từ khóa, thư viện câu, tiến bộ, cài đặt (giọng đọc, giao diện, mục tiêu, dữ liệu), hướng dẫn lần đầu.
+Giữ trong bản đầu: chọn ngôn ngữ và bộ nội dung (tiếng Anh có hai bộ: Global English và English Fluency), thẻ câu và nghe, phiên học 8 câu, ôn câu cần ôn, kiểm tra nhanh 3 bước, học theo từ khóa, thư viện câu, tiến bộ, cài đặt (giọng đọc, giao diện, mục tiêu, dữ liệu), hướng dẫn lần đầu.
 
 Bỏ khỏi bản đầu: Chia sẻ thư viện và lời mời (cần backend `/api/sharing/*`), Góp ý, Khảo sát và Trò chuyện, Thông tin bản chạy thử.
 
@@ -75,13 +75,23 @@ Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; l�
 
 ## 5. Câu hỏi mở
 
-1. Kích thước thật của khung iframe trên trang chính ở desktop, và vị trí nút đóng của trang chính.
-2. Có cần đọc lại tiến độ học cũ (khóa localStorage của bản cũ) không. Nếu app mới chạy ở domain khác thì không đọc được dù code có hỗ trợ.
-3. Bản đầu chỉ tiếng Anh hay cả các ngôn ngữ khác.
-4. Có giữ Chia sẻ trong các bản sau không; nếu có, backend do bên nào cung cấp.
-5. Được phép dùng mẫu dữ liệu nào cho phát triển và demo.
-6. Ai duyệt thiết kế, ở những mốc nào.
+1. Có giữ Chia sẻ trong các bản sau không; nếu có, backend do bên nào cung cấp.
+2. Ai duyệt thiết kế, ở những mốc nào.
+3. Trang chính mở mini app bằng iframe hay tab mới, và có truyền gì cho mini app không (tham số URL, token, postMessage). Đang chờ kiểm trên trang thật, xem `docs/legacy/README.md`. App mới không phụ thuộc vào câu trả lời (APP-09).
+4. Global English: có cho chọn trình độ bắt đầu (A1 đến C2) không, xem câu hỏi mở của DATA.
+
+### Đã trả lời (08/10/2026)
+
+| Câu hỏi | Trả lời | Đã áp dụng vào |
+|---|---|---|
+| Kích thước khung iframe ở desktop, vị trí nút đóng của trang chính | Thiết kế phù hợp cả app và web, responsive; trước mắt làm theo web | APP-02, APP-07, `docs/QUY-TRINH.md` mục 7 |
+| Có đọc lại tiến độ học cũ không | Không cần | DATA-06 |
+| Bản đầu chỉ tiếng Anh hay cả ngôn ngữ khác | Có đủ các ngôn ngữ trong dữ liệu | Bối cảnh, DATA-01, FND-04 |
+| Được dùng mẫu dữ liệu nào | Dùng được bộ dữ liệu khách gửi | DATA-05, DATA-09, `fe/public/data/`, `fe/fixtures/` |
 
 ## 6. Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (08/10/2026): thêm câu hỏi mở 7 về cách trang chính mở mini app.
+- 0.3 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
+- 0.4 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).

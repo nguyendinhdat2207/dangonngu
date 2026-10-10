@@ -41,11 +41,34 @@ Màn chính. Cho người học thấy câu tiếp theo trong lộ trình và b�
 └───────────────────────────┘
 ```
 
+Khổ máy tính (1280 px, ưu tiên giai đoạn đầu):
+
+```
+┌──────────────┬──────────────────────────────────────────────────────────────┐
+│ VITASR       │ Tiếng Anh ▾                                             ⚙    │
+│              │ Global English                                               │
+│ ▌Học         │                                                              │
+│  Luyện tập   │ ┌──────────────────────────────────┐   Tuần này: 3/5 phiên   │
+│  Thư viện    │ │ ■■■□□□□□          Câu 4/8         │   ▓▓▓▓▓▓░░░░            │
+│  Tiến bộ     │ │ Unit 1 · A1                       │                         │
+│              │ │ Find your classroom               │   12 câu cần ôn       › │
+│              │ │ Tìm đúng phòng học                │                         │
+│              │ │ Bạn mới đến trường và hỏi...      │                         │
+│              │ │                                   │                         │
+│              │ │ Phòng số mười hai ở đâu?          │                         │
+│              │ │ Where is room twelve?             │                         │
+│              │ │ Cách dùng: Where is + địa điểm... │                         │
+│              │ │ (◉ Nghe)              (↻ Nghe lặp) │                         │
+│              │ └──────────────────────────────────┘                          │
+│              │ [ Tiếp tục: 5 câu còn lại          ]                          │
+└──────────────┴──────────────────────────────────────────────────────────────┘
+```
+
 ## Yêu cầu
 
 ### T1-01 Thẻ câu tiếp theo
 
-Hiện thẻ câu (C1) của câu tiếp theo trong lộ trình (DATA-11), ở trạng thái hiện đầy đủ (C1-03). Phía trên nghĩa trong thẻ là tên unit: "Unit n" (`--t-sm`, `--muted`), rồi `title` và `translation` của unit (`--t-body`). Dải 8 ô (C2) thể hiện trạng thái các câu của unit đó, ô của câu đang hiện ở trạng thái Đang học.
+Hiện thẻ câu (C1) của câu tiếp theo trong lộ trình (DATA-11), ở trạng thái hiện đầy đủ (C1-03). Phía trên nghĩa trong thẻ là tên unit: "Unit n" (`--t-sm`, `--muted`; n là `number` hoặc vị trí, DATA-03), kèm mã trình độ lấy từ phần đầu `unitId` khi có (ví dụ "A1"), rồi `title` và `translation` của unit (`--t-body`). Khi câu có `situation` (DATA-04), hiện thêm tình huống dưới tên unit (Literata `--t-sm`, `--muted`). Dải 8 ô (C2) thể hiện trạng thái các câu của unit đó, ô của câu đang hiện ở trạng thái Đang học.
 
 ### T1-02 Nút chính đổi chữ theo ngữ cảnh
 
@@ -73,6 +96,11 @@ Từ 900 px: hai cột. Cột trái (tối đa 560 px) là thẻ và nút chính
 
 T1 chỉ hiện một câu; không có vuốt hay nút để xem câu trước/sau. Xem câu khác thì dùng T3.
 
+## Câu hỏi mở
+
+- T1-03 đếm "phiên hoàn tất". Code đợt 1 đếm mọi phiên đã xong (lộ trình, ôn tập, từ khóa, học một câu, kiểm tra nhanh), không đếm phiên bị dừng giữa chừng. Nhóm xác nhận giúp.
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).

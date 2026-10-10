@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "kind": "ve360-language-index",
+  "languageCount": 4,
+  "baseItemsPerLanguage": 4096,
+  "languages": [
+    {
+      "languageId": "en",
+      "name": "Tiếng Anh",
+      "shortName": "Anh",
+      "nativeName": "English",
+      "locale": "en-US",
+      "itemCount": 4096,
+      "coreCount": 512,
+      "bridgeCount": 512,
+      "contentSha256": "b0363b471ce5ed6e33096abc9d83998a618f3889132024a930c93798d6da7193",
+      "sourceSha256": "959464f8a23d41771594c825cc8b29391a0f8224bee63f26fe754a57fca12701",
+      "url": "/language-packs/en.json"
+    },
+    {
+      "languageId": "ja",
+      "name": "Tiếng Nhật",
+      "shortName": "Nhật",
+      "nativeName": "日本語",
+      "locale": "ja-JP",
+      "itemCount": 4096,
+      "coreCount": 512,
+      "bridgeCount": 512,
+      "contentSha256": "215eeaf983cf3ac28527e516ac7704b2dd7660dc920d3eb310cbe4d81e578dc4",
+      "sourceSha256": "b2d84c181495fe712cdfe642bf64a3b8bcfe67c28c7bdd7b16c2304f6a9cff0b",
+      "baseContentSha256": "3c38ad65910461042549926b009e559c17fddb25cd6422f0e090b0a3397bcc03",
+      "readingSystem": "hiragana",
+      "readingCoverage": 4096,
+      "readingSha256": "4b45b99c875282979fa749d468c1a4ed836ebd729961d026f42a24db5f9f8425",
+      "furiganaSystem": "ruby-hiragana",
+      "furiganaCoverage": 4096,
+      "furiganaAnnotatedCount": 3816,
+      "furiganaSha256": "39e1145726a3a612c037df06d2d9f4317ceb1612d889fc4d4ca85c97b4544aa1",
+      "url": "/language-packs/ja.json"
+    },
+    {
+      "languageId": "ru",
+      "name": "Tiếng Nga",
+      "shortName": "Nga",
+      "nativeName": "Русский",
+      "locale": "ru-RU",
+      "itemCount": 4096,
+      "coreCount": 512,
+      "bridgeCount": 512,
+      "contentSha256": "7c584e3912bd7d17ce475d79949e39a230d2ced8ecf304f2c9d6c7c0d53b8b87",
+      "sourceSha256": "cb9c7ec8208894a6f1b76ecadc93974dad8a5335c0fff3b761ba1ee5429ed216",
+      "url": "/language-packs/ru.json"
+    },
+    {
+      "languageId": "th",
+      "name": "Tiếng Thái",
+      "shortName": "Thái",
+      "nativeName": "ไทย",
+      "locale": "th-TH",
+      "itemCount": 4096,
+      "coreCount": 512,
+      "bridgeCount": 512,
+      "contentSha256": "5310dfd3bc0c9a0f95a8d011d2251f8a0f6e2a35c91a85bad1b26d71d8546f77",
+      "sourceSha256": "5529134ce91861a8f604ea3245bcf354f3bc1ba981a0d98324b6202175bcb743",
+      "url": "/language-packs/th.json"
+    }
+  ],
+  "learningDirections": [
+    {
+      "directionId": "vi-en",
+      "name": "Bản Việt–Anh",
+      "promptLanguage": "vi",
+      "answerLanguage": "en",
+      "itemCount": 4096,
+      "defaultForLanguageId": "en",
+      "contentMatch": "EXACT_4096_OF_4096_AFTER_PRESENTATION_LABEL_NORMALIZATION",
+      "url": "/learning-directions/vi-en.json"
+    },
+    {
+      "directionId": "en-vi",
+      "name": "English → Vietnamese",
+      "promptLanguage": "en",
+      "answerLanguage": "vi",
+      "itemCount": 4096,
+      "virtualLanguageId": "vi",
+      "contentMatch": "REVERSE_DIRECTION_OF_VERIFIED_4096_PAIRS",
+      "url": "/learning-directions/en-vi.json"
+    }
+  ]
+}

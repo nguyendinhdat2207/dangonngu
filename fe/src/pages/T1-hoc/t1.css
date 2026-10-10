@@ -1,0 +1,30 @@
+/* @spec T1-01, T1-03, T1-04, T1-06 */
+/* Dưới 900 px: mục tiêu tuần, thẻ và nút chính, dòng câu cần ôn. */
+.t1 { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'goal' 'main' 'review'; gap: var(--s-4); }
+.t1__goal-area { grid-area: goal; }
+.t1__main { grid-area: main; display: flex; flex-direction: column; gap: var(--s-4); min-width: 0; }
+.t1__review-area { grid-area: review; }
+.t1__unit { display: flex; flex-direction: column; gap: var(--s-1); padding-bottom: var(--s-3); border-bottom: 1px solid var(--line); }
+.t1__situation { margin-top: var(--s-1); }
+.t1__goal { color: var(--ink); }
+.t1__review {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-2);
+  min-height: 48px; padding: 0 var(--s-1);
+  color: var(--ink); text-decoration: none;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+@media (hover: hover) { .t1__review:hover span { text-decoration: underline; } }
+
+/* Từ 900 px: hai cột, cột trái tối đa 560 px là thẻ và nút chính; cột phải là mục tiêu tuần và câu cần ôn (T1-06). */
+@media (min-width: 900px) {
+  .t1 {
+    grid-template-columns: minmax(0, 560px) minmax(220px, 320px);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'main goal' 'main review';
+    column-gap: var(--s-12); row-gap: var(--s-4);
+    align-items: start;
+  }
+  .t1__goal-area { padding-top: var(--s-2); }
+  .t1__start .btn { min-width: 240px; }
+}
+@media (min-width: 600px) { .t1__start { align-self: flex-start; } }

@@ -31,6 +31,24 @@ Toàn bộ câu của ngôn ngữ đang học, để tìm, lọc và xem chi ti�
 └───────────────────────────┘
 ```
 
+Khổ máy tính (1280 px):
+
+```
+┌──────────────┬──────────────────────────────┬───────────────────────────────┐
+│ VITASR       │ [ Tìm câu hoặc nghĩa       ] │ Câu 0001                      │
+│              │ Unit ▾ Trạng thái ▾          │ Unit 1 · A1: Find your        │
+│  Học         │ Chủ đề ▾ Trình độ ▾          │ classroom                     │
+│  Luyện tập   │ 4.608 câu                    │ ┌───────────────────────────┐ │
+│ ▌Thư viện    │ 0001 Where is room twelve? ○ │ │ Phòng số mười hai ở đâu?  │ │
+│  Tiến bộ     │      Phòng số mười hai ở đâu?│ │ Where is room twelve?     │ │
+│              │ 0002 It is on the first..  ✓ │ │ Cách dùng: ...            │ │
+│              │      Phòng đó ở tầng ...     │ │ (◉ Nghe)                  │ │
+│              │ ...                          │ └───────────────────────────┘ │
+│              │ ‹ Trước   1/144   Sau ›      │ Chưa học                      │
+│              │                              │ [ Học câu này ]               │
+└──────────────┴──────────────────────────────┴───────────────────────────────┘
+```
+
 ## Yêu cầu
 
 ### T3-01 Danh sách câu
@@ -43,7 +61,7 @@ Mỗi trang 32 câu. Mỗi dòng: số `id` 4 chữ số (`--t-sm`, `--muted`, c
 
 ### T3-03 Bộ lọc
 
-Hai bộ lọc dạng nút mở danh sách chọn: "Unit" (Tất cả, rồi từng unit "Unit n: title") và "Trạng thái" (Tất cả, Chưa học, Đã nhớ, Cần ôn). Bộ lọc đang dùng hiện tên giá trị thay cho nhãn mặc định. Unit giữ trong route (`?unit=`). Tìm kiếm và bộ lọc kết hợp với nhau.
+Các bộ lọc dạng nút mở danh sách chọn: "Unit" (Tất cả, rồi từng unit "Unit n: title"), "Trạng thái" (Tất cả, Chưa học, Đã nhớ, Cần ôn), "Chủ đề" (Tất cả, rồi các `topic` theo thứ tự chữ cái, kèm số câu, có ô tìm trong danh sách vì có tới 177 chủ đề) chỉ hiện khi bộ nội dung có `topic`, và "Trình độ" (Tất cả, A1, A2, B1, B2, C1, C2) chỉ hiện khi có `unitId` (DATA-04). Bộ lọc đang dùng hiện tên giá trị thay cho nhãn mặc định. Unit giữ trong route (`?unit=`). Tìm kiếm và bộ lọc kết hợp với nhau.
 
 ### T3-04 Phân trang
 
@@ -64,3 +82,5 @@ Từ 900 px: hai cột. Danh sách bên trái (tối đa 480 px); chi tiết câ
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
+- 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).

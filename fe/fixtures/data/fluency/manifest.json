@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "version": "1.8.0",
+  "count": 4096,
+  "languages": [
+    {
+      "id": "en",
+      "name": "Tiếng Anh",
+      "locale": "en-US",
+      "file": "en.json",
+      "units": "units-en.json",
+      "sha256": "2dd132c770fc683651ec55d9d9e81f85ad42c6cf12671bea046f1537ce5c149f"
+    },
+    {
+      "id": "ja",
+      "name": "Tiếng Nhật",
+      "locale": "ja-JP",
+      "file": "ja.json",
+      "units": "units-ja.json",
+      "sha256": "67fcf8c4aaeae4ed6c5157def3e320a02ab7f33bead3ae78e92e1161b70bc0d6"
+    },
+    {
+      "id": "ru",
+      "name": "Tiếng Nga",
+      "locale": "ru-RU",
+      "file": "ru.json",
+      "units": "units-ru.json",
+      "sha256": "0321d3741eaad253153fd520382012a4a1862ca2be968b6394c014cf43362cf3"
+    },
+    {
+      "id": "th",
+      "name": "Tiếng Thái",
+      "locale": "th-TH",
+      "file": "th.json",
+      "units": "units-th.json",
+      "sha256": "db09fd803535a641458e9b081881ff6d83422a76bd4dc6b230373203a4fb7e6a"
+    }
+  ]
+}

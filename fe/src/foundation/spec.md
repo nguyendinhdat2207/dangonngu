@@ -45,7 +45,7 @@ Mặc định theo cài đặt hệ thống (`prefers-color-scheme`). Người d
 |---|---|
 | Giao diện và câu ngôn ngữ đích (chữ Latinh) | Lexend, dự phòng `system-ui, sans-serif` |
 | Nghĩa tiếng Việt | Literata, dự phòng `Georgia, serif` |
-| Câu ngôn ngữ đích không phải chữ Latinh | Noto Sans JP, SC, KR, Thai, Lao, Devanagari hoặc Tamil tương ứng |
+| Câu ngôn ngữ đích mà Lexend không hỗ trợ | `ja` Noto Sans JP, `zh` Noto Sans SC, `ko` Noto Sans KR, `th` Noto Sans Thai, `lo` Noto Sans Lao, `hi` Noto Sans Devanagari, `ta` Noto Sans Tamil, `ru` Noto Sans (bảng chữ Kirin; Lexend chỉ có Latinh và tiếng Việt) |
 
 Font được tự host trong bản build (QD-05). Font Noto chỉ tải khi ngôn ngữ đang học cần đến. Dấu tiếng Việt hiển thị đúng, không chồng dấu, ở mọi cỡ trong FND-05.
 
@@ -111,3 +111,4 @@ Mọi thao tác làm được bằng bàn phím; viền focus 2 px `--brand`, c�
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "kind": "ve360-unit-catalog",
+  "languageId": "th",
+  "sourceContentSha256": "5310dfd3bc0c9a0f95a8d011d2251f8a0f6e2a35c91a85bad1b26d71d8546f77",
+  "itemCount": 8,
+  "unitCount": 1,
+  "units": [
+    {
+      "number": 1,
+      "title": "ฉันอยาก...",
+      "translation": "Tôi muốn...",
+      "ids": [
+        "0001",
+        "0257",
+        "0769",
+        "0770",
+        "0258",
+        "0771",
+        "0772",
+        "1793"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "languageId": "en",
+  "locale": "en-GB",
+  "itemCount": 24,
+  "contentSha256": "aeef30e17b4896467f480e7de09a69478e7bbd9140388c11df49e212b5e1e0c3",
+  "items": [
+    {
+      "id": 1,
+      "en": "Where is room twelve?",
+      "vi": "Phòng số mười hai ở đâu?",
+      "noteVi": "Where is + địa điểm số ít để hỏi vị trí.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Core",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 2,
+      "en": "It is on the first floor.",
+      "vi": "Phòng đó ở tầng ngay trên tầng trệt.",
+      "noteVi": "Trong ngữ cảnh này, first floor theo cách gọi Anh-Anh là tầng ngay trên tầng trệt.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Expansion 1",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 3,
+      "en": "Is this the English class?",
+      "vi": "Đây có phải lớp tiếng Anh không?",
+      "noteVi": "Is this ...? dùng để xác nhận.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Expansion 2",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 4,
+      "en": "My name is Linh.",
+      "vi": "Mình tên là Linh.",
+      "noteVi": "My name is dùng khi giới thiệu tên.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Leaf 1",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 5,
+      "en": "I am a new student.",
+      "vi": "Mình là học sinh mới.",
+      "noteVi": "Dùng a trước student ở số ít.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Leaf 2",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 6,
+      "en": "What time does the class start?",
+      "vi": "Lớp học bắt đầu lúc mấy giờ?",
+      "noteVi": "Sau does, dùng động từ nguyên mẫu start.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Leaf 3",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 7,
+      "en": "It starts at nine.",
+      "vi": "Lớp bắt đầu lúc chín giờ.",
+      "noteVi": "Dùng at với giờ cụ thể.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Leaf 4",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 8,
+      "en": "Thank you. See you in class.",
+      "vi": "Cảm ơn bạn. Hẹn gặp trong lớp nhé.",
+      "noteVi": "Cách kết thúc cuộc trao đổi thân thiện.",
+      "topic": "Trường học",
+      "situation": "Bạn mới đến trường và hỏi một bạn học về phòng học tiếng Anh.",
+      "hierarchy": "Bridge",
+      "unitId": "A1-01"
+    },
+    {
+      "id": 9,
+      "en": "I get up at six thirty.",
+      "vi": "Mình thức dậy lúc sáu giờ rưỡi.",
+      "noteVi": "Dùng hiện tại đơn cho thói quen.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Core",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 10,
+      "en": "What do you have for breakfast?",
+      "vi": "Bạn ăn gì vào bữa sáng?",
+      "noteVi": "Have breakfast nghĩa là ăn sáng.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Expansion 1",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 11,
+      "en": "I have bread and an egg.",
+      "vi": "Mình ăn bánh mì và một quả trứng.",
+      "noteVi": "Dùng an trước âm nguyên âm trong egg.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Expansion 2",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 12,
+      "en": "I drink a glass of water.",
+      "vi": "Mình uống một cốc nước.",
+      "noteVi": "A glass of + đồ uống chỉ một cốc.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Leaf 1",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 13,
+      "en": "I walk to school.",
+      "vi": "Mình đi bộ đến trường.",
+      "noteVi": "Walk to diễn tả đi bộ tới nơi nào đó.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Leaf 2",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 14,
+      "en": "My school is near my home.",
+      "vi": "Trường mình ở gần nhà.",
+      "noteVi": "Near không cần thêm to trong câu này.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Leaf 3",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 15,
+      "en": "I leave home at seven.",
+      "vi": "Mình rời nhà lúc bảy giờ.",
+      "noteVi": "Leave home không dùng the trước home.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Leaf 4",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 16,
+      "en": "What about you?",
+      "vi": "Còn bạn thì sao?",
+      "noteVi": "Câu ngắn để mời người kia chia sẻ.",
+      "topic": "Đời sống",
+      "situation": "Hai người bạn trò chuyện về buổi sáng trước giờ học.",
+      "hierarchy": "Bridge",
+      "unitId": "A1-02"
+    },
+    {
+      "id": 3009,
+      "en": "I caught the destination, but missed the condition for joining the walk.",
+      "vi": "Mình nghe được điểm đến nhưng bỏ lỡ điều kiện tham gia chuyến đi bộ.",
+      "noteVi": "Mẫu câu trong tình huống: dùng để làm rõ tiêu chí, lý do hoặc điều kiện trước khi quyết định.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Core",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3010,
+      "en": "Of course. You need to register by Tuesday evening if you want the guide’s printed booklet; the walk itself does not require registration.",
+      "vi": "Được chứ. Bạn cần đăng ký chậm nhất vào tối thứ Ba nếu muốn nhận tập hướng dẫn bản in của người dẫn đoàn; còn tham gia chuyến đi bộ thì không cần đăng ký.",
+      "noteVi": "Mẫu câu trong tình huống: dùng để làm rõ tiêu chí, lý do hoặc điều kiện trước khi quyết định.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Expansion 1",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3011,
+      "en": "So registration is for the booklet, not for a place on the walk.",
+      "vi": "Vậy đăng ký là để nhận sổ, không phải giữ chỗ đi bộ.",
+      "noteVi": "Mẫu câu trong tình huống: dùng để làm rõ tiêu chí, lý do hoặc điều kiện trước khi quyết định.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Expansion 2",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3012,
+      "en": "That is right. Anyone can join the advertised walk, but we print booklets only for the names received before that deadline.",
+      "vi": "Đúng vậy. Ai cũng có thể tham gia chuyến đi bộ đã được thông báo, nhưng chúng tôi chỉ in tập hướng dẫn cho những người có tên đăng ký được gửi đến trước hạn đó.",
+      "noteVi": "Mẫu câu trong tình huống: dùng để làm rõ tiêu chí, lý do hoặc điều kiện trước khi quyết định.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Leaf 1",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3013,
+      "en": "Let me check whether I have understood your position correctly.",
+      "vi": "Để mình kiểm tra xem đã hiểu đúng quan điểm của bạn chưa.",
+      "noteVi": "Diễn đạt tiêu chí hoặc yêu cầu làm rõ bằng câu đầy đủ.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Leaf 2",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3014,
+      "en": "I have changed my view because the circumstances have changed.",
+      "vi": "Mình đã đổi quan điểm vì hoàn cảnh đã thay đổi.",
+      "noteVi": "Nêu điều kiện, giới hạn hoặc giả định thay vì khẳng định tuyệt đối.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Leaf 3",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3015,
+      "en": "Could we separate the immediate decision from the longer discussion?",
+      "vi": "Ta có thể tách quyết định trước mắt khỏi cuộc thảo luận dài hơn không?",
+      "noteVi": "Đề xuất một bước kiểm tra hoặc thương lượng có thể thực hiện.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Leaf 4",
+      "unitId": "B2-89"
+    },
+    {
+      "id": 3016,
+      "en": "To sum up, this is what we have agreed and what remains open.",
+      "vi": "Tóm lại, đây là điều đã thống nhất và điều còn bỏ ngỏ.",
+      "noteVi": "Chốt kết luận theo đúng phạm vi đã trao đổi.",
+      "topic": "Tổng hợp trong ngữ cảnh mới",
+      "situation": "Bạn nghe hướng dẫn dự án từ khách mời nói theo nhịp chưa quen và cần kiểm tra ý chính.",
+      "hierarchy": "Bridge",
+      "unitId": "B2-89"
+    }
+  ],
+  "_fixtureNote": "tập con của global/en.json"
+}

@@ -16,7 +16,7 @@ Mở từ nút Cài đặt trên thanh trên cùng (APP-02). Hiển thị như m
 
 ### S8-01 Học tập
 
-Nhóm "Học tập" gồm: "Mục tiêu mỗi tuần" với bộ tăng giảm từ 1 đến 21 phiên (mặc định 5), lưu ngay khi đổi; "Ngôn ngữ đang học" hiện tên ngôn ngữ, chạm mở sheet Đổi ngôn ngữ (APP-06).
+Nhóm "Học tập" gồm: "Mục tiêu mỗi tuần" với bộ tăng giảm từ 1 đến 21 phiên (mặc định 5), lưu ngay khi đổi; "Ngôn ngữ đang học" hiện tên ngôn ngữ (và tên bộ nội dung khi ngôn ngữ có nhiều bộ), chạm mở sheet Đổi ngôn ngữ (APP-06), nơi đổi được cả ngôn ngữ lẫn bộ nội dung.
 
 ### S8-02 Giọng đọc
 
@@ -49,3 +49,4 @@ Nhóm "Trợ giúp" gồm "Xem lại hướng dẫn" (mở S9 trên T1) và dòn
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).

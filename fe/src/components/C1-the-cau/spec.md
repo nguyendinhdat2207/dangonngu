@@ -61,6 +61,10 @@ Chỉ khi item có `furigana`: câu gốc hiển thị bằng thẻ `ruby`. Ch�
 
 Phần tử câu gốc có `lang` bằng mã ngôn ngữ đích (ví dụ `en`); phần tử nghĩa có `lang="vi"`.
 
+## Câu hỏi mở
+
+- Liên kết "Cài đặt > Giọng đọc" trong câu báo thiếu giọng (C1-05) nằm trong dòng chữ nên không cao 44 px như FND-14 yêu cầu. Giữ dạng liên kết trong câu (WCAG cho phép ngoại lệ với liên kết trong đoạn văn) hay đổi thành nút riêng?
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

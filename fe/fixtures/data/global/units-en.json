@@ -1,0 +1,50 @@
+{
+  "sourceContentSha256": "aeef30e17b4896467f480e7de09a69478e7bbd9140388c11df49e212b5e1e0c3",
+  "units": [
+    {
+      "number": 1,
+      "title": "Find your classroom",
+      "translation": "Tìm đúng phòng học",
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "number": 2,
+      "title": "My morning routine",
+      "translation": "Một buổi sáng của tôi",
+      "ids": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "number": 377,
+      "title": "Following an unfamiliar pace without pretending to understand",
+      "translation": "Theo dõi người nói có nhịp mới",
+      "ids": [
+        3009,
+        3010,
+        3011,
+        3012,
+        3013,
+        3014,
+        3015,
+        3016
+      ]
+    }
+  ]
+}

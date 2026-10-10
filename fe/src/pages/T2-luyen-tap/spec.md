@@ -45,7 +45,7 @@ Bên phải tên mục là số câu Cần ôn hôm nay (DATA-07). Chạm mở `
 
 ### T2-03 Học theo từ khóa
 
-Chạm mở sheet (C6) "Học theo từ khóa" gồm: ô tìm (placeholder "Ví dụ: đặt phòng, airport"), các chip gợi ý "đặt phòng", "ăn uống", "sân bay", "mua sắm" (chạm chip là điền vào ô tìm), dòng "Tìm thấy N câu", xem trước tối đa 5 câu đầu (câu gốc và nghĩa), và nút chính "Học 8 câu đầu" (mở `#/phien-hoc?nguon=tu-khoa&q=…&nhom=1`). Các nhóm 8 câu tiếp theo mở từ nút "Nhóm tiếp" ở tổng kết phiên (S3-06). Tìm theo DATA-12, cập nhật sau khi ngừng gõ 250 ms.
+Chạm mở sheet (C6) "Học theo từ khóa" gồm: ô tìm (placeholder "Ví dụ: đặt phòng, airport"), các chip gợi ý (chạm chip là điền vào ô tìm): khi bộ nội dung có `topic`, chip là tối đa 6 chủ đề có nhiều câu nhất; khi không có, chip cố định "đặt phòng", "ăn uống", "sân bay", "mua sắm"; dòng "Tìm thấy N câu", xem trước tối đa 5 câu đầu (câu gốc và nghĩa), và nút chính "Học 8 câu đầu" (mở `#/phien-hoc?nguon=tu-khoa&q=…&nhom=1`). Các nhóm 8 câu tiếp theo mở từ nút "Nhóm tiếp" ở tổng kết phiên (S3-06). Tìm theo DATA-12, cập nhật sau khi ngừng gõ 250 ms.
 
 ### T2-04 Kiểm tra nhanh
 
@@ -58,3 +58,4 @@ Trong sheet T2-03, khi không có câu nào khớp: thay phần xem trước b�
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).

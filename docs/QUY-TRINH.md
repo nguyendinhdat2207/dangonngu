@@ -59,12 +59,23 @@ npm run spec:trace
 
 Script đọc toàn bộ spec, acceptance và ghi chú trong code, rồi sinh `docs/generated/traceability.md`: mỗi yêu cầu nằm ở file code nào, được mục acceptance nào kiểm, có test nào.
 
+**Sơ đồ sang spec.** Trong `docs/new/navigation.md`, mỗi mũi tên của sơ đồ Mermaid có một dòng chú thích ngay bên dưới (không hiện khi render):
+
+```
+  t1_start -->|"Click"| W_S3
+  %% @spec T1-02
+```
+
+Mũi tên nằm ngoài phạm vi ghi `%% @none <lý do>`. Script sinh `docs/generated/navigation-trace.md`: mỗi mũi tên, yêu cầu làm bằng chứng (kèm file và dòng spec) và thư mục `fe/src/...` sẽ chứa code của nó. Cột "Sơ đồ" trong `traceability.md` cho chiều ngược lại.
+
 `npm run spec:check` báo lỗi (thoát mã 1) khi:
 
 - ID yêu cầu hoặc acceptance bị trùng;
 - mục acceptance trỏ tới yêu cầu không tồn tại;
 - yêu cầu chưa có mục acceptance nào;
-- code gắn `@spec` hoặc `@ac` tới ID không tồn tại (thường do spec vừa bỏ yêu cầu đó).
+- code gắn `@spec` hoặc `@ac` tới ID không tồn tại (thường do spec vừa bỏ yêu cầu đó);
+- mũi tên trong sơ đồ điều hướng chưa gắn `%% @spec` / `%% @none`, hoặc gắn tới ID không tồn tại;
+- tài liệu trong `docs/new/` nhắc tới một mã yêu cầu hoặc acceptance không tồn tại.
 
 Và cảnh báo khi mục `[auto]` chưa có test gắn `@ac`.
 
@@ -103,4 +114,4 @@ Xem tình trạng hiện tại: `npm run spec:acceptance`, rồi mở `docs/gene
 
 ## 7. Khổ màn hình dùng để kiểm
 
-Trừ khi mục acceptance ghi khác: điện thoại 375 x 812, máy tính bảng 768 x 1024, máy tính 1280 x 800; cả giao diện sáng và tối. Thiết bị thật tối thiểu cho mục `[human]`: một iPhone (Safari), một điện thoại Android (Chrome), một máy Windows (Chrome hoặc Edge).
+Trừ khi mục acceptance ghi khác, kiểm theo thứ tự ưu tiên: máy tính 1440 x 900 và 1280 x 800, máy tính bảng 768 x 1024, điện thoại 375 x 812; cả giao diện sáng và tối. Thiết bị thật tối thiểu cho mục `[human]`: một iPhone (Safari), một điện thoại Android (Chrome), một máy Windows (Chrome hoặc Edge).

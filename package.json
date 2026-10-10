@@ -4,10 +4,53 @@
   "version": "0.1.0",
   "description": "Làm lại giao diện mini app VITASR Đa ngôn ngữ. Spec là nguồn chân lý duy nhất.",
   "type": "module",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
+    "dev": "vite",
+    "dev:fixture": "vite --mode fixture",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "fixtures": "node scripts/make-fixtures.mjs",
     "spec:trace": "node scripts/spec.mjs trace",
     "spec:acceptance": "node scripts/spec.mjs acceptance",
-    "spec:check": "node scripts/spec.mjs check"
+    "spec:check": "node scripts/spec.mjs check",
+    "evidence": "cross-env EVIDENCE=1 playwright test evidence"
+  },
+  "dependencies": {
+    "@fontsource/lexend": "^5.1.1",
+    "@fontsource/literata": "^5.1.1",
+    "@fontsource/noto-sans": "^5.1.1",
+    "@fontsource/noto-sans-devanagari": "^5.1.1",
+    "@fontsource/noto-sans-jp": "^5.1.1",
+    "@fontsource/noto-sans-kr": "^5.1.1",
+    "@fontsource/noto-sans-lao": "^5.1.1",
+    "@fontsource/noto-sans-sc": "^5.1.1",
+    "@fontsource/noto-sans-tamil": "^5.1.1",
+    "@fontsource/noto-sans-thai": "^5.1.1",
+    "@phosphor-icons/react": "^2.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.49.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "4.7.0",
+    "cross-env": "^7.0.3",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "vite": "6.4.4",
+    "vitest": "4.1.11"
   }
 }

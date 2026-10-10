@@ -9,3 +9,4 @@
 - [ ] S8-AC07 [human] S8-05: Trên iPhone (Safari) và Android (Chrome): "Xuất tiến độ" tải được file về máy và "Nhập tiến độ" chọn được chính file đó.
 - [ ] S8-AC08 [auto] S8-06: "Xem lại hướng dẫn" về T1 và hiện bước 1 của S9; dòng phiên bản khớp `version` trong package.json.
 - [ ] S8-AC09 [claude] S8-01, S8-02, S8-04, S8-05, S8-06: Ảnh chụp S8 và sheet Giọng đọc ở 375 px và 1280 px, sáng và tối: nhóm rõ ràng, nhãn đúng, không có mục ngoài spec.
+- [ ] S8-AC10 [auto] S8-01: Đang học Global English: mục "Ngôn ngữ đang học" hiện "Tiếng Anh" và "Global English"; chạm mở sheet Đổi ngôn ngữ có hai dòng Tiếng Anh.

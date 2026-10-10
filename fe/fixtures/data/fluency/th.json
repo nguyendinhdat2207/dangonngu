@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "kind": "ve360-language-tree8",
+  "languageId": "th",
+  "name": "Tiếng Thái",
+  "shortName": "Thái",
+  "nativeName": "ไทย",
+  "locale": "th-TH",
+  "sourceVersion": "MGL Tree v5.3",
+  "itemCount": 8,
+  "coreCount": 512,
+  "bridgeCount": 512,
+  "contentSha256": "5310dfd3bc0c9a0f95a8d011d2251f8a0f6e2a35c91a85bad1b26d71d8546f77",
+  "sourceSha256": "5529134ce91861a8f604ea3245bcf354f3bc1ba981a0d98324b6202175bcb743",
+  "items": [
+    {
+      "id": 1,
+      "hierarchy": "core",
+      "en": "ฉันอยาก...",
+      "vi": "Tôi muốn..."
+    },
+    {
+      "id": 257,
+      "hierarchy": "expansion",
+      "en": "อยากรู้...",
+      "vi": "muốn biết..."
+    },
+    {
+      "id": 769,
+      "hierarchy": "leaf",
+      "en": "อยากรู้ว่าเกิดอะไรขึ้น",
+      "vi": "muốn biết chuyện gì đã xảy ra"
+    },
+    {
+      "id": 770,
+      "hierarchy": "leaf",
+      "en": "อยากรู้ว่ามันทำงานอย่างไร",
+      "vi": "muốn biết nó hoạt động như thế nào"
+    },
+    {
+      "id": 258,
+      "hierarchy": "expansion",
+      "en": "อยากทำ...",
+      "vi": "muốn làm..."
+    },
+    {
+      "id": 771,
+      "hierarchy": "leaf",
+      "en": "อยากให้แน่ใจ",
+      "vi": "muốn chắc chắn"
+    },
+    {
+      "id": 772,
+      "hierarchy": "leaf",
+      "en": "อยากสร้างความแตกต่าง",
+      "vi": "muốn tạo ra sự khác biệt"
+    },
+    {
+      "id": 1793,
+      "hierarchy": "bridge",
+      "en": "[เชื่อมโยง] ถ้าคุณอยาก...",
+      "vi": "nếu bạn muốn..."
+    }
+  ],
+  "_fixtureNote": "tập con của fluency/th.json"
+}

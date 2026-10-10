@@ -1,0 +1,190 @@
+import { expect, test } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+import { answerCorrect, revealAndKnow, seed, settings } from './helpers';
+
+test.describe('khung và luồng chính', () => {
+  // @ac S3-AC08
+  test('nút Back của trình duyệt giữa phiên mở sheet xác nhận', async ({ page }) => {
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/hoc');
+    await page.getByRole('button', { name: 'Học 8 câu' }).click();
+    await expect(page).toHaveURL(/phien-hoc/);
+    for (let i = 0; i < 3; i++) {
+      await revealAndKnow(page);
+      await answerCorrect(page);
+      await page.getByRole('button', { name: 'Câu tiếp' }).click();
+    }
+    await page.goBack();
+    const dialog = page.getByRole('dialog', { name: 'Dừng phiên?' });
+    await expect(dialog).toBeVisible();
+    await expect(dialog).toContainText('Tiến độ 3/8 câu được giữ lại.');
+    await expect(page).toHaveURL(/phien-hoc/);
+    await dialog.getByRole('button', { name: 'Học tiếp' }).click();
+    await expect(page.getByText('Câu 4/8')).toBeVisible();
+    await page.getByRole('button', { name: 'Thoát' }).click();
+    await page.getByRole('dialog').getByRole('button', { name: 'Dừng' }).click();
+    await expect(page).toHaveURL(/#\/hoc$/);
+    await expect(page.getByRole('button', { name: 'Tiếp tục: 5 câu còn lại' })).toBeVisible();
+  });
+
+  // @ac C2-AC01
+  test('ô của dải 10 x 10 px, cách nhau 4 px', async ({ page }) => {
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/hoc');
+    const cells = page.locator('.card .strip__cell');
+    await expect(cells).toHaveCount(8);
+    const boxes = await cells.evaluateAll((els) => els.map((e) => e.getBoundingClientRect()).map((r) => ({ x: r.x, w: r.width, h: r.height })));
+    for (const b of boxes) {
+      expect(b.w).toBe(10);
+      expect(b.h).toBe(10);
+    }
+    for (let i = 1; i < boxes.length; i++) expect(boxes[i].x - (boxes[i - 1].x + boxes[i - 1].w)).toBe(4);
+  });
+
+  // @ac C3-AC04
+  test('mọi nút và liên kết có vùng chạm tối thiểu 44 x 44 px', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await seed(page, { 'vitasr2.settings': settings() });
+    const small = async (where: string) =>
+      (
+        await page.evaluate(() =>
+          [...document.querySelectorAll<HTMLElement>('button, a[href]')]
+            .filter((e) => e.offsetParent !== null && !e.closest('.card__novoice'))
+            .map((e) => ({ t: (e.textContent || e.getAttribute('aria-label') || '').trim(), r: e.getBoundingClientRect() }))
+            .filter((x) => x.r.width < 44 || x.r.height < 44)
+            .map((x) => `${x.t} ${Math.round(x.r.width)}x${Math.round(x.r.height)}`),
+        )
+      ).map((x) => `${where}: ${x}`);
+    await page.goto('./#/hoc');
+    await expect(page.locator('.card')).toBeVisible();
+    const bad = [...(await small('T1'))];
+    await page.getByRole('button', { name: 'Học 8 câu' }).click();
+    bad.push(...(await small('S3a')));
+    await revealAndKnow(page);
+    bad.push(...(await small('S3b')));
+    await page.getByRole('button', { name: 'Thoát' }).click();
+    bad.push(...(await small('sheet')));
+    expect(bad).toEqual([]);
+  });
+
+  // @ac FND-AC04
+  test('giao diện tối theo hệ thống; chọn Sáng thì mở bằng bảng sáng ngay khung đầu', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/hoc');
+    await expect(page.locator('.card')).toBeVisible();
+    const bg = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    expect(await bg()).toBe('rgb(13, 20, 36)');
+    await page.evaluate(() => {
+      const s = JSON.parse(localStorage.getItem('vitasr2.settings')!);
+      s.theme = 'light';
+      localStorage.setItem('vitasr2.settings', JSON.stringify(s));
+    });
+    // Đọc màu nền ở khung đầu tiên, trước khi mã app chạy.
+    await page.addInitScript(() => {
+      document.addEventListener('DOMContentLoaded', () => {
+        (window as unknown as { __firstBg: string }).__firstBg = getComputedStyle(document.body).backgroundColor;
+      });
+    });
+    await page.reload();
+    expect(await page.evaluate(() => (window as unknown as { __firstBg: string }).__firstBg)).toBe('rgb(244, 246, 249)');
+  });
+
+  // @ac FND-AC10
+  test('giảm chuyển động: không có thời lượng chuyển động lớn hơn 0', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/phien-hoc?nguon=lo-trinh');
+    await page.getByRole('button', { name: 'Chạm để hiện câu gốc' }).click();
+    await page.getByRole('button', { name: 'Thoát' }).click();
+    const bad = await page.evaluate(() =>
+      [...document.querySelectorAll('*')]
+        .map((e) => getComputedStyle(e))
+        .filter((s) => s.transitionDuration.split(',').some((d) => parseFloat(d) > 0) || s.animationDuration.split(',').some((d) => parseFloat(d) > 0)).length,
+    );
+    expect(bad).toBe(0);
+  });
+
+  // @ac APP-AC02
+  test('bấm 4 mục điều hướng thì hash đổi đúng', async ({ page }) => {
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/hoc');
+    for (const [label, h] of [
+      ['Luyện tập', '#/luyen-tap'],
+      ['Thư viện', '#/thu-vien'],
+      ['Tiến bộ', '#/tien-bo'],
+      ['Học', '#/hoc'],
+    ]) {
+      await page.getByRole('navigation', { name: 'Khu chính' }).getByRole('link', { name: label, exact: true }).click();
+      await expect(page).toHaveURL(new RegExp(h.replace('/', '\\/') + '$'));
+      await expect(page.getByRole('link', { name: label, exact: true })).toHaveAttribute('aria-current', 'page');
+    }
+  });
+
+  // @ac APP-AC05
+  test('Back sau chuỗi T1 → T3 → T4 về T3 rồi T1', async ({ page }) => {
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/hoc');
+    await page.getByRole('link', { name: 'Thư viện', exact: true }).click();
+    await page.getByRole('link', { name: 'Tiến bộ', exact: true }).click();
+    await page.goBack();
+    await expect(page).toHaveURL(/#\/thu-vien$/);
+    await page.goBack();
+    await expect(page).toHaveURL(/#\/hoc$/);
+  });
+
+  // @ac DATA-AC13
+  test('chỉ gọi mạng tới origin của app', async ({ page, baseURL }) => {
+    const urls: string[] = [];
+    page.on('request', (r) => urls.push(r.url()));
+    await seed(page, { 'vitasr2.settings': settings() });
+    await page.goto('./#/hoc');
+    await page.getByRole('button', { name: 'Học 8 câu' }).click();
+    for (let i = 0; i < 8; i++) {
+      await revealAndKnow(page);
+      await answerCorrect(page);
+      await page.getByRole('button', { name: /Câu tiếp|Xem tổng kết/ }).click();
+    }
+    await page.getByRole('link', { name: 'Xong' }).click();
+    for (const l of ['Thư viện', 'Tiến bộ']) await page.getByRole('link', { name: l, exact: true }).click();
+    await page.getByRole('link', { name: 'Cài đặt' }).click();
+    const origin = new URL(baseURL!).origin;
+    expect(urls.filter((u) => !u.startsWith(origin))).toEqual([]);
+    expect(urls.filter((u) => /\/api\/|get-data/.test(u))).toEqual([]);
+  });
+
+  // @ac FND-AC15
+  test('axe-core không có lỗi serious hoặc critical trên các màn đã làm', async ({ page }) => {
+    test.setTimeout(240000);
+    for (const scheme of ['light', 'dark'] as const) {
+      for (const width of [375, 1280]) {
+        await page.emulateMedia({ colorScheme: scheme });
+        await page.setViewportSize({ width, height: 800 });
+        await page.goto('./#/chon-ngon-ngu');
+        await page.evaluate(() => localStorage.clear());
+        await page.reload();
+        await expect(page.getByText('Bạn muốn học ngôn ngữ nào?')).toBeVisible();
+        const check = async (where: string) => {
+          const r = await new AxeBuilder({ page }).analyze();
+          const bad = r.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical');
+          expect(bad.map((v) => `${where} ${scheme} ${width}: ${v.id} ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`)).toEqual([]);
+        };
+        await check('S1');
+        await page.getByRole('button', { name: /Tiếng Anh/ }).click();
+        await check('S1 bộ');
+        await page.getByRole('button', { name: /Global English/ }).click();
+        await expect(page.getByText('Bước 1/3')).toBeVisible();
+        await check('S9');
+        await page.getByRole('button', { name: 'Bỏ qua' }).click();
+        await check('T1');
+        await page.getByRole('button', { name: 'Học 8 câu' }).click();
+        await check('S3a');
+        await revealAndKnow(page);
+        await check('S3b');
+        await answerCorrect(page);
+        await page.getByRole('button', { name: 'Thoát' }).click();
+        await check('S3 sheet');
+      }
+    }
+  });
+});

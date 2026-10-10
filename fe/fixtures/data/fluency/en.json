@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "kind": "ve360-language-tree8",
+  "languageId": "en",
+  "name": "Tiếng Anh",
+  "shortName": "Anh",
+  "nativeName": "English",
+  "locale": "en-US",
+  "sourceVersion": "MGL Tree v5.3",
+  "itemCount": 29,
+  "coreCount": 512,
+  "bridgeCount": 512,
+  "contentSha256": "b0363b471ce5ed6e33096abc9d83998a618f3889132024a930c93798d6da7193",
+  "sourceSha256": "959464f8a23d41771594c825cc8b29391a0f8224bee63f26fe754a57fca12701",
+  "items": [
+    {
+      "id": 1,
+      "hierarchy": "core",
+      "en": "I want to...",
+      "vi": "Tôi muốn..."
+    },
+    {
+      "id": 257,
+      "hierarchy": "expansion",
+      "en": "want to know...",
+      "vi": "muốn biết..."
+    },
+    {
+      "id": 769,
+      "hierarchy": "leaf",
+      "en": "want to know what happened",
+      "vi": "muốn biết chuyện gì đã xảy ra"
+    },
+    {
+      "id": 770,
+      "hierarchy": "leaf",
+      "en": "want to know how it works",
+      "vi": "muốn biết nó hoạt động như thế nào"
+    },
+    {
+      "id": 258,
+      "hierarchy": "expansion",
+      "en": "want to make...",
+      "vi": "muốn làm..."
+    },
+    {
+      "id": 771,
+      "hierarchy": "leaf",
+      "en": "want to make sure",
+      "vi": "muốn chắc chắn"
+    },
+    {
+      "id": 772,
+      "hierarchy": "leaf",
+      "en": "want to make a difference",
+      "vi": "muốn tạo ra sự khác biệt"
+    },
+    {
+      "id": 1793,
+      "hierarchy": "bridge",
+      "en": "[BRIDGE] if you want to...",
+      "vi": "nếu bạn muốn..."
+    },
+    {
+      "id": 2,
+      "hierarchy": "core",
+      "en": "I'd like to...",
+      "vi": "Tôi muốn..."
+    },
+    {
+      "id": 259,
+      "hierarchy": "expansion",
+      "en": "like to ask...",
+      "vi": "muốn hỏi..."
+    },
+    {
+      "id": 773,
+      "hierarchy": "leaf",
+      "en": "like to ask a question",
+      "vi": "muốn hỏi một câu"
+    },
+    {
+      "id": 774,
+      "hierarchy": "leaf",
+      "en": "like to ask for help",
+      "vi": "muốn nhờ giúp đỡ"
+    },
+    {
+      "id": 260,
+      "hierarchy": "expansion",
+      "en": "like to know...",
+      "vi": "muốn biết..."
+    },
+    {
+      "id": 775,
+      "hierarchy": "leaf",
+      "en": "like to know more about it",
+      "vi": "muốn biết thêm về điều đó"
+    },
+    {
+      "id": 776,
+      "hierarchy": "leaf",
+      "en": "like to know what you think",
+      "vi": "muốn biết bạn nghĩ gì"
+    },
+    {
+      "id": 1794,
+      "hierarchy": "bridge",
+      "en": "[BRIDGE] if you'd like to...",
+      "vi": "nếu bạn muốn..."
+    },
+    {
+      "id": 3,
+      "hierarchy": "core",
+      "en": "I hope to...",
+      "vi": "Tôi hy vọng sẽ..."
+    },
+    {
+      "id": 261,
+      "hierarchy": "expansion",
+      "en": "hope to see...",
+      "vi": "hy vọng sẽ gặp/thấy..."
+    },
+    {
+      "id": 777,
+      "hierarchy": "leaf",
+      "en": "hope to see you soon",
+      "vi": "hy vọng sớm gặp bạn"
+    },
+    {
+      "id": 778,
+      "hierarchy": "leaf",
+      "en": "hope to see some progress",
+      "vi": "hy vọng thấy một số tiến triển"
+    },
+    {
+      "id": 262,
+      "hierarchy": "expansion",
+      "en": "hope to get...",
+      "vi": "hy vọng sẽ có/được..."
+    },
+    {
+      "id": 779,
+      "hierarchy": "leaf",
+      "en": "hope to get better",
+      "vi": "hy vọng sẽ khá hơn"
+    },
+    {
+      "id": 780,
+      "hierarchy": "leaf",
+      "en": "hope to get a chance",
+      "vi": "hy vọng có được một cơ hội"
+    },
+    {
+      "id": 1795,
+      "hierarchy": "bridge",
+      "en": "[BRIDGE] I hope you can...",
+      "vi": "Tôi hy vọng bạn có thể..."
+    },
+    {
+      "id": 4,
+      "hierarchy": "core",
+      "en": "I'd rather...",
+      "vi": "Tôi thà..."
+    },
+    {
+      "id": 263,
+      "hierarchy": "expansion",
+      "en": "rather stay...",
+      "vi": "thà ở lại..."
+    },
+    {
+      "id": 781,
+      "hierarchy": "leaf",
+      "en": "rather stay here",
+      "vi": "thà ở lại đây"
+    },
+    {
+      "id": 782,
+      "hierarchy": "leaf",
+      "en": "rather stay at home",
+      "vi": "thà ở nhà"
+    },
+    {
+      "id": 264,
+      "hierarchy": "expansion",
+      "en": "rather wait...",
+      "vi": "thà đợi..."
+    }
+  ],
+  "_fixtureNote": "tập con của fluency/en.json"
+}

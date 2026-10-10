@@ -1,33 +1,33 @@
 # Báo cáo acceptance
 
-File sinh tự động bởi `node scripts/spec.mjs acceptance` lúc 2026-10-07 04:50 UTC. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs acceptance` lúc 2026-10-08 08:51 UTC. Không sửa tay.
 
 Một khu vực **Đạt** khi mọi mục trong acceptance.md của nó đã được đánh dấu [x].
 
 | Khu vực | Tên | Đã đạt | auto | claude | human | Trạng thái |
 |---|---|---|---|---|---|---|
 | G | Tổng quan giao diện bản mới | 0/5 | - | 0/1 | 0/4 | Chưa |
-| APP | Khung app | 0/16 | 0/9 | 0/5 | 0/2 | Chưa |
-| FND | Nền tảng thiết kế | 0/17 | 0/7 | 0/7 | 0/3 | Chưa |
-| DATA | Dữ liệu và tiến độ | 0/15 | 0/12 | 0/2 | 0/1 | Chưa |
-| C1 | Thẻ câu | 0/8 | 0/6 | 0/1 | 0/1 | Chưa |
-| C2 | Dải 8 ô | 0/3 | 0/2 | 0/1 | - | Chưa |
-| C3 | Nút | 0/4 | 0/1 | 0/2 | 0/1 | Chưa |
-| C4 | Lựa chọn trắc nghiệm | 0/3 | 0/2 | 0/1 | - | Chưa |
-| C5 | Thanh tab | 0/4 | 0/2 | 0/2 | - | Chưa |
-| C6 | Sheet | 0/5 | 0/2 | 0/2 | 0/1 | Chưa |
-| C7 | Thông báo ngắn | 0/3 | 0/2 | 0/1 | - | Chưa |
-| S1 | Chọn ngôn ngữ | 0/6 | 0/4 | 0/1 | 0/1 | Chưa |
-| S3 | Phiên học | 0/11 | 0/9 | 0/1 | 0/1 | Chưa |
+| APP | Khung app | 9/17 | 7/10 | 2/5 | 0/2 | Chưa |
+| FND | Nền tảng thiết kế | 6/17 | 6/7 | 0/7 | 0/3 | Chưa |
+| DATA | Dữ liệu và tiến độ | 14/19 | 13/16 | 1/2 | 0/1 | Chưa |
+| C1 | Thẻ câu | 7/8 | 6/6 | 1/1 | 0/1 | Chưa |
+| C2 | Dải 8 ô | 3/3 | 2/2 | 1/1 | - | Đạt |
+| C3 | Nút | 3/4 | 1/1 | 2/2 | 0/1 | Chưa |
+| C4 | Lựa chọn trắc nghiệm | 2/3 | 2/2 | 0/1 | - | Chưa |
+| C5 | Thanh tab | 2/4 | 2/2 | 0/2 | - | Chưa |
+| C6 | Sheet | 3/5 | 2/2 | 1/2 | 0/1 | Chưa |
+| C7 | Thông báo ngắn | 2/3 | 2/2 | 0/1 | - | Chưa |
+| S1 | Chọn ngôn ngữ | 7/8 | 5/5 | 2/2 | 0/1 | Chưa |
+| S3 | Phiên học | 10/11 | 9/9 | 1/1 | 0/1 | Chưa |
 | S5 | Kiểm tra nhanh | 0/10 | 0/7 | 0/2 | 0/1 | Chưa |
-| S8 | Cài đặt | 0/9 | 0/6 | 0/1 | 0/2 | Chưa |
-| S9 | Hướng dẫn lần đầu | 0/6 | 0/4 | 0/1 | 0/1 | Chưa |
-| T1 | Học | 0/9 | 0/6 | 0/2 | 0/1 | Chưa |
-| T2 | Luyện tập | 0/6 | 0/4 | 0/2 | - | Chưa |
-| T3 | Thư viện | 0/8 | 0/6 | 0/2 | - | Chưa |
+| S8 | Cài đặt | 0/10 | 0/7 | 0/1 | 0/2 | Chưa |
+| S9 | Hướng dẫn lần đầu | 4/6 | 3/4 | 1/1 | 0/1 | Chưa |
+| T1 | Học | 9/10 | 7/7 | 2/2 | 0/1 | Chưa |
+| T2 | Luyện tập | 0/7 | 0/5 | 0/2 | - | Chưa |
+| T3 | Thư viện | 0/10 | 0/8 | 0/2 | - | Chưa |
 | T4 | Tiến bộ | 0/10 | 0/8 | 0/1 | 0/1 | Chưa |
 
-Tổng: 0/158 mục đã đạt.
+Tổng: 81/170 mục đã đạt.
 
 ## Mục còn mở
 
@@ -41,35 +41,21 @@ Tổng: 0/158 mục đã đạt.
 
 ### APP Khung app
 
-- APP-AC01 [claude] (APP-01): Ảnh chụp ở 375 px có thanh tab dưới đáy với 4 mục đúng thứ tự Học, Luyện tập, Thư viện, Tiến bộ; ở 1280 px có thanh dọc trái rộng 220 px với cùng 4 mục.
 - APP-AC02 [auto] (APP-01, APP-04): Test điều hướng: bấm lần lượt 4 mục thì hash đổi thành `#/hoc`, `#/luyen-tap`, `#/thu-vien`, `#/tien-bo` và đúng màn hiện ra.
-- APP-AC03 [claude] (APP-02): Ảnh chụp T1 đến T4 ở 375 px và 1280 px có tên ngôn ngữ bên trái, nút Cài đặt bên phải; vùng 56 x 56 px góc trên bên phải không có điều khiển.
-- APP-AC04 [auto] (APP-03): Ở `#/phien-hoc`, `#/kiem-tra`, `#/chon-ngon-ngu` không có thanh tab và thanh trên cùng trong DOM hiển thị; S3 và S5 có nút "Thoát".
-- APP-AC05 [auto] (APP-04): Mở route không hợp lệ thì chuyển về `#/hoc` (đã chọn ngôn ngữ) hoặc `#/chon-ngon-ngu` (chưa chọn). Nút Back của trình duyệt sau chuỗi T1 → T3 → T4 quay về T3 rồi T1.
-- APP-AC06 [auto] (APP-05): Với localStorage trống, app mở vào S1; sau khi chọn ngôn ngữ và tải lại trang, app mở thẳng vào T1.
+- APP-AC03 [claude] (APP-02): Ảnh chụp T1 đến T4 ở 375 px và 1280 px có tên ngôn ngữ bên trái, nút Cài đặt bên phải.
 - APP-AC07 [claude] (APP-05, APP-08): Giả lập mạng chậm (Slow 3G): ảnh chụp trong lúc tải là khung xương đúng hình, không phải màn trắng hay vòng xoay.
-- APP-AC08 [auto] (APP-06): Mở sheet Đổi ngôn ngữ, chọn ngôn ngữ khác: sheet đóng, về `#/hoc`, tên ngôn ngữ trên thanh trên cùng đổi; quay lại ngôn ngữ cũ thì tiến độ cũ còn nguyên.
-- APP-AC09 [claude] (APP-07): Ảnh chụp T1, T3, S3 ở 320, 375, 768, 1280 px: không có cuộn ngang, lề đúng 16 / 24 px, khối nội dung ở 768 px rộng tối đa 560 px.
-- APP-AC10 [auto] (APP-08): Cho DataSource trả lỗi: màn hiện đúng câu "Không tải được danh sách câu. Kiểm tra kết nối rồi bấm Thử lại." và nút "Thử lại"; bấm Thử lại khi nguồn đã ổn thì hiện dữ liệu.
-- APP-AC11 [auto] (APP-08): Giả lập `navigator.onLine = false` và sự kiện `offline`: dải ngoại tuyến hiện; sự kiện `online` thì dải ẩn. Giả lập localStorage ném lỗi: dải cảnh báo bộ nhớ hiện.
-- APP-AC12 [claude] (APP-09): Nhúng bản build vào một trang thử có iframe 400 x 700 và 1100 x 700: app chạy đủ luồng T1 → S3 → tổng kết; tìm trong mã nguồn không có `window.top`, `window.parent`, `postMessage`.
-- APP-AC13 [human] (APP-09): Mở app trong khung mini app thật của trang học chính (khi khách cho phép đổi URL thử) trên iPhone và Android: hiển thị đủ, không bị nút đóng của trang chính che điều khiển.
+- APP-AC09 [claude] (APP-07): Ảnh chụp T1, T3, S3 ở 1440, 1280, 768, 375, 320 px: ở 1440 px vùng nội dung không rộng quá 1120 px, S3 không rộng quá 720 px; không có cuộn ngang, lề đúng 16 / 24 px, khối nội dung ở 768 px rộng tối đa 560 px.
+- APP-AC13 [human] (APP-07, APP-09): Mở app trên trình duyệt máy tính (Chrome, Edge, Safari) và trên điện thoại (iPhone, Android), mỗi nơi đi hết luồng chọn ngôn ngữ, học một phiên, xem tiến bộ: hiển thị đủ, không có điều khiển bị che hay tràn.
 - APP-AC14 [human] (APP-10): Trên điện thoại thật: mở app có mạng, tắt mạng, đóng và mở lại app: vẫn học được ngôn ngữ đã tải.
 - APP-AC15 [auto] (APP-10): Giả lập service worker có bản mới: thông báo "Có bản cập nhật" hiện ở T1 nhưng không hiện khi đang ở S3; trang không tự tải lại.
 - APP-AC16 [auto] (APP-11): Mở sheet Chi tiết câu rồi kích hoạt mở sheet Đổi ngôn ngữ: tại mọi thời điểm chỉ có một phần tử sheet/hộp thoại đang mở.
 
 ### FND Nền tảng thiết kế
 
-- FND-AC01 [auto] (FND-01): Kiểm tra tĩnh: ngoài file token, không file CSS hay thành phần nào chứa mã màu hex, `rgb(`, `hsl(` hoặc `linear-gradient`/`radial-gradient`.
-- FND-AC02 [auto] (FND-01, FND-02): Script tính tương phản cho mọi cặp chữ/nền dùng trong token (cả sáng và tối) và báo đạt 4.5:1 (3:1 với chữ từ 24 px).
 - FND-AC03 [claude] (FND-02): Ảnh chụp mọi màn chính: mỗi màn có tối đa một nút nền `--brand`; câu trả lời sai trong S3 và S5 hiển thị màu `--review`, không đỏ.
-- FND-AC04 [auto] (FND-03): Với hệ thống ở chế độ tối và cài đặt "Theo hệ thống", app dùng bảng màu tối; chọn "Sáng" trong S8 rồi tải lại trang thì app mở bằng bảng màu sáng ngay từ khung hình đầu tiên.
-- FND-AC05 [claude] (FND-04): Ảnh chụp thẻ câu có nghĩa chứa đủ dấu tiếng Việt khó ("Tôi muốn đặt một bàn cho hai người, được không ạ?") ở `--t-lg` và câu tiếng Nhật ở `--t-2xl`: không chồng dấu, font đúng vai trò; tab Network cho thấy font Noto JP chỉ tải khi chọn tiếng Nhật.
-- FND-AC06 [auto] (FND-05): Kiểm tra tĩnh: mọi `font-size` trong code dùng token `--t-*`.
-- FND-AC07 [auto] (FND-06): Test đơn vị hàm chọn cỡ câu: 39 ký tự cho `--t-2xl`, 40 và 90 cho `--t-xl`, 91 cho `--t-lg`.
+- FND-AC05 [claude] (FND-04): Ảnh chụp thẻ câu có nghĩa chứa đủ dấu tiếng Việt khó ("Tôi muốn đặt một bàn cho hai người, được không ạ?") ở `--t-lg`, cùng câu tiếng Nhật, tiếng Nga và tiếng Tamil ở `--t-2xl`: không chồng dấu, không ô vuông thiếu chữ, font đúng vai trò; tab Network cho thấy font Noto JP chỉ tải khi chọn tiếng Nhật.
 - FND-AC08 [claude] (FND-07, FND-08, FND-09): Đọc file token và CSS: khoảng cách chỉ dùng giá trị trong FND-07; bo góc đúng vai trò; `box-shadow` chỉ có ở sheet và hộp thoại.
 - FND-AC09 [claude] (FND-10): Tìm trong mã nguồn và ảnh chụp: không có emoji, không có ảnh bitmap dùng làm icon, icon cùng một bộ và cùng nét.
-- FND-AC10 [auto] (FND-11): Với `prefers-reduced-motion: reduce`, không phần tử nào có `transition-duration` hoặc `animation-duration` lớn hơn 0 khi đổi trạng thái.
 - FND-AC11 [human] (FND-11): Trên điện thoại thật, chuyển động hiện câu gốc và mở sheet cho cảm giác phản hồi ngay, không chậm, không giật.
 - FND-AC12 [claude] (FND-12): Rà toàn bộ chuỗi giao diện: không còn từ trong cột "Không dùng"; nút và thông báo cùng luồng dùng cùng động từ; mọi thông báo lỗi có hướng xử lý.
 - FND-AC13 [human] (FND-12): Một người không trong nhóm đọc toàn bộ chuỗi giao diện và không thấy câu nào khó hiểu hoặc sai giọng.
@@ -80,94 +66,44 @@ Tổng: 0/158 mục đã đạt.
 
 ### DATA Dữ liệu và tiến độ
 
-- DATA-AC01 [auto] (DATA-01, DATA-02, DATA-03): Test đọc toàn bộ fixture qua `FixtureSource` và kiểm hợp đồng: mọi item có `id`, trường câu gốc và `vi`; mọi id trong `units[].ids` khớp một item.
-- DATA-AC02 [auto] (DATA-02, DATA-05): Cho nguồn trả về item thiếu `vi` hoặc `id` dạng chuỗi chữ: bộ kiểm hợp đồng báo lỗi và app hiện trạng thái lỗi APP-08, không ném lỗi chưa bắt.
-- DATA-AC03 [auto] (DATA-03): Unit 5 câu trong fixture tạo phiên 5 câu; id "0001" khớp item `id: 1`.
-- DATA-AC04 [auto] (DATA-04): Render thẻ câu với item chỉ có `id`, `hierarchy`, `en`, `vi`: không lỗi, không có khối Cách dùng hay phiên âm trong DOM.
-- DATA-AC05 [claude] (DATA-05): Tìm trong mã nguồn: chỉ các file cài đặt `DataSource` gọi `fetch` tới dữ liệu; build với `VITE_DATA_SOURCE=static` và base URL trỏ tới thư mục fixture được phục vụ tĩnh thì app chạy giống `fixture`.
-- DATA-AC06 [auto] (DATA-06): Hoàn tất một phiên rồi đọc localStorage: chỉ có khóa bắt đầu bằng `vitasr2.`; dữ liệu đúng cấu trúc mô tả; không khóa `vitasr.` nào của bản cũ bị ghi hay xóa.
-- DATA-AC07 [auto] (DATA-06): Giả lập `localStorage.setItem` ném lỗi: app vẫn học được hết một phiên trong phiên làm việc và hiện cảnh báo bộ nhớ.
-- DATA-AC08 [auto] (DATA-07): Test đơn vị quy tắc ôn với đồng hồ giả: chuỗi "Tôi nhớ" liên tiếp cho `due` sau 1, 3, 7, 14, 30, 30 ngày; "Cần ôn lại", trả lời sai, dùng gợi ý đều đưa `streak` về 0 và câu thành Cần ôn ngay.
 - DATA-AC09 [auto] (DATA-07): Cùng một bộ tiến độ, số "câu cần ôn hôm nay" hiển thị ở T1, T2 và T4 bằng nhau, và bằng số câu có trạng thái Cần ôn ở T3.
-- DATA-AC10 [auto] (DATA-08): Với mọi câu trong fixture tiếng Anh: đủ 4 lựa chọn, đúng một lựa chọn là nghĩa đúng, không hai lựa chọn trùng sau chuẩn hóa; gọi hai lần cho cùng câu ra cùng bộ và cùng thứ tự.
-- DATA-AC11 [claude] (DATA-09): Đối chiếu nội dung `fe/fixtures/` (kể cả bộ tiến độ mẫu và số liệu tính tay) với danh sách trong DATA-09, ghi từng mục đạt hay không vào bằng chứng.
-- DATA-AC12 [human] (DATA-09): Xác nhận bằng văn bản (email hoặc tin nhắn) từ khách cho phép dùng các câu trong fixture, hoặc xác nhận fixture chỉ chứa câu tự viết.
+- DATA-AC11 [claude] (DATA-09): Chạy lại `node scripts/make-fixtures.mjs` không làm đổi file nào trong git; đối chiếu nội dung `fe/fixtures/` (kể cả bộ tiến độ mẫu và số liệu tính tay) với danh sách trong DATA-09, ghi từng mục đạt hay không vào bằng chứng.
+- DATA-AC12 [human] (DATA-09): Xác nhận bằng văn bản từ khách cho phép dùng bộ dữ liệu trong `fe/public/data/` cho phát triển và demo (nhóm đã ghi nhận đồng ý ngày 08/10/2026; người kiểm lưu lại tin nhắn làm bằng chứng).
 - DATA-AC13 [auto] (DATA-10): Test giao diện ghi lại mọi request trong luồng T1 → S3 → T3 → T4 → S8: chỉ có request tới origin của app và base URL dữ liệu; không có request chứa `/api/` hoặc `get-data`.
-- DATA-AC14 [auto] (DATA-11): Với tiến độ trống, câu tiếp theo là câu đầu của unit 1; sau khi qua bước ghi nhớ toàn bộ unit 1, câu tiếp theo là câu đầu của unit 2.
-- DATA-AC15 [auto] (DATA-12): Test đơn vị tìm kiếm: "dat phong" khớp "đặt phòng", "BOOK" khớp "book", kết quả theo thứ tự `id` tăng dần.
+- DATA-AC18 [auto] (DATA-04): Render thẻ câu, T1 và T3 với fixture Global English: có dòng Cách dùng, tình huống, mã trình độ, bộ lọc Chủ đề; với fixture English Fluency: không có các phần đó và không lỗi.
 
 ### C1 Thẻ câu
 
-- C1-AC01 [claude] (C1-01): Ảnh chụp thẻ có và không có dải 8 ô, ở 320 px và 375 px, sáng và tối: thứ tự khối đúng như bố cục; font nghĩa và câu gốc đúng vai trò.
-- C1-AC02 [auto] (C1-02): Ở chế độ che, nút Nghe bị disabled; chạm khối che, rồi lặp lại bằng phím Space và Enter khi thẻ có focus: câu gốc hiện và sự kiện "đã hiện" phát đúng một lần.
-- C1-AC03 [auto] (C1-03): Sau khi hiện, không phần tử nào trong thẻ khiến câu gốc bị che lại.
-- C1-AC04 [auto] (C1-04): Với `speechSynthesis` giả: bấm Nghe gọi `speak` một lần với `lang`, giọng và `rate` đã chọn; nút thành "Dừng"; gỡ thẻ khỏi màn thì `cancel` được gọi.
 - C1-AC05 [human] (C1-04): Trên iPhone, Android và Windows: Nghe đọc đúng câu bằng giọng tiếng Anh; Nghe lặp lặp lại và dừng được.
-- C1-AC06 [auto] (C1-05): Với `getVoices` trả về danh sách không có giọng ngôn ngữ đích: nút bị khóa, hiện đúng câu thông báo, liên kết mở sheet Giọng đọc.
-- C1-AC07 [auto] (C1-06, C1-07): Item có `noteVi` hiện dòng "Cách dùng: …"; item có `furigana` render `ruby`; item tiếng Anh từ fixture không có cả hai khối trong DOM.
-- C1-AC08 [auto] (C1-08): Phần tử câu gốc tiếng Anh có `lang="en"`, tiếng Nhật có `lang="ja"`; phần tử nghĩa có `lang="vi"`.
-
-### C2 Dải 8 ô
-
-- C2-AC01 [auto] (C2-01): Truyền 8 câu thì có 8 ô, truyền 5 câu thì có 5 ô; mỗi ô 10 x 10 px, khoảng cách 4 px.
-- C2-AC02 [claude] (C2-02): Ảnh chụp phóng to dải có đủ 4 trạng thái, sáng và tối: đúng màu token; ô Cần ôn có vạch chéo; ảnh chuyển sang thang xám vẫn phân biệt được ô Cần ôn với ô Đã nhớ.
-- C2-AC03 [auto] (C2-03): Dải có nhãn trợ năng đúng mẫu; mỗi ô có nhãn "Câu n, <trạng thái>"; không ô nào nằm trong thứ tự Tab.
 
 ### C3 Nút
 
-- C3-AC01 [claude] (C3-01, C3-02): Ảnh chụp bảng mẫu nút chính và nút phụ ở 375 px và 1280 px, sáng và tối: đúng kích thước, màu token, nút chính rộng hết khối ở 375 px.
-- C3-AC02 [claude] (C3-03): Ảnh chụp cặp nút đánh giá ở 320 px và 375 px: hai nút bằng nhau, cách 12 px, cao 56 px, có icon và chữ; ở trạng thái khóa cả hai mờ.
 - C3-AC03 [human] (C3-03): Trên điện thoại thật, dùng một tay bấm 20 lần xen kẽ hai nút đánh giá: không lần nào bấm nhầm.
-- C3-AC04 [auto] (C3-04): Nút ở trạng thái khóa có `aria-disabled="true"` và không phát sự kiện click; mọi nút có kích thước vùng chạm tối thiểu 44 x 44 px.
 
 ### C4 Lựa chọn trắc nghiệm
 
 - C4-AC01 [claude] (C4-01): Ảnh chụp với nghĩa dài trên 120 ký tự ở 320 px: chữ xuống dòng đủ, không bị cắt; số thứ tự chỉ hiện ở 1280 px.
-- C4-AC02 [auto] (C4-02): Chọn sai rồi chọn đúng: sự kiện "sai" phát một lần, sự kiện "đúng" phát một lần; sau khi đúng, mọi lựa chọn bị khóa. Phím 1 đến 4 chọn đúng lựa chọn tương ứng.
-- C4-AC03 [auto] (C4-03): Vùng `aria-live` nhận chuỗi "Đúng" và "Chưa đúng, thử lại" tương ứng; lựa chọn đúng và sai có icon khác nhau trong DOM.
 
 ### C5 Thanh tab
 
 - C5-AC01 [claude] (C5-01): Ảnh chụp 375 px trên khung giả lập iPhone có vùng an toàn đáy: thanh cao 64 px cộng vùng an toàn, 4 mục chia đều, nhãn không bị cắt ở 320 px.
 - C5-AC02 [claude] (C5-02): Ảnh chụp 1280 px: thanh dọc 220 px bên trái, mục cao 48 px, căn trái.
-- C5-AC03 [auto] (C5-03): Ở mỗi route T1 đến T4, đúng một mục có `aria-current="page"` và đó là mục tương ứng.
-- C5-AC04 [auto] (C5-04): Với 12 câu cần ôn, mục Luyện tập hiện "12" và có nhãn trợ năng "Luyện tập, 12 câu cần ôn"; với 0 câu thì không có nhãn số.
 
 ### C6 Sheet
 
-- C6-AC01 [claude] (C6-01): Ảnh chụp sheet ở 375 px (trượt từ dưới, có tay nắm, cao không quá 90%) và 1280 px (hộp thoại giữa màn, rộng không quá 560 px), sáng và tối.
-- C6-AC02 [auto] (C6-02): Sheet thường đóng được bằng nút đóng, chạm lớp nền, phím Esc; sheet xác nhận không đóng khi chạm lớp nền nhưng đóng bằng Esc.
 - C6-AC03 [human] (C6-02): Trên điện thoại thật, vuốt xuống trên tay nắm đóng được sheet, và vuốt lên xuống trong nội dung không vô tình đóng sheet.
-- C6-AC04 [auto] (C6-03): Khi mở, `document.activeElement` nằm trong sheet; nhấn Tab liên tục không ra ngoài sheet; khi đóng, focus về nút đã mở; thuộc tính `role`, `aria-modal`, `aria-labelledby` đúng.
 - C6-AC05 [claude] (C6-04): Mở sheet Tìm câu theo từ khóa với 40 kết quả ở 375 px: nội dung cuộn trong sheet, tiêu đề đứng yên, trang phía sau không cuộn.
 
 ### C7 Thông báo ngắn
 
 - C7-AC01 [claude] (C7-01): Ảnh chụp thông báo ở T1 (có thanh tab) và S3 (không có thanh tab) ở 375 px và 1280 px: vị trí đúng, không che thanh tab, rộng không quá 480 px.
-- C7-AC02 [auto] (C7-02): Với đồng hồ giả: thông báo thường ẩn sau 3 giây, thông báo có nút ẩn sau 6 giây; gọi hai thông báo liên tiếp thì DOM chỉ có thông báo sau.
-- C7-AC03 [auto] (C7-03): Thông báo xác nhận có `role="status"`, thông báo lỗi có `role="alert"`; `document.activeElement` không đổi khi thông báo hiện.
 
 ### S1 Chọn ngôn ngữ
 
-- S1-AC01 [auto] (S1-01): Với manifest fixture, dòng đầu là Tiếng Anh; các dòng sau theo thứ tự tên tiếng Việt tăng dần (so sánh `localeCompare` với `vi`).
-- S1-AC02 [claude] (S1-01, S1-02, S1-03, S1-05): Ảnh chụp ở 320 px, 375 px, 1280 px, sáng và tối: Tiếng Anh nằm trong khối viền; mỗi dòng có tên Việt, tên gốc, số câu "4.096"; có dòng chú thích cuối.
-- S1-AC03 [auto] (S1-02): Tên gốc của `ja-JP` là "日本語", của `en-US` là "English"; khi giả lập không có `Intl.DisplayNames`, dòng tên gốc không render và không lỗi.
-- S1-AC04 [auto] (S1-04): Chạm Tiếng Anh: ngôn ngữ được lưu vào `vitasr2.settings`, hash thành `#/hoc`; trong lúc tải, các dòng khác bị khóa.
-- S1-AC05 [auto] (S1-06): Manifest đang tải thì có 6 dòng khung xương; manifest lỗi thì hiện trạng thái lỗi APP-08.
 - S1-AC06 [human] (S1-01, S1-04): Người học mới (không hướng dẫn) chọn được Tiếng Anh trong lần chạm đầu tiên.
 
 ### S3 Phiên học
 
-- S3-AC01 [auto] (S3-01): Với fixture, mỗi giá trị `nguon` tạo đúng nhóm câu như bảng; `on-tap` khi không có câu Cần ôn thì quay về màn trước và hiện thông báo "Không có câu nào để học trong nhóm này."
-- S3-AC02 [auto] (S3-02): Đi hết phiên 8 câu: thứ tự màn là S3a, S3b cho từng câu rồi S3c; "Câu n/N" và dải ô cập nhật đúng sau mỗi câu.
-- S3-AC03 [auto] (S3-03): Ở S3a cặp nút bị khóa trước khi hiện câu gốc và mở sau khi hiện; chọn "Cần ôn lại" ghi `outcome: can-on` và câu thành Cần ôn.
-- S3-AC04 [auto] (S3-04): Ở S3b chọn đúng thì nút "Câu tiếp" hiện (câu cuối: "Xem tổng kết"); chọn sai trước rồi mới đúng thì câu được ghi sai (DATA-07).
-- S3-AC05 [auto] (S3-05): Bấm "Xem gợi ý" với nghĩa "Tôi muốn đặt một bàn cho hai người." hiện "Nghĩa bắt đầu bằng "T…", gồm 8 từ."; nút gợi ý biến mất; câu ghi `hinted: true`.
-- S3-AC06 [auto] (S3-06): Phiên 8 câu có 2 câu dùng gợi ý và 1 câu chọn sai: tổng kết hiện "5/8" và danh sách Cần ôn có đúng 3 câu (cộng các câu chọn "Cần ôn lại" nếu có). Khi đã học hết lộ trình, không có nút "Học tiếp". Phiên `tu-khoa` nhóm 1 với 20 kết quả có nút chính "Nhóm tiếp" mở `nhom=2`; nhóm 3 (cuối) không có nút này.
-- S3-AC07 [claude] (S3-02, S3-03, S3-04, S3-06): Ảnh chụp S3a (trước và sau khi hiện), S3b (trước chọn, sau chọn sai, sau chọn đúng), S3c ở 320, 375, 1280 px, sáng và tối.
-- S3-AC08 [auto] (S3-07): Bấm Thoát ở câu 4: sheet xác nhận hiện đúng chữ; "Học tiếp" giữ nguyên câu 4; "Dừng" về màn trước; nút Back của trình duyệt cũng mở sheet xác nhận.
-- S3-AC09 [auto] (S3-08): Dừng ở bước S3b của câu 4, tải lại trang, bấm nút tiếp tục ở T1: vào đúng S3b của câu 4. Bắt đầu phiên lộ trình mới thì phiên dở cũ không còn.
-- S3-AC10 [auto] (S3-09): Đi hết một phiên chỉ bằng bàn phím với các phím đã quy định; vuốt trên thẻ không đổi câu.
 - S3-AC11 [human] (S3-03, S3-04): Ba người học làm một phiên trên điện thoại thật; không ai thấy bước kiểm tra lặp lại vô nghĩa hay gây khó chịu (hỏi sau phiên). Ghi lại thời gian mỗi phiên.
 
 ### S5 Kiểm tra nhanh
@@ -194,26 +130,15 @@ Tổng: 0/158 mục đã đạt.
 - S8-AC07 [human] (S8-05): Trên iPhone (Safari) và Android (Chrome): "Xuất tiến độ" tải được file về máy và "Nhập tiến độ" chọn được chính file đó.
 - S8-AC08 [auto] (S8-06): "Xem lại hướng dẫn" về T1 và hiện bước 1 của S9; dòng phiên bản khớp `version` trong package.json.
 - S8-AC09 [claude] (S8-01, S8-02, S8-04, S8-05, S8-06): Ảnh chụp S8 và sheet Giọng đọc ở 375 px và 1280 px, sáng và tối: nhóm rõ ràng, nhãn đúng, không có mục ngoài spec.
+- S8-AC10 [auto] (S8-01): Đang học Global English: mục "Ngôn ngữ đang học" hiện "Tiếng Anh" và "Global English"; chạm mở sheet Đổi ngôn ngữ có hai dòng Tiếng Anh.
 
 ### S9 Hướng dẫn lần đầu
 
-- S9-AC01 [auto] (S9-01): Với localStorage trống, chọn ngôn ngữ ở S1 thì T1 hiện bước 1/3; với tiến độ đã học hết lộ trình thì không hiện.
-- S9-AC02 [claude] (S9-02): Ảnh chụp 3 bước ở 320, 375, 1280 px, sáng và tối: phần tử được làm nổi đúng, bong bóng không che chính phần tử đó và không tràn khỏi khung.
-- S9-AC03 [auto] (S9-03): "Tiếp" sang bước kế; "Bỏ qua" và Esc đóng hướng dẫn; "Bắt đầu học" ở bước 3 mở `#/phien-hoc?nguon=lo-trinh`.
-- S9-AC04 [auto] (S9-04): Sau khi bỏ qua, tải lại trang và đổi ngôn ngữ: hướng dẫn không hiện lại.
 - S9-AC05 [auto] (S9-05): Mở từ S8 "Xem lại hướng dẫn": bắt đầu ở bước 1, bước 3 có nút "Xong" thay cho "Bắt đầu học".
 - S9-AC06 [human] (S9-02): Người học mới đọc hết 3 bước trong dưới 20 giây và nói lại được Ôn tập nằm ở đâu.
 
 ### T1 Học
 
-- T1-AC01 [auto] (T1-01): Với tiến độ trống, thẻ hiện câu đầu của unit 1 trong fixture ở trạng thái hiện đầy đủ, có "Unit 1", title và translation của unit; dải có ô đầu ở trạng thái Đang học.
-- T1-AC02 [claude] (T1-01): Ảnh chụp T1 ở 320, 375, 768, 1280 px, sáng và tối, với câu ngắn và câu dài trên 120 ký tự: không tràn, cỡ chữ đúng FND-06.
-- T1-AC03 [auto] (T1-02): Không có phiên dở: nút ghi "Học 8 câu" (unit 5 câu: "Học 5 câu") và mở `#/phien-hoc?nguon=lo-trinh`. Có phiên dở 3/8: nút ghi "Tiếp tục: 5 câu còn lại" và mở lại phiên ở câu thứ 4.
-- T1-AC04 [auto] (T1-03): Với 3 phiên hoàn tất trong 7 ngày và mục tiêu 5: hiện "Tuần này: 3/5 phiên"; với 5 phiên: hiện "Tuần này: đã đạt mục tiêu 5/5 phiên". Phiên hoàn tất 8 ngày trước không được tính.
-- T1-AC05 [auto] (T1-04): N = 0 thì không có dòng câu cần ôn; N = 12 thì hiện "12 câu cần ôn hôm nay" và chạm mở `#/phien-hoc?nguon=on-tap`.
-- T1-AC06 [auto] (T1-05): Với tiến độ đã học hết fixture: không có thẻ, hiện đoạn thông báo đúng mẫu và nút "Mở Luyện tập" dẫn tới `#/luyen-tap`.
-- T1-AC07 [claude] (T1-06): Ảnh chụp 1280 px: hai cột, thẻ bên trái rộng không quá 560 px, mục tiêu tuần và câu cần ôn bên phải.
-- T1-AC08 [auto] (T1-07): Vuốt trái/phải trên thẻ và nhấn phím mũi tên không đổi câu.
 - T1-AC09 [human] (T1-02, T1-04): Trên điện thoại thật, người học hiểu được khi nào nên bấm nút chính và khi nào nên chạm dòng câu cần ôn (hỏi lại sau khi họ thao tác).
 
 ### T2 Luyện tập
@@ -224,6 +149,7 @@ Tổng: 0/158 mục đã đạt.
 - T2-AC04 [auto] (T2-04): Chạm Kiểm tra nhanh mở `#/kiem-tra` với unit đang học trong lộ trình.
 - T2-AC05 [auto] (T2-05): Gõ "xyzxyz": hiện đúng câu thông báo không có kết quả và nút "Học 8 câu đầu" bị khóa.
 - T2-AC06 [claude] (T2-03, T2-05): Ảnh chụp sheet Học theo từ khóa ở 375 px với 40 kết quả và với 0 kết quả.
+- T2-AC07 [auto] (T2-03): Với fixture Global English, chip là các `topic` xếp theo số câu giảm dần, tối đa 6; với fixture English Fluency, chip là 4 chip cố định.
 
 ### T3 Thư viện
 
@@ -235,6 +161,8 @@ Tổng: 0/158 mục đã đạt.
 - T3-AC06 [auto] (T3-05): Chạm dòng id 257: sheet tiêu đề "Câu 0257" có thẻ câu, unit, trạng thái, lần học gần nhất; "Học câu này" mở `#/phien-hoc?nguon=cau&id=257`.
 - T3-AC07 [auto] (T3-06): Tìm "xyzxyz": hiện đúng câu thông báo; "Xóa tìm kiếm và bộ lọc" đưa về danh sách đầy đủ.
 - T3-AC08 [claude] (T3-07): Ảnh chụp 1280 px: danh sách trái rộng không quá 480 px, chi tiết câu ở cột phải, chạm dòng khác thì cột phải đổi, không mở sheet.
+- T3-AC09 [auto] (T3-03): Với fixture Global English có bộ lọc Chủ đề, chọn "Trường học" chỉ còn các câu có `topic` đó; với fixture English Fluency không có bộ lọc Chủ đề.
+- T3-AC10 [auto] (T3-03): Với fixture Global English, bộ lọc Trình độ có A1 và B2 (các trình độ có trong dữ liệu); chọn B2 chỉ còn 8 câu của unit B2-89; danh sách Chủ đề có ô tìm và số câu mỗi chủ đề.
 
 ### T4 Tiến bộ
 
