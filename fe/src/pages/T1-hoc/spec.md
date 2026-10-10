@@ -78,7 +78,7 @@ Dưới thẻ là nút chính duy nhất của màn (C3-01):
 
 ### T1-03 Mục tiêu tuần
 
-Phía trên thẻ là dòng "Tuần này: x/y phiên", trong đó x là số phiên hoàn tất trong 7 ngày gần nhất (tính cả hôm nay), y là mục tiêu (S8-01). Khi x ≥ y: "Tuần này: đã đạt mục tiêu x/y phiên".
+Phía trên thẻ là dòng "Tuần này: x/y phiên", trong đó x là số phiên hoàn tất trong 7 ngày gần nhất (tính cả hôm nay), y là mục tiêu (S8-01). Khi x ≥ y: "Tuần này: đã đạt mục tiêu x/y phiên". Phiên hoàn tất là mọi phiên đã xong (lộ trình, ôn tập, từ khóa, học một câu, kiểm tra nhanh); phiên dừng giữa chừng không tính.
 
 ### T1-04 Câu cần ôn
 
@@ -98,9 +98,18 @@ T1 chỉ hiện một câu; không có vuốt hay nút để xem câu trước/s
 
 ## Câu hỏi mở
 
-- T1-03 đếm "phiên hoàn tất". Code đợt 1 đếm mọi phiên đã xong (lộ trình, ôn tập, từ khóa, học một câu, kiểm tra nhanh), không đếm phiên bị dừng giữa chừng. Nhóm xác nhận giúp.
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| T1-03: phiên nào tính vào mục tiêu tuần | Mọi phiên đã xong, không tính phiên dừng giữa chừng (như code đang làm) | T1-03 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
+- 0.3 (10/10/2026): chốt cách đếm phiên hoàn tất cho mục tiêu tuần (Claude quyết định theo ủy quyền của nhóm).

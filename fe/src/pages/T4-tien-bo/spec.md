@@ -57,11 +57,11 @@ Ba số liệu cạnh nhau: số phiên hoàn tất trong khoảng; số câu kh
 
 ### T4-04 Biểu đồ theo ngày
 
-Với khoảng 7 hoặc 30 ngày: biểu đồ cột số câu đã học mỗi ngày, cột hôm nay màu `--brand`, các cột khác `--ink` độ mờ 60%, ngày không học là một chấm. Trục ngang ghi thứ (7 ngày) hoặc ngày trong tháng mỗi 5 ngày (30 ngày). Với khoảng 1 ngày: không có biểu đồ. Biểu đồ có bảng số liệu tương đương cho trình đọc màn hình.
+Với khoảng 7 hoặc 30 ngày: biểu đồ cột số câu đã học mỗi ngày, cột hôm nay màu `--brand`, các cột khác `--ink` độ mờ 60%, ngày không học là một chấm. Trục ngang ghi thứ (7 ngày) hoặc ngày trong tháng mỗi 5 ngày (30 ngày). Với khoảng 1 ngày: không có biểu đồ. Biểu đồ có bảng số liệu tương đương cho trình đọc màn hình. Cột hôm nay dùng `--brand` là ngoại lệ được phép của FND-02. Ở khoảng 30 ngày trên màn hẹp, cột có số liệu vẫn chạm được dù hẹp hơn 44 px (ngoại lệ của FND-14); danh sách "Các phiên" bên dưới là đường thay thế để xem từng ngày.
 
 ### T4-05 Lịch ôn
 
-Ba dòng: "Hôm nay", "Ngày mai", "7 ngày tới", mỗi dòng là số câu đến hạn ôn theo DATA-07 (câu đã đến hạn trước hôm nay tính vào "Hôm nay").
+Ba dòng: "Hôm nay", "Ngày mai", "7 ngày tới", mỗi dòng là số câu đến hạn ôn theo DATA-07 (câu đã đến hạn trước hôm nay tính vào "Hôm nay"). "7 ngày tới" là số câu đến hạn từ ngày mai tới hết ngày thứ 7 tính từ hôm nay, nên gồm cả số của dòng "Ngày mai".
 
 ### T4-06 Các phiên
 
@@ -73,15 +73,24 @@ Chạm một cột của biểu đồ mở sheet (C6) "[Thứ], [ngày]/[tháng]
 
 ### T4-08 Chưa có dữ liệu
 
-Khi chưa có phiên nào: thay toàn bộ nội dung dưới bộ chọn khoảng bằng "Chưa có phiên nào. Học 8 câu đầu tiên để bắt đầu theo dõi tiến bộ." và nút chính "Học 8 câu" (mở `#/phien-hoc?nguon=lo-trinh`).
+Khi chưa có phiên nào: thay toàn bộ nội dung dưới bộ chọn khoảng bằng "Chưa có phiên nào. Học 8 câu đầu tiên để bắt đầu theo dõi tiến bộ." và nút chính "Học 8 câu" (mở `#/phien-hoc?nguon=lo-trinh`). "Chưa có phiên nào" nghĩa là chưa từng hoàn tất phiên nào; khi đã có phiên nhưng khoảng đang chọn không có phiên, màn vẫn hiện các chỉ số (bằng 0) và ẩn mục "Các phiên".
 
 ## Câu hỏi mở
 
-- T4-05: code đếm "7 ngày tới" là các câu đến hạn từ ngày mai tới hết ngày thứ 7 tính từ hôm nay, nên đã gồm số của dòng "Ngày mai" (tiến độ mẫu: Ngày mai 5, 7 ngày tới 19). Nếu nhóm muốn ba dòng tách rời nhau, báo để đổi.
-- T4-04 tô cột hôm nay bằng `--brand`, trong khi FND-02 chỉ cho dùng `--brand` ở nút chính và ô đang học của dải 8 ô. Code theo T4-04. Nhóm xác nhận đây là ngoại lệ, hoặc chọn màu khác cho cột hôm nay.
-- T4-04: ở khoảng 30 ngày trên màn 320 px mỗi cột chỉ rộng khoảng 9 px, nhỏ hơn vùng chạm 44 px của FND-14. Code cho chạm cột có số liệu; ngày không học (một chấm) không chạm được. Có cần cách khác để mở chi tiết ngày trên màn hẹp không?
-- T4-08: code hiểu "chưa có phiên nào" là chưa từng hoàn tất phiên nào. Khi đã có phiên nhưng khoảng đang chọn không có phiên, màn vẫn hiện các chỉ số (bằng 0) và ẩn mục "Các phiên".
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| T4-05: "7 ngày tới" có gồm "Ngày mai" không | Có, giữ như code đang làm | T4-05 |
+| T4-04: cột hôm nay dùng `--brand` trái FND-02 | Giữ, ghi là ngoại lệ của FND-02 | T4-04, FND-02 |
+| T4-04: cột 30 ngày trên màn 320 px hẹp hơn vùng chạm 44 px | Giữ; danh sách Các phiên là đường thay thế, ghi là ngoại lệ của FND-14 | T4-04, FND-14 |
+| T4-08: "chưa có phiên nào" nghĩa là gì | Chưa từng hoàn tất phiên nào, như code đang làm | T4-08 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (10/10/2026): chốt các câu hỏi mở (Claude quyết định theo ủy quyền của nhóm).

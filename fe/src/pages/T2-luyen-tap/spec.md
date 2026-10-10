@@ -20,8 +20,9 @@ Gom các cách luyện ngoài lộ trình vào một chỗ.
 │ Luyện tập                 │
 │                           │
 │ Ôn câu cần ôn         12  │
-│ Các câu bạn đánh dấu      │
-│ cần ôn hoặc trả lời sai.  │
+│ Các câu đến hạn ôn hôm    │
+│ nay, kể cả câu bạn chưa   │
+│ nhớ hoặc làm chưa đúng.   │
 │ ───────────────────────── │
 │ Học theo từ khóa          │
 │ Tìm câu có chữ như đặt    │
@@ -45,7 +46,7 @@ Bên phải tên mục là số câu Cần ôn hôm nay (DATA-07). Chạm mở `
 
 ### T2-03 Học theo từ khóa
 
-Chạm mở sheet (C6) "Học theo từ khóa" gồm: ô tìm (placeholder "Ví dụ: đặt phòng, airport"), các chip gợi ý (chạm chip là điền vào ô tìm): khi bộ nội dung có `topic`, chip là tối đa 6 chủ đề có nhiều câu nhất; khi không có, chip cố định "đặt phòng", "ăn uống", "sân bay", "mua sắm"; dòng "Tìm thấy N câu", xem trước tối đa 5 câu đầu (câu gốc và nghĩa), và nút chính "Học 8 câu đầu" (mở `#/phien-hoc?nguon=tu-khoa&q=…&nhom=1`). Các nhóm 8 câu tiếp theo mở từ nút "Nhóm tiếp" ở tổng kết phiên (S3-06). Tìm theo DATA-12, cập nhật sau khi ngừng gõ 250 ms.
+Chạm mở sheet (C6) "Học theo từ khóa" gồm: ô tìm (placeholder "Ví dụ: đặt phòng, airport"), các chip gợi ý (chạm chip là điền vào ô tìm): khi bộ nội dung có `topic`, chip là tối đa 6 chủ đề có nhiều câu nhất; khi không có, chip cố định "đặt phòng", "ăn uống", "sân bay", "mua sắm"; dòng "Tìm thấy N câu", xem trước tối đa 5 câu đầu (câu gốc và nghĩa), và nút chính "Học 8 câu đầu" (mở `#/phien-hoc?nguon=tu-khoa&q=…&nhom=1`); khi chỉ tìm thấy từ 1 đến 7 câu thì nút là "Học N câu", không tìm thấy câu nào thì nút "Học 8 câu đầu" bị khóa. Các nhóm 8 câu tiếp theo mở từ nút "Nhóm tiếp" ở tổng kết phiên (S3-06). Tìm theo DATA-12 (khớp chuỗi con, nên "bus" khớp cả "busy"), cập nhật sau khi ngừng gõ 250 ms.
 
 ### T2-04 Kiểm tra nhanh
 
@@ -57,10 +58,20 @@ Trong sheet T2-03, khi không có câu nào khớp: thay phần xem trước b�
 
 ## Câu hỏi mở
 
-- T2-03: nút luôn là "Học 8 câu đầu", kể cả khi chỉ tìm thấy dưới 8 câu (phiên khi đó có ít câu hơn). Có muốn đổi thành "Học N câu" như T1-02 không?
-- T2-03: tìm theo chuỗi con (DATA-12) nên "bus" khớp cả "busy". Code giữ đúng quy tắc này; báo nếu muốn khớp theo từ.
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| T2-03: nút luôn là "Học 8 câu đầu" kể cả khi tìm thấy dưới 8 câu | Đổi thành "Học N câu" khi tìm thấy từ 1 đến 7 câu | T2-03, T2-AC03 |
+| T2-03: tìm theo chuỗi con hay theo từ | Giữ tìm theo chuỗi con (DATA-12) | T2-03 |
+| Dòng mô tả "trả lời sai" có chữ trong cột Không dùng của FND-12 (phát hiện khi rà FND-AC12) | Đổi thành "Các câu đến hạn ôn hôm nay, kể cả câu bạn chưa nhớ hoặc làm chưa đúng." (đúng với quy tắc câu cần ôn của DATA-07) | Bố cục, T2-01 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
+- 0.3 (10/10/2026): chốt các câu hỏi mở (Claude quyết định theo ủy quyền của nhóm): nút "Học N câu" khi tìm thấy dưới 8 câu; giữ tìm theo chuỗi con; đổi dòng mô tả Ôn câu cần ôn.

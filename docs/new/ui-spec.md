@@ -45,7 +45,7 @@ Giữ trong bản đầu: chọn ngôn ngữ và bộ nội dung (tiếng Anh c�
 
 Bỏ khỏi bản đầu: Chia sẻ thư viện và lời mời (cần backend `/api/sharing/*`), Góp ý, Khảo sát và Trò chuyện, Thông tin bản chạy thử.
 
-Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; lấy dữ liệu thật từ khách.
+Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; lấy dữ liệu thật từ khách. Bản này cũng không có: Chia sẻ, chọn trình độ bắt đầu cho Global English, chế độ đảo chiều "Tiếng Việt (từ tiếng Anh)", nghe nghĩa tiếng Việt, mục pháp lý của bản cũ 1.9.45 (chốt 10/10/2026; khách cần thì làm thành đợt riêng).
 
 Đối chiếu từng chức năng với bản cũ: `mapping-legacy.md`. Sơ đồ điều hướng: `navigation.md`.
 
@@ -75,9 +75,7 @@ Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; l�
 
 ## 5. Câu hỏi mở
 
-1. Có giữ Chia sẻ trong các bản sau không; nếu có, backend do bên nào cung cấp.
-2. Ai duyệt thiết kế, ở những mốc nào.
-3. Global English: có cho chọn trình độ bắt đầu (A1 đến C2) không, xem câu hỏi mở của DATA.
+Không còn câu hỏi mở cho khách. Các câu dưới đây (bảng 10/10/2026) do Claude quyết định theo ủy quyền của nhóm để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
 
 ### Đã trả lời (08/10/2026)
 
@@ -92,6 +90,11 @@ Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; l�
 
 | Câu hỏi | Trả lời | Đã áp dụng vào |
 |---|---|---|
+| Có giữ Chia sẻ không; nếu có, backend do bên nào cung cấp | Không có ở bản này. Nếu khách cần, khách cung cấp backend và làm thành đợt riêng | Mục 3 |
+| Ai duyệt thiết kế, ở những mốc nào | Nhóm duyệt nội bộ qua ảnh bằng chứng (`docs/evidence/`) và bản chạy thử trên GitHub Pages; khách duyệt một lần khi bàn giao, yêu cầu sửa sau đó làm thành đợt riêng | Bàn giao |
+| Global English có cho chọn trình độ bắt đầu không | Không ở bản này; trình độ khác học qua bộ lọc Trình độ ở Thư viện | DATA-11, mục 3 |
+| Có chế độ đảo chiều "Tiếng Việt (từ tiếng Anh)" như bản cũ không | Không ở bản này | Mục 3 |
+| Có đưa mục pháp lý xuất hiện ở bản cũ 1.9.45 vào không | Không, vì chưa có nội dung từ khách | Mục 3 |
 | Trang chính mở mini app bằng iframe hay tab mới, có truyền gì cho mini app không | Mở trang mới (tab mới, chuyển thẳng trang), không nhúng iframe. Giữ nút quay lại để về trang học chính. Chưa rõ trang chính có gắn tham số URL không; app bỏ qua mọi tham số nên việc này không chặn gì | APP-09, APP-12, `docs/new/navigation.md`, `docs/legacy/README.md` |
 
 ## 6. Lịch sử thay đổi
@@ -101,3 +104,4 @@ Ngoài phạm vi: trang học chính, đăng ký, đăng nhập, thanh toán; l�
 - 0.3 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.4 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
 - 0.5 (10/10/2026): nhóm trả lời câu hỏi về cách trang chính mở mini app: mở trang mới, không nhúng iframe, có nút về trang học chính (APP-09, APP-12). Câu hỏi 4 cũ thành câu 3.
+- 0.6 (10/10/2026): chốt các câu hỏi còn lại cho khách (Claude quyết định theo ủy quyền của nhóm): không có Chia sẻ, chọn trình độ bắt đầu, chế độ đảo chiều, nghe nghĩa, mục pháp lý ở bản này; quy trình duyệt thiết kế.

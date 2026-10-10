@@ -1,6 +1,6 @@
 # Ánh xạ sơ đồ điều hướng sang spec
 
-File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 10:32 UTC từ các dòng `%% @spec` trong docs/new/navigation.md. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 11:57 UTC từ các dòng `%% @spec` trong docs/new/navigation.md. Không sửa tay.
 
 Tổng: 95 mũi tên; 94 gắn yêu cầu, 1 ngoài phạm vi.
 
@@ -12,7 +12,7 @@ Tổng: 95 mũi tên; 94 gắn yêu cầu, 1 ngoài phạm vi.
 | Khởi động kiểm tra lần đầu → S1 Chọn ngôn ngữ và bộ nội dung | lần đầu | APP-05 Khởi động ([fe/src/app/spec.md:45](../../fe/src/app/spec.md))<br>S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md)) | `fe/src/app/`<br>`fe/src/pages/S1-chon-ngon-ngu/` | docs/new/navigation.md:20 |
 | Khởi động kiểm tra lần đầu → 4 khu chính, chuyển bằng thanh tab | đã chọn ngôn ngữ | APP-05 Khởi động ([fe/src/app/spec.md:45](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:22 |
 | S1 Chọn ngôn ngữ và bộ nội dung → 4 khu chính, chuyển bằng thanh tab | - | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/` | docs/new/navigation.md:24 |
-| 4 khu chính, chuyển bằng thanh tab → Màn toàn trang S3 Phiên học, S5 Kiểm tra nhanh | - | APP-03 Màn toàn trang ([fe/src/app/spec.md:24](../../fe/src/app/spec.md))<br>T1-02 Nút chính đổi chữ theo ngữ cảnh ([fe/src/pages/T1-hoc/spec.md:73](../../fe/src/pages/T1-hoc/spec.md))<br>T2-04 Kiểm tra nhanh ([fe/src/pages/T2-luyen-tap/spec.md:50](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/app/`<br>`fe/src/pages/T1-hoc/`<br>`fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:34 |
+| 4 khu chính, chuyển bằng thanh tab → Màn toàn trang S3 Phiên học, S5 Kiểm tra nhanh | - | APP-03 Màn toàn trang ([fe/src/app/spec.md:24](../../fe/src/app/spec.md))<br>T1-02 Nút chính đổi chữ theo ngữ cảnh ([fe/src/pages/T1-hoc/spec.md:73](../../fe/src/pages/T1-hoc/spec.md))<br>T2-04 Kiểm tra nhanh ([fe/src/pages/T2-luyen-tap/spec.md:51](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/app/`<br>`fe/src/pages/T1-hoc/`<br>`fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:34 |
 | 4 khu chính, chuyển bằng thanh tab → S8 Cài đặt | - | APP-02 Thanh trên cùng ([fe/src/app/spec.md:20](../../fe/src/app/spec.md))<br>APP-04 Bảng route ([fe/src/app/spec.md:28](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:36 |
 | 4 khu chính, chuyển bằng thanh tab → Sheet đổi ngôn ngữ, từ khóa, chi tiết câu, chi tiết ngày, giọng đọc, xác nhận | - | APP-11 Một lớp phủ tại một thời điểm ([fe/src/app/spec.md:83](../../fe/src/app/spec.md))<br>C6-01 Dạng hiển thị ([fe/src/components/C6-sheet/spec.md:15](../../fe/src/components/C6-sheet/spec.md)) | `fe/src/app/`<br>`fe/src/components/C6-sheet/` | docs/new/navigation.md:38 |
 | 4 khu chính, chuyển bằng thanh tab → Trang học chính (ngoài phạm vi) | Quay lại trang học | APP-12 Nút về trang học chính ([fe/src/app/spec.md:87](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:40 |
@@ -28,7 +28,7 @@ Tổng: 95 mũi tên; 94 gắn yêu cầu, 1 ngoài phạm vi.
 | Lỗi tải Không tải được danh sách câu nút Thử lại → Khởi động hiện khung xương, tải danh sách ngôn ngữ | Thử lại | APP-08 Trạng thái toàn cục ([fe/src/app/spec.md:66](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:58 |
 | Tải được? → Đã lưu ngôn ngữ đang học? | Có | APP-05 Khởi động ([fe/src/app/spec.md:45](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:60 |
 | Đã lưu ngôn ngữ đang học? → S1 Chọn ngôn ngữ | Chưa: lần đầu | APP-05 Khởi động ([fe/src/app/spec.md:45](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:62 |
-| S1 Chọn ngôn ngữ → Ngôn ngữ có nhiều bộ nội dung? | chạm một ngôn ngữ | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>DATA-13 Bộ nội dung ([fe/src/data/spec.md:128](../../fe/src/data/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/data/` | docs/new/navigation.md:64 |
+| S1 Chọn ngôn ngữ → Ngôn ngữ có nhiều bộ nội dung? | chạm một ngôn ngữ | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>DATA-13 Bộ nội dung ([fe/src/data/spec.md:130](../../fe/src/data/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/data/` | docs/new/navigation.md:64 |
 | Ngôn ngữ có nhiều bộ nội dung? → S1 bước 2 Chọn bộ nội dung | Có: tiếng Anh | S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/` | docs/new/navigation.md:66 |
 | S1 bước 2 Chọn bộ nội dung → Tải câu và unit của bộ và ngôn ngữ đó | chạm Global English hoặc English Fluency | S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>DATA-05 Nguồn dữ liệu thay được ([fe/src/data/spec.md:72](../../fe/src/data/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/data/` | docs/new/navigation.md:68 |
 | Ngôn ngữ có nhiều bộ nội dung? → Tải câu và unit của bộ và ngôn ngữ đó | Không | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/` | docs/new/navigation.md:70 |
@@ -55,10 +55,10 @@ Tổng: 95 mũi tên; 94 gắn yêu cầu, 1 ngoài phạm vi.
 | 4 khu chính, chuyển bằng thanh tab → S8 Cài đặt | Cài đặt | APP-02 Thanh trên cùng ([fe/src/app/spec.md:20](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:120 |
 | T1 Học → S3 Phiên học | Học 8 câu / Tiếp tục N câu cần ôn hôm nay | T1-02 Nút chính đổi chữ theo ngữ cảnh ([fe/src/pages/T1-hoc/spec.md:73](../../fe/src/pages/T1-hoc/spec.md))<br>T1-04 Câu cần ôn ([fe/src/pages/T1-hoc/spec.md:83](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:123 |
 | T1 Học → T2 Luyện tập | Mở Luyện tập, khi học hết lộ trình | T1-05 Học hết lộ trình ([fe/src/pages/T1-hoc/spec.md:87](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:125 |
-| T2 Luyện tập → S3 Phiên học | Ôn câu cần ôn | T2-02 Ôn câu cần ôn ([fe/src/pages/T2-luyen-tap/spec.md:42](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:127 |
-| T2 Luyện tập → Sheet Học theo từ khóa | Học theo từ khóa | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:46](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:129 |
-| Sheet Học theo từ khóa → S3 Phiên học | Học 8 câu đầu | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:46](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:131 |
-| T2 Luyện tập → S5 Kiểm tra nhanh | Kiểm tra nhanh | T2-04 Kiểm tra nhanh ([fe/src/pages/T2-luyen-tap/spec.md:50](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:133 |
+| T2 Luyện tập → S3 Phiên học | Ôn câu cần ôn | T2-02 Ôn câu cần ôn ([fe/src/pages/T2-luyen-tap/spec.md:43](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:127 |
+| T2 Luyện tập → Sheet Học theo từ khóa | Học theo từ khóa | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:47](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:129 |
+| Sheet Học theo từ khóa → S3 Phiên học | Học 8 câu đầu | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:47](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:131 |
+| T2 Luyện tập → S5 Kiểm tra nhanh | Kiểm tra nhanh | T2-04 Kiểm tra nhanh ([fe/src/pages/T2-luyen-tap/spec.md:51](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:133 |
 | S5 Kiểm tra nhanh → S5 Kết quả | xong bước cuối | S5-07 Kết quả ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:57](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:135 |
 | T3 Thư viện → Sheet Chi tiết câu | chạm vào câu | T3-05 Chi tiết câu ([fe/src/pages/T3-thu-vien/spec.md:70](../../fe/src/pages/T3-thu-vien/spec.md)) | `fe/src/pages/T3-thu-vien/` | docs/new/navigation.md:137 |
 | Sheet Chi tiết câu → S3 Phiên học | Học câu này | T3-05 Chi tiết câu ([fe/src/pages/T3-thu-vien/spec.md:70](../../fe/src/pages/T3-thu-vien/spec.md)) | `fe/src/pages/T3-thu-vien/` | docs/new/navigation.md:139 |
@@ -73,78 +73,78 @@ Tổng: 95 mũi tên; 94 gắn yêu cầu, 1 ngoài phạm vi.
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «list item» Tiếng Anh → «window» S1 bước 2: Chọn bộ nội dung | Click | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/` | docs/new/navigation.md:213 |
-| «list item» Global English → «overlay» S9 Hướng dẫn trên T1 | Click | S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S9-01 Khi nào hiện ([fe/src/pages/S9-huong-dan/spec.md:17](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:215 |
-| «list item» English Fluency → «overlay» S9 Hướng dẫn trên T1 | Click | S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S9-01 Khi nào hiện ([fe/src/pages/S9-huong-dan/spec.md:17](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:217 |
-| «list item» Ngôn ngữ khác → «overlay» S9 Hướng dẫn trên T1 | Click | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S9-01 Khi nào hiện ([fe/src/pages/S9-huong-dan/spec.md:17](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:219 |
-| «button» Bỏ qua → «window» T1 Học | Click | S9-03 Điều khiển ([fe/src/pages/S9-huong-dan/spec.md:31](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:221 |
-| «button» Bắt đầu học → «window» S3 Phiên học | Click | S9-03 Điều khiển ([fe/src/pages/S9-huong-dan/spec.md:31](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:223 |
+| «list item» Tiếng Anh → «window» S1 bước 2: Chọn bộ nội dung | Click | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/` | docs/new/navigation.md:214 |
+| «list item» Global English → «overlay» S9 Hướng dẫn trên T1 | Click | S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S9-01 Khi nào hiện ([fe/src/pages/S9-huong-dan/spec.md:17](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:216 |
+| «list item» English Fluency → «overlay» S9 Hướng dẫn trên T1 | Click | S1-07 Chọn bộ nội dung ([fe/src/pages/S1-chon-ngon-ngu/spec.md:63](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S9-01 Khi nào hiện ([fe/src/pages/S9-huong-dan/spec.md:17](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:218 |
+| «list item» Ngôn ngữ khác → «overlay» S9 Hướng dẫn trên T1 | Click | S1-04 Chọn ([fe/src/pages/S1-chon-ngon-ngu/spec.md:51](../../fe/src/pages/S1-chon-ngon-ngu/spec.md))<br>S9-01 Khi nào hiện ([fe/src/pages/S9-huong-dan/spec.md:17](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S1-chon-ngon-ngu/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:220 |
+| «button» Bỏ qua → «window» T1 Học | Click | S9-03 Điều khiển ([fe/src/pages/S9-huong-dan/spec.md:31](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:222 |
+| «button» Bắt đầu học → «window» S3 Phiên học | Click | S9-03 Điều khiển ([fe/src/pages/S9-huong-dan/spec.md:31](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:224 |
 
 ## 4.2 T1 Học và thanh tab
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «button» Tên ngôn ngữ ▾ → «sheet» Đổi ngôn ngữ hoặc bộ nội dung | Click | APP-02 Thanh trên cùng ([fe/src/app/spec.md:20](../../fe/src/app/spec.md))<br>APP-06 Sheet Đổi ngôn ngữ ([fe/src/app/spec.md:49](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:277 |
-| «button» Cài đặt → «window» S8 Cài đặt | Click | APP-02 Thanh trên cùng ([fe/src/app/spec.md:20](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:279 |
-| «button» Học 8 câu / Tiếp tục → «window» S3 Phiên học | Click | T1-02 Nút chính đổi chữ theo ngữ cảnh ([fe/src/pages/T1-hoc/spec.md:73](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:281 |
-| «hyperlink» N câu cần ôn hôm nay → «window» S3 Phiên học | Click | T1-04 Câu cần ôn ([fe/src/pages/T1-hoc/spec.md:83](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:283 |
-| «tab» Luyện tập → «window» T2 Luyện tập | Click | APP-01 Bốn khu chính ([fe/src/app/spec.md:16](../../fe/src/app/spec.md))<br>C5-01 Thanh dưới đáy ([fe/src/components/C5-thanh-tab/spec.md:15](../../fe/src/components/C5-thanh-tab/spec.md)) | `fe/src/app/`<br>`fe/src/components/C5-thanh-tab/` | docs/new/navigation.md:285 |
-| «tab» Thư viện → «window» T3 Thư viện | Click | APP-01 Bốn khu chính ([fe/src/app/spec.md:16](../../fe/src/app/spec.md))<br>C5-01 Thanh dưới đáy ([fe/src/components/C5-thanh-tab/spec.md:15](../../fe/src/components/C5-thanh-tab/spec.md)) | `fe/src/app/`<br>`fe/src/components/C5-thanh-tab/` | docs/new/navigation.md:287 |
-| «tab» Tiến bộ → «window» T4 Tiến bộ | Click | APP-01 Bốn khu chính ([fe/src/app/spec.md:16](../../fe/src/app/spec.md))<br>C5-01 Thanh dưới đáy ([fe/src/components/C5-thanh-tab/spec.md:15](../../fe/src/components/C5-thanh-tab/spec.md)) | `fe/src/app/`<br>`fe/src/components/C5-thanh-tab/` | docs/new/navigation.md:289 |
-| «list item» Ngôn ngữ hoặc bộ khác → «window» T1 Học, ngôn ngữ hoặc bộ mới | Click | APP-06 Sheet Đổi ngôn ngữ ([fe/src/app/spec.md:49](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:291 |
-| «button» Mở Luyện tập, khi học hết → «window» T2 Luyện tập | Click | T1-05 Học hết lộ trình ([fe/src/pages/T1-hoc/spec.md:87](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:293 |
-| «hyperlink» Cài đặt > Giọng đọc, khi thiếu giọng → «sheet» Giọng đọc | Click | C1-05 Không có giọng đọc ([fe/src/components/C1-the-cau/spec.md:48](../../fe/src/components/C1-the-cau/spec.md)) | `fe/src/components/C1-the-cau/` | docs/new/navigation.md:295 |
+| «button» Tên ngôn ngữ ▾ → «sheet» Đổi ngôn ngữ hoặc bộ nội dung | Click | APP-02 Thanh trên cùng ([fe/src/app/spec.md:20](../../fe/src/app/spec.md))<br>APP-06 Sheet Đổi ngôn ngữ ([fe/src/app/spec.md:49](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:278 |
+| «button» Cài đặt → «window» S8 Cài đặt | Click | APP-02 Thanh trên cùng ([fe/src/app/spec.md:20](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:280 |
+| «button» Học 8 câu / Tiếp tục → «window» S3 Phiên học | Click | T1-02 Nút chính đổi chữ theo ngữ cảnh ([fe/src/pages/T1-hoc/spec.md:73](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:282 |
+| «hyperlink» N câu cần ôn hôm nay → «window» S3 Phiên học | Click | T1-04 Câu cần ôn ([fe/src/pages/T1-hoc/spec.md:83](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:284 |
+| «tab» Luyện tập → «window» T2 Luyện tập | Click | APP-01 Bốn khu chính ([fe/src/app/spec.md:16](../../fe/src/app/spec.md))<br>C5-01 Thanh dưới đáy ([fe/src/components/C5-thanh-tab/spec.md:15](../../fe/src/components/C5-thanh-tab/spec.md)) | `fe/src/app/`<br>`fe/src/components/C5-thanh-tab/` | docs/new/navigation.md:286 |
+| «tab» Thư viện → «window» T3 Thư viện | Click | APP-01 Bốn khu chính ([fe/src/app/spec.md:16](../../fe/src/app/spec.md))<br>C5-01 Thanh dưới đáy ([fe/src/components/C5-thanh-tab/spec.md:15](../../fe/src/components/C5-thanh-tab/spec.md)) | `fe/src/app/`<br>`fe/src/components/C5-thanh-tab/` | docs/new/navigation.md:288 |
+| «tab» Tiến bộ → «window» T4 Tiến bộ | Click | APP-01 Bốn khu chính ([fe/src/app/spec.md:16](../../fe/src/app/spec.md))<br>C5-01 Thanh dưới đáy ([fe/src/components/C5-thanh-tab/spec.md:15](../../fe/src/components/C5-thanh-tab/spec.md)) | `fe/src/app/`<br>`fe/src/components/C5-thanh-tab/` | docs/new/navigation.md:290 |
+| «list item» Ngôn ngữ hoặc bộ khác → «window» T1 Học, ngôn ngữ hoặc bộ mới | Click | APP-06 Sheet Đổi ngôn ngữ ([fe/src/app/spec.md:49](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:292 |
+| «button» Mở Luyện tập, khi học hết → «window» T2 Luyện tập | Click | T1-05 Học hết lộ trình ([fe/src/pages/T1-hoc/spec.md:87](../../fe/src/pages/T1-hoc/spec.md)) | `fe/src/pages/T1-hoc/` | docs/new/navigation.md:294 |
+| «hyperlink» Cài đặt > Giọng đọc, khi thiếu giọng → «sheet» Giọng đọc | Click | C1-05 Không có giọng đọc ([fe/src/components/C1-the-cau/spec.md:48](../../fe/src/components/C1-the-cau/spec.md)) | `fe/src/components/C1-the-cau/` | docs/new/navigation.md:296 |
 
 ## 4.3 S3 Phiên học
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «button» Cần ôn lại → «window» S3b Kiểm tra | Click | S3-03 Bước ghi nhớ ([fe/src/pages/S3-phien-hoc/spec.md:103](../../fe/src/pages/S3-phien-hoc/spec.md))<br>C3-03 Cặp nút đánh giá ([fe/src/components/C3-nut/spec.md:21](../../fe/src/components/C3-nut/spec.md)) | `fe/src/pages/S3-phien-hoc/`<br>`fe/src/components/C3-nut/` | docs/new/navigation.md:344 |
-| «button» Tôi nhớ → «window» S3b Kiểm tra | Click | S3-03 Bước ghi nhớ ([fe/src/pages/S3-phien-hoc/spec.md:103](../../fe/src/pages/S3-phien-hoc/spec.md))<br>C3-03 Cặp nút đánh giá ([fe/src/components/C3-nut/spec.md:21](../../fe/src/components/C3-nut/spec.md)) | `fe/src/pages/S3-phien-hoc/`<br>`fe/src/components/C3-nut/` | docs/new/navigation.md:346 |
-| «button» Xem tổng kết, ở câu cuối → «window» S3c Tổng kết phiên | Click | S3-04 Bước kiểm tra ([fe/src/pages/S3-phien-hoc/spec.md:107](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:348 |
-| «button» Thoát → «sheet» Dừng phiên? | Click | S3-07 Thoát giữa phiên ([fe/src/pages/S3-phien-hoc/spec.md:119](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:350 |
-| «button» Thoát → «sheet» Dừng phiên? | Click | S3-07 Thoát giữa phiên ([fe/src/pages/S3-phien-hoc/spec.md:119](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:352 |
-| «button» Dừng → «window» Màn đã mở phiên | Click | S3-07 Thoát giữa phiên ([fe/src/pages/S3-phien-hoc/spec.md:119](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:354 |
-| «hyperlink» Xem tiến bộ → «window» T4 Tiến bộ | Click | S3-06 Tổng kết phiên ([fe/src/pages/S3-phien-hoc/spec.md:115](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:356 |
-| «hyperlink» Xong → «window» T1 Học | Click | S3-06 Tổng kết phiên ([fe/src/pages/S3-phien-hoc/spec.md:115](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:358 |
+| «button» Cần ôn lại → «window» S3b Kiểm tra | Click | S3-03 Bước ghi nhớ ([fe/src/pages/S3-phien-hoc/spec.md:103](../../fe/src/pages/S3-phien-hoc/spec.md))<br>C3-03 Cặp nút đánh giá ([fe/src/components/C3-nut/spec.md:21](../../fe/src/components/C3-nut/spec.md)) | `fe/src/pages/S3-phien-hoc/`<br>`fe/src/components/C3-nut/` | docs/new/navigation.md:345 |
+| «button» Tôi nhớ → «window» S3b Kiểm tra | Click | S3-03 Bước ghi nhớ ([fe/src/pages/S3-phien-hoc/spec.md:103](../../fe/src/pages/S3-phien-hoc/spec.md))<br>C3-03 Cặp nút đánh giá ([fe/src/components/C3-nut/spec.md:21](../../fe/src/components/C3-nut/spec.md)) | `fe/src/pages/S3-phien-hoc/`<br>`fe/src/components/C3-nut/` | docs/new/navigation.md:347 |
+| «button» Xem tổng kết, ở câu cuối → «window» S3c Tổng kết phiên | Click | S3-04 Bước kiểm tra ([fe/src/pages/S3-phien-hoc/spec.md:107](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:349 |
+| «button» Thoát → «sheet» Dừng phiên? | Click | S3-07 Thoát giữa phiên ([fe/src/pages/S3-phien-hoc/spec.md:119](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:351 |
+| «button» Thoát → «sheet» Dừng phiên? | Click | S3-07 Thoát giữa phiên ([fe/src/pages/S3-phien-hoc/spec.md:119](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:353 |
+| «button» Dừng → «window» Màn đã mở phiên | Click | S3-07 Thoát giữa phiên ([fe/src/pages/S3-phien-hoc/spec.md:119](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:355 |
+| «hyperlink» Xem tiến bộ → «window» T4 Tiến bộ | Click | S3-06 Tổng kết phiên ([fe/src/pages/S3-phien-hoc/spec.md:115](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:357 |
+| «hyperlink» Xong → «window» T1 Học | Click | S3-06 Tổng kết phiên ([fe/src/pages/S3-phien-hoc/spec.md:115](../../fe/src/pages/S3-phien-hoc/spec.md)) | `fe/src/pages/S3-phien-hoc/` | docs/new/navigation.md:359 |
 
 ## 4.4 T2 Luyện tập và S5 Kiểm tra nhanh
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «list item» Ôn câu cần ôn → «window» S3 Phiên học | Click | T2-02 Ôn câu cần ôn ([fe/src/pages/T2-luyen-tap/spec.md:42](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:406 |
-| «list item» Học theo từ khóa → «sheet» Học theo từ khóa | Click | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:46](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:408 |
-| «button» Học 8 câu đầu → «window» S3 Phiên học | Click | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:46](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:410 |
-| «list item» Kiểm tra nhanh → «window» S5 Bắt đầu kiểm tra | Click | T2-04 Kiểm tra nhanh ([fe/src/pages/T2-luyen-tap/spec.md:50](../../fe/src/pages/T2-luyen-tap/spec.md))<br>S5-01 Màn bắt đầu ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:33](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/T2-luyen-tap/`<br>`fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:412 |
-| «button» Làm cả 3 bước → «window» S5 Đang kiểm tra | Click | S5-01 Màn bắt đầu ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:33](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:414 |
-| «hyperlink» Chỉ làm một bước → «window» S5 Đang kiểm tra | Click | S5-01 Màn bắt đầu ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:33](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:416 |
-| «button» Thoát → «sheet» Dừng kiểm tra? | Click | S5-08 Thoát giữa chừng ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:61](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:418 |
-| «button» Dừng → «window» T2 Luyện tập | Click | S5-08 Thoát giữa chừng ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:61](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:420 |
-| «button» Câu tiếp, ở câu cuối → «window» S5 Kết quả | Click | S5-07 Kết quả ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:57](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:422 |
-| «hyperlink» Xong → «window» T2 Luyện tập | Click | S5-07 Kết quả ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:57](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:424 |
+| «list item» Ôn câu cần ôn → «window» S3 Phiên học | Click | T2-02 Ôn câu cần ôn ([fe/src/pages/T2-luyen-tap/spec.md:43](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:407 |
+| «list item» Học theo từ khóa → «sheet» Học theo từ khóa | Click | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:47](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:409 |
+| «button» Học 8 câu đầu → «window» S3 Phiên học | Click | T2-03 Học theo từ khóa ([fe/src/pages/T2-luyen-tap/spec.md:47](../../fe/src/pages/T2-luyen-tap/spec.md)) | `fe/src/pages/T2-luyen-tap/` | docs/new/navigation.md:411 |
+| «list item» Kiểm tra nhanh → «window» S5 Bắt đầu kiểm tra | Click | T2-04 Kiểm tra nhanh ([fe/src/pages/T2-luyen-tap/spec.md:51](../../fe/src/pages/T2-luyen-tap/spec.md))<br>S5-01 Màn bắt đầu ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:33](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/T2-luyen-tap/`<br>`fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:413 |
+| «button» Làm cả 3 bước → «window» S5 Đang kiểm tra | Click | S5-01 Màn bắt đầu ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:33](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:415 |
+| «hyperlink» Chỉ làm một bước → «window» S5 Đang kiểm tra | Click | S5-01 Màn bắt đầu ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:33](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:417 |
+| «button» Thoát → «sheet» Dừng kiểm tra? | Click | S5-08 Thoát giữa chừng ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:61](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:419 |
+| «button» Dừng → «window» T2 Luyện tập | Click | S5-08 Thoát giữa chừng ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:61](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:421 |
+| «button» Câu tiếp, ở câu cuối → «window» S5 Kết quả | Click | S5-07 Kết quả ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:57](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:423 |
+| «hyperlink» Xong → «window» T2 Luyện tập | Click | S5-07 Kết quả ([fe/src/pages/S5-kiem-tra-nhanh/spec.md:57](../../fe/src/pages/S5-kiem-tra-nhanh/spec.md)) | `fe/src/pages/S5-kiem-tra-nhanh/` | docs/new/navigation.md:425 |
 
 ## 4.5 T3 Thư viện
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «list item» Dòng câu → «sheet» Chi tiết câu | Click | T3-05 Chi tiết câu ([fe/src/pages/T3-thu-vien/spec.md:70](../../fe/src/pages/T3-thu-vien/spec.md)) | `fe/src/pages/T3-thu-vien/` | docs/new/navigation.md:452 |
-| «button» Học câu này → «window» S3 Phiên học | Click | T3-05 Chi tiết câu ([fe/src/pages/T3-thu-vien/spec.md:70](../../fe/src/pages/T3-thu-vien/spec.md)) | `fe/src/pages/T3-thu-vien/` | docs/new/navigation.md:454 |
+| «list item» Dòng câu → «sheet» Chi tiết câu | Click | T3-05 Chi tiết câu ([fe/src/pages/T3-thu-vien/spec.md:70](../../fe/src/pages/T3-thu-vien/spec.md)) | `fe/src/pages/T3-thu-vien/` | docs/new/navigation.md:453 |
+| «button» Học câu này → «window» S3 Phiên học | Click | T3-05 Chi tiết câu ([fe/src/pages/T3-thu-vien/spec.md:70](../../fe/src/pages/T3-thu-vien/spec.md)) | `fe/src/pages/T3-thu-vien/` | docs/new/navigation.md:455 |
 
 ## 4.6 T4 Tiến bộ
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «chart bar» Cột ngày → «sheet» Chi tiết ngày | Click | T4-07 Chi tiết ngày ([fe/src/pages/T4-tien-bo/spec.md:70](../../fe/src/pages/T4-tien-bo/spec.md)) | `fe/src/pages/T4-tien-bo/` | docs/new/navigation.md:482 |
-| «button» Học 8 câu, khi chưa có phiên → «window» S3 Phiên học | Click | T4-08 Chưa có dữ liệu ([fe/src/pages/T4-tien-bo/spec.md:74](../../fe/src/pages/T4-tien-bo/spec.md)) | `fe/src/pages/T4-tien-bo/` | docs/new/navigation.md:484 |
+| «chart bar» Cột ngày → «sheet» Chi tiết ngày | Click | T4-07 Chi tiết ngày ([fe/src/pages/T4-tien-bo/spec.md:70](../../fe/src/pages/T4-tien-bo/spec.md)) | `fe/src/pages/T4-tien-bo/` | docs/new/navigation.md:483 |
+| «button» Học 8 câu, khi chưa có phiên → «window» S3 Phiên học | Click | T4-08 Chưa có dữ liệu ([fe/src/pages/T4-tien-bo/spec.md:74](../../fe/src/pages/T4-tien-bo/spec.md)) | `fe/src/pages/T4-tien-bo/` | docs/new/navigation.md:485 |
 
 ## 4.7 S8 Cài đặt
 
 | Mũi tên | Thao tác | Yêu cầu (bằng chứng) | Thư mục spec / code | Dòng sơ đồ |
 |---|---|---|---|---|
-| «button» Quay lại → «window» Màn trước đó | Click | APP-04 Bảng route ([fe/src/app/spec.md:28](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:530 |
-| «list item» Ngôn ngữ đang học → «sheet» Đổi ngôn ngữ hoặc bộ nội dung | Click | S8-01 Học tập ([fe/src/pages/S8-cai-dat/spec.md:17](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:532 |
-| «list item» Giọng đọc → «sheet» Giọng đọc | Click | S8-02 Giọng đọc ([fe/src/pages/S8-cai-dat/spec.md:21](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:534 |
-| «list item» Nhập tiến độ → «sheet» Xác nhận nhập tiến độ | Click, sau khi chọn file | S8-05 Dữ liệu ([fe/src/pages/S8-cai-dat/spec.md:38](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:536 |
-| «list item» Xóa tiến độ → «sheet» Xác nhận xóa tiến độ | Click | S8-05 Dữ liệu ([fe/src/pages/S8-cai-dat/spec.md:38](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:538 |
-| «button» Xóa → «window» T1 Học | Click, khi gõ đúng tên ngôn ngữ | S8-05 Dữ liệu ([fe/src/pages/S8-cai-dat/spec.md:38](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:540 |
-| «hyperlink» Xem lại hướng dẫn → «overlay» S9 Hướng dẫn trên T1 | Click | S8-06 Trợ giúp ([fe/src/pages/S8-cai-dat/spec.md:45](../../fe/src/pages/S8-cai-dat/spec.md))<br>S9-05 Xem lại ([fe/src/pages/S9-huong-dan/spec.md:39](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S8-cai-dat/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:542 |
+| «button» Quay lại → «window» Màn trước đó | Click | APP-04 Bảng route ([fe/src/app/spec.md:28](../../fe/src/app/spec.md)) | `fe/src/app/` | docs/new/navigation.md:531 |
+| «list item» Ngôn ngữ đang học → «sheet» Đổi ngôn ngữ hoặc bộ nội dung | Click | S8-01 Học tập ([fe/src/pages/S8-cai-dat/spec.md:17](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:533 |
+| «list item» Giọng đọc → «sheet» Giọng đọc | Click | S8-02 Giọng đọc ([fe/src/pages/S8-cai-dat/spec.md:21](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:535 |
+| «list item» Nhập tiến độ → «sheet» Xác nhận nhập tiến độ | Click, sau khi chọn file | S8-05 Tiến độ ([fe/src/pages/S8-cai-dat/spec.md:38](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:537 |
+| «list item» Xóa tiến độ → «sheet» Xác nhận xóa tiến độ | Click | S8-05 Tiến độ ([fe/src/pages/S8-cai-dat/spec.md:38](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:539 |
+| «button» Xóa → «window» T1 Học | Click, khi gõ đúng tên ngôn ngữ | S8-05 Tiến độ ([fe/src/pages/S8-cai-dat/spec.md:38](../../fe/src/pages/S8-cai-dat/spec.md)) | `fe/src/pages/S8-cai-dat/` | docs/new/navigation.md:541 |
+| «hyperlink» Xem lại hướng dẫn → «overlay» S9 Hướng dẫn trên T1 | Click | S8-06 Trợ giúp ([fe/src/pages/S8-cai-dat/spec.md:45](../../fe/src/pages/S8-cai-dat/spec.md))<br>S9-05 Xem lại ([fe/src/pages/S9-huong-dan/spec.md:39](../../fe/src/pages/S9-huong-dan/spec.md)) | `fe/src/pages/S8-cai-dat/`<br>`fe/src/pages/S9-huong-dan/` | docs/new/navigation.md:543 |

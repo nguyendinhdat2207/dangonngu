@@ -163,6 +163,8 @@ for (const theme of THEMES) {
       await expect(page.getByRole('button', { name: 'Làm cả 3 bước' })).toBeVisible();
       await shot(page, 'S5-AC09', `${w}-${theme}-1-bat-dau`, { full: true });
       await page.getByRole('button', { name: 'Làm cả 3 bước' }).click();
+      // S5-03: lựa chọn chỉ hiện sau khi biết thiết bị có giọng hay không (tối đa 1,5 giây).
+      await expect(page.locator('.choice').first()).toBeVisible();
       await shot(page, 'S5-AC09', `${w}-${theme}-2-nghe-chon`, { full: true });
       await page.locator('.choice:not([data-correct])').first().click();
       await page.locator('.choice[data-correct="true"]').click();

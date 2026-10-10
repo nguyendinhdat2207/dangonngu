@@ -20,7 +20,7 @@ Hiện một lần, ngay khi T1 tải xong lần đầu sau khi người học c
 
 ### S9-02 Ba bước
 
-Mỗi bước làm nổi một phần tử của T1 (phần còn lại phủ `--ink` độ mờ 40%) và hiện một bong bóng chữ cạnh phần tử đó:
+Mỗi bước làm nổi một phần tử của T1 (phần còn lại phủ lớp nền `--scrim` như sheet, C6-01) và hiện một bong bóng chữ cạnh phần tử đó:
 
 | Bước | Phần tử | Chữ |
 |---|---|---|
@@ -43,3 +43,4 @@ Mở lại được từ S8-06; khi đó bắt đầu từ bước 1 và "Bắt 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (10/10/2026): lớp phủ dùng chung token `--scrim` với sheet (C6-01).

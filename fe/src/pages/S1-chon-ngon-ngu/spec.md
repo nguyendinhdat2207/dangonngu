@@ -86,10 +86,19 @@ Bước thứ hai của S1, chỉ hiện với ngôn ngữ có nhiều bộ (DAT
 
 ## Câu hỏi mở
 
-- Bản cũ có chế độ "Tiếng Việt (từ tiếng Anh)" đảo chiều câu gốc và nghĩa. Bản đầu không có. Khách có cần không?
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| Có cần chế độ "Tiếng Việt (từ tiếng Anh)" đảo chiều câu gốc và nghĩa không | Không có ở bản này; khách cần thì làm thành đợt riêng | `docs/new/ui-spec.md` mục 3 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
+- 0.4 (10/10/2026): chốt không có chế độ đảo chiều ở bản này (Claude quyết định theo ủy quyền của nhóm).

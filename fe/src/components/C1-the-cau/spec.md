@@ -47,7 +47,7 @@ Câu gốc hiện đầy đủ, nút Nghe và Nghe lặp dùng được. Không 
 
 ### C1-05 Không có giọng đọc
 
-Khi thiết bị không có giọng nào cho ngôn ngữ đích: nút Nghe và Nghe lặp bị khóa, dưới hàng nút hiện "Thiết bị chưa có giọng [tên ngôn ngữ]. Mở Cài đặt > Giọng đọc." Phần "Cài đặt > Giọng đọc" là liên kết mở sheet Giọng đọc (S8-02).
+Khi thiết bị không có giọng nào cho ngôn ngữ đích: nút Nghe và Nghe lặp bị khóa, dưới hàng nút hiện "Thiết bị chưa có giọng [tên ngôn ngữ]. Mở Cài đặt > Giọng đọc." Phần "Cài đặt > Giọng đọc" là liên kết mở sheet Giọng đọc (S8-02). Liên kết này nằm trong dòng chữ nên được miễn vùng chạm 44 px của FND-14. Khi chưa biết thiết bị có giọng hay không (đang nạp danh sách giọng), dòng này được giữ chỗ nhưng ẩn, để lúc hiện ra không đẩy các nút bên dưới.
 
 ### C1-06 Dòng Cách dùng
 
@@ -63,8 +63,17 @@ Phần tử câu gốc có `lang` bằng mã ngôn ngữ đích (ví dụ `en`);
 
 ## Câu hỏi mở
 
-- Liên kết "Cài đặt > Giọng đọc" trong câu báo thiếu giọng (C1-05) nằm trong dòng chữ nên không cao 44 px như FND-14 yêu cầu. Giữ dạng liên kết trong câu (WCAG cho phép ngoại lệ với liên kết trong đoạn văn) hay đổi thành nút riêng?
+Không còn câu hỏi mở.
+
+### Đã trả lời (10/10/2026)
+
+Các câu dưới đây do Claude quyết định ngày 10/10/2026 theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau.
+
+| Câu hỏi | Quyết định | Áp dụng vào |
+|---|---|---|
+| Liên kết "Cài đặt > Giọng đọc" trong câu báo thiếu giọng thấp hơn 44 px | Giữ dạng liên kết trong câu; được miễn vùng chạm như liên kết trong đoạn văn | C1-05, FND-14 |
 
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
+- 0.2 (10/10/2026): chốt câu hỏi về liên kết trong câu báo thiếu giọng; ghi việc giữ chỗ cho câu báo khi đang nạp giọng (Claude quyết định theo ủy quyền của nhóm).

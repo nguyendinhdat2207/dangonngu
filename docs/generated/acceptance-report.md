@@ -1,6 +1,6 @@
 # Báo cáo acceptance
 
-File sinh tự động bởi `node scripts/spec.mjs acceptance` lúc 2026-10-10 10:32 UTC. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs acceptance` lúc 2026-10-10 11:57 UTC. Không sửa tay.
 
 Một khu vực **Đạt** khi mọi mục trong acceptance.md của nó đã được đánh dấu [x].
 
@@ -8,7 +8,7 @@ Một khu vực **Đạt** khi mọi mục trong acceptance.md của nó đã đ
 |---|---|---|---|---|---|---|
 | G | Tổng quan giao diện bản mới | 1/5 | - | 1/1 | 0/4 | Chưa |
 | APP | Khung app | 17/20 | 11/11 | 6/6 | 0/3 | Chưa |
-| FND | Nền tảng thiết kế | 13/17 | 7/7 | 6/7 | 0/3 | Chưa |
+| FND | Nền tảng thiết kế | 14/17 | 7/7 | 7/7 | 0/3 | Chưa |
 | DATA | Dữ liệu và tiến độ | 18/19 | 16/16 | 2/2 | 0/1 | Chưa |
 | C1 | Thẻ câu | 7/8 | 6/6 | 1/1 | 0/1 | Chưa |
 | C2 | Dải 8 ô | 3/3 | 2/2 | 1/1 | - | Đạt |
@@ -27,7 +27,7 @@ Một khu vực **Đạt** khi mọi mục trong acceptance.md của nó đã đ
 | T3 | Thư viện | 10/10 | 8/8 | 2/2 | - | Đạt |
 | T4 | Tiến bộ | 9/10 | 8/8 | 1/1 | 0/1 | Chưa |
 
-Tổng: 150/173 mục đã đạt.
+Tổng: 151/173 mục đã đạt.
 
 ## Mục còn mở
 
@@ -47,7 +47,6 @@ Tổng: 150/173 mục đã đạt.
 ### FND Nền tảng thiết kế
 
 - FND-AC11 [human] (FND-11): Trên điện thoại thật, chuyển động hiện câu gốc và mở sheet cho cảm giác phản hồi ngay, không chậm, không giật.
-- FND-AC12 [claude] (FND-12): Rà toàn bộ chuỗi giao diện: không còn từ trong cột "Không dùng"; nút và thông báo cùng luồng dùng cùng động từ; mọi thông báo lỗi có hướng xử lý.
 - FND-AC13 [human] (FND-12): Một người không trong nhóm đọc toàn bộ chuỗi giao diện và không thấy câu nào khó hiểu hoặc sai giọng.
 - FND-AC17 [human] (FND-14): Bật VoiceOver (iPhone) và TalkBack (Android): câu tiếng Anh được đọc bằng giọng tiếng Anh, nghĩa đọc bằng giọng tiếng Việt; đi được hết luồng học một phiên.
 

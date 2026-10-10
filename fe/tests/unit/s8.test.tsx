@@ -159,19 +159,22 @@ describe('S8 Cài đặt', () => {
     fireEvent.change(input(), { target: { files: [new File([exported.text], 'tien-do.json', { type: 'application/json' })] } });
     await settle(50);
     dialog = screen.getByRole('dialog', { name: 'Nhập tiến độ' });
-    expect(dialog).toHaveTextContent('Thay tiến độ Tiếng Anh hiện tại bằng file này?');
+    expect(dialog).toHaveTextContent('Thay tiến độ Tiếng Anh (English Fluency) hiện tại bằng tệp này?');
     fireEvent.click(within(dialog).getByRole('button', { name: 'Nhập tiến độ' }));
     await settle();
     expect(screen.getByText('Đã nhập tiến độ')).toBeInTheDocument();
     expect(JSON.parse(r.mem.get(progressKey)!)).toEqual(JSON.parse(before));
 
-    // File của ngôn ngữ khác và file JSON bất kỳ.
+    // Tệp của ngôn ngữ khác, của bộ nội dung khác và tệp JSON bất kỳ.
     const after = r.mem.get(progressKey);
     const other = JSON.stringify({ ...JSON.parse(exported.text), lang: 'ja' });
-    for (const text of [other, '{"hello": "world"}']) {
+    const otherPack = JSON.stringify({ ...JSON.parse(exported.text), pack: 'global' });
+    for (const text of [other, otherPack, '{"hello": "world"}']) {
       fireEvent.change(input(), { target: { files: [new File([text], 'x.json', { type: 'application/json' })] } });
       await settle(50);
-      expect(screen.getByRole('alert')).toHaveTextContent('File không phải tiến độ VITASR hoặc của ngôn ngữ khác.');
+      expect(screen.getByRole('alert')).toHaveTextContent(
+        'Tệp này không phải tiến độ VITASR của Tiếng Anh (English Fluency). Chọn tệp đã xuất bằng Xuất tiến độ khi đang học Tiếng Anh (English Fluency).',
+      );
       expect(screen.queryByRole('dialog')).toBeNull();
       expect(r.mem.get(progressKey)).toBe(after);
     }

@@ -21,6 +21,16 @@ export async function seed(page: Page, values: Record<string, unknown>) {
   }, values);
 }
 
+/**
+ * Chờ mọi chuyển động có điểm dừng chạy xong (hiện câu gốc, mở sheet, lớp phủ hướng dẫn) trước khi axe-core đo tương phản:
+ * đo giữa lúc đang mờ dần sẽ ra tương phản thấp giả.
+ */
+export async function animationsDone(page: Page) {
+  await page.waitForFunction(() =>
+    document.getAnimations().every((a) => a.playState !== 'running' || a.effect?.getComputedTiming().iterations === Infinity),
+  );
+}
+
 export async function revealAndKnow(page: Page) {
   await page.getByRole('button', { name: 'Chạm để hiện câu gốc' }).click();
   await page.getByRole('button', { name: /Tôi nhớ/ }).click();

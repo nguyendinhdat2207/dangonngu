@@ -160,6 +160,7 @@ flowchart TD
 | S3c Tổng kết phiên | Xem tiến bộ | T4 Tiến bộ | S3-06 |
 | S3c Tổng kết phiên | Xong | T1 Học | S3-06 |
 | S5 Kiểm tra nhanh | Thoát, xác nhận Dừng | T2 Luyện tập | S5-08 |
+| S5 màn bắt đầu | Thoát | T2 Luyện tập | S5-08 |
 | S5 Kết quả | Kiểm tra unit tiếp theo | S5 Kiểm tra nhanh, unit sau | S5-07 |
 | S5 Kết quả | Xong | T2 Luyện tập | S5-07 |
 | Sheet Đổi ngôn ngữ | Chọn ngôn ngữ hoặc bộ nội dung khác | T1 Học của ngôn ngữ hoặc bộ đó | APP-06 |

@@ -1,7 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
-import { seed, settings } from './helpers';
+import { animationsDone, seed, settings } from './helpers';
 
 const progress30 = JSON.parse(readFileSync('fe/fixtures/progress/fluency-en-30-ngay.json', 'utf8'));
 const NOW = new Date('2026-10-08T10:00:00+07:00');
@@ -13,6 +13,7 @@ async function go(page: Page, hash: string) {
 }
 
 async function axe(page: Page, where: string) {
+  await animationsDone(page);
   const r = await new AxeBuilder({ page }).analyze();
   return r.violations
     .filter((v) => v.impact === 'serious' || v.impact === 'critical')
