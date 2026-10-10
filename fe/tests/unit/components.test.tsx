@@ -9,7 +9,7 @@ import { SentenceCard } from '../../src/components/C1-the-cau/SentenceCard';
 import { SheetProvider, useSheet } from '../../src/components/C6-sheet/SheetHost';
 import { ToastProvider, useToast } from '../../src/components/C7-thong-bao/ToastHost';
 import { FixtureSource, loadCatalog, loadLanguageData } from '../../src/data';
-import { settle, withProviders } from './helpers';
+import { fakeSpeech, settle, withProviders } from './helpers';
 
 afterEach(() => {
   vi.useRealTimers();
@@ -17,30 +17,6 @@ afterEach(() => {
   delete (window as unknown as Record<string, unknown>).speechSynthesis;
   delete (globalThis as unknown as Record<string, unknown>).SpeechSynthesisUtterance;
 });
-
-function fakeSpeech(voices: { lang: string; voiceURI: string; name: string }[]) {
-  const synth = {
-    speak: vi.fn(),
-    cancel: vi.fn(),
-    getVoices: () => voices,
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-  };
-  class Utter {
-    text: string;
-    lang = '';
-    rate = 1;
-    voice: unknown = null;
-    onend: (() => void) | null = null;
-    onerror: (() => void) | null = null;
-    constructor(t: string) {
-      this.text = t;
-    }
-  }
-  (window as unknown as Record<string, unknown>).speechSynthesis = synth;
-  (globalThis as unknown as Record<string, unknown>).SpeechSynthesisUtterance = Utter;
-  return synth;
-}
 
 const plain = { id: 1, en: 'I want to...', vi: 'Tôi muốn...' };
 

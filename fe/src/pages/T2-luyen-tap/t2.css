@@ -1,0 +1,32 @@
+/* @spec T2-01, T2-03, T2-05, C6-04 */
+.t2 { display: flex; flex-direction: column; gap: var(--s-4); max-width: 720px; }
+.t2__title { font-weight: 600; }
+.t2__list > li + li { border-top: 1px solid var(--line); }
+.t2__row {
+  display: flex; align-items: center; gap: var(--s-3);
+  width: 100%; min-height: 72px;
+  padding: var(--s-4) 0;
+  text-align: left; color: var(--ink);
+}
+/* Khóa: không làm mờ chữ để câu "Không có câu cần ôn hôm nay." vẫn đọc rõ (FND-02). */
+.t2__row[aria-disabled='true'] { cursor: default; }
+.t2__row[aria-disabled='true'] .t2__name { color: var(--muted); }
+.t2__row[aria-disabled='true'] .t2__caret { visibility: hidden; }
+.t2__row-text { display: flex; flex-direction: column; gap: var(--s-1); flex: 1; min-width: 0; }
+.t2__name { font-weight: 600; }
+.t2__count { font-weight: 600; color: var(--review); }
+.t2__caret { color: var(--muted); flex: none; }
+@media (hover: hover) { .t2__row:not([aria-disabled='true']):hover .t2__name { text-decoration: underline; } }
+
+/* Sheet Học theo từ khóa */
+.kw { display: flex; flex-direction: column; gap: var(--s-4); }
+.kw__chips { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.chip {
+  min-height: 44px; padding: 0 var(--s-3);
+  border: 1px solid var(--line); border-radius: var(--r-input);
+  color: var(--ink);
+}
+@media (hover: hover) { .chip:hover { border-color: var(--muted); } }
+.kw__preview > li { display: flex; flex-direction: column; gap: var(--s-1); padding: var(--s-3) 0; }
+.kw__preview > li + li { border-top: 1px solid var(--line); }
+.kw__none { padding: var(--s-2) 0; }

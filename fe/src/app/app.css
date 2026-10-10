@@ -32,6 +32,7 @@
 .topbar__lang { display: flex; align-items: center; min-height: 44px; text-align: left; border-radius: var(--r-button); }
 .topbar__lang-text { display: flex; flex-direction: column; }
 .topbar__lang-name { display: inline-flex; align-items: center; gap: var(--s-1); font-weight: 600; }
+.topbar__back { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 var(--s-2) 0 0; border-radius: var(--r-button); }
 .topbar__settings { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r-round); color: var(--ink); }
 
 /* Dải trạng thái APP-08 */
@@ -53,7 +54,6 @@
 .skeleton__bar--xl { height: 32px; }
 .skeleton__row { display: flex; flex-direction: column; gap: var(--s-2); padding: var(--s-3) 0; border-bottom: 1px solid var(--line); }
 
-.placeholder { display: flex; flex-direction: column; gap: var(--s-2); padding: var(--s-6) 0; }
 
 /* Danh sách ngôn ngữ (S1 và sheet Đổi ngôn ngữ) */
 .lang-list > li + li { border-top: 1px solid var(--line); }

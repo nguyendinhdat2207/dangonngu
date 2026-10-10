@@ -1,13 +1,24 @@
-// @spec APP-02, APP-06
-import { CaretDown, GearSix } from '@phosphor-icons/react';
+// @spec APP-02, APP-06, S8-01
+import { ArrowLeft, CaretDown, GearSix } from '@phosphor-icons/react';
 import { packInfo } from '../data';
-import { href } from './router';
+import { backFromSettings, href } from './router';
 import { useApp } from './state';
 import { useLanguageSheet } from './useLanguageSheet';
 
-export function TopBar() {
+/** Thanh trên cùng. Ở S8 Cài đặt, nút Quay lại thay cho tên ngôn ngữ (S8). */
+export function TopBar({ settings = false }: { settings?: boolean }) {
   const { language, pack } = useApp();
   const openLanguageSheet = useLanguageSheet();
+  if (settings) {
+    return (
+      <header className="topbar">
+        <button type="button" className="topbar__back" onClick={backFromSettings}>
+          <ArrowLeft size={24} aria-hidden />
+          <span className="t-body">Quay lại</span>
+        </button>
+      </header>
+    );
+  }
   return (
     <header className="topbar">
       <button type="button" className="topbar__lang" onClick={openLanguageSheet} aria-haspopup="dialog">

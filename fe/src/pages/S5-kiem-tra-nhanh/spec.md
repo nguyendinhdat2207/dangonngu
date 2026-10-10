@@ -62,6 +62,13 @@ Sau bước cuối: tiêu đề "Xong kiểm tra", với mỗi bước đã làm
 
 Như S3-07: sheet xác nhận "Dừng kiểm tra? Kết quả các câu đã làm vẫn được lưu." với nút "Làm tiếp" và "Dừng". Không lưu bài kiểm tra dở để làm tiếp.
 
+## Câu hỏi mở
+
+- S5-07: bước "Nghe theo cụm" không có đúng sai. Code ghi kết quả bước này là số câu đã làm xong trên số câu của bước (ví dụ "Nghe theo cụm: 8/8"). Nhóm xác nhận cách hiển thị.
+- DATA-06 chưa có loại lượt cho bước Nghe theo cụm, nên làm "Chỉ nghe theo cụm" tạo một phiên hoàn tất không có lượt nào: T4 đếm phiên này nhưng không đếm câu nào là đã học. Có thêm loại lượt (ví dụ `nghe-cum`) không?
+- S5-08 "về màn trước": code về khu chính đã mở S5 (thường là T2, như bảng trong docs/new/navigation.md).
+- S5-03: trong lúc trình duyệt còn nạp danh sách giọng (tối đa 1,5 giây), bước 1 chưa hiện nút "Nghe lại" lẫn chữ câu gốc; hết thời gian đó mới quyết định dùng âm thanh hay chữ.
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

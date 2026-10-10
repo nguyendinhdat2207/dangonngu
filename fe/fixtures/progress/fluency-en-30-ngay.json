@@ -1,0 +1,3810 @@
+{
+  "schema": 1,
+  "sessions": [
+    {
+      "id": "fx01",
+      "nguon": "lo-trinh",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1788440040000,
+      "completedAt": 1788440400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {}
+    },
+    {
+      "id": "fx02",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1788828840000,
+      "completedAt": 1788829200000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "1"
+      }
+    },
+    {
+      "id": "fx03",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1788915240000,
+      "completedAt": 1788915600000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "1"
+      }
+    },
+    {
+      "id": "fx04",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1789088040000,
+      "completedAt": 1789088400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "1"
+      }
+    },
+    {
+      "id": "fx05",
+      "nguon": "lo-trinh",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1789304040000,
+      "completedAt": 1789304400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {}
+    },
+    {
+      "id": "fx06",
+      "nguon": "cau",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1789390440000,
+      "completedAt": 1789390800000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "id": "2"
+      }
+    },
+    {
+      "id": "fx07",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1789433640000,
+      "completedAt": 1789434000000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "2"
+      }
+    },
+    {
+      "id": "fx08",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1789520040000,
+      "completedAt": 1789520400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "2"
+      }
+    },
+    {
+      "id": "fx09",
+      "nguon": "cau",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1789649640000,
+      "completedAt": 1789650000000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "id": "2"
+      }
+    },
+    {
+      "id": "fx10",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1789779240000,
+      "completedAt": 1789779600000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "2"
+      }
+    },
+    {
+      "id": "fx11",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1789952040000,
+      "completedAt": 1789952400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "1"
+      }
+    },
+    {
+      "id": "fx12",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1790038440000,
+      "completedAt": 1790038800000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "2"
+      }
+    },
+    {
+      "id": "fx13",
+      "nguon": "cau",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1790254440000,
+      "completedAt": 1790254800000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "id": "2"
+      }
+    },
+    {
+      "id": "fx14",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1790384040000,
+      "completedAt": 1790384400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "2"
+      }
+    },
+    {
+      "id": "fx15",
+      "nguon": "lo-trinh",
+      "itemIds": [
+        3,
+        261,
+        777,
+        778,
+        262,
+        779,
+        780,
+        1795
+      ],
+      "startedAt": 1790600040000,
+      "completedAt": 1790600400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {}
+    },
+    {
+      "id": "fx16",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        3,
+        261,
+        777,
+        778,
+        262,
+        779,
+        780,
+        1795
+      ],
+      "startedAt": 1790643240000,
+      "completedAt": 1790643600000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "3"
+      }
+    },
+    {
+      "id": "fx17",
+      "nguon": "cau",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1790772840000,
+      "completedAt": 1790773200000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "id": "2"
+      }
+    },
+    {
+      "id": "fx18",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        2,
+        259,
+        773,
+        774,
+        260,
+        775,
+        776,
+        1794
+      ],
+      "startedAt": 1790816040000,
+      "completedAt": 1790816400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "2"
+      }
+    },
+    {
+      "id": "fx19",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        3,
+        261,
+        777,
+        778,
+        262,
+        779,
+        780,
+        1795
+      ],
+      "startedAt": 1790902440000,
+      "completedAt": 1790902800000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "3"
+      }
+    },
+    {
+      "id": "fx20",
+      "nguon": "on-tap",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1790945640000,
+      "completedAt": 1790946000000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {}
+    },
+    {
+      "id": "fx21",
+      "nguon": "lo-trinh",
+      "itemIds": [
+        4,
+        263,
+        781,
+        782,
+        264
+      ],
+      "startedAt": 1791122400000,
+      "position": 0,
+      "step": "ghi-nho",
+      "params": {},
+      "abandonedAt": 1791291240000
+    },
+    {
+      "id": "fx22",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1791161640000,
+      "completedAt": 1791162000000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "1"
+      }
+    },
+    {
+      "id": "fx23",
+      "nguon": "cau",
+      "itemIds": [
+        1,
+        257,
+        769,
+        770,
+        258,
+        771,
+        772,
+        1793
+      ],
+      "startedAt": 1791291240000,
+      "completedAt": 1791291600000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {
+        "id": "1"
+      }
+    },
+    {
+      "id": "fx24",
+      "nguon": "on-tap",
+      "itemIds": [
+        3,
+        261,
+        777,
+        778,
+        262,
+        779,
+        780,
+        1795
+      ],
+      "startedAt": 1791374040000,
+      "completedAt": 1791374400000,
+      "position": 8,
+      "step": "kiem-tra",
+      "params": {}
+    },
+    {
+      "id": "fx25",
+      "nguon": "lo-trinh",
+      "itemIds": [
+        4,
+        263,
+        781,
+        782,
+        264
+      ],
+      "startedAt": 1791420840000,
+      "completedAt": 1791421200000,
+      "position": 5,
+      "step": "kiem-tra",
+      "params": {}
+    },
+    {
+      "id": "fx26",
+      "nguon": "kiem-tra",
+      "itemIds": [
+        4,
+        263,
+        781,
+        782,
+        264
+      ],
+      "startedAt": 1791424440000,
+      "completedAt": 1791424800000,
+      "position": 5,
+      "step": "kiem-tra",
+      "params": {
+        "unit": "4"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "sessionId": "fx01",
+      "itemId": 1,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 1,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 257,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 257,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 769,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 769,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 770,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 770,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 258,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 258,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 771,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 771,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 772,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 772,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 1793,
+      "at": 1788440160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx01",
+      "itemId": 1793,
+      "at": 1788440280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 1,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 1,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 257,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 257,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 769,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 769,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 770,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 770,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 258,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 258,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 771,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 771,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 772,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 772,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 1793,
+      "at": 1788828960000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx02",
+      "itemId": 1793,
+      "at": 1788829080000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 1,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 1,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 257,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 257,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 769,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 769,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 770,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 770,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 258,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 258,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 771,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 771,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 772,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 772,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 1793,
+      "at": 1788915360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx03",
+      "itemId": 1793,
+      "at": 1788915480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 1,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 1,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 257,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 257,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 769,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 769,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 770,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 770,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 258,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 258,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 771,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 771,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 772,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 772,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 1793,
+      "at": 1789088160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx04",
+      "itemId": 1793,
+      "at": 1789088280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 2,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 2,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 259,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 259,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 773,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 773,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 774,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 774,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 260,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 260,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 775,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 775,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 776,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 776,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 1794,
+      "at": 1789304160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx05",
+      "itemId": 1794,
+      "at": 1789304280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 2,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 2,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 259,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 259,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 773,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 773,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 774,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 774,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 260,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 260,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 775,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 775,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 776,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 776,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 1794,
+      "at": 1789390560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx06",
+      "itemId": 1794,
+      "at": 1789390680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 2,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 2,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 259,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 259,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 773,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 773,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 774,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 774,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 260,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 260,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 775,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 775,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 776,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 776,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 1794,
+      "at": 1789433760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx07",
+      "itemId": 1794,
+      "at": 1789433880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 2,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 2,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 259,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 259,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 773,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 773,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 774,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 774,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 260,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 260,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 775,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 775,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 776,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 776,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 1794,
+      "at": 1789520160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx08",
+      "itemId": 1794,
+      "at": 1789520280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 2,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 2,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 259,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 259,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 773,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 773,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 774,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 774,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 260,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 260,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 775,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 775,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 776,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 776,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 1794,
+      "at": 1789649760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx09",
+      "itemId": 1794,
+      "at": 1789649880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 2,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 2,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 259,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 259,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 773,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 773,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 774,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 774,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 260,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 260,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 775,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 775,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 776,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 776,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 1794,
+      "at": 1789779360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx10",
+      "itemId": 1794,
+      "at": 1789779480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 1,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 1,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 257,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 257,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 769,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 769,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 770,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 770,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 258,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 258,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 771,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 771,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 772,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 772,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 1793,
+      "at": 1789952160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx11",
+      "itemId": 1793,
+      "at": 1789952280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 2,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 2,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 259,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 259,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 773,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 773,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 774,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 774,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 260,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 260,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 775,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 775,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 776,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 776,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 1794,
+      "at": 1790038560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx12",
+      "itemId": 1794,
+      "at": 1790038680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 2,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 2,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 259,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 259,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 773,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 773,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 774,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 774,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 260,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 260,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 775,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 775,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 776,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 776,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 1794,
+      "at": 1790254560000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx13",
+      "itemId": 1794,
+      "at": 1790254680000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 2,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 2,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 259,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 259,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 773,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 773,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 774,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 774,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 260,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 260,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 775,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 775,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 776,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 776,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 1794,
+      "at": 1790384160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx14",
+      "itemId": 1794,
+      "at": 1790384280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 3,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 3,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "sai",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 261,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 261,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 777,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 777,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 778,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 778,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 262,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 262,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 779,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 779,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 780,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 780,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 1795,
+      "at": 1790600160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx15",
+      "itemId": 1795,
+      "at": 1790600280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 3,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 3,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 261,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 261,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 777,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 777,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 778,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 778,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 262,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 262,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 779,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 779,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 780,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 780,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 1795,
+      "at": 1790643360000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx16",
+      "itemId": 1795,
+      "at": 1790643480000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 2,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 2,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 259,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 259,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 773,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 773,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 774,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 774,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 260,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 260,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 775,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 775,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 776,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 776,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 1794,
+      "at": 1790772960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx17",
+      "itemId": 1794,
+      "at": 1790773080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 2,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 2,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 259,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 259,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 773,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 773,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 774,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 774,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 260,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 260,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 775,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 775,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 776,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 776,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 1794,
+      "at": 1790816160000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx18",
+      "itemId": 1794,
+      "at": 1790816280000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 3,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 3,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 261,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 261,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 777,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 777,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 778,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 778,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 262,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 262,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 779,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 779,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 780,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 780,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 1795,
+      "at": 1790902560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx19",
+      "itemId": 1795,
+      "at": 1790902680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 1,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 1,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 257,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 257,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 769,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 769,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 770,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 770,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 258,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 258,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 771,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 771,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 772,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 772,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 1793,
+      "at": 1790945760000,
+      "kind": "ghi-nho",
+      "outcome": "can-on",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx20",
+      "itemId": 1793,
+      "at": 1790945880000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 1,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 1,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 257,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 257,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 769,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 769,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 770,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 770,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 258,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 258,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 771,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 771,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 772,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 772,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 1793,
+      "at": 1791161760000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx22",
+      "itemId": 1793,
+      "at": 1791161880000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 1,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 1,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 257,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 257,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 769,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 769,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 770,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 770,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 258,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 258,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 771,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 771,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 772,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 772,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 1793,
+      "at": 1791291360000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx23",
+      "itemId": 1793,
+      "at": 1791291480000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 3,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 3,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 261,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 261,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 777,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 777,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 778,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 778,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 262,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 262,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 779,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 779,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 780,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 780,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 1795,
+      "at": 1791374160000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx24",
+      "itemId": 1795,
+      "at": 1791374280000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 4,
+      "at": 1791420960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 4,
+      "at": 1791421080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 263,
+      "at": 1791420960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 263,
+      "at": 1791421080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 781,
+      "at": 1791420960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 781,
+      "at": 1791421080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 782,
+      "at": 1791420960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 782,
+      "at": 1791421080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 264,
+      "at": 1791420960000,
+      "kind": "ghi-nho",
+      "outcome": "nho",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx25",
+      "itemId": 264,
+      "at": 1791421080000,
+      "kind": "trac-nghiem",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 4,
+      "at": 1791424560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 4,
+      "at": 1791424680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 263,
+      "at": 1791424560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 263,
+      "at": 1791424680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 781,
+      "at": 1791424560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 781,
+      "at": 1791424680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 782,
+      "at": 1791424560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 782,
+      "at": 1791424680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 264,
+      "at": 1791424560000,
+      "kind": "nghe-chon",
+      "outcome": "dung",
+      "hinted": false
+    },
+    {
+      "sessionId": "fx26",
+      "itemId": 264,
+      "at": 1791424680000,
+      "kind": "sap-xep",
+      "outcome": "dung",
+      "hinted": false
+    }
+  ],
+  "items": {
+    "1": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "2": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "3": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791460560000,
+      "lastAt": 1791374160000
+    },
+    "4": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791507360000,
+      "lastAt": 1791420960000
+    },
+    "257": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "258": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "259": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "260": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "261": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    },
+    "262": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    },
+    "263": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791507360000,
+      "lastAt": 1791420960000
+    },
+    "264": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791507360000,
+      "lastAt": 1791420960000
+    },
+    "769": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "770": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "771": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "772": {
+      "status": "da-hoc",
+      "streak": 3,
+      "due": 1791896160000,
+      "lastAt": 1791291360000
+    },
+    "773": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "774": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "775": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "776": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "777": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    },
+    "778": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    },
+    "779": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    },
+    "780": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    },
+    "781": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791507360000,
+      "lastAt": 1791420960000
+    },
+    "782": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791507360000,
+      "lastAt": 1791420960000
+    },
+    "1793": {
+      "status": "da-hoc",
+      "streak": 1,
+      "due": 1791377760000,
+      "lastAt": 1791291360000
+    },
+    "1794": {
+      "status": "da-hoc",
+      "streak": 5,
+      "due": 1793364960000,
+      "lastAt": 1790772960000
+    },
+    "1795": {
+      "status": "da-hoc",
+      "streak": 2,
+      "due": 1791633360000,
+      "lastAt": 1791374160000
+    }
+  }
+}

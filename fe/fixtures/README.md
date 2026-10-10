@@ -18,4 +18,4 @@ node scripts/make-fixtures.mjs
 
 Manifest Fluency trong fixture chỉ liệt kê 4 ngôn ngữ trên nhưng giữ `count` 4096 như bản thật; `itemCount` trong từng file ngôn ngữ là số câu thật của tập con.
 
-Còn thiếu: bộ tiến độ mẫu 30 ngày kèm số liệu tính tay cho T4 (DATA-09). Tạo khi đã cài quy tắc DATA-07.
+Bộ tiến độ mẫu 30 ngày cho English Fluency tiếng Anh nằm ở `progress/` (script cũng sinh file tiến độ); số liệu T4 phải hiển thị được tính tay và ghi riêng, xem `progress/README.md`.

@@ -5,6 +5,44 @@ import { SheetProvider } from '../../src/components/C6-sheet/SheetHost';
 import { ToastProvider } from '../../src/components/C7-thong-bao/ToastHost';
 import { FixtureSource, SafeStorage, type DataSource } from '../../src/data';
 import type { ReactNode } from 'react';
+import { vi } from 'vitest';
+import progress30 from '../../fixtures/progress/fluency-en-30-ngay.json';
+import soLieu30 from '../../fixtures/progress/fluency-en-30-ngay.so-lieu.json';
+
+/** Tiến độ mẫu 30 ngày (DATA-09) và số liệu tính tay đi kèm. */
+export const PROGRESS_30 = progress30;
+export const SO_LIEU_30 = soLieu30;
+export const progressSeed = (p: unknown = progress30, pack = 'fluency', lang = 'en') => ({ [`vitasr2.progress.${pack}.${lang}`]: p });
+
+/** speechSynthesis giả với danh sách giọng cho trước. */
+export function fakeSpeech(voices: { lang: string; voiceURI: string; name: string; default?: boolean }[]) {
+  const synth = {
+    speak: vi.fn(),
+    cancel: vi.fn(),
+    getVoices: () => voices,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  };
+  class Utter {
+    text: string;
+    lang = '';
+    rate = 1;
+    voice: unknown = null;
+    onend: (() => void) | null = null;
+    onerror: (() => void) | null = null;
+    constructor(t: string) {
+      this.text = t;
+    }
+  }
+  (window as unknown as Record<string, unknown>).speechSynthesis = synth;
+  (globalThis as unknown as Record<string, unknown>).SpeechSynthesisUtterance = Utter;
+  return synth;
+}
+
+export function removeFakeSpeech() {
+  delete (window as unknown as Record<string, unknown>).speechSynthesis;
+  delete (globalThis as unknown as Record<string, unknown>).SpeechSynthesisUtterance;
+}
 
 export const NOW = new Date(2026, 9, 8, 10, 0, 0).getTime();
 
@@ -79,3 +117,22 @@ export async function settle(ms = 0) {
 }
 
 export { screen };
+
+/** Nguồn tĩnh đọc bộ dữ liệu đầy đủ trong fe/public/data (dùng khi cần nhiều câu, ví dụ phân trang). */
+export async function publicSource(): Promise<DataSource> {
+  const { readFileSync } = await import('node:fs');
+  const path = await import('node:path');
+  const { StaticFileSource } = await import('../../src/data');
+  const root = path.resolve(process.cwd(), 'fe/public');
+  const fetchImpl = (async (url: string) => {
+    try {
+      return new Response(readFileSync(path.join(root, url.replace(/^\.\//, ''))), { status: 200 });
+    } catch {
+      return new Response('', { status: 404 });
+    }
+  }) as unknown as typeof fetch;
+  return new StaticFileSource('./data', fetchImpl);
+}
+
+/** Các dialog đang mở. */
+export const dialogs = () => document.querySelectorAll('[role="dialog"]');

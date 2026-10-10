@@ -1,4 +1,4 @@
-// @spec S9-01, S9-02, S9-03, S9-04, S9-05
+// @spec S9-01, S9-02, S9-03, S9-04, S9-05, APP-11
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button } from '../../components/C3-nut/Button';
 import { useSheet } from '../../components/C6-sheet/SheetHost';
@@ -73,6 +73,16 @@ export function S9HuongDan({ replay, onStart }: { replay: boolean; onStart: () =
       if (e.key === 'Escape' && !sheet.isOpen) {
         e.preventDefault();
         finish();
+        return;
+      }
+      // APP-11: giữ focus trong bong bóng, để bàn phím không mở được sheet khác (ví dụ Đổi ngôn ngữ) khi hướng dẫn đang mở.
+      if (e.key === 'Tab' && bubble.current && !sheet.isOpen) {
+        const els = [...bubble.current.querySelectorAll<HTMLElement>('button')];
+        if (els.length === 0) return;
+        const i = els.indexOf(document.activeElement as HTMLElement);
+        e.preventDefault();
+        const next = e.shiftKey ? (i <= 0 ? els.length - 1 : i - 1) : i === -1 || i === els.length - 1 ? 0 : i + 1;
+        els[next].focus();
       }
     };
     window.addEventListener('keydown', on);

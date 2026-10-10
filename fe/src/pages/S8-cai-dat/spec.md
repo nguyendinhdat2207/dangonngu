@@ -46,6 +46,15 @@ Nhóm "Dữ liệu" gồm:
 
 Nhóm "Trợ giúp" gồm "Xem lại hướng dẫn" (mở S9 trên T1) và dòng "Phiên bản [số phiên bản app]" không chạm được.
 
+## Câu hỏi mở
+
+- S8-04 ghi "Theo thiết bị", FND-03 ghi "Theo hệ thống". Code dùng "Theo thiết bị". Nhóm chọn một tên cho cả hai chỗ.
+- S8-05: câu báo lỗi "File không phải tiến độ VITASR hoặc của ngôn ngữ khác." chưa nói cần làm gì, trái với FND-12 (mọi thông báo lỗi có hướng xử lý). Đề xuất thêm: "Chọn file đã xuất từ Cài đặt khi đang học ngôn ngữ này." Chờ nhóm duyệt chữ trước khi đổi.
+- S8-05: tiếng Anh có hai bộ nội dung dùng chung dải id câu, nên code chỉ nhận file đúng cả ngôn ngữ lẫn bộ nội dung đang học; file của bộ kia bị báo lỗi như file của ngôn ngữ khác.
+- S8-05: spec chưa đặt tên nút trong hai sheet xác nhận. Code dùng "Hủy" và "Nhập tiến độ" (sheet nhập, nội dung là câu hỏi trong spec), "Hủy" và "Xóa" (sheet xóa, kèm dòng: Gõ "[tên ngôn ngữ]" để xác nhận. Tiến độ đã xóa không lấy lại được.). Tên gõ vào được so khớp không phân biệt hoa thường nhưng phải đủ dấu.
+- S8-02: giọng Tiếng Việt chọn và lưu được nhưng hiện chưa màn nào đọc nghĩa tiếng Việt thành tiếng. Có cần nút nghe nghĩa ở thẻ câu không?
+- S8: spec chưa nói phía phải thanh trên cùng khi đang ở S8. Code chỉ hiện nút "Quay lại" bên trái, bỏ nút Cài đặt (đang ở chính màn này).
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

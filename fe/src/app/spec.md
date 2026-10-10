@@ -84,6 +84,10 @@ Sau lần mở đầu tiên có mạng, app mở lại được khi ngoại tuy�
 
 Tại mỗi thời điểm có tối đa một sheet hoặc hộp thoại mở. Mở sheet mới thì sheet đang mở phải đóng trước.
 
+## Câu hỏi mở
+
+- APP-10: bản mới tự kích hoạt trong service worker nhưng trang đang mở không tự tải lại; người dùng bấm "Cập nhật" mới tải lại. Lần mở đầu tiên có mạng, ngay khi service worker nhận trang, app tải lại các file dữ liệu đã dùng để lưu ngoại tuyến. Font Noto của ngôn ngữ không dùng chữ Latinh chỉ được lưu từ lần mở có mạng thứ hai; nếu tắt mạng ngay sau lần đầu, câu tiếng Nhật, Thái... hiện bằng font sẵn có của máy. Nhóm xác nhận cách làm này.
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

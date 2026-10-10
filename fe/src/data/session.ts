@@ -1,4 +1,4 @@
-// @spec DATA-06, DATA-07, S3-03, S3-04, S3-05, S3-06, S3-08
+// @spec DATA-06, DATA-07, S3-03, S3-04, S3-05, S3-06, S3-08, S5-07, S5-08
 // Thao tác thuần trên Progress cho một phiên học. Mỗi hàm trả về Progress mới.
 import { applyCheck, applyMemorize } from './review';
 import { newSessionId, type Attempt, type Nguon, type Progress, type Session, type SessionStep } from './progress';
@@ -48,6 +48,13 @@ export function recordCheck(
   return { ...p, attempts: [...p.attempts, attempt], items };
 }
 
+/** Bỏ dở một phiên: không mở lại được để làm tiếp (S5-08). Kết quả các câu đã làm vẫn giữ. */
+export function abandonSession(p: Progress, sessionId: string, now: number): Progress {
+  const s = p.sessions.find((x) => x.id === sessionId);
+  if (!s || s.completedAt !== undefined || s.abandonedAt !== undefined) return p;
+  return patchSession(p, sessionId, { abandonedAt: now });
+}
+
 export function completeSession(p: Progress, sessionId: string, now: number): Progress {
   const s = p.sessions.find((x) => x.id === sessionId);
   return patchSession(p, sessionId, { completedAt: now, position: s?.itemIds.length ?? 0 });
@@ -63,13 +70,15 @@ export function sessionResults(p: Progress, session: Session): { perItem: Map<nu
   for (const id of session.itemIds) {
     const atts = p.attempts.filter((a) => a.sessionId === session.id && a.itemId === id);
     const mem = atts.find((a) => a.kind === 'ghi-nho');
-    const chk = atts.find((a) => a.kind !== 'ghi-nho');
-    if (!mem && !chk) {
+    // Phiên kiểm tra (S5) có thể có hai lượt mỗi câu: nghe-chon và sap-xep.
+    const checks = atts.filter((a) => a.kind !== 'ghi-nho');
+    if (!mem && checks.length === 0) {
       perItem.set(id, 'chua');
       continue;
     }
-    const bad = mem?.outcome === 'can-on' || chk?.outcome === 'sai' || chk?.hinted === true;
-    if (chk && chk.outcome === 'dung' && !chk.hinted) cleanCount++;
+    const badCheck = checks.some((a) => a.outcome === 'sai' || a.hinted);
+    const bad = mem?.outcome === 'can-on' || badCheck;
+    if (checks.length > 0 && !badCheck) cleanCount++;
     perItem.set(id, bad ? 'can-on' : 'nho');
     if (bad) reviewIds.push(id);
   }

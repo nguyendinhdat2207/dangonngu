@@ -10,3 +10,6 @@ export * from './search';
 export * from './distractors';
 export * from './session';
 export * from './text';
+export * from './stats';
+export * from './chunks';
+export * from './transfer';

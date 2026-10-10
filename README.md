@@ -44,9 +44,10 @@ Làm lại giao diện mini app "ĐA NGÔN NGỮ" của VITASR. Repo gồm: tài
 └── fe/
     ├── public/data/              bộ dữ liệu đầy đủ khách gửi (15 ngôn ngữ Fluency, Global English)
     ├── fixtures/                 tập con cho test (DATA-09), sinh bằng scripts/make-fixtures.mjs
+    │   └── progress/             tiến độ mẫu 30 ngày và số liệu tính tay cho T4
     ├── index.html, src/main.tsx  điểm vào của app
     ├── tests/unit/               test Vitest (dữ liệu, thành phần, trang), gắn @ac
-    ├── tests/e2e/                test Playwright trên bản build, gắn @ac; evidence.spec.ts sinh ảnh bằng chứng
+    ├── tests/e2e/                test Playwright trên bản build, gắn @ac; evidence*.spec.ts sinh ảnh bằng chứng
     └── src/
         ├── app/                  APP  khung app, route, bố cục, trạng thái toàn cục
         ├── foundation/           FND  token, chữ, giọng văn, trợ năng
@@ -92,11 +93,11 @@ npm run spec:acceptance   # sinh docs/generated/acceptance-report.md
 
 Lần đầu chạy Playwright trên máy mới: `npx playwright install chromium`. Máy đã có sẵn Chromium thì có thể trỏ tới nó bằng biến `PW_CHROMIUM_PATH`.
 
-## Trạng thái hiện tại (08/10/2026)
+## Trạng thái hiện tại (10/10/2026)
 
 - 20 khu vực, 134 yêu cầu, 170 mục nghiệm thu; 93 mũi tên trong sơ đồ điều hướng đều gắn yêu cầu.
-- Đợt 1 đã code: DATA, FND, C1 đến C7, APP (khung, route, thanh trên cùng, sheet Đổi ngôn ngữ, trạng thái tải, lỗi, ngoại tuyến), S1, T1, S3, S9. Các màn T2, T3, T4, S5, S8 đang là màn tạm, làm ở đợt sau. Chưa có service worker (APP-10).
-- Tình trạng từng mục nghiệm thu: `npm run spec:acceptance` rồi mở `docs/generated/acceptance-report.md`.
-- QD-01, QD-02, QD-04, QD-05 đã chốt (`docs/QUYET-DINH.md`).
-- Còn thiếu bộ tiến độ mẫu 30 ngày cho T4 (DATA-09).
-- Câu hỏi mở cho khách: `docs/new/ui-spec.md` mục 5; câu hỏi mở theo khu vực nằm cuối từng `spec.md`.
+- Đã code đủ các màn trong spec: S1, T1, S3, S9 (đợt 1) và T2 Luyện tập, S5 Kiểm tra nhanh, T3 Thư viện, T4 Tiến bộ, S8 Cài đặt (đợt 2). Có service worker để mở lại khi ngoại tuyến và báo bản cập nhật (APP-10).
+- Nghiệm thu: 148/170 mục đã đạt. Còn 21 mục `[human]` (thiết bị thật, người dùng thật) và FND-AC12 (chờ duyệt chữ báo lỗi nhập file, xem Câu hỏi mở của S8).
+- Tình trạng từng mục: `npm run spec:acceptance` rồi mở `docs/generated/acceptance-report.md`.
+- Test đơn vị chạy theo giờ Việt Nam (`TZ=Asia/Ho_Chi_Minh` trong `npm test`) để khớp tiến độ mẫu 30 ngày.
+- Câu hỏi mở cho khách: `docs/new/ui-spec.md` mục 5; câu hỏi mở theo khu vực nằm cuối từng `spec.md` (đợt 2 thêm ở APP, T2, T3, T4, S5, S8).
