@@ -1,0 +1,29 @@
+{
+  "navWidth": 220,
+  "items": [
+    {
+      "text": "Học",
+      "height": 48,
+      "justify": "flex-start",
+      "textAlign": "start"
+    },
+    {
+      "text": "Luyện tập",
+      "height": 48,
+      "justify": "flex-start",
+      "textAlign": "start"
+    },
+    {
+      "text": "Thư viện",
+      "height": 48,
+      "justify": "flex-start",
+      "textAlign": "start"
+    },
+    {
+      "text": "Tiến bộ",
+      "height": 48,
+      "justify": "flex-start",
+      "textAlign": "start"
+    }
+  ]
+}
