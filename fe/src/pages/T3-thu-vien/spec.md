@@ -79,6 +79,12 @@ Khi không có câu nào khớp: "Không có câu nào khớp với tìm kiếm 
 
 Từ 900 px: hai cột. Danh sách bên trái (tối đa 480 px); chi tiết câu (nội dung như T3-05) hiển thị ở cột phải thay cho sheet, mặc định là câu đầu của trang.
 
+## Câu hỏi mở
+
+- T3-03: chỉ Unit và từ khóa giữ trong route; bộ lọc Trạng thái, Chủ đề, Trình độ mất khi tải lại trang. Có cần giữ cả ba trong route không?
+- T3-03: bộ lọc Trình độ chỉ liệt kê các trình độ có trong dữ liệu (theo T3-AC10). Với bộ dữ liệu đầy đủ là đủ 6 trình độ A1 đến C2.
+- T3-03: spec chưa nói danh sách chọn của bộ lọc hiện ở đâu. Code mở bằng sheet (C6), giống các lớp phủ khác.
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

@@ -55,6 +55,11 @@ Chạm mở `#/kiem-tra` với nhóm câu là unit đang học trong lộ trình
 
 Trong sheet T2-03, khi không có câu nào khớp: thay phần xem trước bằng "Không có câu nào chứa "[từ khóa]". Thử từ khác hoặc từ tiếng Anh." và khóa nút "Học 8 câu đầu".
 
+## Câu hỏi mở
+
+- T2-03: nút luôn là "Học 8 câu đầu", kể cả khi chỉ tìm thấy dưới 8 câu (phiên khi đó có ít câu hơn). Có muốn đổi thành "Học N câu" như T1-02 không?
+- T2-03: tìm theo chuỗi con (DATA-12) nên "bus" khớp cả "busy". Code giữ đúng quy tắc này; báo nếu muốn khớp theo từ.
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.

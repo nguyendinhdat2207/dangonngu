@@ -75,6 +75,13 @@ Chạm một cột của biểu đồ mở sheet (C6) "[Thứ], [ngày]/[tháng]
 
 Khi chưa có phiên nào: thay toàn bộ nội dung dưới bộ chọn khoảng bằng "Chưa có phiên nào. Học 8 câu đầu tiên để bắt đầu theo dõi tiến bộ." và nút chính "Học 8 câu" (mở `#/phien-hoc?nguon=lo-trinh`).
 
+## Câu hỏi mở
+
+- T4-05: code đếm "7 ngày tới" là các câu đến hạn từ ngày mai tới hết ngày thứ 7 tính từ hôm nay, nên đã gồm số của dòng "Ngày mai" (tiến độ mẫu: Ngày mai 5, 7 ngày tới 19). Nếu nhóm muốn ba dòng tách rời nhau, báo để đổi.
+- T4-04 tô cột hôm nay bằng `--brand`, trong khi FND-02 chỉ cho dùng `--brand` ở nút chính và ô đang học của dải 8 ô. Code theo T4-04. Nhóm xác nhận đây là ngoại lệ, hoặc chọn màu khác cho cột hôm nay.
+- T4-04: ở khoảng 30 ngày trên màn 320 px mỗi cột chỉ rộng khoảng 9 px, nhỏ hơn vùng chạm 44 px của FND-14. Code cho chạm cột có số liệu; ngày không học (một chấm) không chạm được. Có cần cách khác để mở chi tiết ngày trên màn hẹp không?
+- T4-08: code hiểu "chưa có phiên nào" là chưa từng hoàn tất phiên nào. Khi đã có phiên nhưng khoảng đang chọn không có phiên, màn vẫn hiện các chỉ số (bằng 0) và ẩn mục "Các phiên".
+
 ## Lịch sử thay đổi
 
 - 0.1 (07/10/2026): bản đầu.
