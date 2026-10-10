@@ -7,7 +7,7 @@ Khổ kiểm mặc định và quy tắc đánh dấu: `docs/QUY-TRINH.md` mục
 - [x] APP-AC02 [auto] APP-01, APP-04: Test điều hướng: bấm lần lượt 4 mục thì hash đổi thành `#/hoc`, `#/luyen-tap`, `#/thu-vien`, `#/tien-bo` và đúng màn hiện ra.
   - Bằng chứng: test fe/tests/e2e/app.spec.ts pass (npm run test:e2e), Claude, 2026-10-10, chưa commit (đợt 2)
 - [x] APP-AC03 [claude] APP-02: Ảnh chụp T1 đến T4 ở 375 px và 1280 px có tên ngôn ngữ bên trái, nút Cài đặt bên phải.
-  - Bằng chứng: ảnh docs/evidence/APP-AC03/ (T1, T2, T3, T4 ở 375 và 1280 px, sáng và tối): tên ngôn ngữ và tên bộ bên trái, nút Cài đặt bên phải, Claude, 2026-10-10, chưa commit (đợt 2)
+  - Bằng chứng: ảnh docs/evidence/APP-AC03/ chụp lại sau khi thêm nút về trang học (T1, T2, T3, T4 ở 375 và 1280 px, sáng và tối): nút về trang học ngoài cùng bên trái, tiếp theo là tên ngôn ngữ và tên bộ, nút Cài đặt bên phải, Claude, 2026-10-10, chưa commit (APP-12)
 - [x] APP-AC04 [auto] APP-03: Ở `#/phien-hoc`, `#/kiem-tra`, `#/chon-ngon-ngu` không có thanh tab và thanh trên cùng trong DOM hiển thị; S3 và S5 có nút "Thoát".
   - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] APP-AC05 [auto] APP-04: Mở route không hợp lệ thì chuyển về `#/hoc` (đã chọn ngôn ngữ) hoặc `#/chon-ngon-ngu` (chưa chọn). Nút Back của trình duyệt sau chuỗi T1 → T3 → T4 quay về T3 rồi T1.
@@ -34,6 +34,8 @@ Khổ kiểm mặc định và quy tắc đánh dấu: `docs/QUY-TRINH.md` mục
   - Bằng chứng: test fe/tests/unit/s8.test.tsx và fe/tests/unit/t3.test.tsx pass (npm test), Claude, 2026-10-10, chưa commit (đợt 2)
 - [x] APP-AC17 [auto] APP-02, APP-06: Đang học Global English: thanh trên cùng có "Tiếng Anh" và dòng nhỏ "Global English"; đang học Tiếng Nhật thì không có dòng tên bộ. Sheet Đổi ngôn ngữ có hai dòng cho Tiếng Anh; chọn dòng English Fluency thì về `#/hoc` với dữ liệu Fluency.
   - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
-- [ ] APP-AC18 [auto] APP-12: Ở T1, T2, T3, T4 và S1 bước 1 có một liên kết nhãn trợ năng "Quay lại trang học" với `href` bằng `VITE_HOST_URL` (mặc định `https://language.pomaskhoahocnaobo.com/`); ở S1 bước 2, S3, S5 và S8 không có liên kết này. Bấm liên kết khi đang có phiên dở không mở sheet xác nhận nào.
-- [ ] APP-AC19 [claude] APP-02, APP-12: Ảnh chụp thanh trên cùng của T1 ở 320, 375 và 1280 px, sáng và tối: nút về trang học nằm ngoài cùng bên trái, vùng chạm từ 44 x 44 px; từ 600 px có chữ "Trang học"; tên ngôn ngữ, tên bộ và nút Cài đặt không bị che hay cắt.
+- [x] APP-AC18 [auto] APP-12: Ở T1, T2, T3, T4 và S1 bước 1 có một liên kết nhãn trợ năng "Quay lại trang học" với `href` bằng `VITE_HOST_URL` (mặc định `https://language.pomaskhoahocnaobo.com/`); ở S1 bước 2, S3, S5 và S8 không có liên kết này. Bấm liên kết khi đang có phiên dở không mở sheet xác nhận nào.
+  - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test), Claude, 2026-10-10, chưa commit (APP-12)
+- [x] APP-AC19 [claude] APP-02, APP-12: Ảnh chụp thanh trên cùng của T1 ở 320, 375 và 1280 px, sáng và tối: nút về trang học nằm ngoài cùng bên trái, vùng chạm từ 44 x 44 px; từ 600 px có chữ "Trang học"; tên ngôn ngữ, tên bộ và nút Cài đặt không bị che hay cắt.
+  - Bằng chứng: ảnh và số đo docs/evidence/APP-AC19/ (320, 375, 600, 1280 px, sáng và tối; do-dac-light.json, do-dac-dark.json): nút 44 x 44 px ở 320 và 375 px, 130 x 44 px có chữ "Trang học" từ 600 px; nút, tên ngôn ngữ, nút Cài đặt không chồng nhau; không cuộn ngang; ảnh S1 bước 1 ở 320 và 1280 px, Claude, 2026-10-10, chưa commit (APP-12)
 - [ ] APP-AC20 [human] APP-09, APP-12: Trên trang học chính thật, đăng nhập, mở Đa ngôn ngữ: app mở ở trang mới. Bấm "Quay lại trang học": về đúng trang học chính và vẫn đăng nhập.

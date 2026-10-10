@@ -1,7 +1,8 @@
-// @spec S1-01, S1-02, S1-03, S1-04, S1-05, S1-06, S1-07
+// @spec S1-01, S1-02, S1-03, S1-04, S1-05, S1-06, S1-07, APP-12
 import { useState } from 'react';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import { formatCount, PACKS, type CatalogLanguage, type PackId } from '../../data';
+import { HostBack } from '../../app/HostBack';
 import { LangRowText } from '../../app/LanguageList';
 import { LoadError, Skeleton } from '../../app/States';
 import { navigate } from '../../app/router';
@@ -37,6 +38,7 @@ export function S1ChonNgonNgu() {
   if (catalog.status === 'error') {
     return (
       <div className="s1">
+        <HostBack className="s1__host" />
         <LoadError onRetry={retryCatalog} />
       </div>
     );
@@ -118,6 +120,7 @@ export function S1ChonNgonNgu() {
 
   return (
     <div className="s1">
+      <HostBack className="s1__host" />
       <p className="s1__brand t-body">VITASR</p>
       <h1 className="s1__title t-xl">Bạn muốn học ngôn ngữ nào?</h1>
       {first && <div className="s1__featured">{row(first)}</div>}
