@@ -97,6 +97,7 @@ Vì app mở bằng trang mới (APP-09), app có một nút để người họ
 
 - APP-12: nút về trang chủ `https://language.pomaskhoahocnaobo.com/` hay về thẳng Trung tâm ứng dụng? Nếu là Trung tâm ứng dụng thì cần đường dẫn chính xác của trang đó. Hiện để mặc định là trang chủ, đổi được bằng `VITE_HOST_URL` mà không sửa code.
 - APP-10: bản mới tự kích hoạt trong service worker nhưng trang đang mở không tự tải lại; người dùng bấm "Cập nhật" mới tải lại. Lần mở đầu tiên có mạng, ngay khi service worker nhận trang, app tải lại các file dữ liệu đã dùng để lưu ngoại tuyến. Font Noto của ngôn ngữ không dùng chữ Latinh chỉ được lưu từ lần mở có mạng thứ hai; nếu tắt mạng ngay sau lần đầu, câu tiếng Nhật, Thái... hiện bằng font sẵn có của máy. Nhóm xác nhận cách làm này.
+- APP-09, APP-12: quyết định ngày 10/10 ghi "tab mới, chuyển thẳng trang", nhưng hai cách này cho kết quả khác nhau khi bấm "Quay lại trang học". Nút hiện mở trang học chính ngay trong tab của app. Nếu trang chính mở app bằng tab mới thì tab trang học cũ vẫn còn, bấm nút sẽ thành hai tab trang học; nếu trang chính chuyển thẳng trong cùng tab thì nút về đúng một trang như mong muốn. Cần xác nhận trang chính dùng cách nào (xem trên trang thật, APP-AC20). Nếu là tab mới: giữ cách hiện tại, hay đổi nhãn cho rõ là mở trang học (đóng tab bằng mã chỉ làm được trong một số trường hợp nên không dùng được làm cách chính)?
 
 ## Lịch sử thay đổi
 

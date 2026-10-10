@@ -67,7 +67,7 @@ Như S3-07: sheet xác nhận "Dừng kiểm tra? Kết quả các câu đã là
 - S5-07: bước "Nghe theo cụm" không có đúng sai. Code ghi kết quả bước này là số câu đã làm xong trên số câu của bước (ví dụ "Nghe theo cụm: 8/8"). Nhóm xác nhận cách hiển thị.
 - DATA-06 chưa có loại lượt cho bước Nghe theo cụm, nên làm "Chỉ nghe theo cụm" tạo một phiên hoàn tất không có lượt nào: T4 đếm phiên này nhưng không đếm câu nào là đã học. Có thêm loại lượt (ví dụ `nghe-cum`) không?
 - S5-08 "về màn trước": code về khu chính đã mở S5 (thường là T2, như bảng trong docs/new/navigation.md).
-- S5-03: trong lúc trình duyệt còn nạp danh sách giọng (tối đa 1,5 giây), bước 1 chưa hiện nút "Nghe lại" lẫn chữ câu gốc; hết thời gian đó mới quyết định dùng âm thanh hay chữ.
+- S5-03: trong lúc trình duyệt còn nạp danh sách giọng (tối đa 1,5 giây), bước 1 chưa hiện nút "Nghe lại" lẫn chữ câu gốc; hết thời gian đó mới quyết định dùng âm thanh hay chữ. Khi hết thời gian chờ mà thiết bị không có giọng, khối chữ câu gốc và dòng báo hiện ra phía trên 4 lựa chọn và đẩy chúng xuống; người đang bấm chọn đúng lúc đó có thể bấm trượt. Nên giữ như vậy, giữ sẵn chỗ cho khối này, hay chỉ hiện 4 lựa chọn sau khi đã biết có giọng hay không?
 
 ## Lịch sử thay đổi
 
