@@ -187,4 +187,49 @@ test.describe('khung và luồng chính', () => {
       }
     }
   });
+
+  // @ac C1-AC06
+  test('câu báo thiếu giọng hiện ra không đẩy các nút bên dưới đi chỗ khác (T1, S3 bước kiểm tra)', async ({ page }) => {
+    // Thiết bị không có giọng nào: app chờ nạp giọng 1,5 giây rồi mới hiện câu báo (useVoices).
+    // Dừng đồng hồ của trang để đo được trước và sau đúng mốc đó, không phụ thuộc máy chạy test nhanh hay chậm.
+    await page.addInitScript(() => Object.defineProperty(window.speechSynthesis, 'getVoices', { value: () => [] }));
+    await page.clock.install({ time: new Date('2026-10-08T10:00:00+07:00') });
+    await page.clock.pauseAt(new Date('2026-10-08T10:00:01+07:00'));
+    await seed(page, { 'vitasr2.settings': settings() });
+    const boxes = (sel: string) =>
+      page.evaluate((s) => {
+        const r = (e: Element) => e.getBoundingClientRect();
+        return {
+          pending: document.querySelectorAll('.card__novoice--pending').length,
+          shown: document.querySelectorAll('.card__novoice:not(.card__novoice--pending)').length,
+          y: [...document.querySelectorAll(s)].map((e) => Math.round(r(e).y)),
+        };
+      }, sel);
+
+    await page.goto('./#/hoc');
+    await expect(page.locator('.card')).toBeVisible();
+    const t1Before = await boxes('.card__audio, .t1 .btn--primary');
+    expect(t1Before.pending).toBe(1);
+    await page.clock.runFor(1600);
+    await expect(page.locator('.card .card__novoice:not(.card__novoice--pending)')).toBeVisible();
+    const t1After = await boxes('.card__audio, .t1 .btn--primary');
+    expect(t1After.pending).toBe(0);
+    expect(t1After.y).toEqual(t1Before.y);
+
+    // Mở thẳng S3 rồi tới bước kiểm tra trước mốc 1,5 giây.
+    await page.goto('about:blank');
+    await page.goto('./#/phien-hoc?nguon=lo-trinh');
+    await revealAndKnow(page);
+    await answerCorrect(page);
+    await expect(page.getByRole('button', { name: 'Câu tiếp' })).toBeVisible();
+    const s3Before = await boxes('.choice, .s3__check-actions .btn');
+    expect(s3Before.pending).toBe(1);
+    await page.clock.runFor(1600);
+    await expect(page.locator('.s3__source .card__novoice:not(.card__novoice--pending)')).toBeVisible();
+    const s3After = await boxes('.choice, .s3__check-actions .btn');
+    expect(s3After.pending).toBe(0);
+    expect(s3After.y).toEqual(s3Before.y);
+    await page.getByRole('button', { name: 'Câu tiếp' }).click();
+    await expect(page.getByText('Câu 2/8')).toBeVisible();
+  });
 });

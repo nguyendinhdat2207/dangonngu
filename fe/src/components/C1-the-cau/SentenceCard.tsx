@@ -120,7 +120,7 @@ export function SentenceCard({ item, lang, locale, langName, covered = false, on
         <AudioButton locked={audioLocked} active={speaker.playing === 'once'} kind="once" onClick={() => speaker.toggle('once')} />
         <AudioButton locked={audioLocked} active={speaker.playing === 'loop'} kind="loop" onClick={() => speaker.toggle('loop')} />
       </div>
-      {speaker.noVoice && <NoVoice langName={langName} onOpenVoices={onOpenVoices} />}
+      {(speaker.noVoice || !speaker.ready) && <NoVoice langName={langName} onOpenVoices={onOpenVoices} pending={!speaker.ready} />}
     </article>
   );
 }
@@ -142,7 +142,21 @@ export function AudioButton({ locked, active, kind, onClick }: { locked: boolean
   );
 }
 
-export function NoVoice({ langName, onOpenVoices }: { langName: string; onOpenVoices?: () => void }) {
+/**
+ * Câu báo thiếu giọng dưới hàng nút Nghe (C1-05).
+ *
+ * `pending`: trình duyệt còn đang nạp danh sách giọng (tối đa 1,5 giây, xem `useVoices`), chưa biết có giọng hay không.
+ * Khi đó giữ sẵn chỗ bằng một dòng ẩn cùng nội dung, để lúc câu báo hiện ra các lựa chọn và nút bên dưới
+ * không bị đẩy xuống dưới tay người đang bấm. Có giọng thì nơi gọi bỏ dòng giữ chỗ.
+ */
+export function NoVoice({ langName, onOpenVoices, pending = false }: { langName: string; onOpenVoices?: () => void; pending?: boolean }) {
+  if (pending) {
+    return (
+      <p className="card__novoice card__novoice--pending t-sm muted" aria-hidden="true">
+        Thiết bị chưa có giọng {langName}. Mở <span className="card__link">Cài đặt &gt; Giọng đọc</span>.
+      </p>
+    );
+  }
   return (
     <p className="card__novoice t-sm muted">
       Thiết bị chưa có giọng {langName}. Mở{' '}
