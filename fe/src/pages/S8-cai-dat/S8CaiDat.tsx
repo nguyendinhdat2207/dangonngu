@@ -75,6 +75,8 @@ export function S8CaiDat({ params }: { params: Record<string, string> }) {
   if (!language || !pack) return null;
   const lang = language.id;
   const multi = language.packs.length > 1;
+  /** Tên dùng trong câu xác nhận và câu báo lỗi nhập tiến độ (S8-05): kèm tên bộ khi ngôn ngữ có nhiều bộ. */
+  const who = multi ? `${language.name} (${packInfo(pack).name})` : language.name;
   const chosen = voices.find((v) => v.voiceURI === settings.voiceByLang[lang] && voicesFor(lang, [v]).length > 0);
 
   const doExport = () => {
@@ -93,7 +95,7 @@ export function S8CaiDat({ params }: { params: Record<string, string> }) {
     }
     const p = parseImport(text, pack, lang);
     if (!p) {
-      toast.show({ text: 'File không phải tiến độ VITASR hoặc của ngôn ngữ khác.', kind: 'alert' });
+      toast.show({ text: `Tệp này không phải tiến độ VITASR của ${who}. Chọn tệp đã xuất bằng Xuất tiến độ khi đang học ${who}.`, kind: 'alert' });
       return;
     }
     confirmImport(p);
@@ -103,7 +105,7 @@ export function S8CaiDat({ params }: { params: Record<string, string> }) {
     sheet.open({
       title: 'Nhập tiến độ',
       kind: 'confirm',
-      body: () => <p className="t-body">Thay tiến độ {language.name} hiện tại bằng file này?</p>,
+      body: () => <p className="t-body">Thay tiến độ {who} hiện tại bằng tệp này?</p>,
       footer: (close) => (
         <>
           <Button variant="secondary" onClick={close}>
@@ -227,9 +229,9 @@ export function S8CaiDat({ params }: { params: Record<string, string> }) {
         </div>
       </section>
 
-      <section className="s8__group" aria-labelledby="s8-du-lieu">
-        <h2 id="s8-du-lieu" className="t-sm muted s8__group-title">
-          Dữ liệu
+      <section className="s8__group" aria-labelledby="s8-tien-do">
+        <h2 id="s8-tien-do" className="t-sm muted s8__group-title">
+          Tiến độ
         </h2>
         <ul className="s8__list">
           <li>

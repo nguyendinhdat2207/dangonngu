@@ -58,7 +58,7 @@ function Banners() {
       )}
       {storageBlocked && (
         <p className="banner banner--warn t-sm" role="alert">
-          Trình duyệt đang chặn lưu dữ liệu, tiến độ sẽ mất khi đóng app.
+          Trình duyệt đang chặn lưu tiến độ, tiến độ sẽ mất khi đóng app. Cho phép trang này lưu trên máy trong cài đặt trình duyệt rồi mở lại app.
         </p>
       )}
     </>

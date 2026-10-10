@@ -22,7 +22,7 @@ import {
   type Unit,
 } from '../../data';
 import { sentenceSize } from '../../foundation/typography';
-import { lastMainRoute, navigate, setLeaveGuard } from '../../app/router';
+import { navigate, setLeaveGuard } from '../../app/router';
 import { useApp } from '../../app/state';
 import { useSay } from '../../app/hooks';
 import { voicesFor } from '../../app/speech';
@@ -59,7 +59,6 @@ const isInteractive = (t: EventTarget | null) => t instanceof HTMLElement && !!t
 function TestView({ d, unit, unitIndex }: { d: LanguageData; unit: Unit; unitIndex: number }) {
   const { updateProgress, deps, progress } = useApp();
   const sheet = useSheet();
-  const origin = useRef(lastMainRoute());
   const leaving = useRef(false);
   /** Route của bài đang làm; đổi sang route khác (kể cả unit khác qua nút Back) phải hỏi trước (S5-08). */
   const ownRoute = useRef(window.location.hash.replace(/^#/, ''));
@@ -117,9 +116,10 @@ function TestView({ d, unit, unitIndex }: { d: LanguageData; unit: Unit; unitInd
     }
   };
 
+  // S5-08: Thoát ở màn bắt đầu và Dừng giữa chừng đều về T2 Luyện tập, như nút Xong (S5-07), kể cả khi mở S5 thẳng bằng đường dẫn.
   const leave = useCallback(() => {
     leaving.current = true;
-    navigate(origin.current.name, origin.current.params);
+    navigate('luyen-tap');
   }, []);
 
   // S5-08: thoát giữa chừng.
@@ -377,6 +377,10 @@ function ListenChoose(props: {
   const nextBtn = useNextFocus(answered);
   useEnterNext(answered, props.onNext);
   const showText = answered || noVoice;
+
+  // S5-03: chưa biết có giọng hay không (đang nạp danh sách giọng, tối đa 1,5 giây) thì chưa hiện câu hỏi và lựa chọn,
+  // để khối nghe hoặc chữ câu gốc hiện ra sau không đẩy các lựa chọn xuống dưới tay người đang bấm.
+  if (!voicesReady) return <div className="s5__task" data-item-id={item.id} aria-busy="true" />;
 
   return (
     <div className="s5__task" data-item-id={item.id}>

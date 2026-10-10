@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { answerCorrect, revealAndKnow, seed, settings } from './helpers';
+import { animationsDone, answerCorrect, revealAndKnow, seed, settings } from './helpers';
 
 test.describe('khung và luồng chính', () => {
   // @ac S3-AC08
@@ -165,6 +165,7 @@ test.describe('khung và luồng chính', () => {
         await page.reload();
         await expect(page.getByText('Bạn muốn học ngôn ngữ nào?')).toBeVisible();
         const check = async (where: string) => {
+          await animationsDone(page);
           const r = await new AxeBuilder({ page }).analyze();
           const bad = r.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical');
           expect(bad.map((v) => `${where} ${scheme} ${width}: ${v.id} ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`)).toEqual([]);

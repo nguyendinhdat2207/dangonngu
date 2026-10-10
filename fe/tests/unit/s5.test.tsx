@@ -116,6 +116,22 @@ describe('S5 Kiểm tra nhanh', () => {
     expect(screen.queryByRole('button', { name: 'Nghe lại' })).toBeNull();
   });
 
+  // @ac S5-AC03
+  it('trình duyệt chưa trả danh sách giọng: chưa có câu hỏi và 4 lựa chọn; hết 1,5 giây thì hiện cùng chữ câu gốc', async () => {
+    fakeSpeech([]);
+    await renderApp('#/kiem-tra?unit=1', { seed: settingsSeed() });
+    fireEvent.click(screen.getByRole('button', { name: 'Chỉ nghe và chọn nghĩa' }));
+    await settle();
+    expect(document.querySelector('.s5__task[aria-busy="true"]')).not.toBeNull();
+    expect(document.querySelectorAll('.choice')).toHaveLength(0);
+    expect(screen.queryByText('Câu bạn nghe nghĩa là gì?')).toBeNull();
+    await settle(1600);
+    expect(document.querySelectorAll('.choice')).toHaveLength(4);
+    expect(screen.getByText('Câu bạn nghe nghĩa là gì?')).toBeInTheDocument();
+    expect(screen.getByTestId('s5-source')).toHaveTextContent('I want to...');
+    expect(screen.getByText('Thiết bị chưa có giọng đọc, bài này dùng chữ thay cho âm thanh.')).toBeInTheDocument();
+  });
+
   // @ac S5-AC04
   it('nghe theo cụm: chạm hết cụm thì có Câu tiếp; câu 1 cụm bị bỏ qua', async () => {
     await renderApp('#/kiem-tra?unit=1', { seed: settingsSeed() });
@@ -260,6 +276,26 @@ describe('S5 Kiểm tra nhanh', () => {
     fireEvent.click(screen.getByRole('button', { name: /Kiểm tra nhanh/ }));
     await settle();
     expect(screen.getByRole('button', { name: 'Làm cả 3 bước' })).toBeInTheDocument();
+  });
+});
+
+describe('S5 thoát khi mở thẳng đường dẫn', () => {
+  // @ac S5-AC08
+  it('mở thẳng #/kiem-tra: Dừng giữa chừng và Thoát ở màn bắt đầu đều về T2 Luyện tập', async () => {
+    let r = await renderApp('#/kiem-tra?unit=1', { seed: settingsSeed() });
+    fireEvent.click(screen.getByRole('button', { name: 'Làm cả 3 bước' }));
+    await settle();
+    fireEvent.click(screen.getByRole('button', { name: 'Thoát' }));
+    await settle();
+    fireEvent.click(within(screen.getByRole('dialog', { name: 'Dừng kiểm tra?' })).getByRole('button', { name: 'Dừng' }));
+    await settle();
+    expect(hash()).toBe('#/luyen-tap');
+    r.unmount();
+    r = await renderApp('#/kiem-tra?unit=1', { seed: settingsSeed() });
+    fireEvent.click(screen.getByRole('button', { name: 'Thoát' }));
+    await settle();
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(hash()).toBe('#/luyen-tap');
   });
 });
 

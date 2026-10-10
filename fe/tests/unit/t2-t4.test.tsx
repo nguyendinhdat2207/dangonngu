@@ -62,6 +62,23 @@ describe('T2 Luyện tập', () => {
   });
 
   // @ac T2-AC03
+  it('từ khóa chỉ khớp 1 đến 7 câu: nút là "Học N câu" và mở đúng route', async () => {
+    const source = new FixtureSource();
+    const d = await loadLanguageData(source, await loadCatalog(source), 'en', 'fluency');
+    const n = searchItems(d, 'rather').length;
+    expect(n).toBeGreaterThanOrEqual(1);
+    expect(n).toBeLessThanOrEqual(7);
+    await renderApp('#/luyen-tap', { seed: settingsSeed() });
+    const dialog = await openKeyword();
+    fireEvent.change(within(dialog).getByRole('searchbox', { name: 'Từ khóa' }), { target: { value: 'rather' } });
+    await settle(320);
+    expect(within(dialog).getByText(`Tìm thấy ${n} câu`)).toBeInTheDocument();
+    expect(within(dialog).queryByRole('button', { name: 'Học 8 câu đầu' })).toBeNull();
+    fireEvent.click(within(dialog).getByRole('button', { name: `Học ${n} câu` }));
+    expect(parseHash(hash()).params).toEqual({ nguon: 'tu-khoa', q: 'rather', nhom: '1' });
+  });
+
+  // @ac T2-AC03
   it('chạm chip "sân bay" điền vào ô tìm', async () => {
     await renderApp('#/luyen-tap', { seed: settingsSeed() });
     const dialog = await openKeyword();

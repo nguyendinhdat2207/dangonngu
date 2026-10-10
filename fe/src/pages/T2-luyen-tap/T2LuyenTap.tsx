@@ -49,7 +49,7 @@ export function T2LuyenTap() {
           >
             <span className="t2__row-text">
               <span className="t2__name t-body">Ôn câu cần ôn</span>
-              <span className="t-sm muted">{due > 0 ? 'Các câu bạn đánh dấu cần ôn hoặc trả lời sai.' : 'Không có câu cần ôn hôm nay.'}</span>
+              <span className="t-sm muted">{due > 0 ? 'Các câu đến hạn ôn hôm nay, kể cả câu bạn chưa nhớ hoặc làm chưa đúng.' : 'Không có câu cần ôn hôm nay.'}</span>
             </span>
             {due > 0 && (
               <span className="t2__count t-body num" aria-label={`${due} câu`}>
@@ -166,7 +166,7 @@ function KeywordFooter({ d, store, close }: { d: LanguageData; store: Store<Keyw
         navigate('phien-hoc', { nguon: 'tu-khoa', q: term, nhom: 1 });
       }}
     >
-      Học 8 câu đầu
+      {count > 0 && count < 8 ? `Học ${count} câu` : 'Học 8 câu đầu'}
     </Button>
   );
 }

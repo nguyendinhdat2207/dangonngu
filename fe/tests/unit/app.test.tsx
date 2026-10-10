@@ -249,7 +249,9 @@ describe('APP Khung app', () => {
       removeItem: () => {},
     } as unknown as Storage;
     await renderApp('#/chon-ngon-ngu', { backend: throwing });
-    expect(screen.getByText('Trình duyệt đang chặn lưu dữ liệu, tiến độ sẽ mất khi đóng app.')).toBeInTheDocument();
+    expect(
+      screen.getByText('Trình duyệt đang chặn lưu tiến độ, tiến độ sẽ mất khi đóng app. Cho phép trang này lưu trên máy trong cài đặt trình duyệt rồi mở lại app.'),
+    ).toBeInTheDocument();
     fireEvent.click(screen.getByText('Tiếng Nhật'));
     await waitFor(() => expect(hash()).toBe('#/hoc'));
     fireEvent.click(screen.getByRole('button', { name: /^Học \d câu$/ }));
