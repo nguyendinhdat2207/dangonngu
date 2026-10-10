@@ -1,0 +1,36 @@
+# Kiểm tự động mỗi lần push hoặc mở pull request: test, build, ánh xạ spec, test trên trình duyệt.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  kiem-tra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Kiểm ánh xạ spec, acceptance, code
+        run: npm run spec:check
+      - name: Test đơn vị (Vitest)
+        run: npm test
+      - name: Build (kiểm kiểu TypeScript)
+        run: npm run build
+      - name: Cài Chromium cho Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Test trên trình duyệt (Playwright)
+        run: npm run test:e2e
+      - name: Lưu báo cáo khi test trình duyệt lỗi
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: test-results/
+          retention-days: 7

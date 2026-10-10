@@ -23,11 +23,11 @@ Làm lại giao diện mini app "ĐA NGÔN NGỮ" của VITASR. Repo gồm: tài
 ├── playwright.config.ts          test giao diện chạy trên bản build
 ├── scripts/spec.mjs              script truy vết (Node 18+, không cần thư viện)
 ├── scripts/make-fixtures.mjs     tạo fixture từ bộ dữ liệu đầy đủ
-├── data/, README.txt, i18n-seed/ bản xuất dữ liệu gốc của nhóm (data/ trùng nội dung với fe/public/data/)
 ├── docs/
 │   ├── QUY-TRINH.md              ID, ánh xạ, ai kiểm gì, khi nào được chấp nhận
 │   ├── QUYET-DINH.md             quyết định kỹ thuật (QD-xx)
 │   ├── legacy/                   bản cũ (tham khảo, không phải yêu cầu)
+│   │   ├── ban-xuat-du-lieu/     ghi chú và chuỗi giao diện của bản xuất dữ liệu ngày 07/10/2026
 │   │   ├── README.md
 │   │   ├── navigation.md
 │   │   ├── ui-spec.md

@@ -1,0 +1,13 @@
+# Giữ xuống dòng LF trong repo và cả trên máy Windows, để mã băm dữ liệu khớp _inventory.json
+* text=auto eol=lf
+
+# File nhị phân: không đổi xuống dòng, không so diff dạng chữ
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.mp4 binary
+*.zip binary
