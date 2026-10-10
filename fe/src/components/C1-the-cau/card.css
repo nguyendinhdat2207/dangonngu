@@ -1,4 +1,4 @@
-/* @spec C1-01, C1-02, C1-03 */
+/* @spec C1-01, C1-02, C1-03, C1-05 */
 .card {
   display: flex; flex-direction: column; gap: var(--s-4);
   background: var(--surface);
@@ -33,3 +33,6 @@
 }
 .card__audio-btn[aria-disabled='true'] { opacity: 0.4; }
 .card__link { text-decoration: underline; color: var(--ink); min-height: 0; }
+/* C1-05: dòng giữ chỗ khi chưa biết có giọng hay không; ẩn nhưng giữ đúng chiều cao của câu báo. */
+.card__novoice--pending { visibility: hidden; }
+.card__novoice--pending .card__link { display: inline-block; }

@@ -287,7 +287,9 @@ function CheckStep(props: {
       <div className="s3__source">
         <SourceText item={item} lang={d.lang} size={sentenceSize(item.en)} />
         <AudioButton locked={speaker.noVoice || !speaker.ready} active={speaker.playing === 'once'} kind="once" onClick={() => speaker.toggle('once')} />
-        {speaker.noVoice && <NoVoice langName={language?.name ?? ''} onOpenVoices={() => navigate('cai-dat', { giong: 1 })} />}
+        {(speaker.noVoice || !speaker.ready) && (
+          <NoVoice langName={language?.name ?? ''} onOpenVoices={() => navigate('cai-dat', { giong: 1 })} pending={!speaker.ready} />
+        )}
       </div>
       {hinted && (
         <p className="s3__hint vi t-body" lang="vi" role="status">

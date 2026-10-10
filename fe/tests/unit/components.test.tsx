@@ -80,6 +80,36 @@ describe('C1 Thẻ câu', () => {
     expect(open).toHaveBeenCalled();
   });
 
+  // @ac C1-AC06
+  it('đang nạp danh sách giọng: giữ chỗ bằng dòng ẩn cùng nội dung; hết 1,5 giây không có giọng thì câu báo hiện đúng chỗ đó; có giọng thì không có dòng nào', async () => {
+    vi.useFakeTimers();
+    fakeSpeech([]);
+    const a = withProviders(<SentenceCard item={plain} lang="en" langName="Tiếng Anh" />);
+    await act(async () => {});
+    const text = 'Thiết bị chưa có giọng Tiếng Anh. Mở Cài đặt > Giọng đọc.';
+    const pending = a.container.querySelector('.card__novoice');
+    expect(pending).toHaveClass('card__novoice--pending');
+    expect(pending).toHaveAttribute('aria-hidden', 'true');
+    expect(pending).toHaveTextContent(text);
+    expect(pending!.previousElementSibling).toHaveClass('card__audio');
+    expect(screen.queryByRole('button', { name: 'Cài đặt > Giọng đọc' })).toBeNull();
+    await act(async () => {
+      vi.advanceTimersByTime(1500);
+    });
+    const shown = a.container.querySelector('.card__novoice');
+    expect(shown).not.toHaveClass('card__novoice--pending');
+    expect(shown).not.toHaveAttribute('aria-hidden');
+    expect(shown).toHaveTextContent(text);
+    expect(shown!.previousElementSibling).toHaveClass('card__audio');
+    expect(screen.getByRole('button', { name: 'Cài đặt > Giọng đọc' })).toBeInTheDocument();
+    a.unmount();
+
+    fakeSpeech([{ lang: 'en-US', voiceURI: 'en', name: 'EN' }]);
+    const b = withProviders(<SentenceCard item={plain} lang="en" langName="Tiếng Anh" />);
+    await act(async () => {});
+    expect(b.container.querySelector('.card__novoice')).toBeNull();
+  });
+
   // @ac C1-AC07, DATA-AC04
   it('Cách dùng và ruby chỉ có khi item có trường tương ứng', async () => {
     const src = new FixtureSource();

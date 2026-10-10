@@ -8,7 +8,9 @@ on:
 
 jobs:
   kiem-tra:
-    runs-on: ubuntu-latest
+    # Ghim bản Ubuntu: từ 19/10/2026 ubuntu-latest chuyển sang Ubuntu 26, bước cài Chromium của Playwright có thể chưa hỗ trợ.
+    # Nâng lên khi Playwright hỗ trợ bản mới.
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
@@ -29,7 +31,7 @@ jobs:
         run: npm run test:e2e
       - name: Lưu báo cáo khi test trình duyệt lỗi
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-test-results
           path: test-results/

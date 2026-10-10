@@ -7,7 +7,7 @@ Khổ kiểm mặc định và quy tắc đánh dấu: `docs/QUY-TRINH.md` mục
 - [x] APP-AC02 [auto] APP-01, APP-04: Test điều hướng: bấm lần lượt 4 mục thì hash đổi thành `#/hoc`, `#/luyen-tap`, `#/thu-vien`, `#/tien-bo` và đúng màn hiện ra.
   - Bằng chứng: test fe/tests/e2e/app.spec.ts pass (npm run test:e2e), Claude, 2026-10-10, chưa commit (đợt 2)
 - [x] APP-AC03 [claude] APP-02: Ảnh chụp T1 đến T4 ở 375 px và 1280 px có tên ngôn ngữ bên trái, nút Cài đặt bên phải.
-  - Bằng chứng: ảnh docs/evidence/APP-AC03/ chụp lại sau khi thêm nút về trang học (T1, T2, T3, T4 ở 375 và 1280 px, sáng và tối): nút về trang học ngoài cùng bên trái, tiếp theo là tên ngôn ngữ và tên bộ, nút Cài đặt bên phải, Claude, 2026-10-10, chưa commit (APP-12)
+  - Bằng chứng: ảnh docs/evidence/APP-AC03/ chụp lại sau khi thêm nút về trang học (T1, T2, T3, T4 ở 375 và 1280 px, sáng và tối): nút về trang học ngoài cùng bên trái, tiếp theo là tên ngôn ngữ và tên bộ, nút Cài đặt bên phải (chụp lại sau PR #7 cùng bản build mới), Claude, 2026-10-10, chưa commit (sửa sau PR #7)
 - [x] APP-AC04 [auto] APP-03: Ở `#/phien-hoc`, `#/kiem-tra`, `#/chon-ngon-ngu` không có thanh tab và thanh trên cùng trong DOM hiển thị; S3 và S5 có nút "Thoát".
   - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] APP-AC05 [auto] APP-04: Mở route không hợp lệ thì chuyển về `#/hoc` (đã chọn ngôn ngữ) hoặc `#/chon-ngon-ngu` (chưa chọn). Nút Back của trình duyệt sau chuỗi T1 → T3 → T4 quay về T3 rồi T1.
@@ -25,7 +25,7 @@ Khổ kiểm mặc định và quy tắc đánh dấu: `docs/QUY-TRINH.md` mục
 - [x] APP-AC11 [auto] APP-08: Giả lập `navigator.onLine = false` và sự kiện `offline`: dải ngoại tuyến hiện; sự kiện `online` thì dải ẩn. Giả lập localStorage ném lỗi: dải cảnh báo bộ nhớ hiện.
   - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] APP-AC12 [claude] APP-09: Nhúng bản build vào một trang thử có iframe 400 x 700 và 1100 x 700: app chạy đủ luồng T1 → S3 → tổng kết; tìm trong mã nguồn không có `window.top`, `window.parent`, `postMessage`.
-  - Bằng chứng: ảnh docs/evidence/APP-AC12/ (iframe 400x700 và 1100x700 đi hết T1 → S3 → tổng kết); tìm trong fe/src không có window.top, window.parent, postMessage, Claude, 2026-10-08, commit 97e85fa
+  - Bằng chứng: kiểm lại sau khi APP-09 đổi (10/10): chạy lại với bản build mới, ảnh docs/evidence/APP-AC12/ (iframe 400x700 và 1100x700 đi hết T1 → S3 → tổng kết); tìm trong fe/src không có window.top, window.parent, postMessage, Claude, 2026-10-10, chưa commit (sửa sau PR #7)
 - [ ] APP-AC13 [human] APP-07, APP-09: Mở app trên trình duyệt máy tính (Chrome, Edge, Safari) và trên điện thoại (iPhone, Android), mỗi nơi đi hết luồng chọn ngôn ngữ, học một phiên, xem tiến bộ: hiển thị đủ, không có điều khiển bị che hay tràn.
 - [ ] APP-AC14 [human] APP-10: Trên điện thoại thật: mở app có mạng, tắt mạng, đóng và mở lại app: vẫn học được ngôn ngữ đã tải.
 - [x] APP-AC15 [auto] APP-10: Giả lập service worker có bản mới: thông báo "Có bản cập nhật" hiện ở T1 nhưng không hiện khi đang ở S3; trang không tự tải lại.
@@ -37,5 +37,5 @@ Khổ kiểm mặc định và quy tắc đánh dấu: `docs/QUY-TRINH.md` mục
 - [x] APP-AC18 [auto] APP-12: Ở T1, T2, T3, T4 và S1 bước 1 có một liên kết nhãn trợ năng "Quay lại trang học" với `href` bằng `VITE_HOST_URL` (mặc định `https://language.pomaskhoahocnaobo.com/`); ở S1 bước 2, S3, S5 và S8 không có liên kết này. Bấm liên kết khi đang có phiên dở không mở sheet xác nhận nào.
   - Bằng chứng: test fe/tests/unit/app.test.tsx pass (npm test), Claude, 2026-10-10, chưa commit (APP-12)
 - [x] APP-AC19 [claude] APP-02, APP-12: Ảnh chụp thanh trên cùng của T1 ở 320, 375 và 1280 px, sáng và tối: nút về trang học nằm ngoài cùng bên trái, vùng chạm từ 44 x 44 px; từ 600 px có chữ "Trang học"; tên ngôn ngữ, tên bộ và nút Cài đặt không bị che hay cắt.
-  - Bằng chứng: ảnh và số đo docs/evidence/APP-AC19/ (320, 375, 600, 1280 px, sáng và tối; do-dac-light.json, do-dac-dark.json): nút 44 x 44 px ở 320 và 375 px, 130 x 44 px có chữ "Trang học" từ 600 px; nút, tên ngôn ngữ, nút Cài đặt không chồng nhau; không cuộn ngang; ảnh S1 bước 1 ở 320 và 1280 px, Claude, 2026-10-10, chưa commit (APP-12)
+  - Bằng chứng: ảnh và số đo docs/evidence/APP-AC19/ (320, 375, 600, 1280 px, sáng và tối; do-dac-light.json, do-dac-dark.json): nút 44 x 44 px ở 320 và 375 px, 130 x 44 px có chữ "Trang học" từ 600 px; nút, tên ngôn ngữ, nút Cài đặt không chồng nhau; không cuộn ngang; ảnh S1 bước 1 ở 320 và 1280 px (chụp lại sau PR #7: bỏ đường kẻ ngăn thừa bên phải nút ở S1 từ 600 px), Claude, 2026-10-10, chưa commit (sửa sau PR #7)
 - [ ] APP-AC20 [human] APP-09, APP-12: Trên trang học chính thật, đăng nhập, mở Đa ngôn ngữ: app mở ở trang mới. Bấm "Quay lại trang học": về đúng trang học chính và vẫn đăng nhập.
