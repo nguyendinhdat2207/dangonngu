@@ -1,6 +1,6 @@
 # Ma trận truy vết spec, code và acceptance
 
-File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 11:57 UTC. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs trace` lúc 2026-10-10 12:49 UTC. Không sửa tay.
 
 Tổng: 135 yêu cầu, 173 mục acceptance, 426 ghi chú @spec/@ac trong code.
 
@@ -56,7 +56,7 @@ Spec: [fe/src/foundation/spec.md](../../fe/src/foundation/spec.md) · Acceptance
 | FND-11 | Chuyển động | FND-AC10, FND-AC11 | - | fe/src/foundation/base.css:1<br>fe/src/foundation/tokens.css:1 | fe/tests/e2e/app.spec.ts:93 |
 | FND-12 | Giọng văn và từ ngữ | FND-AC12, FND-AC13 | - | - | - |
 | FND-13 | Quy tắc tránh giao diện kiểu AI | FND-AC14 | - | - | - |
-| FND-14 | Trợ năng chung | FND-AC15, FND-AC16, FND-AC17 | - | fe/src/foundation/base.css:1 | fe/tests/e2e/app.spec.ts:156<br>fe/tests/e2e/dot2.spec.ts:25 |
+| FND-14 | Trợ năng chung | FND-AC15, FND-AC16, FND-AC17 | - | fe/src/foundation/base.css:1 | fe/tests/e2e/app.spec.ts:156<br>fe/tests/e2e/dot2.spec.ts:26 |
 
 ## DATA Dữ liệu và tiến độ
 
@@ -73,7 +73,7 @@ Spec: [fe/src/data/spec.md](../../fe/src/data/spec.md) · Acceptance: [fe/src/da
 | DATA-07 | Quy tắc câu cần ôn | DATA-AC08, DATA-AC09 | - | fe/src/data/review.ts:1<br>fe/src/data/session.ts:1<br>fe/src/data/stats.ts:1<br>fe/src/pages/T3-thu-vien/filter.ts:1 | fe/tests/unit/app.test.tsx:364<br>fe/tests/unit/data.test.ts:134<br>fe/tests/unit/t2-t4.test.tsx:264 |
 | DATA-08 | Đáp án nhiễu | DATA-AC10 | - | fe/src/data/distractors.ts:1<br>fe/src/data/text.ts:1 | fe/tests/unit/data.test.ts:167 |
 | DATA-09 | Fixture | DATA-AC11, DATA-AC12 | - | - | - |
-| DATA-10 | Không gọi mạng ngoài phạm vi | DATA-AC13 | - | fe/src/data/source.ts:1 | fe/tests/e2e/app.spec.ts:136<br>fe/tests/e2e/dot2.spec.ts:98 |
+| DATA-10 | Không gọi mạng ngoài phạm vi | DATA-AC13 | - | fe/src/data/source.ts:1 | fe/tests/e2e/app.spec.ts:136<br>fe/tests/e2e/dot2.spec.ts:99 |
 | DATA-11 | Lộ trình học | DATA-AC14 | - | fe/src/data/path.ts:1 | fe/tests/unit/data.test.ts:182 |
 | DATA-12 | Tìm kiếm | DATA-AC15 | - | fe/src/data/search.ts:1<br>fe/src/data/text.ts:1<br>fe/src/pages/T3-thu-vien/filter.ts:1 | fe/tests/unit/data.test.ts:191 |
 | DATA-13 | Bộ nội dung | DATA-AC16, DATA-AC17 | docs/new/navigation.md:64 | fe/src/app/state.tsx:1<br>fe/src/data/catalog.ts:1<br>fe/src/data/types.ts:1 | fe/tests/unit/data.test.ts:86<br>fe/tests/unit/data.test.ts:212<br>fe/tests/unit/s3.test.tsx:232 |
@@ -88,7 +88,7 @@ Spec: [fe/src/components/C1-the-cau/spec.md](../../fe/src/components/C1-the-cau/
 | C1-02 | Trạng thái che câu gốc | C1-AC02 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1 | fe/tests/unit/components.test.tsx:24 |
 | C1-03 | Trạng thái hiện đầy đủ | C1-AC03 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1 | fe/tests/unit/components.test.tsx:39 |
 | C1-04 | Phát âm | C1-AC04, C1-AC05 | - | fe/src/app/speech.ts:1<br>fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/useSpeaker.ts:1 | fe/tests/unit/components.test.tsx:48 |
-| C1-05 | Không có giọng đọc | C1-AC06 | docs/new/navigation.md:149<br>docs/new/navigation.md:296 | fe/src/app/speech.ts:1<br>fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1<br>fe/src/components/C1-the-cau/useSpeaker.ts:1 | fe/tests/e2e/app.spec.ts:191<br>fe/tests/unit/components.test.tsx:70<br>fe/tests/unit/components.test.tsx:83 |
+| C1-05 | Không có giọng đọc | C1-AC06 | docs/new/navigation.md:149<br>docs/new/navigation.md:296 | fe/src/app/speech.ts:1<br>fe/src/components/C1-the-cau/SentenceCard.tsx:1<br>fe/src/components/C1-the-cau/card.css:1<br>fe/src/components/C1-the-cau/useSpeaker.ts:1 | fe/tests/e2e/app.spec.ts:192<br>fe/tests/unit/components.test.tsx:70<br>fe/tests/unit/components.test.tsx:83 |
 | C1-06 | Dòng Cách dùng | C1-AC07 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:113 |
 | C1-07 | Phiên âm | C1-AC07 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:113 |
 | C1-08 | Thuộc tính ngôn ngữ | C1-AC08 | - | fe/src/components/C1-the-cau/SentenceCard.tsx:1 | fe/tests/unit/components.test.tsx:136 |
