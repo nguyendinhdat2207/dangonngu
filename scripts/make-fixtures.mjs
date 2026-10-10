@@ -47,3 +47,92 @@ write('global/manifest.json', read('global/manifest.json'));
 const gi = subset('global', 'en', [...new Set([1, 2, longUnit])]);
 
 console.log(`Fixture: fluency ${LANGS.join(', ')}; global unit 1, 2 và ${longUnit} (câu dài nhất ${longest.en.length} ký tự, id ${longest.id}); ${gi.length} câu Global.`);
+
+// ---------------------------------------------------------------------------
+// Bộ tiến độ mẫu 30 ngày cho English Fluency tiếng Anh (DATA-09, dùng cho T4).
+// Kế hoạch học viết tường minh dưới đây; script chỉ phát lại kế hoạch theo quy tắc DATA-07
+// (viết lại độc lập, không dùng code của app). Số liệu T4 phải hiển thị được tính tay và ghi
+// riêng ở fe/fixtures/progress/fluency-en-30-ngay.so-lieu.json; script không ghi file đó.
+// Mốc thời gian theo giờ Việt Nam (UTC+7), "bây giờ" là 2026-10-08 10:00.
+const PROGRESS_OUT = path.join(ROOT, 'fe/fixtures/progress');
+const unitsEn = read('fluency/units-en.json').units;
+const U = Object.fromEntries([1, 2, 3, 4].map((n) => [n, unitsEn.find((u) => u.number === n).ids.map(num).slice(0, n === 4 ? 5 : 8)]));
+const MIN = 60 * 1000;
+const DAY = 24 * 60 * MIN;
+const INTERVAL_DAYS = [1, 3, 7, 14, 30];
+const at = (date, time) => Date.parse(`2026-${date}T${time}:00+07:00`);
+
+// Mỗi phiên: ngày, giờ xong, nguồn, unit; mem = kết quả ghi nhớ khác "nho"; check = kết quả kiểm tra khác "dung".
+// Phiên kiem-tra ghi hai lượt mỗi câu (nghe-chon, sap-xep), đều đúng, nên không đổi trạng thái câu.
+const PLAN = [
+  { d: '09-03', t: '20:00', nguon: 'lo-trinh', unit: 1 },
+  { d: '09-08', t: '08:00', nguon: 'kiem-tra', unit: 1 },
+  { d: '09-09', t: '08:00', nguon: 'kiem-tra', unit: 1 },
+  { d: '09-11', t: '08:00', nguon: 'kiem-tra', unit: 1 },
+  { d: '09-13', t: '20:00', nguon: 'lo-trinh', unit: 2 },
+  { d: '09-14', t: '20:00', nguon: 'cau', unit: 2, params: { id: '2' } },
+  { d: '09-15', t: '08:00', nguon: 'kiem-tra', unit: 2 },
+  { d: '09-16', t: '08:00', nguon: 'kiem-tra', unit: 2 },
+  { d: '09-17', t: '20:00', nguon: 'cau', unit: 2, params: { id: '2' } },
+  { d: '09-19', t: '08:00', nguon: 'kiem-tra', unit: 2 },
+  { d: '09-21', t: '08:00', nguon: 'kiem-tra', unit: 1 },
+  { d: '09-22', t: '08:00', nguon: 'kiem-tra', unit: 2 },
+  { d: '09-24', t: '20:00', nguon: 'cau', unit: 2, params: { id: '2' } },
+  { d: '09-26', t: '08:00', nguon: 'kiem-tra', unit: 2 },
+  { d: '09-28', t: '20:00', nguon: 'lo-trinh', unit: 3, check: { 3: 'sai' } },
+  { d: '09-29', t: '08:00', nguon: 'kiem-tra', unit: 3 },
+  { d: '09-30', t: '20:00', nguon: 'cau', unit: 2, params: { id: '2' } },
+  { d: '10-01', t: '08:00', nguon: 'kiem-tra', unit: 2 },
+  { d: '10-02', t: '08:00', nguon: 'kiem-tra', unit: 3 },
+  { d: '10-02', t: '20:00', nguon: 'on-tap', unit: 1, mem: { 1793: 'can-on' } },
+  { d: '10-04', t: '21:00', nguon: 'lo-trinh', unit: 4, abandoned: true },
+  { d: '10-05', t: '08:00', nguon: 'kiem-tra', unit: 1 },
+  { d: '10-06', t: '20:00', nguon: 'cau', unit: 1, params: { id: '1' } },
+  { d: '10-07', t: '19:00', nguon: 'on-tap', unit: 3 },
+  { d: '10-08', t: '08:00', nguon: 'lo-trinh', unit: 4 },
+  { d: '10-08', t: '09:00', nguon: 'kiem-tra', unit: 4 },
+];
+
+function buildProgress() {
+  const sessions = [];
+  const attempts = [];
+  const items = {};
+  PLAN.forEach((p, i) => {
+    const end = at(p.d, p.t);
+    const start = end - 6 * MIN;
+    const ids = U[p.unit];
+    const id = `fx${String(i + 1).padStart(2, '0')}`;
+    // Bắt đầu phiên học mới thì phiên dở (không phải kiểm tra) bị thay (S3-08).
+    if (p.nguon !== 'kiem-tra') for (const s of sessions) if (s.completedAt === undefined && s.abandonedAt === undefined && s.nguon !== 'kiem-tra') s.abandonedAt = start;
+    const params = p.nguon === 'kiem-tra' ? { unit: String(p.unit) } : (p.params ?? {});
+    if (p.abandoned) {
+      sessions.push({ id, nguon: p.nguon, itemIds: ids, startedAt: end, position: 0, step: 'ghi-nho', params });
+      return;
+    }
+    sessions.push({ id, nguon: p.nguon, itemIds: ids, startedAt: start, completedAt: end, position: ids.length, step: 'kiem-tra', params });
+    const memAt = end - 4 * MIN;
+    const chkAt = end - 2 * MIN;
+    for (const itemId of ids) {
+      if (p.nguon === 'kiem-tra') {
+        attempts.push({ sessionId: id, itemId, at: memAt, kind: 'nghe-chon', outcome: 'dung', hinted: false });
+        attempts.push({ sessionId: id, itemId, at: chkAt, kind: 'sap-xep', outcome: 'dung', hinted: false });
+        continue;
+      }
+      const mem = p.mem?.[itemId] ?? 'nho';
+      attempts.push({ sessionId: id, itemId, at: memAt, kind: 'ghi-nho', outcome: mem, hinted: false });
+      const prev = items[itemId];
+      const streak = mem === 'nho' ? (prev?.streak ?? 0) + 1 : 0;
+      const due = streak === 0 ? memAt : memAt + INTERVAL_DAYS[Math.min(streak, 5) - 1] * DAY;
+      items[itemId] = { status: 'da-hoc', streak, due, lastAt: memAt };
+      const chk = p.check?.[itemId] ?? 'dung';
+      attempts.push({ sessionId: id, itemId, at: chkAt, kind: 'trac-nghiem', outcome: chk, hinted: false });
+      if (chk === 'sai') items[itemId] = { status: items[itemId].status, streak: 0, due: chkAt, lastAt: chkAt };
+    }
+  });
+  return { schema: 1, sessions, attempts, items };
+}
+
+fs.mkdirSync(PROGRESS_OUT, { recursive: true });
+const progress30 = buildProgress();
+fs.writeFileSync(path.join(PROGRESS_OUT, 'fluency-en-30-ngay.json'), JSON.stringify(progress30, null, 2) + '\n');
+console.log(`Tiến độ mẫu: ${progress30.sessions.length} phiên, ${progress30.attempts.length} lượt, ${Object.keys(progress30.items).length} câu.`);

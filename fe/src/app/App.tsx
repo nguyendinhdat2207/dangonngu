@@ -1,4 +1,4 @@
-// @spec APP-01, APP-03, APP-04, APP-05, APP-07, APP-08, APP-09
+// @spec APP-01, APP-03, APP-04, APP-05, APP-07, APP-08, APP-09, APP-10
 import { useEffect, useState, type ReactNode } from 'react';
 import { SheetProvider } from '../components/C6-sheet/SheetHost';
 import { ToastProvider } from '../components/C7-thong-bao/ToastHost';
@@ -11,7 +11,12 @@ import { LoadError, Skeleton } from './States';
 import { S1ChonNgonNgu } from '../pages/S1-chon-ngon-ngu/S1ChonNgonNgu';
 import { T1Hoc } from '../pages/T1-hoc/T1Hoc';
 import { S3PhienHoc } from '../pages/S3-phien-hoc/S3PhienHoc';
-import { Placeholder } from '../pages/Placeholder';
+import { T2LuyenTap } from '../pages/T2-luyen-tap/T2LuyenTap';
+import { T3ThuVien } from '../pages/T3-thu-vien/T3ThuVien';
+import { T4TienBo } from '../pages/T4-tien-bo/T4TienBo';
+import { S5KiemTra } from '../pages/S5-kiem-tra-nhanh/S5KiemTra';
+import { S8CaiDat } from '../pages/S8-cai-dat/S8CaiDat';
+import { useUpdateNotice } from './updates';
 import './app.css';
 
 export function App({ deps }: { deps?: AppDeps }) {
@@ -63,6 +68,7 @@ function Banners() {
 function Shell() {
   const route = useRoute();
   const app = useApp();
+  useUpdateNotice(route.name);
   const { catalog, language, pack, settings, data, progress, deps } = app;
   const ready = catalog.status === 'ready';
   const hasLanguage = Boolean(language && pack);
@@ -82,7 +88,7 @@ function Shell() {
   if (catalog.status === 'loading') {
     return (
       <div className="boot">
-        <Skeleton shape={settings.lang ? 'card' : 'list'} />
+        <Skeleton shape={!settings.lang || route.name === 'thu-vien' || route.name === 'chon-ngon-ngu' ? 'list' : 'card'} />
       </div>
     );
   }
@@ -123,7 +129,7 @@ function Shell() {
     <div className="shell">
       <TabBar current={route.name} reviewCount={reviewCount} brand />
       <div className="shell__main">
-        <TopBar />
+        <TopBar settings={route.name === 'cai-dat'} />
         <Banners />
         <main className="shell__content">{content}</main>
       </div>
@@ -138,15 +144,15 @@ function Page({ route }: { route: Route }): ReactNode {
     case 'phien-hoc':
       return <S3PhienHoc params={route.params} />;
     case 'luyen-tap':
-      return <Placeholder title="Luyện tập" />;
+      return <T2LuyenTap />;
     case 'thu-vien':
-      return <Placeholder title="Thư viện" />;
+      return <T3ThuVien params={route.params} />;
     case 'tien-bo':
-      return <Placeholder title="Tiến bộ" />;
+      return <T4TienBo params={route.params} />;
     case 'cai-dat':
-      return <Placeholder title="Cài đặt" />;
+      return <S8CaiDat params={route.params} />;
     case 'kiem-tra':
-      return <Placeholder title="Kiểm tra nhanh" fullscreen />;
+      return <S5KiemTra params={route.params} />;
     default:
       return null;
   }

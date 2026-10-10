@@ -1,4 +1,4 @@
-// @spec DATA-05, DATA-10
+// @spec DATA-05, DATA-10, APP-10
 // Nguồn dữ liệu thay được. Chỉ file này gọi fetch tới dữ liệu.
 import type { PackId } from './types';
 
@@ -30,10 +30,18 @@ function checkFile(file: string): string {
 
 /** Đọc từ một base URL (mặc định ./data, là fe/public/data trong bản build). */
 export class StaticFileSource implements DataSource {
+  /** Các URL đã tải thành công, để nạp lại vào bộ nhớ ngoại tuyến khi service worker vừa nhận quản lý trang (APP-10). */
+  private readonly loaded = new Set<string>();
+
   constructor(
     private readonly baseUrl: string,
     private readonly fetchImpl: typeof fetch = (...args) => fetch(...args),
   ) {}
+
+  /** Tải lại các file đã tải, qua service worker, để mở lại được khi ngoại tuyến. Lỗi bỏ qua. */
+  async warm(): Promise<void> {
+    await Promise.all([...this.loaded].map((u) => this.fetchImpl(u).catch(() => undefined)));
+  }
 
   private url(pack: PackId, file: string) {
     return `${this.baseUrl.replace(/\/$/, '')}/${pack}/${checkFile(file)}`;
@@ -50,6 +58,7 @@ export class StaticFileSource implements DataSource {
       if (optional && res.status === 404) return null;
       throw new DataLoadError(`Không tải được ${pack}/${file}: HTTP ${res.status}`);
     }
+    this.loaded.add(this.url(pack, file));
     try {
       return await res.json();
     } catch {

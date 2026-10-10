@@ -3,12 +3,14 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import './toast.css';
 
 export interface ToastSpec {
+  /** Mã để ẩn đúng thông báo này (hide(id) không ẩn thông báo khác). */
+  id?: string;
   text: string;
   kind?: 'status' | 'alert';
   action?: { label: string; onClick: () => void };
 }
 
-const Ctx = createContext<{ show: (t: ToastSpec) => void; hide: () => void } | null>(null);
+const Ctx = createContext<{ show: (t: ToastSpec) => void; hide: (id?: string) => void } | null>(null);
 
 export function useToast() {
   const v = useContext(Ctx);
@@ -19,14 +21,21 @@ export function useToast() {
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toast, setToast] = useState<(ToastSpec & { n: number }) | null>(null);
   const timer = useRef<number | undefined>(undefined);
-  const hide = useCallback(() => {
+  const current = useRef<string | undefined>(undefined);
+  const hide = useCallback((id?: string) => {
+    if (id !== undefined && current.current !== id) return;
     window.clearTimeout(timer.current);
+    current.current = undefined;
     setToast(null);
   }, []);
   const show = useCallback((t: ToastSpec) => {
     window.clearTimeout(timer.current);
+    current.current = t.id;
     setToast({ ...t, n: Date.now() });
-    timer.current = window.setTimeout(() => setToast(null), t.action ? 6000 : 3000);
+    timer.current = window.setTimeout(() => {
+      current.current = undefined;
+      setToast(null);
+    }, t.action ? 6000 : 3000);
   }, []);
   useEffect(() => () => window.clearTimeout(timer.current), []);
   return (

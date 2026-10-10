@@ -164,7 +164,8 @@ function SessionView({ data: d, session, origin }: { data: LanguageData; session
   useEffect(() => {
     if (finished) return;
     setLeaveGuard((to) => {
-      if (leaving.current || to.name === 'phien-hoc') return true;
+      // Liên kết "Cài đặt > Giọng đọc" (C1-05) rời phiên mà không hỏi: phiên vẫn mở lại được từ T1.
+      if (leaving.current || to.name === 'phien-hoc' || to.name === 'cai-dat') return true;
       window.setTimeout(confirmExit, 0);
       return false;
     });

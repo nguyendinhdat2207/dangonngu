@@ -9,6 +9,9 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:4173/',
     trace: 'retain-on-failure',
+    // Giờ Việt Nam, khớp mốc thời gian của tiến độ mẫu (fe/fixtures/progress).
+    timezoneId: 'Asia/Ho_Chi_Minh',
+    locale: 'vi-VN',
     launchOptions: process.env.PW_CHROMIUM_PATH ? { executablePath: process.env.PW_CHROMIUM_PATH } : undefined,
   },
   projects: [

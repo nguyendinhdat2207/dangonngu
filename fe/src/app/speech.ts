@@ -48,7 +48,8 @@ export function speak(o: SpeakOptions): boolean {
   if (!s || typeof SpeechSynthesisUtterance === 'undefined') return false;
   const u = new SpeechSynthesisUtterance(o.text);
   const candidates = voicesFor(o.lang, s.getVoices());
-  const voice = candidates.find((v) => v.voiceURI === o.voiceURI) ?? candidates[0];
+  // Không chọn giọng thì dùng giọng mặc định của thiết bị cho ngôn ngữ đó (S8-02).
+  const voice = candidates.find((v) => v.voiceURI === o.voiceURI) ?? candidates.find((v) => v.default) ?? candidates[0];
   u.lang = voice?.lang ?? o.locale ?? o.lang;
   if (voice) u.voice = voice;
   u.rate = o.rate;

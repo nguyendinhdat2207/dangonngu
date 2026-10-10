@@ -1,4 +1,4 @@
-// @spec APP-04
+// @spec APP-04, S8-01
 // Điều hướng bằng hash (QD-02). Bảng route là nguồn chân lý ở APP-04.
 import { useEffect, useState } from 'react';
 
@@ -45,7 +45,7 @@ export function navigate(name: RouteName, params?: Record<string, string | numbe
   }
 }
 
-/** Màn chính gần nhất đã mở (để "về màn trước"). */
+/** Khu chính gần nhất đã mở (để "về màn trước" từ S3, S5). */
 let lastMain: { name: RouteName; params: Record<string, string> } = { name: 'hoc', params: {} };
 export const lastMainRoute = () => lastMain;
 
@@ -61,13 +61,31 @@ export function setLeaveGuard(g: LeaveGuard | null) {
 
 let acceptedHref = typeof window !== 'undefined' ? window.location.href : '';
 
+/** Màn đang mở trước khi vào S8 Cài đặt, để nút Quay lại về đúng chỗ (S8, APP-04). */
+let current: Route | null = null;
+let beforeSettings: { name: RouteName; params: Record<string, string> } | null = null;
+function track(to: Route) {
+  if (to.name === 'cai-dat' && current?.name && current.name !== 'cai-dat') beforeSettings = { name: current.name, params: current.params };
+  current = to;
+}
+export function backFromSettings() {
+  const b = beforeSettings ?? { name: 'hoc' as RouteName, params: {} };
+  navigate(b.name, b.params);
+}
+
 export function useRoute(): Route {
   const [route, setRoute] = useState(() => parseHash(window.location.hash));
   useEffect(() => {
     acceptedHref = window.location.href;
+    if (current === null || current.raw !== route.raw) track(route);
     const on = () => {
       if (window.location.href === acceptedHref) {
-        setRoute((r) => (r.raw === parseHash(window.location.hash).raw ? r : parseHash(window.location.hash)));
+        setRoute((r) => {
+          const to = parseHash(window.location.hash);
+          if (r.raw === to.raw) return r;
+          track(to);
+          return to;
+        });
         return;
       }
       const to = parseHash(window.location.hash);
@@ -77,6 +95,7 @@ export function useRoute(): Route {
         return;
       }
       acceptedHref = window.location.href;
+      track(to);
       setRoute(to);
     };
     window.addEventListener('hashchange', on);
@@ -87,7 +106,7 @@ export function useRoute(): Route {
     };
   }, []);
   useEffect(() => {
-    if (route.name && !FULLSCREEN_ROUTES.includes(route.name)) lastMain = { name: route.name, params: route.params };
+    if (route.name && TAB_ROUTES.includes(route.name)) lastMain = { name: route.name, params: route.params };
   }, [route]);
   return route;
 }
