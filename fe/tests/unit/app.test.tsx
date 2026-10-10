@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { act, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { FixtureSource, StaticFileSource, type DataSource, type PackId } from '../../src/data';
+import { HOST_URL } from '../../src/app/HostBack';
 import { NOW, hash, renderApp, settingsSeed, settle } from './helpers';
 
 const DAY = 86400000;
@@ -134,6 +135,41 @@ describe('APP Khung app', () => {
     const c = await renderApp('#/kiem-tra', { seed: settingsSeed() });
     expect(screen.queryByRole('navigation', { name: 'Khu chính' })).toBeNull();
     expect(c.container.querySelector('.topbar')).toBeNull();
+  });
+
+  // @ac APP-AC18
+  it('nút Quay lại trang học: có ở T1 đến T4 và S1 bước 1, không có ở S1 bước 2, S3, S5, S8; bấm khi có phiên dở không hỏi', async () => {
+    const link = () => screen.queryByRole('link', { name: 'Quay lại trang học' });
+    expect(HOST_URL).toBe('https://language.pomaskhoahocnaobo.com/');
+    for (const h of ['#/hoc', '#/luyen-tap', '#/thu-vien', '#/tien-bo']) {
+      const r = await renderApp(h, { seed: settingsSeed() });
+      expect(link()).toHaveAttribute('href', HOST_URL);
+      r.unmount();
+    }
+    const s1 = await renderApp('#/chon-ngon-ngu');
+    expect(link()).toHaveAttribute('href', HOST_URL);
+    fireEvent.click(screen.getByText('Tiếng Anh'));
+    expect(screen.getByText('Học tiếng Anh với bộ nào?')).toBeInTheDocument();
+    expect(link()).toBeNull();
+    s1.unmount();
+    for (const h of ['#/phien-hoc?nguon=lo-trinh', '#/kiem-tra', '#/cai-dat']) {
+      const r = await renderApp(h, { seed: settingsSeed() });
+      await settle();
+      expect(link()).toBeNull();
+      r.unmount();
+    }
+    // Có phiên dở: bấm liên kết là rời app ngay, không có sheet xác nhận nào.
+    const open = { id: 'sx', nguon: 'lo-trinh', itemIds: [1, 257, 769, 770, 258, 771, 772, 1793], startedAt: NOW, position: 3, step: 'ghi-nho', params: {} };
+    await renderApp('#/hoc', { seed: { ...settingsSeed(), 'vitasr2.progress.fluency.en': { schema: 1, sessions: [open], attempts: [], items: {} } } });
+    expect(screen.getByRole('button', { name: 'Tiếp tục: 5 câu còn lại' })).toBeInTheDocument();
+    const stop = (e: Event) => e.preventDefault();
+    document.addEventListener('click', stop);
+    const clicked = fireEvent.click(link()!);
+    document.removeEventListener('click', stop);
+    await settle();
+    expect(clicked).toBe(false);
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(hash()).toBe('#/hoc');
   });
 
   // @ac APP-AC05

@@ -8,7 +8,7 @@ flowchart TD
     H0["/register (đăng ký)"] -->|"Sign in"| HL["/ (đăng nhập)"]
     HL --> H1["Trang học sau đăng nhập"]
     H1 -.->|"nút góc trên bên trái"| H2["Menu / danh sách<br/>(chưa xác nhận)"]
-    H2 -.->|"Đa ngôn ngữ"| H3["Khung mini app<br/>(iframe hay tab mới: chưa xác nhận)"]
+    H2 -.->|"Đa ngôn ngữ"| H3["Mở mini app ở trang mới<br/>(không iframe, xác nhận 10/10/2026)"]
   end
   H3 -.-> S0
   subgraph MINI["Mini app ĐA NGÔN NGỮ"]

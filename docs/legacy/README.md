@@ -22,15 +22,16 @@ Thư mục này mô tả mini app "ĐA NGÔN NGỮ" đang chạy, dựng lại b
 | Trang đăng ký | Đọc trang công khai `/register?refId=849`, ngày 08/10/2026 | Cao |
 | Bộ dữ liệu | Khách gửi `data.zip` ngày 08/10/2026 (xuất từ trang thật ngày 07/10/2026; 40 file, 12 MB; mã băm khớp manifest theo `_inventory.json`). Lưu ở `fe/public/data/` | Cao |
 | Hướng dẫn chi tiết 12 bước | Đọc `demo/quick-guide.js` trên trang thật, ngày 08/10/2026; khớp với đoạn nhóm chép từ giao diện | Cao |
-| Trang học sau đăng nhập và cách mở mini app | Mô tả của nhóm: sau khi đăng nhập, bấm nút góc trên bên trái, chọn "Đa ngôn ngữ" | **Chờ xác nhận** trên trang thật (xem mục dưới) |
+| Trang học sau đăng nhập và cách mở mini app | Mô tả của nhóm: sau khi đăng nhập, bấm nút góc trên bên trái, chọn "Đa ngôn ngữ"; mini app mở ở trang mới, không nhúng iframe (nhóm trả lời 10/10/2026) | Cách mở: **đã xác nhận**. Vị trí menu: chờ xác nhận (xem mục dưới) |
 
 ## Đang chờ xác nhận trên trang thật
 
 Cần đăng nhập để kiểm. Mỗi mục khi xác nhận xong thì cập nhật file tương ứng và xóa khỏi danh sách này. (Câu hỏi về kích thước khung chứa mini app đã được nhóm trả lời ngày 08/10/2026: bản mới thiết kế responsive, ưu tiên web, không phụ thuộc khung.)
 
 1. Nút góc trên bên trái mở ra gì (menu hay danh sách mini app), và mục "Đa ngôn ngữ" nằm ở đâu trong đó.
-2. Mini app được mở bằng iframe trong trang hay mở tab mới; URL được mở có đúng là địa chỉ mini app ở trên không, có kèm tham số gì không.
-3. Trang chính có truyền gì cho mini app không (tham số URL, token, postMessage). Ảnh hưởng APP-09 của bản mới.
+2. URL trang chính mở có đúng là địa chỉ mini app ở trên không, và có gắn tham số gì không. Không chặn bản mới: app bỏ qua mọi tham số (APP-09).
+
+Đã xác nhận ngày 10/10/2026 (nhóm trả lời): trang chính mở mini app bằng trang mới (tab mới, chuyển thẳng trang), không nhúng iframe, nên không có postMessage giữa hai trang. Bản mới thêm nút về trang học chính (APP-12).
 
 ## Phát hiện quan trọng
 

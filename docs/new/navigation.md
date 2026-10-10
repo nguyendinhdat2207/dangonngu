@@ -15,7 +15,7 @@ File gồm bốn mức, từ khái quát tới chi tiết:
 
 ```mermaid
 flowchart LR
-  HOST["Trang học chính<br/>(ngoài phạm vi)"] -->|"chọn Đa ngôn ngữ"| BOOT["Khởi động<br/>kiểm tra lần đầu"]
+  HOST["Trang học chính<br/>(ngoài phạm vi)"] -->|"chọn Đa ngôn ngữ, mở trang mới"| BOOT["Khởi động<br/>kiểm tra lần đầu"]
   %% @none trang chính ngoài phạm vi, xem docs/legacy/README.md
   BOOT -->|"lần đầu"| S1["S1 Chọn ngôn ngữ<br/>và bộ nội dung"]
   %% @spec APP-05, S1-07
@@ -37,6 +37,10 @@ flowchart LR
   %% @spec APP-02, APP-04
   MAIN <--> SHEET["Sheet<br/>đổi ngôn ngữ, từ khóa, chi tiết câu,<br/>chi tiết ngày, giọng đọc, xác nhận"]
   %% @spec APP-11, C6-01
+  MAIN -->|"Quay lại trang học"| HOST
+  %% @spec APP-12
+  S1 -->|"Quay lại trang học"| HOST
+  %% @spec APP-12
 ```
 
 ## 2. Luồng khởi động
@@ -161,6 +165,7 @@ flowchart TD
 | Sheet Đổi ngôn ngữ | Chọn ngôn ngữ hoặc bộ nội dung khác | T1 Học của ngôn ngữ hoặc bộ đó | APP-06 |
 | S1 bước 2 Chọn bộ nội dung | Quay lại | S1 danh sách ngôn ngữ | S1-07 |
 | S8 Cài đặt | Quay lại | Khu chính vừa mở S8 | APP-04 |
+| T1 đến T4, S1 bước 1 | Quay lại trang học | Trang học chính (rời app) | APP-12 |
 | S8 Cài đặt | Ngôn ngữ đang học | Sheet Đổi ngôn ngữ | S8-01 |
 | S8 Cài đặt | Xóa tiến độ, xác nhận | T1 Học | S8-05 |
 | Mọi sheet | Đóng | Cửa sổ đã mở sheet | C6-02 |

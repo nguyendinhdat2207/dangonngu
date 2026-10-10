@@ -29,6 +29,16 @@
 }
 @media (min-width: 600px) { .topbar { padding: 0 var(--s-3) 0 var(--s-6); } }
 @media (min-width: 900px) { .topbar { padding: 0 var(--s-6) 0 var(--s-8); } }
+.topbar__start { display: flex; align-items: center; gap: var(--s-1); min-width: 0; }
+@media (min-width: 600px) { .topbar__start { gap: var(--s-3); } }
+/* APP-12: nút về trang học chính. Icon thẳng mép lề trái; từ 600 px có chữ và đường kẻ ngăn với tên ngôn ngữ. */
+.host-back { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); flex: none; min-width: 44px; min-height: 44px; margin-left: calc(var(--s-2) * -1); padding: 0 var(--s-2); border-radius: var(--r-button); color: var(--ink); text-decoration: none; }
+.host-back__text { display: none; }
+@media (min-width: 600px) {
+  .host-back { padding-right: var(--s-3); border-right: 1px solid var(--line); border-radius: var(--r-button) 0 0 var(--r-button); }
+  .host-back__text { display: inline; }
+}
+@media (hover: hover) { .host-back:hover .host-back__text { text-decoration: underline; } }
 .topbar__lang { display: flex; align-items: center; min-height: 44px; text-align: left; border-radius: var(--r-button); }
 .topbar__lang-text { display: flex; flex-direction: column; }
 .topbar__lang-name { display: inline-flex; align-items: center; gap: var(--s-1); font-weight: 600; }

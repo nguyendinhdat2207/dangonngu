@@ -1,13 +1,13 @@
 # Báo cáo acceptance
 
-File sinh tự động bởi `node scripts/spec.mjs acceptance` lúc 2026-10-10 06:36 UTC. Không sửa tay.
+File sinh tự động bởi `node scripts/spec.mjs acceptance` lúc 2026-10-10 09:05 UTC. Không sửa tay.
 
 Một khu vực **Đạt** khi mọi mục trong acceptance.md của nó đã được đánh dấu [x].
 
 | Khu vực | Tên | Đã đạt | auto | claude | human | Trạng thái |
 |---|---|---|---|---|---|---|
 | G | Tổng quan giao diện bản mới | 1/5 | - | 1/1 | 0/4 | Chưa |
-| APP | Khung app | 15/17 | 10/10 | 5/5 | 0/2 | Chưa |
+| APP | Khung app | 17/20 | 11/11 | 6/6 | 0/3 | Chưa |
 | FND | Nền tảng thiết kế | 13/17 | 7/7 | 6/7 | 0/3 | Chưa |
 | DATA | Dữ liệu và tiến độ | 18/19 | 16/16 | 2/2 | 0/1 | Chưa |
 | C1 | Thẻ câu | 7/8 | 6/6 | 1/1 | 0/1 | Chưa |
@@ -27,7 +27,7 @@ Một khu vực **Đạt** khi mọi mục trong acceptance.md của nó đã đ
 | T3 | Thư viện | 10/10 | 8/8 | 2/2 | - | Đạt |
 | T4 | Tiến bộ | 9/10 | 8/8 | 1/1 | 0/1 | Chưa |
 
-Tổng: 148/170 mục đã đạt.
+Tổng: 150/173 mục đã đạt.
 
 ## Mục còn mở
 
@@ -42,6 +42,7 @@ Tổng: 148/170 mục đã đạt.
 
 - APP-AC13 [human] (APP-07, APP-09): Mở app trên trình duyệt máy tính (Chrome, Edge, Safari) và trên điện thoại (iPhone, Android), mỗi nơi đi hết luồng chọn ngôn ngữ, học một phiên, xem tiến bộ: hiển thị đủ, không có điều khiển bị che hay tràn.
 - APP-AC14 [human] (APP-10): Trên điện thoại thật: mở app có mạng, tắt mạng, đóng và mở lại app: vẫn học được ngôn ngữ đã tải.
+- APP-AC20 [human] (APP-09, APP-12): Trên trang học chính thật, đăng nhập, mở Đa ngôn ngữ: app mở ở trang mới. Bấm "Quay lại trang học": về đúng trang học chính và vẫn đăng nhập.
 
 ### FND Nền tảng thiết kế
 

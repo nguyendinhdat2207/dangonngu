@@ -9,7 +9,7 @@ legacy: L-S0, L-S2 (header), pwa-update
 
 # APP Khung app
 
-Khung bao quanh mọi trang: điều hướng, route, thanh trên cùng, bố cục theo khổ màn hình, trạng thái toàn cục và các ràng buộc khi chạy trong iframe.
+Khung bao quanh mọi trang: điều hướng, route, thanh trên cùng, bố cục theo khổ màn hình, trạng thái toàn cục, cách trang học chính mở app và đường quay về trang học chính.
 
 ## Yêu cầu
 
@@ -19,7 +19,7 @@ App có đúng 4 khu chính, theo thứ tự: T1 Học, T2 Luyện tập, T3 Th�
 
 ### APP-02 Thanh trên cùng
 
-Mọi khu chính có thanh trên cùng cao 56 px gồm: bên trái là tên ngôn ngữ đang học kèm mũi tên xuống, và với ngôn ngữ có nhiều bộ nội dung thì thêm tên bộ ở dòng nhỏ bên dưới (`--t-sm`, `--muted`, ví dụ "Global English") (chạm mở sheet Đổi ngôn ngữ, APP-06); bên phải là nút Cài đặt (icon bánh răng, nhãn trợ năng "Cài đặt") mở S8.
+Mọi khu chính có thanh trên cùng cao 56 px gồm: ngoài cùng bên trái là nút về trang học chính (APP-12), tiếp theo là tên ngôn ngữ đang học kèm mũi tên xuống, và với ngôn ngữ có nhiều bộ nội dung thì thêm tên bộ ở dòng nhỏ bên dưới (`--t-sm`, `--muted`, ví dụ "Global English") (chạm mở sheet Đổi ngôn ngữ, APP-06); bên phải là nút Cài đặt (icon bánh răng, nhãn trợ năng "Cài đặt") mở S8.
 
 ### APP-03 Màn toàn trang
 
@@ -72,9 +72,9 @@ Không có thanh cuộn ngang ở bất kỳ khổ nào từ 320 px.
 | Ngoại tuyến | Dải mỏng ngay dưới thanh trên cùng: "Đang ngoại tuyến. Tiến độ vẫn được lưu trên máy." Tự ẩn khi có mạng lại |
 | Bộ nhớ trình duyệt bị chặn | Dải cảnh báo: "Trình duyệt đang chặn lưu dữ liệu, tiến độ sẽ mất khi đóng app." |
 
-### APP-09 Chạy trong iframe
+### APP-09 Cách trang chính mở app
 
-App chạy đúng khi nằm trong iframe của trang khác và khi mở trực tiếp. Không đọc hay ghi `window.top` / `window.parent`, không dựa vào postMessage, không yêu cầu đăng nhập. Tôn trọng vùng an toàn của màn hình (`env(safe-area-inset-*)`).
+Trang học chính mở mini app bằng một trang mới (tab mới hoặc chuyển thẳng trang), không nhúng iframe (nhóm chốt ngày 10/10/2026). App không đọc hay ghi `window.top` / `window.parent`, không dựa vào postMessage, không yêu cầu đăng nhập và bỏ qua mọi tham số URL mà trang chính gửi kèm. App vẫn chạy đúng khi bị nhúng trong iframe, để nếu sau này đổi cách mở thì không phải sửa code. Tôn trọng vùng an toàn của màn hình (`env(safe-area-inset-*)`). Đường quay về trang học chính: APP-12.
 
 ### APP-10 Ngoại tuyến và cập nhật
 
@@ -84,8 +84,18 @@ Sau lần mở đầu tiên có mạng, app mở lại được khi ngoại tuy�
 
 Tại mỗi thời điểm có tối đa một sheet hoặc hộp thoại mở. Mở sheet mới thì sheet đang mở phải đóng trước.
 
+### APP-12 Nút về trang học chính
+
+Vì app mở bằng trang mới (APP-09), app có một nút để người học quay về trang học chính.
+
+- Vị trí: ngoài cùng bên trái thanh trên cùng của T1 đến T4 (APP-02), trước tên ngôn ngữ; và góc trên bên trái của S1 bước 1 (danh sách ngôn ngữ). Không có ở S1 bước 2 (đã có "Quay lại" về danh sách ngôn ngữ), S3 và S5 (đã có "Thoát"), S8 (đã có "Quay lại" về khu chính).
+- Hiển thị: icon mũi tên trái (FND-10), nhãn trợ năng "Quay lại trang học", vùng chạm tối thiểu 44 x 44 px (FND-14). Từ 600 px hiện thêm chữ "Trang học" cạnh icon.
+- Hành động: là một liên kết thường, mở địa chỉ trang học chính ngay trong trang đang xem. Địa chỉ cấu hình lúc build (`VITE_HOST_URL`), mặc định `https://language.pomaskhoahocnaobo.com/`. Không dùng `history.back()`: lịch sử route hash của app nằm trước trang học chính, và khi app mở bằng tab mới thì tab không có trang trước.
+- Bấm khi đang có phiên dở thì không hỏi; tiến độ đã lưu trên máy (DATA-06) và phiên dở mở lại được lần sau (S3-08).
+
 ## Câu hỏi mở
 
+- APP-12: nút về trang chủ `https://language.pomaskhoahocnaobo.com/` hay về thẳng Trung tâm ứng dụng? Nếu là Trung tâm ứng dụng thì cần đường dẫn chính xác của trang đó. Hiện để mặc định là trang chủ, đổi được bằng `VITE_HOST_URL` mà không sửa code.
 - APP-10: bản mới tự kích hoạt trong service worker nhưng trang đang mở không tự tải lại; người dùng bấm "Cập nhật" mới tải lại. Lần mở đầu tiên có mạng, ngay khi service worker nhận trang, app tải lại các file dữ liệu đã dùng để lưu ngoại tuyến. Font Noto của ngôn ngữ không dùng chữ Latinh chỉ được lưu từ lần mở có mạng thứ hai; nếu tắt mạng ngay sau lần đầu, câu tiếng Nhật, Thái... hiện bằng font sẵn có của máy. Nhóm xác nhận cách làm này.
 
 ## Lịch sử thay đổi
@@ -93,3 +103,4 @@ Tại mỗi thời điểm có tối đa một sheet hoặc hộp thoại mở. 
 - 0.1 (07/10/2026): bản đầu.
 - 0.2 (08/10/2026): hỗ trợ hai bộ nội dung tiếng Anh (English Fluency và Global English).
 - 0.3 (08/10/2026): cập nhật theo bộ dữ liệu khách gửi và câu trả lời của nhóm (ưu tiên web, responsive; đủ 15 ngôn ngữ; không đọc tiến độ bản cũ).
+- 0.4 (10/10/2026): chốt cách trang chính mở app là trang mới, không nhúng iframe (APP-09, đổi tên từ "Chạy trong iframe"); thêm nút về trang học chính (APP-12); APP-02 có thêm nút này ở bên trái.

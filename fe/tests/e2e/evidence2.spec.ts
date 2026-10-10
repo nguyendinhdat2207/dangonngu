@@ -480,3 +480,62 @@ test('C5-AC01 thanh tab với vùng an toàn đáy kiểu iPhone', async ({ page
   }
   note('C5-AC01', 'do-dac', out);
 });
+
+// APP-AC19 (APP-02, APP-12): nút về trang học chính trên thanh trên cùng. Chụp lại luôn APP-AC03 vì APP-02 có thêm nút này.
+for (const theme of THEMES) {
+  test(`APP-AC19 nút về trang học ${theme}`, async ({ page }) => {
+    await page.clock.setFixedTime(NOW);
+    await page.emulateMedia({ colorScheme: theme });
+    await seed(page, { 'vitasr2.settings': global(), 'vitasr2.progress.global.en': globalProgress(9) });
+    const rows: unknown[] = [];
+    for (const w of [320, 375, 600, 1280]) {
+      await page.setViewportSize({ width: w, height: w === 1280 ? 800 : 812 });
+      await go(page, './#/hoc');
+      await expect(page.locator('.card')).toBeVisible();
+      const m = await page.evaluate(() => {
+        const box = (s: string) => {
+          const e = document.querySelector(s);
+          if (!e) return null;
+          const b = e.getBoundingClientRect();
+          return { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.width), h: Math.round(b.height) };
+        };
+        const text = document.querySelector('.topbar .host-back__text');
+        return {
+          hostBack: box('.topbar .host-back'),
+          lang: box('.topbar__lang'),
+          settings: box('.topbar__settings'),
+          chuTrangHoc: text ? getComputedStyle(text).display !== 'none' : false,
+          href: document.querySelector('.topbar .host-back')?.getAttribute('href'),
+          cuonNgang: document.documentElement.scrollWidth > window.innerWidth,
+        };
+      });
+      const hb = m.hostBack!, lang = m.lang!, st = m.settings!;
+      expect(hb.w).toBeGreaterThanOrEqual(44);
+      expect(hb.h).toBeGreaterThanOrEqual(44);
+      expect(hb.x).toBeGreaterThanOrEqual(0);
+      expect(hb.x + hb.w).toBeLessThanOrEqual(lang.x);
+      expect(lang.x + lang.w).toBeLessThanOrEqual(st.x);
+      expect(m.chuTrangHoc).toBe(w >= 600);
+      expect(m.cuonNgang).toBe(false);
+      rows.push({ rong: w, ...m });
+      await shot(page, 'APP-AC19', `${w}-${theme}`, { el: '.topbar' });
+      if (w === 375 || w === 1280) {
+        await shot(page, 'APP-AC19', `${w}-${theme}-man-T1`);
+        await shot(page, 'APP-AC03', `T1-${w}-${theme}`);
+        for (const [tab, route] of [['T2', './#/luyen-tap'], ['T3', './#/thu-vien'], ['T4', './#/tien-bo']] as const) {
+          await go(page, route);
+          await expect(page.locator('.topbar .host-back')).toBeVisible();
+          await page.waitForTimeout(300);
+          await shot(page, 'APP-AC03', `${tab}-${w}-${theme}`);
+        }
+      }
+    }
+    note('APP-AC19', `do-dac-${theme}`, rows);
+    for (const w of [320, 1280]) {
+      await page.setViewportSize({ width: w, height: 812 });
+      await go(page, './#/chon-ngon-ngu');
+      await expect(page.getByText('Bạn muốn học ngôn ngữ nào?')).toBeVisible();
+      await shot(page, 'APP-AC19', `S1-${w}-${theme}`);
+    }
+  });
+}
