@@ -38,6 +38,8 @@ Làm lại giao diện mini app "ĐA NGÔN NGỮ" của VITASR. Repo gồm: tài
 │   │   ├── navigation.md
 │   │   └── mapping-legacy.md
 │   ├── evidence/                 ảnh chụp, bằng chứng nghiệm thu
+│   ├── thu-that/                 kịch bản thử thật cho các mục [human]
+│   ├── theo-doi/                 checklist chức năng, ánh xạ câu hỏi mở, bản đồ màn hình
 │   └── generated/                do script sinh ra, không sửa tay
 │       ├── traceability.md
 │       └── acceptance-report.md
@@ -91,15 +93,20 @@ npm run spec:trace        # sinh docs/generated/traceability.md
 npm run spec:acceptance   # sinh docs/generated/acceptance-report.md
 ```
 
-Lần đầu chạy Playwright trên máy mới: `npx playwright install chromium`. Máy đã có sẵn Chromium thì có thể trỏ tới nó bằng biến `PW_CHROMIUM_PATH`.
+Lần đầu chạy Playwright trên máy mới: `npx playwright install chromium`. Máy đã có sẵn Chromium thì có thể trỏ tới nó bằng biến `PW_CHROMIUM_PATH`. Chạy thêm trên WebKit (gần Safari iOS): `npx playwright install webkit` rồi `PW_WEBKIT=1 npx playwright test --project=webkit`; CI chạy WebKit trong job riêng, chưa chặn việc gộp.
 
 Địa chỉ trang học chính cho nút "Quay lại trang học" (APP-12) đặt lúc build bằng biến `VITE_HOST_URL`, mặc định `https://language.pomaskhoahocnaobo.com/`. Ví dụ: `VITE_HOST_URL=<địa chỉ trang muốn về> npm run build`.
+
+## Bản chạy thử
+
+Mỗi lần CI trên main đạt, workflow `.github/workflows/pages.yml` đưa bản build lên GitHub Pages: `https://nguyendinhdat2207.github.io/dangonngu/`. Bật một lần (chủ repo): Settings > Pages > Build and deployment, chọn Source là "GitHub Actions"; rồi Settings > Secrets and variables > Actions > Variables, thêm `PAGES_ENABLED` = `true` (chưa có biến này thì workflow bỏ qua). Bật Pages là đưa app và bộ dữ liệu của khách lên một địa chỉ web công khai, nên làm sau khi nhóm quyết repo công khai hay riêng tư. Bản này dùng để thử trên điện thoại và máy tính thật theo `docs/thu-that/README.md` (22 mục `[human]`). Muốn đổi địa chỉ nút "Quay lại trang học" trên bản này: đặt biến repo `VITE_HOST_URL` (Settings > Secrets and variables > Actions > Variables).
 
 ## Trạng thái hiện tại (10/10/2026)
 
 - 20 khu vực, 135 yêu cầu, 173 mục nghiệm thu; 95 mũi tên trong sơ đồ điều hướng đều gắn yêu cầu.
-- Đã code đủ các màn trong spec: S1, T1, S3, S9 (đợt 1) và T2 Luyện tập, S5 Kiểm tra nhanh, T3 Thư viện, T4 Tiến bộ, S8 Cài đặt (đợt 2). Có service worker để mở lại khi ngoại tuyến và báo bản cập nhật (APP-10). Trang học chính mở app ở trang mới (APP-09, chốt 10/10); nút "Quay lại trang học" ở thanh trên cùng và màn chọn ngôn ngữ đưa người học về trang học chính (APP-12).
-- Nghiệm thu: 150/173 mục đã đạt. Còn 22 mục `[human]` (thiết bị thật, người dùng thật, trang học chính thật) và FND-AC12 (chờ duyệt chữ báo lỗi nhập file, xem Câu hỏi mở của S8).
+- Đã code đủ các màn trong spec: S1, T1, S3, S9 (đợt 1) và T2 Luyện tập, S5 Kiểm tra nhanh, T3 Thư viện, T4 Tiến bộ, S8 Cài đặt (đợt 2). Có service worker để mở lại khi ngoại tuyến và báo bản cập nhật (APP-10). Trang học chính mở app ở trang mới (APP-09, chốt 10/10); nút "Quay lại trang học" ở thanh trên cùng và màn chọn ngôn ngữ đưa người học về trang học chính (APP-12). Đợt 3 (10/10) sửa theo các câu hỏi đã chốt: bước 1 Kiểm tra nhanh chờ biết có giọng rồi mới hiện lựa chọn, Thoát và Dừng ở Kiểm tra nhanh luôn về Luyện tập, nút "Học N câu" khi từ khóa khớp dưới 8 câu, lớp nền sheet tối hơn ở giao diện tối, ba câu chữ theo FND-12.
+- Nghiệm thu: 151/173 mục đã đạt. 22 mục còn lại đều là `[human]` (thiết bị thật, người học thật, người ngoài nhóm, khách, trang học chính thật); cách thử từng mục ở `docs/thu-that/README.md`.
 - Tình trạng từng mục: `npm run spec:acceptance` rồi mở `docs/generated/acceptance-report.md`.
 - Test đơn vị chạy theo giờ Việt Nam (`TZ=Asia/Ho_Chi_Minh` trong `npm test`) để khớp tiến độ mẫu 30 ngày.
-- Câu hỏi mở cho khách: `docs/new/ui-spec.md` mục 5; câu hỏi mở theo khu vực nằm cuối từng `spec.md` (đợt 2 thêm ở APP, T2, T3, T4, S5, S8).
+- Không còn câu hỏi mở: ngày 10/10/2026 Claude quyết định toàn bộ câu hỏi còn lại theo ủy quyền của nhóm (bảng "Đã trả lời" cuối từng `spec.md` và `docs/new/ui-spec.md` mục 5); khách muốn khác thì sửa ở đợt sau. Riêng DATA-AC12 vẫn cần tin nhắn xác nhận của khách.
+- Tài liệu theo dõi của nhóm: `docs/theo-doi/` (checklist chức năng, ánh xạ câu hỏi mở, bản đồ màn hình).

@@ -17,14 +17,14 @@
 - [x] DATA-AC08 [auto] DATA-07: Test đơn vị quy tắc ôn với đồng hồ giả: chuỗi "Tôi nhớ" liên tiếp cho `due` sau 1, 3, 7, 14, 30, 30 ngày; "Cần ôn lại", trả lời sai, dùng gợi ý đều đưa `streak` về 0 và câu thành Cần ôn ngay.
   - Bằng chứng: test fe/tests/unit/data.test.ts pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] DATA-AC09 [auto] DATA-07: Cùng một bộ tiến độ, số "câu cần ôn hôm nay" hiển thị ở T1, T2 và T4 bằng nhau, và bằng số câu có trạng thái Cần ôn ở T3.
-  - Bằng chứng: test fe/tests/unit/app.test.tsx và fe/tests/unit/t2-t4.test.tsx pass (npm test), Claude, 2026-10-10, chưa commit (đợt 2)
+  - Bằng chứng: test fe/tests/unit/app.test.tsx và fe/tests/unit/t2-t4.test.tsx pass (npm test), Claude, 2026-10-10, commit 757a784
 - [x] DATA-AC10 [auto] DATA-08: Với mọi câu trong fixture tiếng Anh: đủ 4 lựa chọn, đúng một lựa chọn là nghĩa đúng, không hai lựa chọn trùng sau chuẩn hóa; gọi hai lần cho cùng câu ra cùng bộ và cùng thứ tự.
   - Bằng chứng: test fe/tests/unit/data.test.ts pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] DATA-AC11 [claude] DATA-09: Chạy lại `node scripts/make-fixtures.mjs` không làm đổi file nào trong git; đối chiếu nội dung `fe/fixtures/` (kể cả bộ tiến độ mẫu và số liệu tính tay) với danh sách trong DATA-09, ghi từng mục đạt hay không vào bằng chứng.
-  - Bằng chứng: chạy lại node scripts/make-fixtures.mjs: fe/fixtures/data không đổi trong git, fluency-en-30-ngay.json trùng mã băm. Đối chiếu DATA-09: Fluency en có unit 1 đến 3 đủ 8 câu và unit 4 còn 5 câu (đạt); ja có reading và furigana ở cả 8 câu, th 8 câu, ru 8 câu (đạt); Global có unit 1, 2, 377, hai trình độ A1 và B2, 3 chủ đề, câu dài nhất 138 ký tự (đạt); tiến độ mẫu 30 ngày đúng cấu trúc DATA-06 (26 phiên, 388 lượt, 29 câu) kèm số liệu tính tay fluency-en-30-ngay.so-lieu.json và cách tính trong fe/fixtures/progress/README.md (đạt), Claude, 2026-10-10, chưa commit (đợt 2)
+  - Bằng chứng: chạy lại node scripts/make-fixtures.mjs: fe/fixtures/data không đổi trong git, fluency-en-30-ngay.json trùng mã băm. Đối chiếu DATA-09: Fluency en có unit 1 đến 3 đủ 8 câu và unit 4 còn 5 câu (đạt); ja có reading và furigana ở cả 8 câu, th 8 câu, ru 8 câu (đạt); Global có unit 1, 2, 377, hai trình độ A1 và B2, 3 chủ đề, câu dài nhất 138 ký tự (đạt); tiến độ mẫu 30 ngày đúng cấu trúc DATA-06 (26 phiên, 388 lượt, 29 câu) kèm số liệu tính tay fluency-en-30-ngay.so-lieu.json và cách tính trong fe/fixtures/progress/README.md (đạt), Claude, 2026-10-10, commit 757a784
 - [ ] DATA-AC12 [human] DATA-09: Xác nhận bằng văn bản từ khách cho phép dùng bộ dữ liệu trong `fe/public/data/` cho phát triển và demo (nhóm đã ghi nhận đồng ý ngày 08/10/2026; người kiểm lưu lại tin nhắn làm bằng chứng).
 - [x] DATA-AC13 [auto] DATA-10: Test giao diện ghi lại mọi request trong luồng T1 → S3 → T3 → T4 → S8: chỉ có request tới origin của app và base URL dữ liệu; không có request chứa `/api/` hoặc `get-data`.
-  - Bằng chứng: test fe/tests/e2e/app.spec.ts và fe/tests/e2e/dot2.spec.ts pass (npm run test:e2e), Claude, 2026-10-10, chưa commit (đợt 2)
+  - Bằng chứng: test fe/tests/e2e/app.spec.ts và fe/tests/e2e/dot2.spec.ts pass (npm run test:e2e), Claude, 2026-10-10, commit 757a784
 - [x] DATA-AC14 [auto] DATA-11: Với tiến độ trống, câu tiếp theo là câu đầu của unit 1; sau khi qua bước ghi nhớ toàn bộ unit 1, câu tiếp theo là câu đầu của unit 2.
   - Bằng chứng: test fe/tests/unit/data.test.ts pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] DATA-AC15 [auto] DATA-12: Test đơn vị tìm kiếm: "dat phong" khớp "đặt phòng", "BOOK" khớp "book", kết quả theo thứ tự `id` tăng dần; với fixture Global English, "truong hoc" khớp các câu có `topic` "Trường học", và với fixture Fluency không lỗi khi thiếu các trường đó.
@@ -34,6 +34,6 @@
 - [x] DATA-AC17 [auto] DATA-06, DATA-13: Học một phiên ở Global English rồi đổi sang English Fluency và học một phiên: có hai khóa `vitasr2.progress.global.en` và `vitasr2.progress.fluency.en` độc lập; đổi lại Global English thì tiến độ cũ còn nguyên.
   - Bằng chứng: test fe/tests/unit/s3.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] DATA-AC18 [auto] DATA-04: Render thẻ câu, T1 và T3 với fixture Global English: có dòng Cách dùng, tình huống, mã trình độ, bộ lọc Chủ đề; với fixture English Fluency: không có các phần đó và không lỗi.
-  - Bằng chứng: test fe/tests/unit/app.test.tsx và fe/tests/unit/t3.test.tsx pass (npm test), Claude, 2026-10-10, chưa commit (đợt 2)
+  - Bằng chứng: test fe/tests/unit/app.test.tsx và fe/tests/unit/t3.test.tsx pass (npm test), Claude, 2026-10-10, commit 757a784
 - [x] DATA-AC19 [auto] DATA-01, DATA-02, DATA-03: Test đọc toàn bộ `fe/public/data/` qua `StaticFileSource`: 15 ngôn ngữ Fluency, mỗi file 4.096 câu và 512 unit; Global English 4.608 câu và 576 unit; mọi id trong unit khớp một câu; mã băm khớp `_inventory.json`.
   - Bằng chứng: test fe/tests/unit/data.test.ts pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa

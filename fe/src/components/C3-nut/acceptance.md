@@ -1,7 +1,7 @@
 # Acceptance: C3 Nút
 
 - [x] C3-AC01 [claude] C3-01, C3-02: Ảnh chụp bảng mẫu nút chính và nút phụ ở 375 px và 1280 px, sáng và tối: đúng kích thước, màu token, nút chính rộng hết khối ở 375 px.
-  - Bằng chứng: ảnh docs/evidence/C3-AC01/ (sheet Dừng phiên: nút chính và nút phụ), Claude, 2026-10-08, commit 97e85fa
+  - Bằng chứng: ảnh docs/evidence/C3-AC01/ (sheet Dừng phiên: nút chính và nút phụ), Claude, 2026-10-08, commit 97e85fa; ảnh chụp lại 10/10 với bản Đợt 3, commit 9aaf1ed
 - [x] C3-AC02 [claude] C3-03: Ảnh chụp cặp nút đánh giá ở 320 px và 375 px: hai nút bằng nhau, cách 12 px, cao 56 px, có icon và chữ; ở trạng thái khóa cả hai mờ.
   - Bằng chứng: ảnh docs/evidence/C3-AC02/, Claude, 2026-10-08, commit 97e85fa
 - [ ] C3-AC03 [human] C3-03: Trên điện thoại thật, dùng một tay bấm 20 lần xen kẽ hai nút đánh giá: không lần nào bấm nhầm.

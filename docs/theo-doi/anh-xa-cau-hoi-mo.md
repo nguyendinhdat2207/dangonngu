@@ -1,6 +1,8 @@
 # Ánh xạ câu hỏi mở VITASR Đa ngôn ngữ vào spec, code và test
 
-Cập nhật 10/10/2026 · số dòng tính theo commit `ec1d2f2` trên main · đi kèm file `checklist-vitasr-da-ngon-ngu.md`
+Cập nhật 10/10/2026 tối · số dòng trong các đường dẫn tính theo commit `ec1d2f2` trên main · đi kèm `docs/theo-doi/checklist-chuc-nang.md`
+
+**Tất cả các câu đã có quyết định ngày 10/10/2026** (Claude quyết định theo ủy quyền của nhóm, để làm xong bản web; khách muốn khác thì sửa ở đợt sau). Quyết định nằm ở dòng "Quyết định" đầu mỗi mục dưới đây và ở bảng "Đã trả lời" cuối từng `spec.md`. Riêng A6 (xác nhận dữ liệu) vẫn cần khách trả lời.
 
 File này lấy 26 dòng có trạng thái "Cần trao đổi" (14) và "Chờ xác nhận" (12) trong checklist, cộng 7 chức năng bản cũ chưa có. Mỗi mục ghi câu hỏi cần làm rõ, code đang làm gì, vị trí trong spec, code, test, và nếu đổi phương án thì phải sửa những chỗ nào. Bấm vào đường dẫn để mở đúng dòng trên GitHub.
 
@@ -18,34 +20,34 @@ Nếu nhóm đồng ý với cách code đang làm thì chỉ cần bước 1: c
 
 | STT | Mã | Trạng thái | Câu hỏi ngắn | Ai trả lời | Ưu tiên |
 |---|---|---|---|---|---|
-| A1 | G (Chia sẻ) | Cần trao đổi | Có giữ tính năng Chia sẻ không, backend của ai? | Khách | Cao |
-| A2 | DATA-11 | Cần trao đổi | Global English có cho chọn trình độ bắt đầu không? | Khách | Cao |
-| A3 | S1-07 | Cần trao đổi | Có cần chế độ "Tiếng Việt (từ tiếng Anh)" không? | Khách | Cao |
-| A4 | G-05 | Cần trao đổi | Ai duyệt thiết kế, ở mốc nào? | Khách | Cao |
-| A5 | APP-09, APP-12 | **Đã quyết định** (10/10): mở trang mới, không iframe; giữ nút quay lại về trang học chính | Trang chính mở mini app bằng iframe hay tab mới? | Nhóm | Cao |
-| A6 | DATA-09 | Cần trao đổi | Xác nhận bằng văn bản việc dùng dữ liệu | Khách | Cao |
-| A7 | (bản cũ 1.9.45) | Cần trao đổi | Mục pháp lý ở bản cũ có cần không? | Khách | Thấp |
-| B1 | DATA-07 | Cần trao đổi | Giữ khoảng ôn 1, 3, 7, 14, 30 ngày? Đúng không gợi ý thì giữ nguyên lịch? | Nhóm (có thể hỏi khách) | Cao |
-| B2 | S8-05, FND-12 | Cần trao đổi | Duyệt câu báo lỗi nhập file | Nhóm | Cao |
-| B3 | S8-04, FND-03 | Cần trao đổi | "Theo thiết bị" hay "Theo hệ thống"? | Nhóm | Thấp |
-| B4 | T4-05 | Cần trao đổi | "7 ngày tới" gộp hay tách "Ngày mai"? | Nhóm | Trung bình |
-| B5 | T4-04 | Cần trao đổi | Màu cột hôm nay; cột 30 ngày ở 320 px quá hẹp | Nhóm | Trung bình |
-| B6 | C6-01 | Cần trao đổi | Lớp nền sau sheet ở chế độ tối | Nhóm | Thấp |
-| B7 | S8-02 | Cần trao đổi | Có nút nghe nghĩa tiếng Việt không? | Nhóm | Thấp |
-| C1 | T1-03 | Chờ xác nhận | Phiên nào được tính vào mục tiêu tuần? | Nhóm | Trung bình |
-| C2 | T2-03 | Chờ xác nhận | Chữ nút "Học 8 câu đầu"; tìm chuỗi con hay theo từ | Nhóm | Trung bình |
-| C3 | S5-03 | Chờ xác nhận | Chờ nạp giọng tối đa 1,5 giây | Nhóm | Trung bình |
-| C4 | S5-04 | Chờ xác nhận | Thêm loại lượt `nghe-cum`? | Nhóm | Trung bình |
-| C5 | S5-07 | Chờ xác nhận | Cách hiện kết quả bước Nghe theo cụm | Nhóm | Trung bình |
-| C6 | S5-08 | Chờ xác nhận | Bấm Thoát rồi Dừng ở Kiểm tra nhanh thì về đâu: luôn về Luyện tập, hay về khu chính mở gần nhất (mở thẳng link thì thành màn Học)? | Nhóm | Thấp |
-| C7 | T3-03 | Chờ xác nhận | Giữ bộ lọc nào trong route; danh sách chọn mở bằng sheet | Nhóm | Trung bình |
-| C8 | T4-08 | Chờ xác nhận | "Chưa có phiên nào" nghĩa là gì? | Nhóm | Thấp |
-| C9 | S8-06 | Chờ xác nhận | Bỏ nút Cài đặt trên thanh trên cùng khi ở S8 | Nhóm | Thấp |
-| C10 | APP-10 | Chờ xác nhận | Cách cập nhật service worker và font Noto ngoại tuyến | Nhóm | Trung bình |
-| C11 | C1-05 | Chờ xác nhận | Liên kết "Cài đặt > Giọng đọc" thấp hơn 44 px | Nhóm | Thấp |
-| C12 | DATA-06 | Chờ xác nhận | Ghi các trường lưu thêm vào spec | Nhóm | Cao |
-| D1 | (bản cũ) | Cần trao đổi | Đọc nghĩa tiếng Việt thành tiếng (gộp với B7) | Nhóm | Thấp |
-| D2 | S8-03 | Chờ xác nhận | Gói âm thanh ngoại tuyến để bản sau? | Nhóm | Thấp |
+| A1 | G (Chia sẻ) | Đã quyết định (10/10) | Có giữ tính năng Chia sẻ không, backend của ai? | Khách | Cao |
+| A2 | DATA-11 | Đã quyết định (10/10) | Global English có cho chọn trình độ bắt đầu không? | Khách | Cao |
+| A3 | S1-07 | Đã quyết định (10/10) | Có cần chế độ "Tiếng Việt (từ tiếng Anh)" không? | Khách | Cao |
+| A4 | G-05 | Đã quyết định (10/10) | Ai duyệt thiết kế, ở mốc nào? | Khách | Cao |
+| A5 | APP-09, APP-12 | Đã quyết định (10/10) | Trang chính mở mini app bằng iframe hay tab mới? | Nhóm | Cao |
+| A6 | DATA-09 | Chờ khách | Xác nhận bằng văn bản việc dùng dữ liệu | Khách | Cao |
+| A7 | (bản cũ 1.9.45) | Đã quyết định (10/10) | Mục pháp lý ở bản cũ có cần không? | Khách | Thấp |
+| B1 | DATA-07 | Đã quyết định (10/10) | Giữ khoảng ôn 1, 3, 7, 14, 30 ngày? Đúng không gợi ý thì giữ nguyên lịch? | Nhóm (có thể hỏi khách) | Cao |
+| B2 | S8-05, FND-12 | Đã quyết định (10/10) | Duyệt câu báo lỗi nhập file | Nhóm | Cao |
+| B3 | S8-04, FND-03 | Đã quyết định (10/10) | "Theo thiết bị" hay "Theo hệ thống"? | Nhóm | Thấp |
+| B4 | T4-05 | Đã quyết định (10/10) | "7 ngày tới" gộp hay tách "Ngày mai"? | Nhóm | Trung bình |
+| B5 | T4-04 | Đã quyết định (10/10) | Màu cột hôm nay; cột 30 ngày ở 320 px quá hẹp | Nhóm | Trung bình |
+| B6 | C6-01 | Đã quyết định (10/10) | Lớp nền sau sheet ở chế độ tối | Nhóm | Thấp |
+| B7 | S8-02 | Đã quyết định (10/10) | Có nút nghe nghĩa tiếng Việt không? | Nhóm | Thấp |
+| C1 | T1-03 | Đã quyết định (10/10) | Phiên nào được tính vào mục tiêu tuần? | Nhóm | Trung bình |
+| C2 | T2-03 | Đã quyết định (10/10) | Chữ nút "Học 8 câu đầu"; tìm chuỗi con hay theo từ | Nhóm | Trung bình |
+| C3 | S5-03 | Đã quyết định (10/10) | Chờ nạp giọng tối đa 1,5 giây | Nhóm | Trung bình |
+| C4 | S5-04 | Đã quyết định (10/10) | Thêm loại lượt `nghe-cum`? | Nhóm | Trung bình |
+| C5 | S5-07 | Đã quyết định (10/10) | Cách hiện kết quả bước Nghe theo cụm | Nhóm | Trung bình |
+| C6 | S5-08 | Đã quyết định (10/10) | Bấm Thoát rồi Dừng ở Kiểm tra nhanh thì về đâu: luôn về Luyện tập, hay về khu chính mở gần nhất (mở thẳng link thì thành màn Học)? | Nhóm | Thấp |
+| C7 | T3-03 | Đã quyết định (10/10) | Giữ bộ lọc nào trong route; danh sách chọn mở bằng sheet | Nhóm | Trung bình |
+| C8 | T4-08 | Đã quyết định (10/10) | "Chưa có phiên nào" nghĩa là gì? | Nhóm | Thấp |
+| C9 | S8-06 | Đã quyết định (10/10) | Bỏ nút Cài đặt trên thanh trên cùng khi ở S8 | Nhóm | Thấp |
+| C10 | APP-10 | Đã quyết định (10/10) | Cách cập nhật service worker và font Noto ngoại tuyến | Nhóm | Trung bình |
+| C11 | C1-05 | Đã quyết định (10/10) | Liên kết "Cài đặt > Giọng đọc" thấp hơn 44 px | Nhóm | Thấp |
+| C12 | DATA-06 | Đã quyết định (10/10) | Ghi các trường lưu thêm vào spec | Nhóm | Cao |
+| D1 | (bản cũ) | Đã quyết định (10/10) | Đọc nghĩa tiếng Việt thành tiếng (gộp với B7) | Nhóm | Thấp |
+| D2 | S8-03 | Đã quyết định (10/10) | Gói âm thanh ngoại tuyến để bản sau? | Nhóm | Thấp |
 
 ---
 
@@ -57,6 +59,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không có Chia sẻ ở bản này. Nếu khách cần, khách cung cấp backend và làm thành đợt riêng (`docs/new/ui-spec.md` mục 3, 5). |
 | **Câu hỏi cần làm rõ** | Bản sau có giữ tính năng Chia sẻ của bản cũ không? Nếu có, bên nào cung cấp backend `/api/sharing/*`, xác thực thế nào? |
 | **Code đang làm** | Không có. App không gọi API nào ngoài file tĩnh của chính nó (DATA-10, QD-03). |
 | **Spec** | [`docs/new/ui-spec.md:78`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/new/ui-spec.md#L78) (câu hỏi 1); [`fe/src/data/spec.md:116-118`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L116-L118) (DATA-10 cấm gọi `/api/sharing/*`); [`docs/legacy/api-and-storage.md`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/legacy/api-and-storage.md) (API bản cũ) |
@@ -69,6 +72,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không cho chọn trình độ bắt đầu ở bản này; trình độ khác học qua bộ lọc Trình độ ở Thư viện (DATA-11). |
 | **Câu hỏi cần làm rõ** | Với Global English (6 trình độ A1 đến C2), người học có được chọn trình độ bắt đầu không? Nếu có: chọn ở S1 ngay sau khi chọn bộ, hay ở Cài đặt, hay cả hai? Đổi trình độ giữa chừng thì lộ trình tính lại thế nào? |
 | **Code đang làm** | Lộ trình đi lần lượt từ unit đầu (A1-01). |
 | **Spec** | [`fe/src/data/spec.md:140`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L140) (câu hỏi); [`fe/src/data/spec.md:120-122`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L120-L122) (DATA-11); [`docs/new/ui-spec.md:81`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/new/ui-spec.md#L81) (câu hỏi 4) |
@@ -81,6 +85,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không có chế độ đảo chiều ở bản này (bảng Đã trả lời của S1). |
 | **Câu hỏi cần làm rõ** | Bản cũ có chế độ đảo chiều: hiện câu tiếng Việt, người học nhớ câu tiếng Anh. Khách có cần chế độ này không? Nếu có, áp dụng cho bộ nào? |
 | **Code đang làm** | Không có. |
 | **Spec** | [`fe/src/pages/S1-chon-ngon-ngu/spec.md:89`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S1-chon-ngon-ngu/spec.md#L89) (câu hỏi); [`fe/src/pages/S1-chon-ngon-ngu/spec.md:63`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S1-chon-ngon-ngu/spec.md#L63) (S1-07) |
@@ -92,6 +97,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Nhóm duyệt nội bộ qua ảnh bằng chứng và bản chạy thử trên GitHub Pages; khách duyệt một lần khi bàn giao (`docs/new/ui-spec.md` mục 5). |
 | **Câu hỏi cần làm rõ** | Ai bên khách duyệt giao diện, ở những mốc nào (sau buổi thử, trước bàn giao)? Ai được đánh dấu G-AC05? |
 | **Spec** | [`docs/new/ui-spec.md:79`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/new/ui-spec.md#L79) (câu hỏi 2); [`docs/new/acceptance.md`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/new/acceptance.md) (G-AC05) |
 | **Code liên quan** | Không có. Ảnh 5 màn chính nằm trong `docs/evidence/`. |
@@ -100,6 +106,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Đã quyết định từ chiều 10/10. Thêm ngày 10/10 tối: nút về trang chủ (đổi bằng `VITE_HOST_URL`); nếu trang chính mở app bằng tab mới, nút vẫn mở trang học trong tab của app (APP-12). |
 | **Trạng thái** | **Đã quyết định ngày 10/10/2026.** Trang học chính mở mini app ở trang mới (tab mới, chuyển thẳng trang), không nhúng iframe. Giữ một nút quay lại để về trang học chính: yêu cầu mới APP-12. Spec đã sửa (APP-09, APP-12, `docs/new/ui-spec.md` mục 5, `docs/new/navigation.md`, `docs/legacy/README.md`) và APP-12 đã code trên nhánh `Manh_work_10_10` (`fe/src/app/HostBack.tsx`, `fe/src/app/TopBar.tsx`, `fe/src/pages/S1-chon-ngon-ngu/S1ChonNgonNgu.tsx`; địa chỉ đổi bằng `VITE_HOST_URL`). Câu còn lại: nút về trang chủ hay thẳng Trung tâm ứng dụng (câu hỏi mở của APP-12). |
 | **Câu hỏi cần làm rõ** | Trang học chính mở mini app bằng iframe hay tab mới? Có truyền tham số URL, token hay postMessage không? |
 | **Code đang làm** | Chạy được cả hai cách, không dùng `window.top`, không chờ token. |
@@ -111,6 +118,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không thể quyết thay khách: vẫn cần tin nhắn xác nhận (DATA-AC12, buổi 4 trong `docs/thu-that/README.md`). |
 | **Câu hỏi cần làm rõ** | Khách xác nhận bằng văn bản cho dùng bộ dữ liệu trong `fe/public/data/` khi phát triển và demo. Hỏi luôn: có cho để repo công khai không? |
 | **Spec** | [`fe/src/data/acceptance.md:25`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/acceptance.md#L25) (DATA-AC12, mục `[human]`) |
 | **Nếu đổi thì sửa** | Người kiểm đánh `[x]` và ghi dòng bằng chứng (ngày, người gửi, nơi lưu tin nhắn) ngay dưới DATA-AC12. Nếu khách không cho công khai thì chuyển repo sang riêng tư. |
@@ -119,6 +127,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không đưa mục pháp lý vào bản này vì chưa có nội dung từ khách (`docs/new/ui-spec.md` mục 3). |
 | **Câu hỏi cần làm rõ** | Bản cũ 1.9.45 từng hiện một mục pháp lý (lần đọc 10/10 không thấy lại). Bản mới có cần mục này không, nội dung lấy ở đâu? |
 | **Spec** | [`docs/legacy/README.md`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/docs/legacy/README.md) (ghi bản cũ 1.9.40) |
 | **Nếu đổi thì sửa** | Thêm một dòng vào nhóm Trợ giúp của S8-06 ([`fe/src/pages/S8-cai-dat/spec.md:45`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L45)). |
@@ -131,6 +140,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Chốt khoảng ôn 1, 3, 7, 14, 30 ngày; trả lời đúng không gợi ý giữ nguyên `streak` và `due` (DATA-07). |
 | **Câu hỏi cần làm rõ** | (1) Giữ khoảng ôn 1, 3, 7, 14, 30 ngày, hay theo quy tắc của bản cũ (`demo/learning-ui.js`, `demo/learning-store.js`)? (2) Trả lời đúng ở bước trắc nghiệm mà không dùng gợi ý thì giữ nguyên lịch ôn, hay cũng tăng `streak`? |
 | **Code đang làm** | Khoảng 1, 3, 7, 14, 30 ngày; đúng không gợi ý thì giữ nguyên `streak` và `due`. |
 | **Spec** | [`fe/src/data/spec.md:139`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L139) và [`fe/src/data/spec.md:141`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L141) (câu hỏi); [`fe/src/data/spec.md:92-102`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L92-L102) (DATA-07) |
@@ -144,6 +154,7 @@ Các câu này nằm ở mục 5 của [`docs/new/ui-spec.md:76-81`](https://git
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Câu mới: "Tệp này không phải tiến độ VITASR của [tên]. Chọn tệp đã xuất bằng Xuất tiến độ khi đang học [tên]." Nhóm "Dữ liệu" đổi tên thành "Tiến độ"; câu xác nhận dùng "tệp". FND-AC12 đạt (S8-05, Đợt 3). |
 | **Câu hỏi cần làm rõ** | Câu hiện tại "File không phải tiến độ VITASR hoặc của ngôn ngữ khác." chưa nói cần làm gì, trái FND-12. Duyệt câu thêm: "Chọn file đã xuất từ Cài đặt khi đang học ngôn ngữ này." Nhân tiện xác nhận: chữ "file" ở đây có được dùng không, vì bảng "Không dùng" của FND-12 có "File" (bảng đó nói về cách gọi câu học, nhưng người rà FND-AC12 nên chốt luôn). |
 | **Code đang làm** | Giữ đúng chữ trong spec, chờ duyệt. Đây là mục duy nhất làm FND-AC12 chưa đạt. |
 | **Spec** | [`fe/src/pages/S8-cai-dat/spec.md:52`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L52) (câu hỏi); [`fe/src/pages/S8-cai-dat/spec.md:38-43`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L38-L43) (S8-05); [`fe/src/foundation/spec.md:89-101`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/foundation/spec.md#L89-L101) (FND-12, bảng từ) |
@@ -158,6 +169,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Dùng "Theo thiết bị" ở cả S8-04 và FND-03. |
 | **Câu hỏi cần làm rõ** | Chọn một tên cho lựa chọn giao diện tự động, dùng chung ở S8-04 và FND-03. |
 | **Code đang làm** | "Theo thiết bị". |
 | **Spec** | [`fe/src/pages/S8-cai-dat/spec.md:51`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L51) (câu hỏi); [`fe/src/pages/S8-cai-dat/spec.md:34-36`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L34-L36) (S8-04); [`fe/src/foundation/spec.md:38-40`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/foundation/spec.md#L38-L40) (FND-03) |
@@ -169,6 +181,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | "7 ngày tới" gồm cả số của "Ngày mai", giữ như code (T4-05). |
 | **Câu hỏi cần làm rõ** | Dòng "7 ngày tới" có tính cả số câu của "Ngày mai" không? Người học dễ cộng nhầm nếu gộp. |
 | **Code đang làm** | Gộp: từ ngày mai tới hết ngày thứ 7 (tiến độ mẫu: Ngày mai 5, 7 ngày tới 19). |
 | **Spec** | [`fe/src/pages/T4-tien-bo/spec.md:80`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/spec.md#L80) (câu hỏi); [`fe/src/pages/T4-tien-bo/spec.md:62-64`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/spec.md#L62-L64) (T4-05) |
@@ -181,6 +194,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Giữ cột hôm nay màu `--brand`, ghi là ngoại lệ của FND-02; cột 30 ngày hẹp vẫn chạm được, danh sách Các phiên là đường thay thế, ghi là ngoại lệ của FND-14 (T4-04). |
 | **Câu hỏi cần làm rõ** | (1) Cột hôm nay tô `--brand` theo T4-04, nhưng FND-02 chỉ cho `--brand` ở nút chính và ô đang học. Giữ làm ngoại lệ (ghi vào FND-02) hay đổi màu khác (ví dụ `--ink` đậm 100%)? (2) Khoảng 30 ngày ở 320 px mỗi cột chỉ khoảng 9 px, nhỏ hơn vùng chạm 44 px. Có cần cách khác để mở chi tiết ngày (ví dụ danh sách ngày bên dưới biểu đồ) không? |
 | **Code đang làm** | Theo T4-04; ngày không học là một chấm, không chạm được. |
 | **Spec** | [`fe/src/pages/T4-tien-bo/spec.md:81-82`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/spec.md#L81-L82) (câu hỏi); [`fe/src/pages/T4-tien-bo/spec.md:58-60`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/spec.md#L58-L60) (T4-04); [`fe/src/foundation/spec.md:34-36`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/foundation/spec.md#L34-L36) (FND-02) |
@@ -193,6 +207,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Token `--scrim` riêng: giao diện tối là đen độ mờ 60%, giao diện sáng giữ `--ink` độ mờ 40%; S9 dùng chung (C6-01, Đợt 3). |
 | **Câu hỏi cần làm rõ** | Lớp nền dùng `--ink` độ mờ 40%; ở chế độ tối `--ink` là màu sáng nên màn phía sau bị bạc đi thay vì tối lại. Có dùng token riêng cho chế độ tối (ví dụ đen độ mờ 50%) không? |
 | **Code đang làm** | Như spec. |
 | **Spec** | [`fe/src/components/C6-sheet/spec.md:33`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C6-sheet/spec.md#L33) (câu hỏi); [`fe/src/components/C6-sheet/spec.md:15-17`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C6-sheet/spec.md#L15-L17) (C6-01); [`fe/src/foundation/spec.md:18`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/foundation/spec.md#L18) (FND-01 bảng token) |
@@ -204,6 +219,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không có nút nghe nghĩa ở bản này; giữ lựa chọn giọng Tiếng Việt (S8-02). |
 | **Câu hỏi cần làm rõ** | Giọng tiếng Việt chọn và lưu được ở S8 nhưng chưa màn nào đọc nghĩa. Có thêm nút nghe nghĩa ở thẻ câu không? Nếu không, có bỏ lựa chọn "Giọng cho: Tiếng Việt" ở S8 cho gọn không? |
 | **Code đang làm** | Lưu lựa chọn, chưa dùng. |
 | **Spec** | [`fe/src/pages/S8-cai-dat/spec.md:55`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L55) (câu hỏi); [`fe/src/pages/S8-cai-dat/spec.md:21-28`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L21-L28) (S8-02); [`fe/src/components/C1-the-cau/spec.md`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C1-the-cau/spec.md) (C1-01, C1-04 nếu thêm nút) |
@@ -221,6 +237,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Đếm mọi phiên đã xong, không tính phiên dừng giữa chừng (T1-03). |
 | **Câu hỏi cần làm rõ** | Mục tiêu tuần đếm mọi loại phiên đã xong (lộ trình, ôn tập, từ khóa, một câu, kiểm tra nhanh) và không đếm phiên bị dừng. Có loại nào không nên tính, ví dụ phiên "Một câu" từ T3 chỉ có vài câu? |
 | **Spec** | [`fe/src/pages/T1-hoc/spec.md:101`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T1-hoc/spec.md#L101) (câu hỏi); [`fe/src/pages/T1-hoc/spec.md:79-81`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T1-hoc/spec.md#L79-L81) (T1-03) |
 | **Code** | [`fe/src/data/path.ts:56-60`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/path.ts#L56-L60) (`sessionsInLast7Days`); dùng ở [`fe/src/pages/T1-hoc/T1Hoc.tsx:24`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T1-hoc/T1Hoc.tsx#L24) và [`fe/src/pages/T4-tien-bo/T4TienBo.tsx:91`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/T4TienBo.tsx#L91) |
@@ -232,6 +249,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Nút là "Học N câu" khi tìm thấy 1 đến 7 câu (Đợt 3); giữ tìm theo chuỗi con (T2-03). |
 | **Câu hỏi cần làm rõ** | (1) Tìm thấy dưới 8 câu thì nút vẫn ghi "Học 8 câu đầu"; có đổi thành "Học N câu" như T1-02 không? (2) Tìm theo chuỗi con nên "bus" khớp cả "busy"; có muốn khớp theo từ không? |
 | **Spec** | [`fe/src/pages/T2-luyen-tap/spec.md:60-61`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T2-luyen-tap/spec.md#L60-L61) (câu hỏi); [`fe/src/pages/T2-luyen-tap/spec.md:46-48`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T2-luyen-tap/spec.md#L46-L48) (T2-03); [`fe/src/data/spec.md:124-126`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L124-L126) (DATA-12) |
 | **Code** | [`fe/src/pages/T2-luyen-tap/T2LuyenTap.tsx:160-171`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T2-luyen-tap/T2LuyenTap.tsx#L160-L171) (nút, dòng 169 là chữ); [`fe/src/data/search.ts:21`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/search.ts#L21) (so khớp chuỗi con) |
@@ -243,6 +261,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Giữ chờ nạp giọng tối đa 1,5 giây; bước 1 chỉ hiện câu hỏi và 4 lựa chọn sau khi biết có giọng hay không (S5-03, Đợt 3). |
 | **Câu hỏi cần làm rõ** | Trong lúc trình duyệt nạp danh sách giọng (tối đa 1,5 giây), bước 1 chưa hiện nút "Nghe lại" lẫn chữ câu gốc. Chấp nhận khoảng trống này, hay hiện khung xương trong lúc chờ? |
 | **Spec** | [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:70`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L70) (câu hỏi); [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:41-43`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L41-L43) (S5-03) |
 | **Code** | [`fe/src/app/speech.ts:28`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/speech.ts#L28) (mốc 1500 ms); [`fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx:365-383`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx#L365-L383) (`voicesReady`, `noVoice`, `showText`) |
@@ -254,6 +273,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Không thêm loại lượt cho Nghe theo cụm (S5-07, DATA-06). |
 | **Câu hỏi cần làm rõ** | Bước Nghe theo cụm chưa có loại lượt riêng, nên làm "Chỉ nghe theo cụm" tạo phiên hoàn tất không có lượt nào: T4 đếm phiên này nhưng không đếm câu nào là đã học. Có thêm loại lượt `nghe-cum` không? |
 | **Spec** | [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:68`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L68) (câu hỏi); [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:45-47`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L45-L47) (S5-04); [`fe/src/data/spec.md:81-90`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L81-L90) (DATA-06) |
 | **Code** | [`fe/src/data/progress.ts:7`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/progress.ts#L7) (`AttemptKind`); [`fe/src/data/transfer.ts:34`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/transfer.ts#L34) (danh sách `KIND` khi nhập file); [`fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx:108`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx#L108) (đếm `cumDone`) và [`fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx:275`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx#L275) (`record`); [`fe/src/data/session.ts:37-46`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/session.ts#L37-L46) (`recordCheck`) |
@@ -264,6 +284,7 @@ Hai điểm khác của S8-05 chỉ cần xác nhận ([`fe/src/pages/S8-cai-dat
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Giữ "Nghe theo cụm: x/y" (S5-07). |
 | **Câu hỏi cần làm rõ** | Bước này không có đúng sai. Code ghi số câu đã làm xong, ví dụ "Nghe theo cụm: 8/8". Giữ, hay đổi thành "Đã nghe 8 câu"? |
 | **Spec** | [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:67`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L67) (câu hỏi); [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:57-59`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L57-L59) (S5-07) |
 | **Code** | [`fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx:236-243`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/S5KiemTra.tsx#L236-L243) (dòng 240 tính số cho bước này) |
@@ -288,6 +309,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Luôn về T2 Luyện tập, kể cả khi mở thẳng đường dẫn; Thoát ở màn bắt đầu cũng vậy (S5-08, Đợt 3). |
 | **Câu hỏi cần làm rõ** | Bấm Thoát rồi Dừng ở Kiểm tra nhanh thì về đâu? Chọn một: **(a)** luôn về Luyện tập, giống nút "Xong" và giống sơ đồ điều hướng; **(b)** giữ như code: về khu chính mở gần nhất, mở thẳng link thì về Học; **(c)** lùi một bước lịch sử trình duyệt như nút Back (mở thẳng link thì có thể ra khỏi app hoặc về trang chính). |
 | **Đề xuất** | (a). Lối vào S5 chỉ có ở Luyện tập, nên về Luyện tập là đúng trong mọi trường hợp; khớp với "Xong" và với `navigation.md`; sửa ít nhất. (c) rủi ro nhất vì app có thể nằm trong iframe của trang học chính. |
 | **Spec** | [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:69`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L69) (câu hỏi); [`fe/src/pages/S5-kiem-tra-nhanh/spec.md:61-63`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S5-kiem-tra-nhanh/spec.md#L61-L63) (S5-08, nơi ghi câu trả lời: thay "Như S3-07" bằng màn đích cụ thể) |
@@ -301,6 +323,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Chỉ Unit và từ khóa giữ trong route; danh sách chọn mở bằng sheet; Trình độ liệt kê theo dữ liệu (T3-03). |
 | **Câu hỏi cần làm rõ** | (1) Chỉ Unit và từ khóa giữ trong route; Trạng thái, Chủ đề, Trình độ mất khi tải lại trang. Có cần giữ cả ba không? (2) Danh sách chọn của bộ lọc mở bằng sheet. (3) Bộ lọc Trình độ chỉ liệt kê trình độ có trong dữ liệu. |
 | **Spec** | [`fe/src/pages/T3-thu-vien/spec.md:84-86`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T3-thu-vien/spec.md#L84-L86) (câu hỏi); [`fe/src/pages/T3-thu-vien/spec.md:62-64`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T3-thu-vien/spec.md#L62-L64) (T3-03) |
 | **Code** | [`fe/src/pages/T3-thu-vien/T3ThuVien.tsx:47-51`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T3-thu-vien/T3ThuVien.tsx#L47-L51) (unit đọc từ route, ba bộ lọc kia là state), [`fe/src/pages/T3-thu-vien/T3ThuVien.tsx:72`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T3-thu-vien/T3ThuVien.tsx#L72) (`setUnit` ghi route), [`fe/src/pages/T3-thu-vien/T3ThuVien.tsx:136-206`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T3-thu-vien/T3ThuVien.tsx#L136-L206) (các sheet chọn); [`fe/src/pages/T3-thu-vien/filter.ts:61-63`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T3-thu-vien/filter.ts#L61-L63) (`levelsIn`) |
@@ -312,6 +335,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | "Chưa có phiên nào" là chưa từng hoàn tất phiên nào (T4-08). |
 | **Câu hỏi cần làm rõ** | Code hiểu là chưa từng hoàn tất phiên nào. Khi đã có phiên nhưng khoảng đang chọn không có, màn vẫn hiện chỉ số bằng 0 và ẩn mục "Các phiên". Đúng ý chưa? |
 | **Spec** | [`fe/src/pages/T4-tien-bo/spec.md:83`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/spec.md#L83) (câu hỏi); [`fe/src/pages/T4-tien-bo/spec.md:74-76`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/spec.md#L74-L76) (T4-08) |
 | **Code** | [`fe/src/data/stats.ts:97`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/stats.ts#L97) (`hasCompletedSession`); [`fe/src/pages/T4-tien-bo/T4TienBo.tsx:75-87`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/T4TienBo.tsx#L75-L87) (trạng thái trống), [`fe/src/pages/T4-tien-bo/T4TienBo.tsx:174`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/T4-tien-bo/T4TienBo.tsx#L174) (ẩn "Các phiên") |
@@ -322,6 +346,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Ở S8 chỉ có nút Quay lại, không có nút Cài đặt (phần mở đầu S8). |
 | **Câu hỏi cần làm rõ** | Ở S8 thanh trên cùng chỉ có nút "Quay lại" bên trái, bỏ tên ngôn ngữ và nút Cài đặt. Được không? |
 | **Spec** | [`fe/src/pages/S8-cai-dat/spec.md:56`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L56) (câu hỏi); [`fe/src/app/spec.md:20-22`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/spec.md#L20-L22) (APP-02, nơi nên ghi câu trả lời) |
 | **Code** | [`fe/src/app/TopBar.tsx:12-21`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/TopBar.tsx#L12-L21); gọi ở [`fe/src/app/App.tsx:132`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/App.tsx#L132) |
@@ -332,6 +357,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Giữ cách kích hoạt bản mới và lưu font ngoại tuyến (APP-10). |
 | **Câu hỏi cần làm rõ** | Service worker tự kích hoạt bản mới, trang đang mở chỉ tải lại khi bấm "Cập nhật". Font Noto (tiếng Nhật, Thái...) chỉ có khi ngoại tuyến từ lần mở có mạng thứ hai; tắt mạng ngay sau lần đầu thì dùng font sẵn có của máy. Chấp nhận được không, hay phải lưu sẵn font Noto ngay lần đầu (tăng dung lượng tải lần đầu)? |
 | **Spec** | [`fe/src/app/spec.md:89`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/spec.md#L89) (câu hỏi); [`fe/src/app/spec.md:79-81`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/spec.md#L79-L81) (APP-10) |
 | **Code** | [`fe/src/app/sw.js:3-5`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/sw.js#L3-L5) (chiến lược lưu), [`fe/src/app/sw.js:17-18`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/sw.js#L17-L18) (`skipWaiting`), [`fe/src/app/sw.js:27`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/sw.js#L27) (`clients.claim`); [`fe/src/app/updates.ts:23`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/app/updates.ts#L23) (tải lại khi bấm) |
@@ -343,6 +369,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Giữ liên kết trong câu, miễn vùng chạm 44 px (C1-05, FND-14). |
 | **Câu hỏi cần làm rõ** | Liên kết nằm trong dòng chữ nên thấp hơn vùng chạm 44 px của FND-14 (WCAG cho phép ngoại lệ với liên kết trong đoạn văn). Giữ, hay đổi thành nút riêng dưới dòng chữ? |
 | **Spec** | [`fe/src/components/C1-the-cau/spec.md:66`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C1-the-cau/spec.md#L66) (câu hỏi); [`fe/src/components/C1-the-cau/spec.md:48-50`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C1-the-cau/spec.md#L48-L50) (C1-05) |
 | **Code** | [`fe/src/components/C1-the-cau/SentenceCard.tsx:144-160`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C1-the-cau/SentenceCard.tsx#L144-L160) (`NoVoice`); [`fe/src/components/C1-the-cau/card.css:35`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/components/C1-the-cau/card.css#L35) (`.card__link`, `min-height: 0`) |
@@ -354,6 +381,7 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | | |
 |---|---|
+| **Quyết định (10/10/2026)** | Ghi các trường lưu thêm vào DATA-06. |
 | **Câu hỏi cần làm rõ** | Code lưu thêm: Session có `step`, `abandonedAt`, `params`; trạng thái câu `status` là `da-hoc` hoặc `kiem-tra`; mốc thời gian là số mili giây. Đồng ý ghi các điểm này vào DATA-06? Cần chốt trước khi ra mắt vì đây là định dạng dữ liệu trên máy người học và trong file xuất. |
 | **Spec** | [`fe/src/data/spec.md:142`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L142) (câu hỏi); [`fe/src/data/spec.md:81-90`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/spec.md#L81-L90) (DATA-06) |
 | **Code** | [`fe/src/data/progress.ts:6-49`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/progress.ts#L6-L49) (kiểu dữ liệu); [`fe/src/data/transfer.ts:34`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/transfer.ts#L34), [`fe/src/data/transfer.ts:51-54`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/data/transfer.ts#L51-L54) (kiểm tra khi nhập file) |
@@ -366,12 +394,12 @@ Hai dòng in đậm là chỗ lệch: biến nhớ tab gần nhất nằm trong 
 
 | STT | Mục | Câu hỏi cần làm rõ | Vị trí | Ghi chú |
 |---|---|---|---|---|
-| D1 | Đọc nghĩa tiếng Việt thành tiếng | Gộp với B7 | Như B7 | |
-| D2 | Gói âm thanh ngoại tuyến (S8-03) | Để bản sau được không? | [`fe/src/pages/S8-cai-dat/spec.md:30-32`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L30-L32); dữ liệu gói tiếng Lào trong `fe/public/data/` | Mục đang ẩn với mọi ngôn ngữ, không cần sửa code nếu để bản sau |
+| D1 | Đọc nghĩa tiếng Việt thành tiếng | Gộp với B7 | Như B7 | Đã quyết định: không có ở bản này |
+| D2 | Gói âm thanh ngoại tuyến (S8-03) | Để bản sau được không? | [`fe/src/pages/S8-cai-dat/spec.md:30-32`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/fe/src/pages/S8-cai-dat/spec.md#L30-L32); dữ liệu gói tiếng Lào trong `fe/public/data/` | Đã quyết định: để bản sau; mục đang ẩn với mọi ngôn ngữ |
 
 ## Việc kỹ thuật không cần hỏi ai
 
 | Việc | Vị trí | Sửa |
 |---|---|---|
-| Ghim Ubuntu cho CI trước 19/10 | [`.github/workflows/ci.yml:11`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/.github/workflows/ci.yml#L11) | `runs-on: ubuntu-latest` thành `runs-on: ubuntu-24.04` |
-| Dòng bằng chứng "chưa commit (đợt 2)" | 14 file `acceptance.md` (T2, T3, T4, S5, S8, S9, APP, DATA, FND, C4 đến C7, G) | Thay bằng `757a784` (tìm bằng `grep -rn "chưa commit (đợt 2)" fe/src docs`) |
+| Ghim Ubuntu cho CI trước 19/10 | [`.github/workflows/ci.yml:11`](https://github.com/nguyendinhdat2207/dangonngu/blob/ec1d2f2/.github/workflows/ci.yml#L11) | Xong ở PR #8 |
+| Dòng bằng chứng "chưa commit (đợt 2)" | 14 file `acceptance.md` (T2, T3, T4, S5, S8, S9, APP, DATA, FND, C4 đến C7, G) | Xong ở Đợt 3: mọi dòng "chưa commit" đã thay bằng mã commit |

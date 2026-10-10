@@ -13,7 +13,7 @@
 - [x] S3-AC06 [auto] S3-06: Phiên 8 câu có 2 câu dùng gợi ý và 1 câu chọn sai: tổng kết hiện "5/8" và danh sách Cần ôn có đúng 3 câu (cộng các câu chọn "Cần ôn lại" nếu có). Khi đã học hết lộ trình, không có nút "Học tiếp". Phiên `tu-khoa` nhóm 1 với 20 kết quả có nút chính "Nhóm tiếp" mở `nhom=2`; nhóm 3 (cuối) không có nút này.
   - Bằng chứng: test fe/tests/unit/s3.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] S3-AC07 [claude] S3-02, S3-03, S3-04, S3-06: Ảnh chụp S3a (trước và sau khi hiện), S3b (trước chọn, sau chọn sai, sau chọn đúng), S3c ở 320, 375, 1280 px, sáng và tối.
-  - Bằng chứng: ảnh docs/evidence/S3-AC07/, Claude, 2026-10-08, commit 97e85fa
+  - Bằng chứng: ảnh docs/evidence/S3-AC07/, Claude, 2026-10-08, commit 97e85fa; ảnh chụp lại 10/10 với bản Đợt 3, commit 9aaf1ed
 - [x] S3-AC08 [auto] S3-07: Bấm Thoát ở câu 4: sheet xác nhận hiện đúng chữ; "Học tiếp" giữ nguyên câu 4; "Dừng" về màn trước; nút Back của trình duyệt cũng mở sheet xác nhận.
   - Bằng chứng: test fe/tests/unit/s3.test.tsx, fe/tests/e2e/app.spec.ts pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] S3-AC09 [auto] S3-08: Dừng ở bước S3b của câu 4, tải lại trang, bấm nút tiếp tục ở T1: vào đúng S3b của câu 4. Bắt đầu phiên lộ trình mới thì phiên dở cũ không còn.

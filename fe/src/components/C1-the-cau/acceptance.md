@@ -1,7 +1,7 @@
 # Acceptance: C1 Thẻ câu
 
 - [x] C1-AC01 [claude] C1-01: Ảnh chụp thẻ có và không có dải 8 ô, ở 320 px và 375 px, sáng và tối: thứ tự khối đúng như bố cục; font nghĩa và câu gốc đúng vai trò.
-  - Bằng chứng: ảnh docs/evidence/C1-AC01/, Claude, 2026-10-08, commit 97e85fa
+  - Bằng chứng: ảnh docs/evidence/C1-AC01/, Claude, 2026-10-08, commit 97e85fa; ảnh chụp lại 10/10 với bản Đợt 3, commit 9aaf1ed
 - [x] C1-AC02 [auto] C1-02: Ở chế độ che, nút Nghe bị disabled; chạm khối che, rồi lặp lại bằng phím Space và Enter khi thẻ có focus: câu gốc hiện và sự kiện "đã hiện" phát đúng một lần.
   - Bằng chứng: test fe/tests/unit/components.test.tsx pass (npm test, npm run test:e2e), Claude, 2026-10-08, commit 97e85fa
 - [x] C1-AC03 [auto] C1-03: Sau khi hiện, không phần tử nào trong thẻ khiến câu gốc bị che lại.
